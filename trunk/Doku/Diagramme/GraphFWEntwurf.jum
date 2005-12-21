@@ -1,0 +1,1652 @@
+Jumli
+{
+  *** Applikation ***;
+  Version=1.4;
+  Elements=153;
+  {
+    *** Model ***;
+    Typ=2;
+    MainFile="main.cpp";
+    ActiveDiagramm=16;
+    {
+      *** GenSettings ***;
+      GetPrefix="Get";
+      SetPrefix="Set";
+      DBBaseClass="DbBasisObject";
+      DBRecordSet="DbSet";
+      GenerateWrite=true;
+      GenerateRead=true;
+    };
+    {
+      *** CompileDebugSettings ***;
+      AufrufCompiler="g++";
+      AufrufDebugger="gdb";
+      DebugOptionen="-nw";
+    };
+    {
+      *** Package ***;
+      Name="UseCases";
+      ID=3;
+      Zugriff=2;
+      Type=2;
+      {
+        *** Diagramm ***;
+        Name="UseCases";
+        ID=4;
+        DiagrammTyp=2;
+        {
+          *** UseCaseZeichner ***;
+          Rechteck=375,198,434,237;
+          Order=-1;
+          UMLElementID=5;
+        };
+        {
+          *** UseCaseZeichner ***;
+          Rechteck=376,309,435,348;
+          Order=-1;
+          UMLElementID=6;
+        };
+        {
+          *** UseCaseZeichner ***;
+          Rechteck=376,428,435,467;
+          Order=-1;
+          UMLElementID=7;
+        };
+        {
+          *** ActorZeichner ***;
+          Rechteck=93,290,132,349;
+          Order=-1;
+          UMLElementID=8;
+        };
+        {
+          *** ActorZeichner ***;
+          Rechteck=695,427,734,486;
+          Order=-1;
+          UMLElementID=12;
+        };
+        {
+          *** SystemZeichner ***;
+          Rechteck=213,127,609,598;
+          Order=-1;
+          UMLElementID=14;
+        };
+        {
+          *** BeziehungZeichner ***;
+          Rechteck=252,325,259,332;
+          Order=-1;
+          UMLElementID=9;
+          TextOffset=0,5;
+        };
+        {
+          *** BeziehungZeichner ***;
+          Order=-1;
+          UMLElementID=10;
+          TextOffset=0,5;
+        };
+        {
+          *** BeziehungZeichner ***;
+          Rechteck=540,456,547,463;
+          Order=-1;
+          UMLElementID=13;
+          TextOffset=0,5;
+        };
+        {
+          *** BeziehungZeichner ***;
+          Order=-1;
+          UMLElementID=11;
+          TextOffset=0,5;
+        };
+      };
+      {
+        *** UseCase ***;
+        Doku="Wird vom Layout Designer gestartet indem mit dem \nPhantom einer \
+        oder mehrere Knoten markiert werden. \nSpießt der Layout Designer nun einen \
+        der markierten \nKnoten auf, kann er an dem markierten Teilgraphen \nziehen. \
+        Wendet er genügend Kraft an, wird der Teilgraph \naus dem ursprünglichen \
+        Graphen gelöst.";
+        Name="Teilgraph lösen";
+        ID=5;
+        Zugriff=2;
+      };
+      {
+        *** UseCase ***;
+        Doku="Der Layout Designer startet den Use Case indem er einen \nKnoten \
+        mit dem Phantom aufspießt. Er kann den Knoten \nnun auf einem durch Constraints \
+        vorgegebenen Gitter \nverschieben. Wie leicht sich der Knoten verschieben \
+        \nlässt, hängt davon ab, wie eng der Knoten mit seinen \nNachbarn verbunden \
+        ist. Das Verschieben eines Knotens \nwird beendet, wenn der Layout Designer \
+        den Knoten mit \ndem Phantom wieder loslässt.";
+        Name="Knoten verschieben";
+        ID=6;
+        Zugriff=2;
+      };
+      {
+        *** UseCase ***;
+        Doku="Der Betrachter startet den Use Case, indem er einen \nStartknoten \
+        und einen Zielknoten auswählt und dann im \nMenü \"Kantenzug\" anklickt. \
+        Das System setzt das \nPhantom an den Startknoten. Für Kanten, die zum \
+        \nZielknoten führen, werden Constraints aktiviert, damit der\nBetrachter \
+        zum Ziel geleitet wird. Der Use Case ist beendet,\nwenn das Phantom am \
+        Zielknoten angekommen ist.";
+        Name="Kantenzug";
+        ID=7;
+        Zugriff=2;
+      };
+      {
+        *** Actor ***;
+        Name="LayoutDesigner";
+        ID=8;
+        Zugriff=2;
+        {
+          *** Beziehung ***;
+          ID=9;
+          Zugriff=2;
+          A=8;
+          B=6;
+        };
+        {
+          *** Beziehung ***;
+          ID=10;
+          Zugriff=2;
+          A=8;
+          B=5;
+        };
+        {
+          *** Beziehung ***;
+          ID=11;
+          Zugriff=2;
+          A=8;
+          B=7;
+        };
+      };
+      {
+        *** Actor ***;
+        Name="Betrachter";
+        ID=12;
+        Zugriff=2;
+        {
+          *** Beziehung ***;
+          ID=13;
+          Zugriff=2;
+          A=12;
+          B=7;
+        };
+      };
+      {
+        *** System ***;
+        Name="HapticGraphFrameWork";
+        ID=14;
+      };
+    };
+    {
+      *** Package ***;
+      Name="GraphFWEntwurf";
+      ID=15;
+      Zugriff=2;
+      {
+        *** Diagramm ***;
+        Name="GraphFWEntwurf";
+        ID=16;
+        {
+          *** CJumliTracker ***;
+          Rechteck=252,261,510,518;
+          Order=-1;
+          UMLElementID=112;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=740,394,898,464;
+          Order=-1;
+          UMLElementID=137;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=740,484,898,554;
+          Order=-1;
+          UMLElementID=144;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=734,578,898,665;
+          Order=-1;
+          UMLElementID=139;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=163,605,294,664;
+          Order=-1;
+          UMLElementID=146;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=320,605,425,664;
+          Order=-1;
+          UMLElementID=84;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=334,41,563,162;
+          Order=-1;
+          UMLElementID=106;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=448,605,553,664;
+          Order=-1;
+          UMLElementID=92;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=599,61,715,131;
+          Order=-1;
+          UMLElementID=103;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=41,297,146,401;
+          Order=-1;
+          UMLElementID=151;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=719,231,898,369;
+          Order=-1;
+          UMLElementID=94;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=29,754,134,813;
+          Order=-1;
+          UMLElementID=155;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=58,60,204,130;
+          Order=-1;
+          UMLElementID=86;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=829,735,1072,924;
+          Order=-1;
+          UMLElementID=51;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** VererbungZeichner ***;
+          Rechteck=267,599,274,606;
+          Order=-1;
+          UMLElementID=150;
+          Knick=271,603;
+          TextOffset=0,5;
+          {
+            *** Linie ***;
+            Punkt=271,603;
+          };
+        };
+        {
+          *** VererbungZeichner ***;
+          Rechteck=367,553,374,560;
+          Order=-1;
+          UMLElementID=85;
+          TextOffset=0,5;
+        };
+        {
+          *** VererbungZeichner ***;
+          Rechteck=471,565,478,572;
+          Order=-1;
+          UMLElementID=93;
+          Knick=475,569;
+          TextOffset=0,5;
+          {
+            *** Linie ***;
+            Punkt=475,569;
+          };
+        };
+        {
+          *** VererbungZeichner ***;
+          Rechteck=865,700,872,707;
+          Order=-1;
+          UMLElementID=82;
+          TextOffset=0,5;
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=553,402,560,409;
+          Order=-1;
+          UMLElementID=132;
+          Knick=542,398;
+          TextOffset=0,5;
+          OffsetRollenName=-52,-18;
+          OffsetA=5,5;
+          OffsetB=-3,3;
+          {
+            *** Linie ***;
+            Punkt=542,398;
+          };
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=519,473,529,490;
+          Order=-1;
+          UMLElementID=133;
+          Knick=511,491;
+          TextOffset=0,5;
+          OffsetRollenName=-45,-19;
+          OffsetA=5,5;
+          OffsetB=-1,-31;
+          {
+            *** Linie ***;
+            Punkt=511,491;
+          };
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=530,517,540,534;
+          Order=-1;
+          UMLElementID=134;
+          Knick=515,518;
+          TextOffset=0,5;
+          OffsetRollenName=-37,-18;
+          OffsetA=5,5;
+          OffsetB=6,-4;
+          {
+            *** Linie ***;
+            Punkt=515,518;
+          };
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=153,311,221,328;
+          Order=-1;
+          UMLElementID=135;
+          Knick=213,331;
+          TextOffset=0,5;
+          OffsetRollenName=6,-18;
+          OffsetA=5,5;
+          OffsetB=5,5;
+          {
+            *** Linie ***;
+            Punkt=213,331;
+          };
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=617,286,733,303;
+          Order=-1;
+          UMLElementID=136;
+          Knick=515,307;
+          TextOffset=0,5;
+          OffsetRollenName=-38,-19;
+          OffsetA=5,5;
+          OffsetB=5,-1;
+          {
+            *** Linie ***;
+            Punkt=515,307;
+          };
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=65,715,131,732;
+          Order=-1;
+          UMLElementID=149;
+          TextOffset=0,5;
+          OffsetRollenName=-37,-13;
+          OffsetA=5,5;
+          OffsetB=5,5;
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=259,222,375,239;
+          Order=-1;
+          UMLElementID=91;
+          TextOffset=0,5;
+          OffsetRollenName=69,-11;
+          OffsetA=-10,2;
+          OffsetB=5,5;
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=482,551,558,568;
+          Order=-1;
+          UMLElementID=81;
+          Knick=626,656;
+          TextOffset=0,5;
+          OffsetRollenName=-2,9;
+          OffsetA=5,5;
+          OffsetB=5,5;
+          {
+            *** Linie ***;
+            Punkt=626,656;
+          };
+        };
+      };
+      {
+        *** Package ***;
+        Name="genSource";
+        ID=17;
+        Zugriff=2;
+        {
+          *** Diagramm ***;
+          Name="genSource";
+          ID=18;
+          {
+            *** CJumliTracker ***;
+            Rechteck=-2,25,241,214;
+            Order=-1;
+            UMLElementID=19;
+            IsWithAttributs=true;
+            IsWithMethods=true;
+            IsHideTaggedValue=true;
+          };
+        };
+        {
+          *** Klasse ***;
+          Doku=".............................................................................../ \
+          @brief\tEine Eventhandlerklasse die es ermöglicht, haptische Objekte mit \
+          dem /\t\t\tPhantom zu bewegen/\t\t\t/\t\t\tDer Eventhandler reagiert auf \
+          die folgende Events:/\t\t\t- der vordere Phantom-Button wird gedrückt, \
+          wenn ein Objekt mit dem /\t\t\t  Phantom berührt wird/\t\t\t- das Phantom \
+          wird mit gedrücktem Button bewegt/\t\t\t- der vordere Phantom-Button wird \
+          losgelassen/\t\t\tWirkung: Solange der Button gedrückt gehalten wird, folgt \
+          das /\t\t\tregistrierte Objekt der Bewegung des Phantom/ @todo\tObjekte \
+          lassen sich noch nicht nach hinten verschieben...............................................................................";
+          Name="DragObjectHandler";
+          ID=19;
+          Datentyp="class";
+          Zugriff=3;
+          KomponentenId=-1;
+          FileName="genSource\\DragObjectHandler.cpp";
+          FileActiveLine=-1;
+          HeaderFileName="genSource\\DragObjectHandler.h";
+          HeaderFileActiveLine=-1;
+          Parent=-1;
+          {
+            *** Attribut ***;
+            Doku="......................................................................./ \
+            Position des Proxy beim letzten Aufruf des Draghandlers/ Dient zur Berechnung \
+            des Vektors um den das Objekt verschoben werden soll";
+            Name="m_LastProxyPos";
+            ID=20;
+            Datentyp="hduVector3Dd";
+            Zugriff=1;
+          };
+          {
+            *** Methode ***;
+            Doku="......................................................................./ \
+            @brief\tKonstruktor, initialisiert das Eventhandler-Objekt mit dem /\t\t\tzugehörigen \
+            haptischen Objekt/ @param\tpObj\tPointer auf das haptische Objekt für das \
+            der /\t\t\t\t\tEventhandler zuständig sein soll.......................................................................";
+            Name="DragObjectHandler";
+            ID=21;
+            {
+              *** Parameter ***;
+              Name="pObj";
+              ID=22;
+              Typ="HapticObject *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="/ @brief\t(HLAPI-Callbackfunktion) Started das Draggen des Objekts/ \
+            @param\tevent\tGibt an, auf welches HLAPI-Event hin die Callback-/\t\t\t\t\tFunktion \
+            aufgerufen werden soll, hier HL_EVENT_1BUTTONDOWN/\t@param\tshapeID\tDie \
+            ShapeID des Objekts, das bewegt werden soll/ @param\tthread\tGibt an, in \
+            welchem HLAPI-Thread das Event behandelt /\t\t\t\t\twerden soll, in diesem \
+            Fall HL_CLIENT_THREAD/ @param\tcache\tHLAPI-State Schnappschuss in dem \
+            Moment, in dem das Event feuert/ @param\tpHandlerObject\tPointer auf das \
+            DragObjectHandler-Objekt, das/\t\t\t\t\tdas Event verarbeiten soll.......................................................................";
+            Name="OnButtonDown";
+            ID=23;
+            IsStatic=true;
+            Zugriff=1;
+            RueckgabeWert="void HLCALLBACK";
+            {
+              *** Parameter ***;
+              Name="event";
+              ID=24;
+              Typ="HLenum";
+            };
+            {
+              *** Parameter ***;
+              Name="shapeID";
+              ID=25;
+              Typ="HLuint";
+            };
+            {
+              *** Parameter ***;
+              Name="thread";
+              ID=26;
+              Typ="HLenum";
+            };
+            {
+              *** Parameter ***;
+              Name="cache";
+              ID=27;
+              Typ="HLcache *";
+            };
+            {
+              *** Parameter ***;
+              Name="pHandlerObject";
+              ID=28;
+              Typ="void *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="......................................................................./ \
+            @brief\t(HLAPI-Callbackfunktion) Beendet das Draggen des Objekts/ @param\tevent\tGibt \
+            an, auf welches HLAPI-Event hin die Callback-/\t\t\t\t\tFunktion aufgerufen \
+            werden soll, hier HL_EVENT_1BUTTONUP/\t@param\tshapeID\thier soll HL_OBJECT_ANY \
+            angegeben werden/ @param\tthread\tGibt an, in welchem HLAPI-Thread das \
+            Event behandelt/\t\t\t\t\t werden soll, in diesem Fall HL_CLIENT_THREAD/ \
+            @param\tcache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
+            feuert/ @param\tuserdata\tWird von dieser Funktion nicht benötigt.......................................................................";
+            Name="OnButtonUp";
+            ID=29;
+            IsStatic=true;
+            Zugriff=1;
+            RueckgabeWert="void HLCALLBACK";
+            {
+              *** Parameter ***;
+              Name="event";
+              ID=30;
+              Typ="HLenum";
+            };
+            {
+              *** Parameter ***;
+              Name="shapeID";
+              ID=31;
+              Typ="HLuint";
+            };
+            {
+              *** Parameter ***;
+              Name="thread";
+              ID=32;
+              Typ="HLenum";
+            };
+            {
+              *** Parameter ***;
+              Name="cache";
+              ID=33;
+              Typ="HLcache *";
+            };
+            {
+              *** Parameter ***;
+              Name="userdata";
+              ID=34;
+              Typ="void *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="......................................................................./ \
+            @brief\t(HLAPI-Callbackfunktion) Steuert das Draggen des Objekts/ @param\tevent\tGibt \
+            an, auf welches HLAPI-Event hin die Callback-/\t\t\t\t\tFunktion aufgerufen \
+            werden soll, hier HL_EVENT_MOTION/\t@param\tshapeID\thier soll HL_OBJECT_ANY \
+            angegeben werden/ @param\tthread\tGibt an, in welchem HLAPI-Thread das \
+            Event behandelt/\t\t\t\t\twerden soll, in diesem Fall HL_CLIENT_THREAD/ \
+            @param\tcache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
+            feuert/ @param\tpHandlerObject\tPointer auf das DragObjectHandler-Objekt, \
+            das/\t\t\t\t\t das Event verarbeiten soll.......................................................................";
+            Name="OnDrag";
+            ID=35;
+            IsStatic=true;
+            Zugriff=1;
+            RueckgabeWert="void HLCALLBACK";
+            {
+              *** Parameter ***;
+              Name="event";
+              ID=36;
+              Typ="HLenum";
+            };
+            {
+              *** Parameter ***;
+              Name="shapeID";
+              ID=37;
+              Typ="HLuint";
+            };
+            {
+              *** Parameter ***;
+              Name="thread";
+              ID=38;
+              Typ="HLenum";
+            };
+            {
+              *** Parameter ***;
+              Name="cache";
+              ID=39;
+              Typ="HLcache *";
+            };
+            {
+              *** Parameter ***;
+              Name="pHandlerObject";
+              ID=40;
+              Typ="void *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="......................................................................./ \
+            @brief\tVeranlasst das haptische Objekt, sich mit dem Proxy zu bewegen/ \
+            @param\tpCache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
+            feuert.......................................................................";
+            Name="handleDrag";
+            ID=41;
+            RueckgabeWert="void";
+            {
+              *** Parameter ***;
+              Name="pCache";
+              ID=42;
+              Typ="HLcache *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="......................................................................./ \
+            @brief\tNimmt die Proxy-Position beim Starten des Drag-Vorgangs auf/ @param\tpCache\tHLAPI-State \
+            Schnappschuss in dem Moment, in dem das Event feuert.......................................................................";
+            Name="initAction";
+            ID=43;
+            RueckgabeWert="void";
+            {
+              *** Parameter ***;
+              Name="pCache";
+              ID=44;
+              Typ="HLcache *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="********************************************************************* \
+            Implementierung der von IHapticAction geerbten Methoden*********************************************************************......................................................................./ \
+            @brief\tRegistriert die Aktion für eine Shape bei HLAPI/ @param\tshapeID\tID \
+            der Shape, für die die Aktion registriert werden soll.......................................................................";
+            Name="registerAction";
+            ID=45;
+            IsVirtual=true;
+            RueckgabeWert="void";
+            {
+              *** Parameter ***;
+              Name="shapeID";
+              ID=46;
+              Typ="HLuint";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="......................................................................./ \
+            @brief\tMeldet die Aktion für eine Shape bei HLAPI ab/ @param\tshapeID\tID \
+            der Shape, für die die Aktion registriert wurde.......................................................................";
+            Name="unregisterAction";
+            ID=47;
+            IsVirtual=true;
+            RueckgabeWert="void";
+            {
+              *** Parameter ***;
+              Name="shapeID";
+              ID=48;
+              Typ="HLuint";
+            };
+          };
+          {
+            *** Aggregation ***;
+            Doku="......................................................................./ \
+            Das Objekt, dem der Eventhandler zugeordnet ist.......................................................................";
+            ID=49;
+            Datentyp="HapticObject *";
+            Zugriff=1;
+            A=19;
+            B=112;
+            RollenName="m_pDragObj";
+          };
+          {
+            *** Vererbung ***;
+            ID=50;
+            A=19;
+            B=139;
+            BasisKlasse="IHapticAction";
+          };
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Copy of HapticCursor";
+        ID=83;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="HapticCursor.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="HapticCursor.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+      };
+      {
+        *** Klasse ***;
+        Doku=".............................................................................../ \
+        @brief\tEine Eventhandlerklasse die es ermöglicht, haptische Objekte mit \
+        dem /\t\t\tPhantom zu bewegen/\t\t\t/\t\t\tDer Eventhandler reagiert auf \
+        die folgende Events:/\t\t\t- der vordere Phantom-Button wird gedrückt, \
+        wenn ein Objekt mit dem /\t\t\t  Phantom berührt wird/\t\t\t- das Phantom \
+        wird mit gedrücktem Button bewegt/\t\t\t- der vordere Phantom-Button wird \
+        losgelassen/\t\t\tWirkung: Solange der Button gedrückt gehalten wird, folgt \
+        das /\t\t\tregistrierte Objekt der Bewegung des Phantom/ @todo\tObjekte \
+        lassen sich noch nicht nach hinten verschieben...............................................................................";
+        Name="DragObjectHandler";
+        ID=51;
+        Datentyp="class";
+        Zugriff=3;
+        KomponentenId=-1;
+        FileName="genSource\\DragObjectHandler.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\DragObjectHandler.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Doku="......................................................................./ \
+          Position des Proxy beim letzten Aufruf des Draghandlers/ Dient zur Berechnung \
+          des Vektors um den das Objekt verschoben werden soll";
+          Name="m_LastProxyPos";
+          ID=52;
+          Datentyp="hduVector3Dd";
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Doku="......................................................................./ \
+          @brief\tKonstruktor, initialisiert das Eventhandler-Objekt mit dem /\t\t\tzugehörigen \
+          haptischen Objekt/ @param\tpObj\tPointer auf das haptische Objekt für das \
+          der /\t\t\t\t\tEventhandler zuständig sein soll.......................................................................";
+          Name="DragObjectHandler";
+          ID=53;
+          {
+            *** Parameter ***;
+            Name="pObj";
+            ID=54;
+            Typ="HapticObject *";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="/ @brief\t(HLAPI-Callbackfunktion) Started das Draggen des Objekts/ \
+          @param\tevent\tGibt an, auf welches HLAPI-Event hin die Callback-/\t\t\t\t\tFunktion \
+          aufgerufen werden soll, hier HL_EVENT_1BUTTONDOWN/\t@param\tshapeID\tDie \
+          ShapeID des Objekts, das bewegt werden soll/ @param\tthread\tGibt an, in \
+          welchem HLAPI-Thread das Event behandelt /\t\t\t\t\twerden soll, in diesem \
+          Fall HL_CLIENT_THREAD/ @param\tcache\tHLAPI-State Schnappschuss in dem \
+          Moment, in dem das Event feuert/ @param\tpHandlerObject\tPointer auf das \
+          DragObjectHandler-Objekt, das/\t\t\t\t\tdas Event verarbeiten soll.......................................................................";
+          Name="OnButtonDown";
+          ID=55;
+          IsStatic=true;
+          Zugriff=1;
+          RueckgabeWert="void HLCALLBACK";
+          {
+            *** Parameter ***;
+            Name="event";
+            ID=56;
+            Typ="HLenum";
+          };
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=57;
+            Typ="HLuint";
+          };
+          {
+            *** Parameter ***;
+            Name="thread";
+            ID=58;
+            Typ="HLenum";
+          };
+          {
+            *** Parameter ***;
+            Name="cache";
+            ID=59;
+            Typ="HLcache *";
+          };
+          {
+            *** Parameter ***;
+            Name="pHandlerObject";
+            ID=60;
+            Typ="void *";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="......................................................................./ \
+          @brief\t(HLAPI-Callbackfunktion) Beendet das Draggen des Objekts/ @param\tevent\tGibt \
+          an, auf welches HLAPI-Event hin die Callback-/\t\t\t\t\tFunktion aufgerufen \
+          werden soll, hier HL_EVENT_1BUTTONUP/\t@param\tshapeID\thier soll HL_OBJECT_ANY \
+          angegeben werden/ @param\tthread\tGibt an, in welchem HLAPI-Thread das \
+          Event behandelt/\t\t\t\t\t werden soll, in diesem Fall HL_CLIENT_THREAD/ \
+          @param\tcache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
+          feuert/ @param\tuserdata\tWird von dieser Funktion nicht benötigt.......................................................................";
+          Name="OnButtonUp";
+          ID=61;
+          IsStatic=true;
+          Zugriff=1;
+          RueckgabeWert="void HLCALLBACK";
+          {
+            *** Parameter ***;
+            Name="event";
+            ID=62;
+            Typ="HLenum";
+          };
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=63;
+            Typ="HLuint";
+          };
+          {
+            *** Parameter ***;
+            Name="thread";
+            ID=64;
+            Typ="HLenum";
+          };
+          {
+            *** Parameter ***;
+            Name="cache";
+            ID=65;
+            Typ="HLcache *";
+          };
+          {
+            *** Parameter ***;
+            Name="userdata";
+            ID=66;
+            Typ="void *";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="......................................................................./ \
+          @brief\t(HLAPI-Callbackfunktion) Steuert das Draggen des Objekts/ @param\tevent\tGibt \
+          an, auf welches HLAPI-Event hin die Callback-/\t\t\t\t\tFunktion aufgerufen \
+          werden soll, hier HL_EVENT_MOTION/\t@param\tshapeID\thier soll HL_OBJECT_ANY \
+          angegeben werden/ @param\tthread\tGibt an, in welchem HLAPI-Thread das \
+          Event behandelt/\t\t\t\t\twerden soll, in diesem Fall HL_CLIENT_THREAD/ \
+          @param\tcache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
+          feuert/ @param\tpHandlerObject\tPointer auf das DragObjectHandler-Objekt, \
+          das/\t\t\t\t\t das Event verarbeiten soll.......................................................................";
+          Name="OnDrag";
+          ID=67;
+          IsStatic=true;
+          Zugriff=1;
+          RueckgabeWert="void HLCALLBACK";
+          {
+            *** Parameter ***;
+            Name="event";
+            ID=68;
+            Typ="HLenum";
+          };
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=69;
+            Typ="HLuint";
+          };
+          {
+            *** Parameter ***;
+            Name="thread";
+            ID=70;
+            Typ="HLenum";
+          };
+          {
+            *** Parameter ***;
+            Name="cache";
+            ID=71;
+            Typ="HLcache *";
+          };
+          {
+            *** Parameter ***;
+            Name="pHandlerObject";
+            ID=72;
+            Typ="void *";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="......................................................................./ \
+          @brief\tVeranlasst das haptische Objekt, sich mit dem Proxy zu bewegen/ \
+          @param\tpCache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
+          feuert.......................................................................";
+          Name="handleDrag";
+          ID=73;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="pCache";
+            ID=74;
+            Typ="HLcache *";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="......................................................................./ \
+          @brief\tNimmt die Proxy-Position beim Starten des Drag-Vorgangs auf/ @param\tpCache\tHLAPI-State \
+          Schnappschuss in dem Moment, in dem das Event feuert.......................................................................";
+          Name="initAction";
+          ID=75;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="pCache";
+            ID=76;
+            Typ="HLcache *";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="********************************************************************* \
+          Implementierung der von IHapticAction geerbten Methoden*********************************************************************......................................................................./ \
+          @brief\tRegistriert die Aktion für eine Shape bei HLAPI/ @param\tshapeID\tID \
+          der Shape, für die die Aktion registriert werden soll.......................................................................";
+          Name="registerAction";
+          ID=77;
+          IsVirtual=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=78;
+            Typ="HLuint";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="......................................................................./ \
+          @brief\tMeldet die Aktion für eine Shape bei HLAPI ab/ @param\tshapeID\tID \
+          der Shape, für die die Aktion registriert wurde.......................................................................";
+          Name="unregisterAction";
+          ID=79;
+          IsVirtual=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=80;
+            Typ="HLuint";
+          };
+        };
+        {
+          *** Assoziation ***;
+          ID=81;
+          Datentyp="HapticObject*";
+          Zugriff=2;
+          A=51;
+          B=112;
+          RollenName="m_pDragObj";
+        };
+        {
+          *** Vererbung ***;
+          Stereotype="implements";
+          ID=82;
+          A=51;
+          B=139;
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Edge";
+        ID=84;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Edge.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Edge.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Vererbung ***;
+          ID=85;
+          A=84;
+          B=112;
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="GraphScene";
+        ID=86;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\GraphScene.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\GraphScene.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Methode ***;
+          Name="addObject";
+          ID=87;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="obj";
+            ID=88;
+            Typ="HapticObject *";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="renderScene";
+          ID=89;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="bHapticsEnabled";
+            ID=90;
+            Typ="bool";
+          };
+        };
+        {
+          *** Assoziation ***;
+          ID=91;
+          Datentyp="vector<HapticObject>";
+          Zugriff=1;
+          A=86;
+          B=112;
+          RollenName="m_SceneElements";
+          KardinalitaetAnfangsKlasse="0..*";
+          KardinalitaetEndeKlasse="1";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Grid";
+        ID=92;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Grid.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Grid.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Vererbung ***;
+          ID=93;
+          A=92;
+          B=112;
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="HapticConstraint";
+        ID=94;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticConstraint.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticConstraint.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="m_HLConstraintID";
+          ID=95;
+          Datentyp="HLuint";
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_SnapDistance";
+          ID=96;
+          Datentyp="HLfloat";
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Name="HapticConstraint";
+          ID=97;
+          {
+            *** Parameter ***;
+            Name="snapDist";
+            ID=98;
+            Typ="HLfloat";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="renderConstraint";
+          ID=99;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="setSnapDistance";
+          ID=100;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=101;
+            Typ="HLfloat";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="~HapticConstraint";
+          ID=102;
+          IsVirtual=true;
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="HapticCursor";
+        ID=103;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticCursor.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticCursor.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Methode ***;
+          Name="render";
+          ID=104;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="scale";
+          ID=105;
+          RueckgabeWert="void";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="HapticDevice";
+        ID=106;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticDevice.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticDevice.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="m_hHLRenderingContext";
+          ID=107;
+          Datentyp="HHLRC";
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_hHapticDevice";
+          ID=108;
+          Datentyp="HHD";
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Name="initialize";
+          ID=109;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="isActive";
+          ID=110;
+          RueckgabeWert="bool";
+        };
+        {
+          *** Methode ***;
+          Name="updateWorkspace";
+          ID=111;
+          RueckgabeWert="void";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="HapticObject";
+        ID=112;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticObject.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticObject.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="m_HLShapeID";
+          ID=113;
+          Datentyp="HLuint";
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Name="HapticObject";
+          ID=114;
+        };
+        {
+          *** Methode ***;
+          Name="addGraphicMaterial";
+          ID=115;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="material";
+            ID=116;
+            Typ="IGraphicMaterial *";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="addHapticAction";
+          ID=117;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="act";
+            ID=118;
+            Typ="IHapticAction *";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="addHapticMaterial";
+          ID=119;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="material";
+            ID=120;
+            Typ="IHapticMaterial *";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="renderDefaultGraphicProperties";
+          ID=121;
+          IsVirtual=true;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="renderDefaultHapticProperties";
+          ID=122;
+          IsVirtual=true;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="renderGraphics";
+          ID=123;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="renderHaptics";
+          ID=124;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="renderShape";
+          ID=125;
+          IsAbstract=true;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="setHapticConstraint";
+          ID=126;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=127;
+            Typ="const HapticConstraint*";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setPosition";
+          ID=128;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=129;
+            Typ="const Position &";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="~HapticObject";
+          ID=130;
+          IsVirtual=true;
+        };
+        {
+          *** Assoziation ***;
+          ID=131;
+          Zugriff=2;
+          A=112;
+          B=137;
+          RollenName="igraphicproperty";
+        };
+        {
+          *** Assoziation ***;
+          ID=132;
+          Datentyp="vector<IGraphicProperty>";
+          Zugriff=1;
+          A=112;
+          B=137;
+          RollenName="m_graphicProperties";
+          KardinalitaetAnfangsKlasse="0..*";
+          KardinalitaetEndeKlasse="1";
+        };
+        {
+          *** Assoziation ***;
+          ID=133;
+          Datentyp="vector<IHapticProperty>";
+          Zugriff=1;
+          A=112;
+          B=144;
+          RollenName="m_hapticProperties";
+          KardinalitaetAnfangsKlasse="0..*";
+          KardinalitaetEndeKlasse="1";
+        };
+        {
+          *** Assoziation ***;
+          ID=134;
+          Datentyp="vector<IHapticAction>";
+          Zugriff=1;
+          A=112;
+          B=139;
+          RollenName="m_hapticActions";
+          KardinalitaetAnfangsKlasse="0..*";
+          KardinalitaetEndeKlasse="1";
+        };
+        {
+          *** Assoziation ***;
+          ID=135;
+          Datentyp="Position";
+          Zugriff=1;
+          A=112;
+          B=151;
+          RollenName="m_position";
+        };
+        {
+          *** Assoziation ***;
+          ID=136;
+          Datentyp="HapticConstraint*";
+          Zugriff=1;
+          A=112;
+          B=94;
+          RollenName="m_hapticConstraint";
+          KardinalitaetAnfangsKlasse="0..1";
+          KardinalitaetEndeKlasse="0..1";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="IGraphicMaterial";
+        Stereotype="Interface";
+        ID=137;
+        Image="Interface";
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\GraphicalProperty.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\GraphicalProperty.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Methode ***;
+          Name="renderProperty";
+          ID=138;
+          IsAbstract=true;
+          RueckgabeWert="void";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="IHapticAction";
+        Stereotype="Interface";
+        ID=139;
+        Image="Interface";
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticAction.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticAction.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Methode ***;
+          Name="registerAction";
+          ID=140;
+          IsAbstract=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=141;
+            Typ="HLuint";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="unregisterAction";
+          ID=142;
+          IsAbstract=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="shapeID";
+            ID=143;
+            Typ="HLuint";
+          };
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="IHapticMaterial";
+        Stereotype="Interface";
+        ID=144;
+        Image="Interface";
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticProperty.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticProperty.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Methode ***;
+          Name="renderProperty";
+          ID=145;
+          IsAbstract=true;
+          RueckgabeWert="void";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Node";
+        ID=146;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Node.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Node.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Methode ***;
+          Name="setTexture";
+          ID=147;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=148;
+            Typ="const Texture*";
+          };
+        };
+        {
+          *** Assoziation ***;
+          ID=149;
+          Datentyp="Texture*";
+          Zugriff=1;
+          A=146;
+          B=155;
+          RollenName="m_Texture";
+          KardinalitaetAnfangsKlasse="0..1";
+          KardinalitaetEndeKlasse="0..1";
+        };
+        {
+          *** Vererbung ***;
+          ID=150;
+          A=146;
+          B=112;
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Position";
+        Stereotype="struct";
+        ID=151;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Utilities.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Utilities.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="x";
+          ID=152;
+          Datentyp="GLfloat";
+        };
+        {
+          *** Attribut ***;
+          Name="y";
+          ID=153;
+          Datentyp="GLfloat";
+        };
+        {
+          *** Attribut ***;
+          Name="z";
+          ID=154;
+          Datentyp="GLfloat";
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Texture";
+        ID=155;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Texture.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Texture.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+      };
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\main.cpp";
+      ActiveLine=-1;
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\genSource\\DragObjectHandler.cpp";
+      ActiveLine=-1;
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\genSource\\DragObjectHandler.h";
+      ActiveLine=-1;
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\genSource\\HapticObject.cpp";
+      ActiveLine=-1;
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\genSource\\HapticObject.h";
+      ActiveLine=-1;
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\genSource\\HapticAction.cpp";
+      ActiveLine=-1;
+    };
+    {
+      *** SonstigeFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\_Projekt\\GraphFWEntwurf\\genSource\\HapticAction.h";
+      ActiveLine=-1;
+    };
+    {
+      *** SourceFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Diagramme\\main.cpp";
+      ActiveLine=-1;
+    };
+  };
+};
