@@ -33,6 +33,7 @@ Description:
 //				- Initialisierung des Haptischen Gerätes wird jetzt von der Klasse
 //				  HapticDevice durchgeführt
 // 27.12.05		- nicht benötigten Code entfernt
+//				- Cursor wird jetzt von Cursor-Objekt gezeichnet
 
 #include <math.h>
 #include <assert.h>
@@ -52,13 +53,14 @@ Description:
 
 // eigene Includes
 #include "hapticgraphclasses/HapticDevice.h"
+#include "hapticgraphclasses/HapticCursor.h"
 #include "exceptionclasses/HapticsExceptions.h"
 
+// Objekt zur Verwaltung des haptischen Gerätes
 static HapticDevice * pHapticDevice = NULL;
 
-#define CURSOR_SIZE_PIXELS 20
-static double gCursorScale;
-static GLuint gCursorDisplayList = 0;
+// Cursor-Objekt
+static HapticCursor cursor;
 
 /* Function prototypes. */
 void glutDisplay(void);
@@ -72,7 +74,6 @@ void initHL();
 void initScene();
 void drawSceneHaptics();
 void drawSceneGraphics();
-void drawCursor();
 void updateWorkspace();
 
 /*******************************************************************************
@@ -237,19 +238,22 @@ void exitHandler()
 *******************************************************************************/
 void updateWorkspace()
 {
-    GLdouble modelview[16];
+/*    GLdouble modelview[16];
     GLdouble projection[16];
     GLint viewport[4];
 
     glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
     glGetDoublev(GL_PROJECTION_MATRIX, projection);
     glGetIntegerv(GL_VIEWPORT, viewport);
+*/
 
 	pHapticDevice->updateWorkspace();
 
     /* compute cursor scale */
-    gCursorScale = hluScreenToModelScale(modelview, projection, viewport);
+/*    gCursorScale = hluScreenToModelScale(modelview, projection, viewport);
     gCursorScale *= CURSOR_SIZE_PIXELS;
+*/
+	cursor.scale();
 
 }
 
@@ -440,7 +444,7 @@ void drawSceneGraphics()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);        
     
     // draw 3D cursor at haptic device position
-    drawCursor();
+    cursor.render();
 }
 
 /*******************************************************************************
@@ -462,54 +466,3 @@ void drawSceneHaptics()
     hlEndFrame();
 
 }
-
-
-/*******************************************************************************
- Draw a 3D cursor for the haptic device using the current local transform,
- the workspace to world transform and the screen coordinate scale.
- *******************************************************************************/
-void drawCursor()
-{
-    static const double kCursorRadius = 0.5;
-    static const double kCursorHeight = 1.5;
-    static const int kCursorTess = 15;
-    HLdouble proxyxform[16];
-
-    GLUquadricObj *qobj = 0;
-
-    glPushAttrib(GL_CURRENT_BIT | GL_ENABLE_BIT | GL_LIGHTING_BIT);
-    glPushMatrix();
-
-    if (!gCursorDisplayList)
-    {
-        gCursorDisplayList = glGenLists(1);
-        glNewList(gCursorDisplayList, GL_COMPILE);
-        qobj = gluNewQuadric();
-               
-        gluCylinder(qobj, 0.0, kCursorRadius, kCursorHeight,
-                            kCursorTess, kCursorTess);
-        glTranslated(0.0, 0.0, kCursorHeight);
-        gluCylinder(qobj, kCursorRadius, 0.0, kCursorHeight / 5.0,
-                    kCursorTess, kCursorTess);
-    
-        gluDeleteQuadric(qobj);
-        glEndList();
-    }
-    
-    /* Get the proxy transform in world coordinates */
-    hlGetDoublev(HL_PROXY_TRANSFORM, proxyxform);
-    glMultMatrixd(proxyxform);
-
-    /* Apply the local cursor scale factor. */
-    glScaled(gCursorScale, gCursorScale, gCursorScale);
-
-    glEnable(GL_LIGHTING);
-    glEnable(GL_COLOR_MATERIAL);
-    glColor3f(0.0, 0.5, 1.0);
-
-    glCallList(gCursorDisplayList);
-
-    glPopMatrix(); 
-    glPopAttrib();
-}
-

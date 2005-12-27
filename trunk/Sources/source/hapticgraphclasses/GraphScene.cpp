@@ -5,6 +5,8 @@
 /// @date	Letzte Änderung	26.12.2005
 //*******************************************************************************
 
+// Änderungen:
+
 
 #include "GraphScene.h"
 #include "HapticObject.h"

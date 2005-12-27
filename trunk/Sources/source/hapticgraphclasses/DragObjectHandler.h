@@ -5,6 +5,8 @@
 /// @date	Letzte Änderung	15.12.2005
 //*******************************************************************************
 
+// Änderungen:
+
 
 #ifndef _DRAGOBJECTHANDLER_H_
 #define _DRAGOBJECTHANDLER_H_

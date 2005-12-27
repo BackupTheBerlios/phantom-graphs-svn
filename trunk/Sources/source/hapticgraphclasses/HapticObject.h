@@ -2,8 +2,11 @@
 /// @file	HapticObject.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	26.12.2005
+/// @date	Letzte Änderung	27.12.2005
 //*******************************************************************************
+
+// Änderungen:
+// 27.12.05		Doku zur Klasse angefangen
 
 
 #ifndef _HAPTICOBJECT_H_
@@ -13,6 +16,7 @@
 #include <HL/hl.h>
 #include <HDU/hduMatrix.h>
 
+// STL includes
 #include <vector>
 
 using namespace std;
@@ -25,6 +29,13 @@ class IHapticAction;
 
 
 //...............................................................................
+/// @brief	Basisklasse aller haptischen Objekte. Stellt grundlegende Funktionalität
+///			zum Fühlbarmachen und Bewegen von Objekten zur Verfügung. Kümmert sich
+///			Um die Registrierung von Eventhandlern. 
+///
+///			Da die Klasse HapticObject abstrakt ist, kann sie nicht direkt 
+///			instanziiert werden. Abgeleitete Klassen müssen die Geometrie für das
+///			Objekt erzeugen.
 //...............................................................................
 class HapticObject
 {
@@ -64,8 +75,8 @@ class HapticObject
 		//.......................................................................
 		hduMatrix m_transformMatrix;
 
-	private:
 //	IGraphicMaterial igraphicproperty;
+
 	public:
 
 		//.......................................................................

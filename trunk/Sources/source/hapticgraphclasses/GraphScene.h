@@ -5,6 +5,8 @@
 /// @date	Letzte Änderung	26.12.2005
 //*******************************************************************************
 
+// Änderungen:
+
 
 #ifndef _GRAPHSCENE_H_
 #define _GRAPHSCENE_H_
