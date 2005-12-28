@@ -140,6 +140,10 @@ SOURCE=.\source\hapticgraphclasses\HapticObject.h
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE=.\source\businesslogic\IBusinessAdapter.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\businesslogic\IObserver.h
 # End Source File
 # Begin Source File
