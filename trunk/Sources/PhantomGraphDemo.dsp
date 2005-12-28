@@ -138,6 +138,18 @@ SOURCE=.\source\hapticgraphclasses\HapticObject.h
 # Begin Group "businesslogic"
 
 # PROP Default_Filter ""
+# Begin Source File
+
+SOURCE=.\source\businesslogic\IObserver.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\businesslogic\Observable.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\businesslogic\Observable.h
+# End Source File
 # End Group
 # Begin Group "exceptionclasses"
 
