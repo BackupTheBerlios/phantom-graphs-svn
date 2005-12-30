@@ -11,10 +11,16 @@
 #ifndef _NODE_H_
 #define _NODE_H_
 
+// wird von gl.h benötigt
+#include <windows.h>
+
+// OpenGL includes
+#include <GL/gl.h>
+
 #include "HapticObject.h"
 #include "../businesslogic/IObserver.h"
 
-class Texture;
+//class Texture;
 class IBusinessAdapter;
 
 //...............................................................................
@@ -25,11 +31,16 @@ class Node : public HapticObject, public IObserver
 
 		//.......................................................................
 		//.......................................................................
-		IBusinessAdapter* m_BusinessObject;
+		IBusinessAdapter * m_pBusinessObject;
+
+		//.......................................................................
+		/// @brief	ID der OpenGL-Displayliste, mit der der Node gezeichnet wird.
+		//.......................................................................
+		GLuint m_DisplayList;
 
 		//.......................................................................
 		//.......................................................................
-		Texture* m_Texture;
+//		Texture* m_Texture;
 
 	public:
 
@@ -43,7 +54,25 @@ class Node : public HapticObject, public IObserver
 		
 		//.......................................................................
 		//.......................................................................
-		void setTexture( const Texture* value );
+//		void setTexture( const Texture* value );
+
+		//***********************************************************************
+		// Von HapticObject geerbte Methoden
+		//***********************************************************************
+
+		//.......................................................................
+		//.......................................................................
+		virtual void renderShape();
+
+		//***********************************************************************
+		// Von IObserver geerbte Methoden
+		//***********************************************************************
+
+		//.......................................................................
+		/// @brief	Veranlasst den Observer, sich die benötigten Informationen 
+		///			vom Observable zu holen.
+		//.......................................................................
+		virtual void Update( Observable * pObservable );
 		
 };
 

@@ -17,6 +17,8 @@
 
 #include "GraphScene.h"
 #include "HapticObject.h"
+#include "Node.h"
+#include "DragObjectHandler.h"
 
 //*******************************************************************************
 GraphScene::GraphScene()
@@ -56,6 +58,11 @@ void GraphScene::addObject( HapticObject * obj )
 //*******************************************************************************
 void GraphScene::initScene()
 {
+	// Dummy-Implementierung
+	HapticObject * tmpObj = new Node(NULL);
+	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
+	tmpObj->addHapticAction(drag);
+	addObject(tmpObj);
 }
 //*******************************************************************************
 

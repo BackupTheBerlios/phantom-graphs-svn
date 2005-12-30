@@ -42,14 +42,28 @@ class HapticObject
 	protected:
 
 		//.......................................................................
+		/// @brief	Hier wird die Geometrie des Objekts festgelegt.
+		///
+		///			Am besten wird dafür eine Displayliste verwendet. Diese Methode 
+		///			muss von allen abgeleiteten Klassen implementiert werden.
 		//.......................................................................
 		virtual void renderShape() = 0;
 		
 		//.......................................................................
+		/// @brief	Hier werden die Standard-Haptikeigenschaften eines Objektes
+		///			festgelegt.
+		///
+		///			Die Standardeigenschaften können für abgeleitete Klassen
+		///			neu festgelegt werden.
 		//.......................................................................
 		virtual void renderDefaultHapticProperties();
 		
 		//.......................................................................
+		/// @brief	Hier werden die Standard-Graphikeigenschaften eines Objektes
+		///			festgelegt.
+		///
+		///			Die Standardeigenschaften können für abgeleitete Klassen
+		///			neu festgelegt werden.
 		//.......................................................................
 		virtual void renderDefaultGraphicProperties();
 		
@@ -57,6 +71,7 @@ class HapticObject
 //	Position m_position;
 
 		//.......................................................................
+		/// @brief	Liste der Eventhandler, die das Objekt betreffen.
 		//.......................................................................
 		vector<IHapticAction*> m_hapticActions;
 
@@ -64,6 +79,7 @@ class HapticObject
 //	vector<IGraphicProperty> m_graphicProperties;
 		
 		//.......................................................................
+		/// @brief	ID, mit der das Objekt bei HLAPI bekannt ist.
 		//.......................................................................
 		HLuint m_HLShapeID;
 
@@ -87,10 +103,6 @@ class HapticObject
 		//.......................................................................
 		virtual ~HapticObject();
 		
-		//.......................................................................
-		//.......................................................................
-		void setPosition(const double x, const double y, const double z);
-		
 //	void setHapticConstraint( const HapticConstraint* value );
 		
 		//.......................................................................
@@ -112,6 +124,10 @@ class HapticObject
 		//.......................................................................
 		//.......................................................................
 		virtual void translate(const double x, const double y, const double z);
+
+		//.......................................................................
+		//.......................................................................
+		void setPosition(const double x, const double y, const double z);
 	
 };
 

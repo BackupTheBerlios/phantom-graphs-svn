@@ -72,10 +72,16 @@ void HapticObject::addHapticAction( IHapticAction * act )
 //*******************************************************************************
 void HapticObject::renderGraphics()
 {
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	// Dummy
 	renderDefaultGraphicProperties();
 
-	renderShape();
+	glPushMatrix();
+	glMultMatrixd(m_transformMatrix);
+    renderShape();
+	glPopMatrix();
+
+	glPopAttrib();
 }
 //*******************************************************************************
 
@@ -88,7 +94,11 @@ void HapticObject::renderHaptics()
 	// Dummy
     renderDefaultHapticProperties();
 
+	glPushMatrix();
+	glMultMatrixd(m_transformMatrix);
     renderShape();
+	glPopMatrix();
+
     hlEndShape();
 }
 //*******************************************************************************
@@ -101,6 +111,7 @@ void HapticObject::renderHaptics()
 void HapticObject::renderDefaultGraphicProperties()
 {
 	// Dummy
+	glDisable(GL_LIGHTING);
 	glColor3f(1.0f, 1.0f, 0.0f);
 }
 //*******************************************************************************

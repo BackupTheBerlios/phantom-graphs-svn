@@ -2,10 +2,11 @@
 /// @file	IObserver.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		28.12.2005
-/// @date	Letzte Änderung	28.12.2005
+/// @date	Letzte Änderung	30.12.2005
 //*******************************************************************************
 
 // Änderungen:
+// 30.12.05		- Doku zu Update vervollständigt.
 
 
 #ifndef _IOBSERVER_H_
@@ -27,6 +28,8 @@ class IObserver
 		//.......................................................................
 		/// @brief	Veranlasst den Observer, sich die benötigten Informationen 
 		///			vom Observable zu holen
+		/// @param	pObservable	Das observierte Objekt, von dem der Observer
+		///						Informationen braucht.
 		//.......................................................................
 		virtual void Update( Observable * pObservable ) = 0;
 };

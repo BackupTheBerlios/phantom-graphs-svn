@@ -30,6 +30,9 @@ class HapticCursor
 		//.......................................................................
 		double m_Scale;
 
+		//.......................................................................
+		/// @brief	ID der OpenGL-Displayliste, mit der der Cursor gezeichnet wird.
+		//.......................................................................
 		GLuint m_DisplayList;
 
 	public:
