@@ -12,6 +12,7 @@
 #define _OBSERVABLE_H_
 
 #include "IObserver.h"
+class IObserver;
 
 #include <list>
 using namespace std;

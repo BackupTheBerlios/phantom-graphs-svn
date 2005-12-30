@@ -109,9 +109,9 @@ void HapticObject::renderDefaultGraphicProperties()
 void HapticObject::renderDefaultHapticProperties()
 {
 	// Dummy
-	hlMaterialf(HL_FRONT, HL_STIFFNESS, 0.8);
-    hlMaterialf(HL_FRONT, HL_STATIC_FRICTION, 0.0);
-    hlMaterialf(HL_FRONT, HL_DYNAMIC_FRICTION, 0.9);
+	hlMaterialf(HL_FRONT, HL_STIFFNESS, 0.8f);
+    hlMaterialf(HL_FRONT, HL_STATIC_FRICTION, 0.0f);
+    hlMaterialf(HL_FRONT, HL_DYNAMIC_FRICTION, 0.9f);
 }
 //*******************************************************************************
 

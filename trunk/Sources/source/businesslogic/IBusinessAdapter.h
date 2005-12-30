@@ -38,7 +38,7 @@ public:
 	///			0 = kann nicht berechnet werden
 	///			-1= Fehler
 	//...............................................................................
-	int getForce()=0;
+	virtual int getForce()=0;
 
 };
 
