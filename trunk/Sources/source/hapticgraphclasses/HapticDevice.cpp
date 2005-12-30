@@ -67,6 +67,11 @@ bool HapticDevice::isActive()
 //*******************************************************************************
 void HapticDevice::updateWorkspace()
 {
+	if (!isActive())
+	{
+		return;
+	}
+
 	// die Projection-Matrix von OpenGL geben lassen
     GLdouble projection[16];
     glGetDoublev(GL_PROJECTION_MATRIX, projection);

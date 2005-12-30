@@ -1,7 +1,7 @@
 //*******************************************************************************
 /// @file	HapticObject.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
-/// @date	Erstellt am		26.12.2005
+/// @date	Erstellt am		03.12.2005
 /// @date	Letzte Änderung	27.12.2005
 //*******************************************************************************
 
@@ -87,7 +87,9 @@ class HapticObject
 		//.......................................................................
 		virtual ~HapticObject();
 		
-//	void setPosition( const Position & value );
+		//.......................................................................
+		//.......................................................................
+		void setPosition(const double x, const double y, const double z);
 		
 //	void setHapticConstraint( const HapticConstraint* value );
 		
@@ -109,7 +111,7 @@ class HapticObject
 
 		//.......................................................................
 		//.......................................................................
-		void translate(const double x, const double y, const double z);
+		virtual void translate(const double x, const double y, const double z);
 	
 };
 
