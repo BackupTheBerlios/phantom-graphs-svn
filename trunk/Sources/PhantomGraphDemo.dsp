@@ -134,6 +134,14 @@ SOURCE=.\source\hapticgraphclasses\HapticObject.cpp
 
 SOURCE=.\source\hapticgraphclasses\HapticObject.h
 # End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\Node.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\Node.h
+# End Source File
 # End Group
 # Begin Group "businesslogic"
 
