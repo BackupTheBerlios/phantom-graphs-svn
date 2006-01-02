@@ -1,0 +1,31 @@
+//*******************************************************************************
+/// @file	HapticConstraint.cpp
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+/// @date	Erstellt am		02.01.2006
+/// @date	Letzte Änderung	02.01.2006
+//*******************************************************************************
+
+// Änderungen:
+
+
+#include "HapticConstraint.h"
+
+HapticConstraint::HapticConstraint( HLfloat snapDist )
+{
+}
+
+HapticConstraint::HapticConstraint()
+{
+}
+
+void HapticConstraint::renderConstraint()
+{
+}
+
+void HapticConstraint::setSnapDistance( HLfloat value )
+{
+}
+
+HapticConstraint::~HapticConstraint()
+{
+}

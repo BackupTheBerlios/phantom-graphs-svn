@@ -2,11 +2,12 @@
 /// @file	GraphScene.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte ƒnderung	30.12.2005
+/// @date	Letzte ƒnderung	02.01.2006
 //*******************************************************************************
 
 // ƒnderungen:
 // 30.12.05		- Alle Methoden bis auf initScene() implementiert
+// 02.01.06		- Anstoﬂ f¸r Event-Callbacks hinzugef¸gt
 
 
 // Haptics Library includes
@@ -115,6 +116,9 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 				(*itObj)->renderHaptics();
 			}
 		}
+
+		// Eventcallbacks des Client Thread anstoﬂen
+		hlCheckEvents();
 
 		// Haptic Frame beenden
 		hlEndFrame();

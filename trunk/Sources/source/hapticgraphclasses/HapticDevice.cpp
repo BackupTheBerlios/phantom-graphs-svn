@@ -49,6 +49,7 @@ void HapticDevice::initialize()
     m_hHapticDevice = hdInitDevice(HD_DEFAULT_DEVICE);
     if (HD_DEVICE_ERROR(hdGetError()))
     {
+		m_hHapticDevice = HD_INVALID_HANDLE;
 		throw HDInitialisationFailedException("Unable to initialize Haptic Device!");
     }
 

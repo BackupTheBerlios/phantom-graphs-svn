@@ -112,6 +112,14 @@ SOURCE=.\source\hapticgraphclasses\HapticAction.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\HapticConstraint.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\HapticConstraint.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\HapticCursor.cpp
 # End Source File
 # Begin Source File

@@ -1,0 +1,38 @@
+//*******************************************************************************
+/// @file	HapticConstraint.h
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+/// @date	Erstellt am		02.01.2006
+/// @date	Letzte Änderung	02.01.2006
+//*******************************************************************************
+
+// Änderungen:
+
+
+#ifndef _HAPTICCONSTRAINT_H_
+#define _HAPTICCONSTRAINT_H_
+
+// Haptic Library includes
+#include <HL/hl.h>
+
+
+class HapticConstraint
+{
+protected:
+	
+	HLfloat m_SnapDistance;
+	
+	HLuint m_HLConstraintID;
+public:
+	virtual ~HapticConstraint();
+	
+	void setSnapDistance( HLfloat value );
+	
+	void renderConstraint();
+	
+	HapticConstraint();
+	
+	HapticConstraint( HLfloat snapDist );
+	
+};
+
+#endif

@@ -79,8 +79,6 @@ void exitHandler(void);
 void initGL();
 void initHL();
 void initScene();
-void drawSceneHaptics();
-void drawSceneGraphics();
 
 /*******************************************************************************
  Initializes GLUT for displaying a simple haptic scene
@@ -114,9 +112,6 @@ int main(int argc, char *argv[])
 *******************************************************************************/
 void glutDisplay()
 {    
-//    drawSceneHaptics();
-//    drawSceneGraphics();
-
 	scene.renderScene(pHapticDevice->isActive());
 	cursor.render();
     glutSwapBuffers();
@@ -248,34 +243,3 @@ void exitHandler()
 	}
 }
 
-/*******************************************************************************
- The main routine for displaying the scene. Get the latest snapshot of state
- from the haptic thread and use it for displaying a 3D cursor.
-*******************************************************************************/
-void drawSceneGraphics()
-{
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);        
-    
-    // draw 3D cursor at haptic device position
-    cursor.render();
-}
-
-/*******************************************************************************
- The main routine for rendering scene haptics. 
- Renders the sphere haptically.
-*******************************************************************************/
-void drawSceneHaptics()
-{    
-	if (!(pHapticDevice->isActive()))
-	{
-		return;
-	}
-
-    // start haptic frame - must do this before rendering any haptic shapes
-    hlBeginFrame();
-
-
-    // end the haptic frame
-    hlEndFrame();
-
-}
