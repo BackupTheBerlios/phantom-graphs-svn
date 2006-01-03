@@ -65,7 +65,7 @@ void Node::translate(const double x, const double y, const double z)
 	{
 		
 	}
-	m_transformMatrix *= hduMatrix::createTranslation(x, y, z);
+	HapticObject::translate(x, y, z);
 }
 //*******************************************************************************
 

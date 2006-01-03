@@ -16,7 +16,6 @@
 // Haptic Library includes
 #include <HL/hl.h>
 #include <HDU/hduMatrix.h>
-#include <HDU/hduVector.h>
 
 // STL includes
 #include <vector>

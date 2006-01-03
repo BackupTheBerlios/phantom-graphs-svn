@@ -9,7 +9,7 @@
 // 27.12.05		- Konstruktor und Destruktor implementiert
 // 30.12.05		- Dummy-Implementierungen von render*() und renderDefault*Properties()
 //				- setPosition implementiert
-// 03.01.06		- Methode getPosition() hinzugefügt
+// 03.01.06		- Methode getPosition() hinzugefügt und implementiert
 
 // Haptics Library includes
 #include <HL/hl.h>
@@ -144,6 +144,8 @@ void HapticObject::setPosition(const double x, const double y, const double z)
 //*******************************************************************************
 Position HapticObject::getPosition()
 {
-	return Position();
+	hduVector3Dd origin;
+	hduVector3Dd pos(origin * m_transformMatrix);
+	return Position(pos[0], pos[1], pos[2]);
 }
 //*******************************************************************************

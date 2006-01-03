@@ -63,6 +63,7 @@ void GraphScene::initScene()
 	HapticObject * tmpObj = new Node(NULL);
 	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
 	tmpObj->addHapticAction(drag);
+	tmpObj->translate(0.5, 0.0, 0.0);
 	addObject(tmpObj);
 }
 //*******************************************************************************
