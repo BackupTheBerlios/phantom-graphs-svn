@@ -2,13 +2,14 @@
 /// @file	HapticObject.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	30.12.2005
+/// @date	Letzte Änderung	03.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 27.12.05		- Konstruktor und Destruktor implementiert
 // 30.12.05		- Dummy-Implementierungen von render*() und renderDefault*Properties()
 //				- setPosition implementiert
+// 03.01.06		- Methode getPosition() hinzugefügt
 
 // Haptics Library includes
 #include <HL/hl.h>
@@ -19,7 +20,7 @@
 #include "HapticObject.h"
 //#include "GraphicalProperty.h"
 //#include "HapticProperty.h"
-#include "HapticAction.h"
+//#include "HapticAction.h"
 //#include "Utilities.h"
 //#include "HapticConstraint.h"
 
@@ -137,5 +138,12 @@ void HapticObject::translate(const double x, const double y, const double z)
 void HapticObject::setPosition(const double x, const double y, const double z)
 {
 	m_transformMatrix = hduMatrix::createTranslation(x, y, z);
+}
+//*******************************************************************************
+
+//*******************************************************************************
+Position HapticObject::getPosition()
+{
+	return Position();
 }
 //*******************************************************************************

@@ -2,11 +2,12 @@
 /// @file	HapticObject.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	27.12.2005
+/// @date	Letzte Änderung	03.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 27.12.05		Doku zur Klasse angefangen
+// 03.01.06		- Methode getPosition() hinzugefügt
 
 
 #ifndef _HAPTICOBJECT_H_
@@ -15,15 +16,19 @@
 // Haptic Library includes
 #include <HL/hl.h>
 #include <HDU/hduMatrix.h>
+#include <HDU/hduVector.h>
 
 // STL includes
 #include <vector>
 
 using namespace std;
 
+#include "HapticAction.h"
+#include "Utilities.h"
+
 //class IGraphicMaterial;
 //class IHapticMaterial;
-class IHapticAction;
+//class IHapticAction;
 //class Position;
 //class HapticConstraint;
 
@@ -103,8 +108,6 @@ class HapticObject
 		//.......................................................................
 		virtual ~HapticObject();
 		
-//	void setHapticConstraint( const HapticConstraint* value );
-		
 		//.......................................................................
 		//.......................................................................
 		void renderHaptics();
@@ -112,14 +115,16 @@ class HapticObject
 		//.......................................................................
 		//.......................................................................
 		void renderGraphics();
+
+//	void setHapticConstraint( const HapticConstraint* value );
 		
 //	void addHapticMaterial( IHapticMaterial * material );
+
+//	void addGraphicMaterial( IGraphicMaterial * material );
 		
 		//.......................................................................
 		//.......................................................................
 		void addHapticAction( IHapticAction * act );
-		
-//	void addGraphicMaterial( IGraphicMaterial * material );
 
 		//.......................................................................
 		//.......................................................................
@@ -127,7 +132,11 @@ class HapticObject
 
 		//.......................................................................
 		//.......................................................................
-		void setPosition(const double x, const double y, const double z);
+		virtual void setPosition(const double x, const double y, const double z);
+
+		//.......................................................................
+		//.......................................................................
+		Position getPosition();
 	
 };
 

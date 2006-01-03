@@ -2,10 +2,11 @@
 /// @file	Node.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		30.12.2005
-/// @date	Letzte Änderung	30.12.2005
+/// @date	Letzte Änderung	03.01.2006
 //*******************************************************************************
 
 // Änderungen:
+// 03.01.06		- Methode translate() hinzugefügt
 
 
 #include "Node.h"
@@ -54,6 +55,17 @@ void Node::renderShape()
 		glEnd();
         glEndList();
     }
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void Node::translate(const double x, const double y, const double z)
+{
+	if (m_pBusinessObject != NULL)
+	{
+		
+	}
+	m_transformMatrix *= hduMatrix::createTranslation(x, y, z);
 }
 //*******************************************************************************
 

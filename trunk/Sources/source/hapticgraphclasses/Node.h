@@ -2,10 +2,11 @@
 /// @file	Node.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		30.12.2005
-/// @date	Letzte Änderung	30.12.2005
+/// @date	Letzte Änderung	03.01.2006
 //*******************************************************************************
 
 // Änderungen:
+// 03.01.06		- Methode translate() hinzugefügt
 
 
 #ifndef _NODE_H_
@@ -63,6 +64,10 @@ class Node : public HapticObject, public IObserver
 		//.......................................................................
 		//.......................................................................
 		virtual void renderShape();
+
+		//.......................................................................
+		//.......................................................................
+		virtual void translate(const double x, const double y, const double z);
 
 		//***********************************************************************
 		// Von IObserver geerbte Methoden
