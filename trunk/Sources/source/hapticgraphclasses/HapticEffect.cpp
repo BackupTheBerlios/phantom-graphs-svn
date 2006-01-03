@@ -1,6 +1,7 @@
 #include "HapticEffect.h"
 
 HapticEffect::HapticEffect()
+: m_EffectID(hlGenEffects(1))
 {
 }
 

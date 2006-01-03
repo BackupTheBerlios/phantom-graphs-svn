@@ -6,14 +6,13 @@
 --------------------Konfiguration: Constraints - Win32 Debug--------------------
 </h3>
 <h3>Befehlszeilen</h3>
-Erstellen der temporären Datei  "C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSPD7.tmp" mit Inhalten
+Erstellen der temporären Datei  "C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSP39.tmp" mit Inhalten
 [
 /nologo /MDd /W3 /Gm /GX /ZI /Od /I "include" /I "C:\Programme\Anwendungen\SensAble\3DTouch\include" /I "C:\Programme\Anwendungen\SensAble\3DTouch\utilities\include" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\FHW\WS05-06\Visualisierung\Projekt\Sources\source\hapticgraphclasses\HapticObject.cpp"
-"D:\FHW\WS05-06\Visualisierung\Projekt\Sources\source\hapticgraphclasses\Node.cpp"
+"D:\FHW\WS05-06\Visualisierung\Projekt\Sources\source\hapticgraphclasses\HapticEffect.cpp"
 ]
-Creating command line "cl.exe @C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSPD7.tmp" 
-Erstellen der temporären Datei  "C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSPD8.tmp" mit Inhalten
+Creating command line "cl.exe @C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSP39.tmp" 
+Erstellen der temporären Datei  "C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSP3A.tmp" mit Inhalten
 [
 hl.lib hlud.lib hd.lib hdud.lib glut32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/PhantomGraphDemo.pdb" /debug /machine:I386 /out:"Debug/PhantomGraphDemo.exe" /pdbtype:sept /libpath:"C:\Programme\Anwendungen\SensAble\3DTouch\lib" /libpath:"C:\Programme\Anwendungen\SensAble\3DTouch\utilities\lib" 
 ".\Debug\DragObjectHandler.obj"
@@ -26,13 +25,12 @@ hl.lib hlud.lib hd.lib hdud.lib glut32.lib /nologo /subsystem:console /increment
 ".\Debug\Utilities.obj"
 ".\Debug\Observable.obj"
 ".\Debug\Main.obj"
+".\Debug\HapticEffect.obj"
 ]
-Erstellen der Befehlzeile "link.exe @C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSPD8.tmp"
+Erstellen der Befehlzeile "link.exe @C:\DOKUME~1\ADMINI~1\LOKALE~1\Temp\RSP3A.tmp"
 <h3>Ausgabefenster</h3>
 Kompilierung läuft...
-HapticObject.cpp
-Node.cpp
-Generieren von Code...
+HapticEffect.cpp
 Linker-Vorgang läuft...
 
 

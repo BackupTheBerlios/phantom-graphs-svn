@@ -136,6 +136,14 @@ SOURCE=.\source\hapticgraphclasses\HapticDevice.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\HapticEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\HapticEffect.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\HapticObject.cpp
 # End Source File
 # Begin Source File
