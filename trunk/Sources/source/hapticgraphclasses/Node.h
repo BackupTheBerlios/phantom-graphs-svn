@@ -25,6 +25,7 @@
 class IBusinessAdapter;
 
 //...............................................................................
+/// @author	Katharina Greiner, Matr.-Nr. 943471
 //...............................................................................
 class Node : public HapticObject, public IObserver
 {

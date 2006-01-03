@@ -21,6 +21,8 @@ using namespace std;
 class HapticObject;
 
 //...............................................................................
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+///
 /// @brief	Klasse, die alle haptischen Objekte der Scene verwaltet.
 ///
 ///			Sie ist sowohl für die Erzeugung der Objekte verantwortlich, als auch

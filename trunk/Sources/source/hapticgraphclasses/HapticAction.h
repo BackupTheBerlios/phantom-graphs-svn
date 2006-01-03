@@ -8,6 +8,7 @@
 // Änderungen:
 // 27.12.05		- Doku zur Schnittstelle geschrieben
 
+
 #ifndef _HAPTICACTION_H_
 #define _HAPTICACTION_H_
 
@@ -15,6 +16,8 @@
 #include <HL/hl.h>
 
 //...............................................................................
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+///
 /// @brief	Schnittstelle für haptische Eventhandler
 ///
 ///			Implementierende Klassen müssen darauf achten, dass alle HLAPI-Events

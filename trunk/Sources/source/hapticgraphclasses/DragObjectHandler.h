@@ -19,6 +19,8 @@
 #include "HapticObject.h"
 
 //...............................................................................
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+///
 /// @brief	Eine Eventhandlerklasse die es ermöglicht, haptische Objekte mit dem 
 ///			Phantom zu bewegen
 ///			

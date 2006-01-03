@@ -33,6 +33,8 @@ using namespace std;
 
 
 //...............................................................................
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+///
 /// @brief	Basisklasse aller haptischen Objekte. Stellt grundlegende Funktionalität
 ///			zum Fühlbarmachen und Bewegen von Objekten zur Verfügung. Kümmert sich
 ///			Um die Registrierung von Eventhandlern. 

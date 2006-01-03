@@ -17,6 +17,8 @@
 
 
 //...............................................................................
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+///
 /// @brief	Eine Klasse zur Verwaltung des Haptischen Gerätes
 ///
 ///			Übernimmt die Initialisierung des Haptischen Gerätes und die Anpassung

@@ -1,22 +1,55 @@
+//*******************************************************************************
+/// @file	HapticEffect.cpp
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+/// @date	Erstellt am		03.01.2006
+/// @date	Letzte Änderung	03.01.2006
+//*******************************************************************************
+
+// Änderungen:
+
+
 #include "HapticEffect.h"
 
+//*******************************************************************************
 HapticEffect::HapticEffect()
 : m_EffectID(hlGenEffects(1))
 {
+	// Member mit Defaultwert belegen
+	m_EffectType = HL_EFFECT_CONSTANT;
 }
+//*******************************************************************************
 
-void HapticEffect::startEffect()
-{
-}
-
-void HapticEffect::stopEffect()
-{
-}
-
-void HapticEffect::triggerEffect( double duration )
-{
-}
-
+//*******************************************************************************
 HapticEffect::~HapticEffect()
 {
+	// Effekt freigeben
+	hlDeleteEffects(m_EffectID, 1);
 }
+//*******************************************************************************
+
+//*******************************************************************************
+void HapticEffect::startEffect()
+{
+	// Effekt mit den in der abstrakten Methode renderProperties() spezifizierten 
+	// Eigenschaften starten
+	renderProperties();
+	hlStartEffect(m_EffectType, m_EffectID);
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void HapticEffect::stopEffect()
+{
+	hlStopEffect(m_EffectID);
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void HapticEffect::triggerEffect( double duration )
+{
+	// Effekt für die Dauer duration (msec) anstoßen
+	renderProperties();
+	hlEffectd(HL_EFFECT_PROPERTY_DURATION, duration);
+	hlTriggerEffect(m_EffectType);
+}
+//*******************************************************************************
