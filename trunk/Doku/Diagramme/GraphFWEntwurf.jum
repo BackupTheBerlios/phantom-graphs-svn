@@ -2,7 +2,7 @@ Jumli
 {
   *** Applikation ***;
   Version=1.4;
-  Elements=207;
+  Elements=215;
   {
     *** Model ***;
     Typ=2;
@@ -279,15 +279,6 @@ Jumli
         };
         {
           *** CJumliTracker ***;
-          Rechteck=29,754,134,813;
-          Order=-1;
-          UMLElementID=199;
-          IsWithAttributs=true;
-          IsWithMethods=true;
-          IsHideTaggedValue=true;
-        };
-        {
-          *** CJumliTracker ***;
           Rechteck=31,17,231,172;
           Order=-1;
           UMLElementID=99;
@@ -306,7 +297,7 @@ Jumli
         };
         {
           *** CJumliTracker ***;
-          Rechteck=508,726,717,864;
+          Rechteck=370,995,579,1133;
           Order=-1;
           UMLElementID=185;
           IsWithAttributs=true;
@@ -315,7 +306,7 @@ Jumli
         };
         {
           *** CJumliTracker ***;
-          Rechteck=273,745,386,804;
+          Rechteck=135,1014,248,1073;
           Order=-1;
           UMLElementID=172;
           IsWithAttributs=true;
@@ -324,9 +315,18 @@ Jumli
         };
         {
           *** CJumliTracker ***;
-          Rechteck=174,883,322,942;
+          Rechteck=36,1152,184,1211;
           Order=-1;
           UMLElementID=160;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=59,286,164,424;
+          Order=-1;
+          UMLElementID=195;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -444,16 +444,6 @@ Jumli
         };
         {
           *** AssoziationZeichner ***;
-          Rechteck=65,715,131,732;
-          Order=-1;
-          UMLElementID=181;
-          TextOffset=0,5;
-          OffsetRollenName=-37,-13;
-          OffsetA=5,5;
-          OffsetB=5,5;
-        };
-        {
-          *** AssoziationZeichner ***;
           Rechteck=259,222,375,239;
           Order=-1;
           UMLElementID=110;
@@ -482,31 +472,31 @@ Jumli
           Rechteck=409,754,493,771;
           Order=-1;
           UMLElementID=194;
-          Knick=466,773;
           TextOffset=0,5;
           OffsetRollenName=30,-17;
           OffsetA=5,5;
           OffsetB=5,5;
-          {
-            *** Linie ***;
-            Punkt=466,773;
-          };
         };
         {
           *** AssoziationZeichner ***;
-          Rechteck=150,828,265,845;
+          Rechteck=97,661,104,668;
           Order=-1;
           UMLElementID=182;
+          Knick=101,665;
           TextOffset=0,5;
           OffsetRollenName=-20,-19;
           OffsetA=5,5;
           OffsetB=5,5;
+          {
+            *** Linie ***;
+            Punkt=101,665;
+          };
         };
         {
           *** CJumliTracker ***;
-          Rechteck=59,286,164,424;
+          Rechteck=485,728,654,900;
           Order=-1;
-          UMLElementID=295;
+          UMLElementID=260;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -959,6 +949,19 @@ Jumli
       };
       {
         *** Klasse ***;
+        Name="Copy of Grid";
+        ID=257;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Grid.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Grid.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+      };
+      {
+        *** Klasse ***;
         Name="Copy of HapticCursor";
         ID=64;
         Datentyp="class";
@@ -967,6 +970,19 @@ Jumli
         FileName="HapticCursor.cpp";
         FileActiveLine=-1;
         HeaderFileName="HapticCursor.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+      };
+      {
+        *** Klasse ***;
+        Name="Copy of Texture";
+        ID=259;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Texture.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Texture.h";
         HeaderFileActiveLine=-1;
         Parent=-1;
       };
@@ -1389,18 +1405,18 @@ Jumli
         {
           *** Methode ***;
           Name="HapticConstraint";
-          ID=118;
+          ID=117;
+          {
+            *** Parameter ***;
+            Name="snapDist";
+            ID=118;
+            Typ="HLfloat";
+          };
         };
         {
           *** Methode ***;
           Name="HapticConstraint";
           ID=116;
-          {
-            *** Parameter ***;
-            Name="snapDist";
-            ID=117;
-            Typ="HLfloat";
-          };
         };
         {
           *** Methode ***;
@@ -1538,6 +1554,84 @@ Jumli
       };
       {
         *** Klasse ***;
+        Name="HapticEffect";
+        ID=260;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\HapticEffect.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\HapticEffect.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="m_EffectID";
+          ID=308;
+          Datentyp="HLuint";
+          IsConst=true;
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_EffectType";
+          ID=309;
+          Datentyp="HLenum";
+          IsConst=true;
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Name="HapticEffect";
+          ID=310;
+        };
+        {
+          *** Methode ***;
+          Name="renderProperties";
+          ID=311;
+          IsAbstract=true;
+          IsVirtual=true;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="startEffect";
+          ID=312;
+          IsVirtual=true;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="stopEffect";
+          ID=313;
+          IsVirtual=true;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="triggerEffect";
+          ID=314;
+          IsVirtual=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Doku="Millisekunden";
+            Name="duration";
+            ID=315;
+            Typ="double";
+            Default="100.0";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="~HapticEffect";
+          ID=316;
+          IsVirtual=true;
+        };
+      };
+      {
+        *** Klasse ***;
         Name="HapticObject";
         ID=137;
         Datentyp="class";
@@ -1551,61 +1645,62 @@ Jumli
         {
           *** Attribut ***;
           Name="m_HLShapeID";
-          ID=278;
+          ID=239;
           Datentyp="HLuint";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="HapticObject";
-          ID=279;
+          ID=240;
         };
         {
           *** Methode ***;
           Name="addGraphicMaterial";
-          ID=280;
+          ID=241;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="material";
-            ID=281;
+            ID=242;
             Typ="IGraphicMaterial *";
           };
         };
         {
           *** Methode ***;
           Name="addHapticAction";
-          ID=282;
+          ID=243;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="act";
-            ID=283;
+            ID=244;
             Typ="IHapticAction *";
           };
         };
         {
           *** Methode ***;
           Name="addHapticMaterial";
-          ID=284;
+          ID=245;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="material";
-            ID=285;
+            ID=246;
             Typ="IHapticMaterial *";
           };
         };
         {
           *** Methode ***;
           Name="getPosition";
-          ID=286;
-          RueckgabeWert="hduVector3Dd";
+          ID=247;
+          RueckgabeWert="Position";
+          RueckgabeWertID=195;
         };
         {
           *** Methode ***;
           Name="renderDefaultGraphicProperties";
-          ID=287;
+          ID=248;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -1613,7 +1708,7 @@ Jumli
         {
           *** Methode ***;
           Name="renderDefaultHapticProperties";
-          ID=288;
+          ID=249;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -1621,19 +1716,19 @@ Jumli
         {
           *** Methode ***;
           Name="renderGraphics";
-          ID=289;
+          ID=250;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="renderHaptics";
-          ID=290;
+          ID=251;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="renderShape";
-          ID=291;
+          ID=252;
           IsAbstract=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -1641,19 +1736,19 @@ Jumli
         {
           *** Methode ***;
           Name="setHapticConstraint";
-          ID=292;
+          ID=253;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=293;
+            ID=254;
             Typ="const HapticConstraint*";
           };
         };
         {
           *** Methode ***;
           Name="~HapticObject";
-          ID=294;
+          ID=255;
           IsVirtual=true;
         };
         {
@@ -1911,7 +2006,7 @@ Jumli
           Datentyp="Texture*";
           Zugriff=1;
           A=175;
-          B=199;
+          B=208;
           RollenName="m_Texture";
           KardinalitaetAnfangsKlasse="0..1";
           KardinalitaetEndeKlasse="0..1";
@@ -2032,70 +2127,6 @@ Jumli
         *** Klasse ***;
         Name="Position";
         Stereotype="struct";
-        ID=295;
-        Datentyp="class";
-        NameSpace="GraphFWEntwurf";
-        KomponentenId=-1;
-        FileName="genSource\\Utilities.cpp";
-        FileActiveLine=-1;
-        HeaderFileName="genSource\\Utilities.h";
-        HeaderFileActiveLine=-1;
-        Parent=-1;
-        {
-          *** Attribut ***;
-          Name="x";
-          ID=318;
-          Datentyp="double";
-        };
-        {
-          *** Attribut ***;
-          Name="y";
-          ID=319;
-          Datentyp="double";
-        };
-        {
-          *** Attribut ***;
-          Name="z";
-          ID=320;
-          Datentyp="double";
-        };
-        {
-          *** Methode ***;
-          Name="Position";
-          ID=321;
-          {
-            *** Parameter ***;
-            Name="x";
-            ID=322;
-            Typ="double";
-            Default="0.0";
-          };
-          {
-            *** Parameter ***;
-            Name="y";
-            ID=323;
-            Typ="double";
-            Default="0.0";
-          };
-          {
-            *** Parameter ***;
-            Name="z";
-            ID=324;
-            Typ="double";
-            Default="0.0";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="~Position";
-          ID=325;
-          IsVirtual=true;
-        };
-      };
-      {
-        *** Klasse ***;
-        Name="Position";
-        Stereotype="struct";
         ID=195;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
@@ -2109,25 +2140,57 @@ Jumli
           *** Attribut ***;
           Name="x";
           ID=196;
-          Datentyp="GLfloat";
+          Datentyp="double";
         };
         {
           *** Attribut ***;
           Name="y";
           ID=197;
-          Datentyp="GLfloat";
+          Datentyp="double";
         };
         {
           *** Attribut ***;
           Name="z";
           ID=198;
-          Datentyp="GLfloat";
+          Datentyp="double";
+        };
+        {
+          *** Methode ***;
+          Name="Position";
+          ID=199;
+          {
+            *** Parameter ***;
+            Name="x";
+            ID=200;
+            Typ="double";
+            Default="0.0";
+          };
+          {
+            *** Parameter ***;
+            Name="y";
+            ID=201;
+            Typ="double";
+            Default="0.0";
+          };
+          {
+            *** Parameter ***;
+            Name="z";
+            ID=202;
+            Typ="double";
+            Default="0.0";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="~Position";
+          ID=203;
+          IsVirtual=true;
         };
       };
       {
         *** Klasse ***;
         Name="Texture";
-        ID=199;
+        ID=208;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -2145,12 +2208,8 @@ Jumli
     };
     {
       *** SourceFiles ***;
-      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\HapticObject.h";
-    };
-    {
-      *** SourceFiles ***;
-      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\HapticObject.cpp";
-      ActiveLine=1;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Utilities.cpp";
+      ActiveLine=-1;
     };
     {
       *** SourceFiles ***;
@@ -2159,7 +2218,11 @@ Jumli
     };
     {
       *** SourceFiles ***;
-      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Utilities.cpp";
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\HapticEffect.h";
+    };
+    {
+      *** SourceFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\HapticEffect.cpp";
     };
   };
 };

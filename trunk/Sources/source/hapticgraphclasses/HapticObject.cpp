@@ -113,7 +113,7 @@ void HapticObject::renderDefaultGraphicProperties()
 {
 	// Dummy
 	glDisable(GL_LIGHTING);
-	glColor3f(1.0f, 1.0f, 0.0f);
+	glColor3f(1.0f, 1.0f, 1.0f);
 }
 //*******************************************************************************
 
