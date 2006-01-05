@@ -18,7 +18,7 @@
 
 using namespace std;
 
-class HapticObject;
+#include "HapticObject.h"
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
@@ -46,7 +46,7 @@ class GraphScene
 		//.......................................................................
 		/// @brief	Fordert alle Objekte auf, ihre graphische Beschaffenheit zu rendern.
 		//.......................................................................
-		void renderSceneGraphics();
+		void renderSceneGraphics();	
 
 	public:
 		

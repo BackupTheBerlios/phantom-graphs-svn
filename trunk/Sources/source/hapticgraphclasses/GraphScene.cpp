@@ -17,7 +17,6 @@
 #include <GL/gl.h>
 
 #include "GraphScene.h"
-#include "HapticObject.h"
 #include "Node.h"
 #include "DragObjectHandler.h"
 

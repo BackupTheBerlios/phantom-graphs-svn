@@ -53,7 +53,7 @@ class HapticEffect
 		///	@brief	Konstruktor: Initialisiert das Objekt mit Defaultwerten und 
 		///			macht den Effekt bei HLAPI bekannt.
 		//.......................................................................
-		HapticEffect();
+		HapticEffect(HLenum type = HL_EFFECT_CONSTANT);
 
 		//.......................................................................
 		/// @brief	Destuktor: Gibt den Effekt bei HLAPI frei.

@@ -11,11 +11,11 @@
 #include "HapticEffect.h"
 
 //*******************************************************************************
-HapticEffect::HapticEffect()
+HapticEffect::HapticEffect(HLenum type)
 : m_EffectID(hlGenEffects(1))
 {
 	// Member mit Defaultwert belegen
-	m_EffectType = HL_EFFECT_CONSTANT;
+	m_EffectType = type;
 }
 //*******************************************************************************
 
