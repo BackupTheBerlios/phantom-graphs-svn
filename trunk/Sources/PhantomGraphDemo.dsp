@@ -92,6 +92,14 @@ LINK32=link.exe
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\ConstantForceEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\ConstantForceEffect.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\DragObjectHandler.cpp
 # End Source File
 # Begin Source File

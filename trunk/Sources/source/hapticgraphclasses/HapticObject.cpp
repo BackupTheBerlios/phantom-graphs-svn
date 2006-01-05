@@ -26,9 +26,9 @@
 
 //*******************************************************************************
 HapticObject::HapticObject()
+: m_HLShapeID(hlGenShapes(1))
 {
-	m_HLShapeID = hlGenShapes(1);
-	m_constraintSID = hlGenShapes(1);
+//	m_constraintSID = hlGenShapes(1);
 	m_transformMatrix.makeIdentity();
 }
 //*******************************************************************************
@@ -38,7 +38,7 @@ HapticObject::~HapticObject()
 {
 	// Shapes für Haptik freigeben
 	hlDeleteShapes(m_HLShapeID, 1);
-	hlDeleteShapes(m_constraintSID, 1);
+//	hlDeleteShapes(m_constraintSID, 1);
 
 	// evtl. vorhandene Actionhandler freigeben
 	vector<IHapticAction*>::iterator iterAct = NULL;

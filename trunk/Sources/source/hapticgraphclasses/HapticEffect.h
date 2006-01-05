@@ -31,6 +31,8 @@ class HapticEffect
 		///			- HL_EFFECT_SPRING
 		///			- HL_EFFECT_VISCOUS
 		///			- HL_EFFECT_FRICTION
+		///			Für eine detailiertere Beschreibung der Effekttypen, siehe
+		///			3D TOUCH SDK - API REFERENCE
 		//.......................................................................
 		HLenum m_EffectType;
 		
