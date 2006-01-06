@@ -20,6 +20,7 @@
 #include "Node.h"
 #include "DragObjectHandler.h"
 
+
 //*******************************************************************************
 GraphScene::GraphScene()
 {
@@ -42,6 +43,12 @@ GraphScene::~GraphScene()
 		}
 	}
 	m_SceneElements.clear();
+
+hlBeginFrame();
+eff->stopEffect();
+//eff2.stopEffect();
+hlEndFrame();
+
 }
 //*******************************************************************************
 
@@ -64,6 +71,16 @@ void GraphScene::initScene()
 	tmpObj->addHapticAction(drag);
 	tmpObj->translate(0.5, 0.0, 0.0);
 	addObject(tmpObj);
+
+//eff = new FrictionForceEffect(0.5, 0.4);
+double dir[3] = {-1.0, 0.0, 0.0};
+eff = new ConstantForceEffect(dir, 0.5);
+//eff.setGain(0.4);
+//	eff.setMagnitude(0.5);
+hlBeginFrame();
+eff->startEffect();
+hlEndFrame();
+//eff2.startEffect();
 }
 //*******************************************************************************
 

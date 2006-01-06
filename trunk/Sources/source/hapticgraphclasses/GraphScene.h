@@ -20,6 +20,9 @@ using namespace std;
 
 #include "HapticObject.h"
 
+#include "FrictionForceEffect.h"
+#include "ConstantForceEffect.h"
+
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 ///
@@ -47,6 +50,10 @@ class GraphScene
 		/// @brief	Fordert alle Objekte auf, ihre graphische Beschaffenheit zu rendern.
 		//.......................................................................
 		void renderSceneGraphics();	
+
+//FrictionForceEffect * eff;
+ConstantForceEffect * eff;
+//FrictionForceEffect * eff2;
 
 	public:
 		

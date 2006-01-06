@@ -14,7 +14,6 @@
 HapticEffect::HapticEffect(HLenum type)
 : m_EffectID(hlGenEffects(1))
 {
-	// Member mit Defaultwert belegen
 	m_EffectType = type;
 }
 //*******************************************************************************
