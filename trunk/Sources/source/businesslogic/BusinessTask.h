@@ -13,12 +13,14 @@
 #endif // _MSC_VER > 1000
 
 #include "IBusinessAdapter.h"
+#include "IBusinessConverter.h"
+
 
 //...............................................................................
 /// @brief	diese KLasse verwaltet alle Aufgaben, die im Graf dargestellt werden sollen.
 ///
 //...............................................................................
-class BusinessTask : public IBusinessAdapter  
+class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
 	int getForce();
@@ -35,6 +37,10 @@ private:
 	int day_final;
 	int force;
 	int day_duration;
+	char name[60];
+protected:
+	void businessToViewCoordinates();
+	void viewToBusinessCoordinates();
 };
 
 #endif // !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)

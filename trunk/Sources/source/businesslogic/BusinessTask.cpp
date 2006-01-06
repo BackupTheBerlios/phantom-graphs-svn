@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "BusinessTask.h"
+#include "AppConfiguration.h"
 
 //////////////////////////////////////////////////////////////////////
 // Konstruktion/Destruktion
@@ -21,11 +22,13 @@ BusinessTask::BusinessTask()
 
 BusinessTask::BusinessTask(int begin, int duration, int final, bool Milestone)
 {
+	int test;
 	day_begin = begin;
 	day_duration = duration;
 	day_final = final;
 	isMilestone = Milestone;
 	day_end = calcDayEnd(day_begin, day_duration);
+	test = AppConfiguration::getProjectDuration();
 }
 
 
@@ -46,4 +49,14 @@ int BusinessTask::calcDayEnd(int begin, int duration)
 	end = begin + duration;
 	
 	return end;
+}
+
+void BusinessTask::viewToBusinessCoordinates()
+{
+
+}
+
+void BusinessTask::businessToViewCoordinates()
+{
+
 }

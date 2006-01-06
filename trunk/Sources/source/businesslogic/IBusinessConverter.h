@@ -5,9 +5,9 @@
 class IBusinessConverter
 {
 public:
-	virtual static void viewToBusinessCoordinates() = 0;
+	virtual void viewToBusinessCoordinates() = 0;
 	
-	virtual static void businessToViewCoordinates() = 0;
+	virtual void businessToViewCoordinates() = 0;
 	
 };
 
