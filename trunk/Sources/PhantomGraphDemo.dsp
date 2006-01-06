@@ -188,6 +188,14 @@ SOURCE=.\source\hapticgraphclasses\Utilities.h
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE=.\source\businesslogic\BusinessTask.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\businesslogic\BusinessTask.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\businesslogic\IBusinessAdapter.h
 # End Source File
 # Begin Source File

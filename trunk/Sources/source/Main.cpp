@@ -36,6 +36,7 @@ Description:
 //				- Cursor wird jetzt von Cursor-Objekt gezeichnet
 // 30.12.05		- Fenster etwas vergrößert
 //				- nicht benötigte Funktionen gelöscht
+// 06.01.2006	- Task Erzeugung hinzugefügt
 
 #include <math.h>
 #include <assert.h>
@@ -79,6 +80,12 @@ void exitHandler(void);
 void initGL();
 void initHL();
 void initScene();
+
+//........................
+/// @author Carsten Arnold
+/// @brief initialises static tasks
+//........................
+void initTasks(); 
 
 /*******************************************************************************
  Initializes GLUT for displaying a simple haptic scene
@@ -243,3 +250,7 @@ void exitHandler()
 	}
 }
 
+void initTasks()
+{
+
+}
