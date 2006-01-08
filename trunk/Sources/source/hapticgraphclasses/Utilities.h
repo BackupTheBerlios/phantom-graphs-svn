@@ -40,4 +40,4 @@ struct Position
 
 };
 
-#endif
+#endif // _UTILITIES_H_

@@ -73,10 +73,11 @@ void GraphScene::initScene()
 	addObject(tmpObj);
 
 //eff = new FrictionForceEffect(0.5, 0.4);
-double dir[3] = {-1.0, 0.0, 0.0};
-eff = new ConstantForceEffect(dir, 0.5);
+//double dir[3] = {-1.0, 0.0, 0.0};
+//eff = new ConstantForceEffect(dir, 0.5);
+eff = new ViscousForceEffect(0.5, 0.4);
 //eff.setGain(0.4);
-//	eff.setMagnitude(0.5);
+//eff.setMagnitude(0.5);
 hlBeginFrame();
 eff->startEffect();
 hlEndFrame();

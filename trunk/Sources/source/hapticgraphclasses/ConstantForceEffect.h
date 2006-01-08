@@ -81,4 +81,4 @@ class ConstantForceEffect : public HapticEffect
 	
 };
 
-#endif
+#endif // _CONSTANTFORCEEFFECT_H_

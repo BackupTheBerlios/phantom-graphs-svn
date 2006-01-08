@@ -80,4 +80,4 @@ class HapticEffect
 	
 };
 
-#endif
+#endif // _HAPTICEFFECT_H_

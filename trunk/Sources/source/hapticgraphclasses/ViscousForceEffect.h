@@ -1,56 +1,64 @@
 //*******************************************************************************
-/// @file	HapticConstraint.h
+/// @file	ViscousForceEffect.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
-/// @date	Erstellt am		02.01.2006
-/// @date	Letzte Änderung	02.01.2006
+/// @date	Erstellt am		08.01.2006
+/// @date	Letzte Änderung	08.01.2006
 //*******************************************************************************
 
 // Änderungen:
 
 
-#ifndef _HAPTICCONSTRAINT_H_
-#define _HAPTICCONSTRAINT_H_
+#ifndef _VISCOUSFORCEEFFECT_H_
+#define _VISCOUSFORCEEFFECT_H_
 
-// Haptic Library includes
-#include <HL/hl.h>
+#include "HapticEffect.h"
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
+///
+/// @brief	Klasse zur Ausgabe einer "ambienten" Viskostät auf dem Phantom Device.
 //...............................................................................
-class HapticConstraint
+class ViscousForceEffect : public HapticEffect
 {
 	protected:
 		
 		//.......................................................................
+		/// @brief	
 		//.......................................................................
-		HLfloat m_SnapDistance;
+		double m_Magnitude;
 		
 		//.......................................................................
+		/// @brief	
 		//.......................................................................
-		HLuint m_HLConstraintID;
+		double m_Gain;
+
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		virtual void renderProperties();
 
 	public:
 
 		//.......................................................................
+		/// @brief	
 		//.......................................................................
-		HapticConstraint();
-		
-		//.......................................................................
-		//.......................................................................
-		HapticConstraint( HLfloat snapDist );
+		ViscousForceEffect( double magnitude = 0.0, double gain = 0.0 );
 
 		//.......................................................................
+		/// @brief	
 		//.......................................................................
-		virtual ~HapticConstraint();
+		virtual ~ViscousForceEffect();
 		
 		//.......................................................................
+		/// @brief	
 		//.......................................................................
-		void setSnapDistance( HLfloat value );
+		void setMagnitude( double value );
 		
 		//.......................................................................
+		/// @brief	
 		//.......................................................................
-		void renderConstraint();
-	
+		virtual void setGain( double value );
+		
 };
 
-#endif // _HAPTICCONSTRAINT_H_
+#endif // _VISCOUSFORCEEFFECT_H_

@@ -22,6 +22,7 @@ using namespace std;
 
 #include "FrictionForceEffect.h"
 #include "ConstantForceEffect.h"
+#include "ViscousForceEffect.h"
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
@@ -52,8 +53,9 @@ class GraphScene
 		void renderSceneGraphics();	
 
 //FrictionForceEffect * eff;
-ConstantForceEffect * eff;
+//ConstantForceEffect * eff;
 //FrictionForceEffect * eff2;
+ViscousForceEffect * eff;
 
 	public:
 		

@@ -11,7 +11,6 @@
 
 #include "Node.h"
 //#include "Texture.h"
-#include "../businesslogic/IBusinessAdapter.h"
 
 //*******************************************************************************
 Node::Node( IBusinessAdapter * businessObj )

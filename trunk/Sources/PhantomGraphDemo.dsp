@@ -182,6 +182,14 @@ SOURCE=.\source\hapticgraphclasses\Utilities.cpp
 
 SOURCE=.\source\hapticgraphclasses\Utilities.h
 # End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\ViscousForceEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\ViscousForceEffect.h
+# End Source File
 # End Group
 # Begin Group "businesslogic"
 

@@ -20,9 +20,10 @@
 
 #include "HapticObject.h"
 #include "../businesslogic/IObserver.h"
+#include "../businesslogic/IBusinessAdapter.h"
 
 //class Texture;
-class IBusinessAdapter;
+//class IBusinessAdapter;
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
@@ -82,4 +83,4 @@ class Node : public HapticObject, public IObserver
 		
 };
 
-#endif
+#endif // _NODE_H_
