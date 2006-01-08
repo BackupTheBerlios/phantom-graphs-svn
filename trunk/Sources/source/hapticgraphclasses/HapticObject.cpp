@@ -2,7 +2,7 @@
 /// @file	HapticObject.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	03.01.2006
+/// @date	Letzte Änderung	08.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -10,6 +10,9 @@
 // 30.12.05		- Dummy-Implementierungen von render*() und renderDefault*Properties()
 //				- setPosition implementiert
 // 03.01.06		- Methode getPosition() hinzugefügt und implementiert
+// 08.01.06		- setHapticConstraint() implementiert, Konstruktor und Destruktor angepasst
+//				  und in renderHaptics() einen Aufruf von m_pHapticConstraint->renderConstraint()
+//				  hinzugefügt
 
 // Haptics Library includes
 #include <HL/hl.h>
@@ -20,15 +23,13 @@
 #include "HapticObject.h"
 //#include "GraphicalProperty.h"
 //#include "HapticProperty.h"
-//#include "HapticAction.h"
-//#include "Utilities.h"
-//#include "HapticConstraint.h"
+
 
 //*******************************************************************************
 HapticObject::HapticObject()
 : m_HLShapeID(hlGenShapes(1))
 {
-//	m_constraintSID = hlGenShapes(1);
+	m_pHapticConstraint = NULL;
 	m_transformMatrix.makeIdentity();
 }
 //*******************************************************************************
@@ -42,7 +43,7 @@ HapticObject::~HapticObject()
 
 	// evtl. vorhandene Actionhandler freigeben
 	vector<IHapticAction*>::iterator iterAct = NULL;
-	for (iterAct = m_hapticActions.begin(); iterAct != m_hapticActions.end(); iterAct++)
+	for (iterAct = m_HapticActions.begin(); iterAct != m_HapticActions.end(); iterAct++)
 	{
 		if (*iterAct != NULL)
 		{
@@ -51,20 +52,40 @@ HapticObject::~HapticObject()
 			(*iterAct) = NULL;
 		}
 	}
+
+	// Constraint freigeben, wenn eins vorhanden ist
+	if (m_pHapticConstraint != NULL)
+	{
+		delete m_pHapticConstraint;
+		m_pHapticConstraint = NULL;
+	}
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void HapticObject::setHapticConstraint( HapticConstraint* value )
+{
+	// falls schon ein Constraint vorhanden ist, erst freigeben
+	if (m_pHapticConstraint != NULL)
+	{
+		delete m_pHapticConstraint;
+	}
+
+	m_pHapticConstraint = value;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void HapticObject::addHapticAction( IHapticAction * act )
+{
+	m_HapticActions.push_back(act);
+	act->registerAction(m_HLShapeID);
 }
 //*******************************************************************************
 
 //void HapticObject::addGraphicMaterial( IGraphicMaterial * material )
 //{
 //}
-
-//*******************************************************************************
-void HapticObject::addHapticAction( IHapticAction * act )
-{
-	m_hapticActions.push_back(act);
-	act->registerAction(m_HLShapeID);
-}
-//*******************************************************************************
 
 //void HapticObject::addHapticMaterial( IHapticMaterial * material )
 //{
@@ -101,12 +122,10 @@ void HapticObject::renderHaptics()
 	glPopMatrix();
 
     hlEndShape();
+
+	m_pHapticConstraint->renderConstraint(this);
 }
 //*******************************************************************************
-
-//void HapticObject::setHapticConstraint( const HapticConstraint* value )
-//{
-//}
 
 //*******************************************************************************
 void HapticObject::renderDefaultGraphicProperties()

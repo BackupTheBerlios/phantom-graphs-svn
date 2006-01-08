@@ -70,12 +70,13 @@ void GraphScene::initScene()
 	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
 	tmpObj->addHapticAction(drag);
 	tmpObj->translate(0.5, 0.0, 0.0);
+	tmpObj->setHapticConstraint(new HapticConstraint(4.0f));
 	addObject(tmpObj);
 
 //eff = new FrictionForceEffect(0.5, 0.4);
 //double dir[3] = {-1.0, 0.0, 0.0};
 //eff = new ConstantForceEffect(dir, 0.5);
-eff = new ViscousForceEffect(0.5, 0.4);
+eff = new ViscousForceEffect(2.0, 2.0);
 //eff.setGain(0.4);
 //eff.setMagnitude(0.5);
 hlBeginFrame();
