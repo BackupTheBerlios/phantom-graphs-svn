@@ -2,7 +2,7 @@ Jumli
 {
   *** Applikation ***;
   Version=1.4;
-  Elements=278;
+  Elements=295;
   {
     *** Model ***;
     Typ=2;
@@ -191,7 +191,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=252,261,510,518;
           Order=-1;
-          UMLElementID=185;
+          UMLElementID=223;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -200,7 +200,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=740,394,898,464;
           Order=-1;
-          UMLElementID=214;
+          UMLElementID=252;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -209,7 +209,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=740,484,898,554;
           Order=-1;
-          UMLElementID=221;
+          UMLElementID=259;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -218,16 +218,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=734,578,898,665;
           Order=-1;
-          UMLElementID=216;
-          IsWithAttributs=true;
-          IsWithMethods=true;
-          IsHideTaggedValue=true;
-        };
-        {
-          *** CJumliTracker ***;
-          Rechteck=163,591,294,678;
-          Order=-1;
-          UMLElementID=226;
+          UMLElementID=254;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -236,7 +227,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=320,605,425,664;
           Order=-1;
-          UMLElementID=122;
+          UMLElementID=160;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -245,7 +236,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=612,30,841,151;
           Order=-1;
-          UMLElementID=169;
+          UMLElementID=207;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -254,7 +245,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=448,605,553,664;
           Order=-1;
-          UMLElementID=149;
+          UMLElementID=187;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -263,7 +254,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=384,22,513,160;
           Order=-1;
-          UMLElementID=161;
+          UMLElementID=199;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -272,7 +263,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=719,212,898,367;
           Order=-1;
-          UMLElementID=151;
+          UMLElementID=189;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -281,7 +272,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=31,17,231,172;
           Order=-1;
-          UMLElementID=137;
+          UMLElementID=175;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -290,7 +281,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=829,735,1072,924;
           Order=-1;
-          UMLElementID=90;
+          UMLElementID=128;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -299,7 +290,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=370,995,579,1133;
           Order=-1;
-          UMLElementID=236;
+          UMLElementID=264;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -308,7 +299,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=135,1014,248,1073;
           Order=-1;
-          UMLElementID=223;
+          UMLElementID=261;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -317,7 +308,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=36,1152,184,1211;
           Order=-1;
-          UMLElementID=208;
+          UMLElementID=246;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -326,7 +317,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=59,286,164,424;
           Order=-1;
-          UMLElementID=246;
+          UMLElementID=274;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -335,7 +326,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=485,728,654,900;
           Order=-1;
-          UMLElementID=175;
+          UMLElementID=213;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -344,7 +335,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=780,946,971,1101;
           Order=-1;
-          UMLElementID=72;
+          UMLElementID=87;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -353,7 +344,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=623,1126,792,1281;
           Order=-1;
-          UMLElementID=124;
+          UMLElementID=162;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -362,7 +353,7 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=60,1333,238,1454;
           Order=-1;
-          UMLElementID=65;
+          UMLElementID=80;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -371,35 +362,41 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=296,1361,537,1431;
           Order=-1;
-          UMLElementID=211;
+          UMLElementID=249;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=840,1126,1009,1281;
+          Order=-1;
+          UMLElementID=284;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=111,545,291,802;
+          Order=-1;
+          UMLElementID=104;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
         };
         {
           *** VererbungZeichner ***;
-          Rechteck=267,599,274,606;
-          Order=-1;
-          UMLElementID=234;
-          Knick=271,603;
-          TextOffset=0,5;
-          {
-            *** Linie ***;
-            Punkt=271,603;
-          };
-        };
-        {
-          *** VererbungZeichner ***;
           Rechteck=367,553,374,560;
           Order=-1;
-          UMLElementID=123;
+          UMLElementID=161;
           TextOffset=0,5;
         };
         {
           *** VererbungZeichner ***;
           Rechteck=471,565,478,572;
           Order=-1;
-          UMLElementID=150;
+          UMLElementID=188;
           Knick=475,569;
           TextOffset=0,5;
           {
@@ -411,34 +408,27 @@ Jumli
           *** VererbungZeichner ***;
           Rechteck=865,700,872,707;
           Order=-1;
-          UMLElementID=121;
+          UMLElementID=159;
           TextOffset=0,5;
         };
         {
           *** VererbungZeichner ***;
-          Rechteck=269,697,369,714;
           Order=-1;
-          UMLElementID=235;
-          TextOffset=34,-6;
-        };
-        {
-          *** VererbungZeichner ***;
-          Order=-1;
-          UMLElementID=210;
+          UMLElementID=248;
           TextOffset=0,5;
         };
         {
           *** VererbungZeichner ***;
           Rechteck=661,915,668,922;
           Order=-1;
-          UMLElementID=86;
+          UMLElementID=101;
           TextOffset=0,5;
         };
         {
           *** VererbungZeichner ***;
           Rechteck=630,1109,637,1116;
           Order=-1;
-          UMLElementID=136;
+          UMLElementID=174;
           Knick=634,1113;
           TextOffset=0,5;
           {
@@ -447,10 +437,29 @@ Jumli
           };
         };
         {
+          *** VererbungZeichner ***;
+          Order=-1;
+          UMLElementID=296;
+          TextOffset=0,5;
+        };
+        {
+          *** VererbungZeichner ***;
+          Order=-1;
+          UMLElementID=125;
+          TextOffset=0,5;
+        };
+        {
+          *** VererbungZeichner ***;
+          Rechteck=199,834,206,841;
+          Order=-1;
+          UMLElementID=126;
+          TextOffset=0,5;
+        };
+        {
           *** AssoziationZeichner ***;
           Rechteck=553,402,560,409;
           Order=-1;
-          UMLElementID=204;
+          UMLElementID=242;
           Knick=542,398;
           TextOffset=0,5;
           OffsetRollenName=-52,-18;
@@ -465,7 +474,7 @@ Jumli
           *** AssoziationZeichner ***;
           Rechteck=519,473,529,490;
           Order=-1;
-          UMLElementID=205;
+          UMLElementID=243;
           Knick=511,491;
           TextOffset=0,5;
           OffsetRollenName=-45,-19;
@@ -480,7 +489,7 @@ Jumli
           *** AssoziationZeichner ***;
           Rechteck=530,517,540,534;
           Order=-1;
-          UMLElementID=206;
+          UMLElementID=244;
           Knick=515,518;
           TextOffset=0,5;
           OffsetRollenName=-37,-18;
@@ -495,7 +504,7 @@ Jumli
           *** AssoziationZeichner ***;
           Rechteck=617,286,733,303;
           Order=-1;
-          UMLElementID=207;
+          UMLElementID=245;
           Knick=515,307;
           TextOffset=0,5;
           OffsetRollenName=-38,-19;
@@ -510,7 +519,7 @@ Jumli
           *** AssoziationZeichner ***;
           Rechteck=259,222,375,239;
           Order=-1;
-          UMLElementID=148;
+          UMLElementID=186;
           TextOffset=0,5;
           OffsetRollenName=69,-11;
           OffsetA=-10,2;
@@ -520,7 +529,7 @@ Jumli
           *** AssoziationZeichner ***;
           Rechteck=482,551,558,568;
           Order=-1;
-          UMLElementID=120;
+          UMLElementID=158;
           Knick=626,656;
           TextOffset=0,5;
           OffsetRollenName=-2,9;
@@ -535,7 +544,7 @@ Jumli
           *** AssoziationZeichner ***;
           Rechteck=409,754,493,771;
           Order=-1;
-          UMLElementID=245;
+          UMLElementID=273;
           TextOffset=0,5;
           OffsetRollenName=30,-17;
           OffsetA=5,5;
@@ -543,33 +552,18 @@ Jumli
         };
         {
           *** AssoziationZeichner ***;
-          Rechteck=97,661,104,668;
+          Rechteck=84,929,91,936;
           Order=-1;
-          UMLElementID=233;
-          Knick=101,665;
+          UMLElementID=124;
+          Knick=88,725;
           TextOffset=0,5;
-          OffsetRollenName=-20,-19;
+          OffsetRollenName=-5,-14;
           OffsetA=5,5;
           OffsetB=5,5;
           {
             *** Linie ***;
-            Punkt=101,665;
+            Punkt=88,725;
           };
-        };
-        {
-          *** CJumliTracker ***;
-          Rechteck=840,1126,1009,1281;
-          Order=-1;
-          UMLElementID=268;
-          IsWithAttributs=true;
-          IsWithMethods=true;
-          IsHideTaggedValue=true;
-        };
-        {
-          *** VererbungZeichner ***;
-          Order=-1;
-          UMLElementID=307;
-          TextOffset=0,5;
         };
       };
       {
@@ -594,7 +588,7 @@ Jumli
             *** CJumliTracker ***;
             Rechteck=38,214,247,335;
             Order=-1;
-            UMLElementID=56;
+            UMLElementID=71;
             IsWithAttributs=true;
             IsWithMethods=true;
             IsHideTaggedValue=true;
@@ -613,6 +607,15 @@ Jumli
             Rechteck=337,457,485,516;
             Order=-1;
             UMLElementID=51;
+            IsWithAttributs=true;
+            IsWithMethods=true;
+            IsHideTaggedValue=true;
+          };
+          {
+            *** CJumliTracker ***;
+            Rechteck=42,51,197,189;
+            Order=-1;
+            UMLElementID=56;
             IsWithAttributs=true;
             IsWithMethods=true;
             IsHideTaggedValue=true;
@@ -875,14 +878,14 @@ Jumli
             Datentyp="HapticObject *";
             Zugriff=1;
             A=19;
-            B=185;
+            B=223;
             RollenName="m_pDragObj";
           };
           {
             *** Vererbung ***;
             ID=50;
             A=19;
-            B=216;
+            B=254;
             BasisKlasse="IHapticAction";
           };
         };
@@ -948,12 +951,131 @@ Jumli
         };
         {
           *** Klasse ***;
+          Doku="class Texture;class IBusinessAdapter;.............................................................................../ \
+          @author\tKatharina Greiner, Matr.-Nr. 943471//\t@brief\tHaptisches Objekt, \
+          das einen Knoten in einem Graphen darstellt................................................................................";
+          Name="Node";
+          ID=56;
+          Datentyp="class";
+          Zugriff=3;
+          KomponentenId=-1;
+          FileName="genSource\\Node.cpp";
+          HeaderFileName="genSource\\Node.h";
+          Parent=-1;
+          {
+            *** Attribut ***;
+            Doku="......................................................................./ \
+            @brief\tID der OpenGL-Displayliste, mit der der Node gezeichnet wird........................................................................";
+            Name="m_DisplayList";
+            ID=57;
+            Datentyp="GLuint";
+            Zugriff=1;
+          };
+          {
+            *** Methode ***;
+            Doku="..............................................................................................................................................";
+            Name="Node";
+            ID=58;
+            {
+              *** Parameter ***;
+              Name="businessObj";
+              ID=59;
+              Typ="IBusinessAdapter *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="********************************************************************* \
+            Von IObserver geerbte Methoden*********************************************************************......................................................................./ \
+            @brief\tVeranlasst den Observer, sich die benötigten Informationen /\t\t\tvom \
+            Observable zu holen........................................................................";
+            Name="Update";
+            ID=60;
+            IsVirtual=true;
+            RueckgabeWert="void";
+            {
+              *** Parameter ***;
+              Name="pObservable";
+              ID=61;
+              Typ="Observable *";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="..............................................................................................................................................\t\tvoid \
+            setTexture( const Texture* value );********************************************************************* \
+            Von HapticObject geerbte Methoden*********************************************************************..............................................................................................................................................";
+            Name="renderShape";
+            ID=62;
+            IsVirtual=true;
+            RueckgabeWert="void";
+          };
+          {
+            *** Methode ***;
+            Doku="..............................................................................................................................................";
+            Name="translate";
+            ID=63;
+            IsVirtual=true;
+            RueckgabeWert="void";
+            {
+              *** Parameter ***;
+              Name="x";
+              ID=64;
+              Typ="const double";
+            };
+            {
+              *** Parameter ***;
+              Name="y";
+              ID=65;
+              Typ="const double";
+            };
+            {
+              *** Parameter ***;
+              Name="z";
+              ID=66;
+              Typ="const double";
+            };
+          };
+          {
+            *** Methode ***;
+            Doku="..............................................................................................................................................";
+            Name="~Node";
+            ID=67;
+            IsVirtual=true;
+          };
+          {
+            *** Aggregation ***;
+            Doku="..............................................................................................................................................";
+            ID=68;
+            Datentyp="IBusinessAdapter *";
+            Zugriff=1;
+            A=56;
+            B=246;
+            RollenName="m_pBusinessObject";
+          };
+          {
+            *** Vererbung ***;
+            ID=69;
+            A=56;
+            B=223;
+            BasisKlasse="HapticObject";
+          };
+          {
+            *** Vererbung ***;
+            ID=70;
+            A=56;
+            B=261;
+            BasisKlasse="IObserver";
+          };
+        };
+        {
+          *** Klasse ***;
           Doku=".............................................................................../ \
           @brief\tImplementiert das Observer-Pattern//\t\t\tKlassen, die von Observable \
           erben, können Objekte, die an ihrem Zustand/\t\t\tinteressiert sind über \
           Änderungen informieren ohne eine enge Bindung /\t\t\tzu ihnen zu haben................................................................................";
           Name="Observable";
-          ID=56;
+          ID=71;
           Datentyp="class";
           Zugriff=3;
           KomponentenId=-1;
@@ -967,7 +1089,7 @@ Jumli
             Doku="......................................................................./ \
             @brief\tListe aller angemeldeten Observer........................................................................";
             Name="m_Observers";
-            ID=57;
+            ID=72;
             Datentyp="list<IObserver*>";
             Zugriff=1;
           };
@@ -976,12 +1098,12 @@ Jumli
             Doku="......................................................................./ \
             @brief\tRegistriert einen neuen Obersver........................................................................";
             Name="AddObserver";
-            ID=58;
+            ID=73;
             RueckgabeWert="void";
             {
               *** Parameter ***;
               Name="pObserver";
-              ID=59;
+              ID=74;
               Typ="IObserver *";
             };
           };
@@ -991,14 +1113,14 @@ Jumli
             @brief\tInformiert alle Observer darüber, dass sich der Zustand des /\t\t\tObservables \
             geändert hat........................................................................";
             Name="NotifyAll";
-            ID=60;
+            ID=75;
             RueckgabeWert="void";
           };
           {
             *** Methode ***;
             Doku="..............................................................................................................................................";
             Name="Observable";
-            ID=61;
+            ID=76;
           };
           {
             *** Methode ***;
@@ -1006,12 +1128,12 @@ Jumli
             @brief\tMeldet einen Observer beim Observable ab. Das Observer-Objekt/\t\t\twird \
             dabei nicht gelöscht........................................................................";
             Name="RemoveObserver";
-            ID=62;
+            ID=77;
             RueckgabeWert="void";
             {
               *** Parameter ***;
               Name="pObserver";
-              ID=63;
+              ID=78;
               Typ="IObserver *";
             };
           };
@@ -1019,7 +1141,7 @@ Jumli
       };
       {
         *** Klasse ***;
-        ID=64;
+        ID=79;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1030,7 +1152,7 @@ Jumli
       {
         *** Klasse ***;
         Name="AppConfiguration";
-        ID=65;
+        ID=80;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1042,44 +1164,44 @@ Jumli
         {
           *** Attribut ***;
           Name="m_ProjectDuration";
-          ID=66;
+          ID=81;
           Datentyp="int";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="AppConfiguration";
-          ID=67;
+          ID=82;
         };
         {
           *** Methode ***;
           Name="getProjectDuration";
-          ID=68;
+          ID=83;
           RueckgabeWert="int";
         };
         {
           *** Methode ***;
           Name="setProjectDuration";
-          ID=69;
+          ID=84;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=70;
+            ID=85;
             Typ="int";
           };
         };
         {
           *** Methode ***;
           Name="~AppConfiguration";
-          ID=71;
+          ID=86;
           IsVirtual=true;
         };
       };
       {
         *** Klasse ***;
         Name="ConstantForceEffect";
-        ID=72;
+        ID=87;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1091,38 +1213,38 @@ Jumli
         {
           *** Attribut ***;
           Name="m_Direction";
-          ID=73;
+          ID=88;
           Datentyp="hduVector3Dd";
           Zugriff=1;
         };
         {
           *** Attribut ***;
           Name="m_Magnitude";
-          ID=74;
+          ID=89;
           Datentyp="double";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="ConstantForceEffect";
-          ID=75;
+          ID=90;
           {
             *** Parameter ***;
             Name="direction[3]";
-            ID=76;
+            ID=91;
             Typ="const double";
           };
           {
             *** Parameter ***;
             Name="magnitude";
-            ID=77;
+            ID=92;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="renderProperties";
-          ID=78;
+          ID=93;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -1130,147 +1252,56 @@ Jumli
         {
           *** Methode ***;
           Name="setDirection";
-          ID=79;
+          ID=94;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="x";
-            ID=80;
+            ID=95;
             Typ="double";
           };
           {
             *** Parameter ***;
             Name="y";
-            ID=81;
+            ID=96;
             Typ="double";
           };
           {
             *** Parameter ***;
             Name="z";
-            ID=82;
+            ID=97;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="setMagnitude";
-          ID=83;
+          ID=98;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=84;
+            ID=99;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="~ConstantForceEffect";
-          ID=85;
+          ID=100;
           IsVirtual=true;
         };
         {
           *** Vererbung ***;
-          ID=86;
-          A=72;
-          B=175;
-        };
-      };
-      {
-        *** Klasse ***;
-        Name="ViscousForceEffect";
-        ID=268;
-        Datentyp="class";
-        NameSpace="GraphFWEntwurf";
-        KomponentenId=-1;
-        FileName="genSource\\ViscousForceEffect.cpp";
-        FileActiveLine=-1;
-        HeaderFileName="genSource\\ViscousForceEffect.h";
-        HeaderFileActiveLine=-1;
-        Parent=-1;
-        {
-          *** Attribut ***;
-          Name="m_Gain";
-          ID=321;
-          Datentyp="double";
-          Zugriff=1;
-        };
-        {
-          *** Attribut ***;
-          Name="m_Magnitude";
-          ID=322;
-          Datentyp="double";
-          Zugriff=1;
-        };
-        {
-          *** Methode ***;
-          Name="ViscousForceEffect";
-          ID=323;
-          {
-            *** Parameter ***;
-            Name="magnitude";
-            ID=324;
-            Typ="double";
-            Default="0.0";
-          };
-          {
-            *** Parameter ***;
-            Name="gain";
-            ID=325;
-            Typ="double";
-            Default="0.0";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="renderProperties";
-          ID=326;
-          IsVirtual=true;
-          Zugriff=1;
-          RueckgabeWert="void";
-        };
-        {
-          *** Methode ***;
-          Name="setGain";
-          ID=327;
-          IsVirtual=true;
-          RueckgabeWert="void";
-          {
-            *** Parameter ***;
-            Name="value";
-            ID=328;
-            Typ="double";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="setMagnitude";
-          ID=329;
-          RueckgabeWert="void";
-          {
-            *** Parameter ***;
-            Name="value";
-            ID=330;
-            Typ="double";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="~ViscousForceEffect";
-          ID=331;
-          IsVirtual=true;
-        };
-        {
-          *** Vererbung ***;
-          ID=307;
-          A=268;
-          B=175;
+          ID=101;
+          A=87;
+          B=213;
         };
       };
       {
         *** Klasse ***;
         Name="Copy of Grid";
-        ID=87;
+        ID=102;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1283,7 +1314,7 @@ Jumli
       {
         *** Klasse ***;
         Name="Copy of HapticCursor";
-        ID=88;
+        ID=103;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1296,7 +1327,7 @@ Jumli
       {
         *** Klasse ***;
         Name="Copy of Texture";
-        ID=89;
+        ID=127;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1318,7 +1349,7 @@ Jumli
         das /\t\t\tregistrierte Objekt der Bewegung des Phantom/ @todo\tObjekte \
         lassen sich noch nicht nach hinten verschieben...............................................................................";
         Name="DragObjectHandler";
-        ID=90;
+        ID=128;
         Datentyp="class";
         Zugriff=3;
         KomponentenId=-1;
@@ -1333,7 +1364,7 @@ Jumli
           Position des Proxy beim letzten Aufruf des Draghandlers/ Dient zur Berechnung \
           des Vektors um den das Objekt verschoben werden soll";
           Name="m_LastProxyPos";
-          ID=91;
+          ID=129;
           Datentyp="hduVector3Dd";
           Zugriff=1;
         };
@@ -1344,11 +1375,11 @@ Jumli
           haptischen Objekt/ @param\tpObj\tPointer auf das haptische Objekt für das \
           der /\t\t\t\t\tEventhandler zuständig sein soll.......................................................................";
           Name="DragObjectHandler";
-          ID=92;
+          ID=130;
           {
             *** Parameter ***;
             Name="pObj";
-            ID=93;
+            ID=131;
             Typ="HapticObject *";
           };
         };
@@ -1363,38 +1394,38 @@ Jumli
           Moment, in dem das Event feuert/ @param\tpHandlerObject\tPointer auf das \
           DragObjectHandler-Objekt, das/\t\t\t\t\tdas Event verarbeiten soll.......................................................................";
           Name="OnButtonDown";
-          ID=94;
+          ID=132;
           IsStatic=true;
           Zugriff=1;
           RueckgabeWert="void HLCALLBACK";
           {
             *** Parameter ***;
             Name="event";
-            ID=95;
+            ID=133;
             Typ="HLenum";
           };
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=96;
+            ID=134;
             Typ="HLuint";
           };
           {
             *** Parameter ***;
             Name="thread";
-            ID=97;
+            ID=135;
             Typ="HLenum";
           };
           {
             *** Parameter ***;
             Name="cache";
-            ID=98;
+            ID=136;
             Typ="HLcache *";
           };
           {
             *** Parameter ***;
             Name="pHandlerObject";
-            ID=99;
+            ID=137;
             Typ="void *";
           };
         };
@@ -1409,38 +1440,38 @@ Jumli
           @param\tcache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
           feuert/ @param\tuserdata\tWird von dieser Funktion nicht benötigt.......................................................................";
           Name="OnButtonUp";
-          ID=100;
+          ID=138;
           IsStatic=true;
           Zugriff=1;
           RueckgabeWert="void HLCALLBACK";
           {
             *** Parameter ***;
             Name="event";
-            ID=101;
+            ID=139;
             Typ="HLenum";
           };
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=102;
+            ID=140;
             Typ="HLuint";
           };
           {
             *** Parameter ***;
             Name="thread";
-            ID=103;
+            ID=141;
             Typ="HLenum";
           };
           {
             *** Parameter ***;
             Name="cache";
-            ID=104;
+            ID=142;
             Typ="HLcache *";
           };
           {
             *** Parameter ***;
             Name="userdata";
-            ID=105;
+            ID=143;
             Typ="void *";
           };
         };
@@ -1456,38 +1487,38 @@ Jumli
           feuert/ @param\tpHandlerObject\tPointer auf das DragObjectHandler-Objekt, \
           das/\t\t\t\t\t das Event verarbeiten soll.......................................................................";
           Name="OnDrag";
-          ID=106;
+          ID=144;
           IsStatic=true;
           Zugriff=1;
           RueckgabeWert="void HLCALLBACK";
           {
             *** Parameter ***;
             Name="event";
-            ID=107;
+            ID=145;
             Typ="HLenum";
           };
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=108;
+            ID=146;
             Typ="HLuint";
           };
           {
             *** Parameter ***;
             Name="thread";
-            ID=109;
+            ID=147;
             Typ="HLenum";
           };
           {
             *** Parameter ***;
             Name="cache";
-            ID=110;
+            ID=148;
             Typ="HLcache *";
           };
           {
             *** Parameter ***;
             Name="pHandlerObject";
-            ID=111;
+            ID=149;
             Typ="void *";
           };
         };
@@ -1498,12 +1529,12 @@ Jumli
           @param\tpCache\tHLAPI-State Schnappschuss in dem Moment, in dem das Event \
           feuert.......................................................................";
           Name="handleDrag";
-          ID=112;
+          ID=150;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pCache";
-            ID=113;
+            ID=151;
             Typ="HLcache *";
           };
         };
@@ -1513,12 +1544,12 @@ Jumli
           @brief\tNimmt die Proxy-Position beim Starten des Drag-Vorgangs auf/ @param\tpCache\tHLAPI-State \
           Schnappschuss in dem Moment, in dem das Event feuert.......................................................................";
           Name="initAction";
-          ID=114;
+          ID=152;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pCache";
-            ID=115;
+            ID=153;
             Typ="HLcache *";
           };
         };
@@ -1529,13 +1560,13 @@ Jumli
           @brief\tRegistriert die Aktion für eine Shape bei HLAPI/ @param\tshapeID\tID \
           der Shape, für die die Aktion registriert werden soll.......................................................................";
           Name="registerAction";
-          ID=116;
+          ID=154;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=117;
+            ID=155;
             Typ="HLuint";
           };
         };
@@ -1545,37 +1576,37 @@ Jumli
           @brief\tMeldet die Aktion für eine Shape bei HLAPI ab/ @param\tshapeID\tID \
           der Shape, für die die Aktion registriert wurde.......................................................................";
           Name="unregisterAction";
-          ID=118;
+          ID=156;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=119;
+            ID=157;
             Typ="HLuint";
           };
         };
         {
           *** Assoziation ***;
-          ID=120;
+          ID=158;
           Datentyp="HapticObject*";
           Zugriff=2;
-          A=90;
-          B=185;
+          A=128;
+          B=223;
           RollenName="m_pDragObj";
         };
         {
           *** Vererbung ***;
           Stereotype="implements";
-          ID=121;
-          A=90;
-          B=216;
+          ID=159;
+          A=128;
+          B=254;
         };
       };
       {
         *** Klasse ***;
         Name="Edge";
-        ID=122;
+        ID=160;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1586,15 +1617,15 @@ Jumli
         Parent=-1;
         {
           *** Vererbung ***;
-          ID=123;
-          A=122;
-          B=185;
+          ID=161;
+          A=160;
+          B=223;
         };
       };
       {
         *** Klasse ***;
         Name="FrictionForceEffect";
-        ID=124;
+        ID=162;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1606,32 +1637,32 @@ Jumli
         {
           *** Attribut ***;
           Name="m_Gain";
-          ID=125;
+          ID=163;
           Datentyp="double";
           Zugriff=1;
         };
         {
           *** Attribut ***;
           Name="m_Magnitude";
-          ID=126;
+          ID=164;
           Datentyp="double";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="FrictionForceEffect";
-          ID=127;
+          ID=165;
           {
             *** Parameter ***;
             Name="magnitude";
-            ID=128;
+            ID=166;
             Typ="double";
             Default="0.0";
           };
           {
             *** Parameter ***;
             Name="gain";
-            ID=129;
+            ID=167;
             Typ="double";
             Default="0.0";
           };
@@ -1639,7 +1670,7 @@ Jumli
         {
           *** Methode ***;
           Name="renderProperties";
-          ID=130;
+          ID=168;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -1647,45 +1678,45 @@ Jumli
         {
           *** Methode ***;
           Name="setGain";
-          ID=131;
+          ID=169;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=132;
+            ID=170;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="setMagnitude";
-          ID=133;
+          ID=171;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=134;
+            ID=172;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="~FrictionForceEffect";
-          ID=135;
+          ID=173;
           IsVirtual=true;
         };
         {
           *** Vererbung ***;
-          ID=136;
-          A=124;
-          B=175;
+          ID=174;
+          A=162;
+          B=213;
         };
       };
       {
         *** Klasse ***;
         Name="GraphScene";
-        ID=137;
+        ID=175;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1697,72 +1728,72 @@ Jumli
         {
           *** Methode ***;
           Name="GraphScene";
-          ID=138;
+          ID=176;
         };
         {
           *** Methode ***;
           Name="addObject";
-          ID=139;
+          ID=177;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="obj";
-            ID=140;
+            ID=178;
             Typ="HapticObject *";
           };
         };
         {
           *** Methode ***;
           Name="initScene";
-          ID=141;
+          ID=179;
           IsVirtual=true;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="renderScene";
-          ID=142;
+          ID=180;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="bHapticsEnabled";
-            ID=143;
+            ID=181;
             Typ="bool";
           };
         };
         {
           *** Methode ***;
           Name="renderSceneGraphics";
-          ID=144;
+          ID=182;
           Zugriff=1;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="renderSceneHaptics";
-          ID=145;
+          ID=183;
           Zugriff=1;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="bHapticsEnabled";
-            ID=146;
+            ID=184;
             Typ="bool";
           };
         };
         {
           *** Methode ***;
           Name="~GraphScene";
-          ID=147;
+          ID=185;
           IsVirtual=true;
         };
         {
           *** Assoziation ***;
-          ID=148;
+          ID=186;
           Datentyp="vector<HapticObject>";
           Zugriff=1;
-          A=137;
-          B=185;
+          A=175;
+          B=223;
           RollenName="m_SceneElements";
           KardinalitaetAnfangsKlasse="0..*";
           KardinalitaetEndeKlasse="1";
@@ -1771,7 +1802,7 @@ Jumli
       {
         *** Klasse ***;
         Name="Grid";
-        ID=149;
+        ID=187;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1782,15 +1813,15 @@ Jumli
         Parent=-1;
         {
           *** Vererbung ***;
-          ID=150;
-          A=149;
-          B=185;
+          ID=188;
+          A=187;
+          B=223;
         };
       };
       {
         *** Klasse ***;
         Name="HapticConstraint";
-        ID=151;
+        ID=189;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1802,62 +1833,62 @@ Jumli
         {
           *** Attribut ***;
           Name="m_HLConstraintID";
-          ID=152;
+          ID=190;
           Datentyp="HLuint";
           Zugriff=1;
         };
         {
           *** Attribut ***;
           Name="m_SnapDistance";
-          ID=153;
+          ID=191;
           Datentyp="HLfloat";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="HapticConstraint";
-          ID=155;
+          ID=193;
           {
             *** Parameter ***;
             Name="snapDist";
-            ID=156;
+            ID=194;
             Typ="HLfloat";
           };
         };
         {
           *** Methode ***;
           Name="HapticConstraint";
-          ID=154;
+          ID=192;
         };
         {
           *** Methode ***;
           Name="renderConstraint";
-          ID=157;
+          ID=195;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="setSnapDistance";
-          ID=158;
+          ID=196;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=159;
+            ID=197;
             Typ="HLfloat";
           };
         };
         {
           *** Methode ***;
           Name="~HapticConstraint";
-          ID=160;
+          ID=198;
           IsVirtual=true;
         };
       };
       {
         *** Klasse ***;
         Name="HapticCursor";
-        ID=161;
+        ID=199;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1871,7 +1902,7 @@ Jumli
           Doku="......................................................................./ \
           @brief\tSkalierungsfaktor, der je nach Projektion berechnet wird........................................................................";
           Name="m_Scale";
-          ID=162;
+          ID=200;
           Datentyp="double";
           Zugriff=1;
         };
@@ -1880,7 +1911,7 @@ Jumli
           Doku="......................................................................./ \
           @brief\tGröße des Cursors in Pixeln........................................................................";
           Name="m_SizePixels";
-          ID=163;
+          ID=201;
           Datentyp="int";
           IsConst=true;
           Zugriff=1;
@@ -1889,11 +1920,11 @@ Jumli
           *** Methode ***;
           Doku="......................................................................./.......................................................................";
           Name="HapticCursor";
-          ID=164;
+          ID=202;
           {
             *** Parameter ***;
             Name="sizePix";
-            ID=165;
+            ID=203;
             Typ="int";
             Default="DEFAULT_CURSOR_SIZE_PIX";
           };
@@ -1901,27 +1932,27 @@ Jumli
         {
           *** Methode ***;
           Name="render";
-          ID=166;
+          ID=204;
           IsVirtual=true;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="scale";
-          ID=167;
+          ID=205;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="~HapticCursor";
-          ID=168;
+          ID=206;
           IsVirtual=true;
         };
       };
       {
         *** Klasse ***;
         Name="HapticDevice";
-        ID=169;
+        ID=207;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1933,40 +1964,40 @@ Jumli
         {
           *** Attribut ***;
           Name="m_hHLRenderingContext";
-          ID=170;
+          ID=208;
           Datentyp="HHLRC";
           Zugriff=1;
         };
         {
           *** Attribut ***;
           Name="m_hHapticDevice";
-          ID=171;
+          ID=209;
           Datentyp="HHD";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="initialize";
-          ID=172;
+          ID=210;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="isActive";
-          ID=173;
+          ID=211;
           RueckgabeWert="bool";
         };
         {
           *** Methode ***;
           Name="updateWorkspace";
-          ID=174;
+          ID=212;
           RueckgabeWert="void";
         };
       };
       {
         *** Klasse ***;
         Name="HapticEffect";
-        ID=175;
+        ID=213;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -1978,7 +2009,7 @@ Jumli
         {
           *** Attribut ***;
           Name="m_EffectID";
-          ID=176;
+          ID=214;
           Datentyp="HLuint";
           IsConst=true;
           Zugriff=1;
@@ -1986,7 +2017,7 @@ Jumli
         {
           *** Attribut ***;
           Name="m_EffectType";
-          ID=177;
+          ID=215;
           Datentyp="HLenum";
           IsConst=true;
           Zugriff=1;
@@ -1994,12 +2025,12 @@ Jumli
         {
           *** Methode ***;
           Name="HapticEffect";
-          ID=178;
+          ID=216;
         };
         {
           *** Methode ***;
           Name="renderProperties";
-          ID=179;
+          ID=217;
           IsAbstract=true;
           IsVirtual=true;
           Zugriff=1;
@@ -2008,28 +2039,28 @@ Jumli
         {
           *** Methode ***;
           Name="startEffect";
-          ID=180;
+          ID=218;
           IsVirtual=true;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="stopEffect";
-          ID=181;
+          ID=219;
           IsVirtual=true;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="triggerEffect";
-          ID=182;
+          ID=220;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Doku="Millisekunden";
             Name="duration";
-            ID=183;
+            ID=221;
             Typ="double";
             Default="100.0";
           };
@@ -2037,14 +2068,14 @@ Jumli
         {
           *** Methode ***;
           Name="~HapticEffect";
-          ID=184;
+          ID=222;
           IsVirtual=true;
         };
       };
       {
         *** Klasse ***;
         Name="HapticObject";
-        ID=185;
+        ID=223;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -2056,62 +2087,62 @@ Jumli
         {
           *** Attribut ***;
           Name="m_HLShapeID";
-          ID=186;
+          ID=224;
           Datentyp="HLuint";
           Zugriff=1;
         };
         {
           *** Methode ***;
           Name="HapticObject";
-          ID=187;
+          ID=225;
         };
         {
           *** Methode ***;
           Name="addGraphicMaterial";
-          ID=188;
+          ID=226;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="material";
-            ID=189;
+            ID=227;
             Typ="IGraphicMaterial *";
           };
         };
         {
           *** Methode ***;
           Name="addHapticAction";
-          ID=190;
+          ID=228;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="act";
-            ID=191;
+            ID=229;
             Typ="IHapticAction *";
           };
         };
         {
           *** Methode ***;
           Name="addHapticMaterial";
-          ID=192;
+          ID=230;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="material";
-            ID=193;
+            ID=231;
             Typ="IHapticMaterial *";
           };
         };
         {
           *** Methode ***;
           Name="getPosition";
-          ID=194;
+          ID=232;
           RueckgabeWert="Position";
-          RueckgabeWertID=246;
+          RueckgabeWertID=274;
         };
         {
           *** Methode ***;
           Name="renderDefaultGraphicProperties";
-          ID=195;
+          ID=233;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -2119,7 +2150,7 @@ Jumli
         {
           *** Methode ***;
           Name="renderDefaultHapticProperties";
-          ID=196;
+          ID=234;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -2127,19 +2158,19 @@ Jumli
         {
           *** Methode ***;
           Name="renderGraphics";
-          ID=197;
+          ID=235;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="renderHaptics";
-          ID=198;
+          ID=236;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Name="renderShape";
-          ID=199;
+          ID=237;
           IsAbstract=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -2147,69 +2178,69 @@ Jumli
         {
           *** Methode ***;
           Name="setHapticConstraint";
-          ID=200;
+          ID=238;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=201;
+            ID=239;
             Typ="const HapticConstraint*";
           };
         };
         {
           *** Methode ***;
           Name="~HapticObject";
-          ID=202;
+          ID=240;
           IsVirtual=true;
         };
         {
           *** Assoziation ***;
-          ID=203;
+          ID=241;
           Zugriff=2;
-          A=185;
-          B=214;
+          A=223;
+          B=252;
           RollenName="igraphicproperty";
         };
         {
           *** Assoziation ***;
-          ID=204;
+          ID=242;
           Datentyp="vector<IGraphicProperty>";
           Zugriff=1;
-          A=185;
-          B=214;
+          A=223;
+          B=252;
           RollenName="m_graphicProperties";
           KardinalitaetAnfangsKlasse="0..*";
           KardinalitaetEndeKlasse="1";
         };
         {
           *** Assoziation ***;
-          ID=205;
+          ID=243;
           Datentyp="vector<IHapticProperty>";
           Zugriff=1;
-          A=185;
-          B=221;
+          A=223;
+          B=259;
           RollenName="m_hapticProperties";
           KardinalitaetAnfangsKlasse="0..*";
           KardinalitaetEndeKlasse="1";
         };
         {
           *** Assoziation ***;
-          ID=206;
+          ID=244;
           Datentyp="vector<IHapticAction>";
           Zugriff=1;
-          A=185;
-          B=216;
+          A=223;
+          B=254;
           RollenName="m_hapticActions";
           KardinalitaetAnfangsKlasse="0..*";
           KardinalitaetEndeKlasse="1";
         };
         {
           *** Assoziation ***;
-          ID=207;
+          ID=245;
           Datentyp="HapticConstraint*";
           Zugriff=1;
-          A=185;
-          B=151;
+          A=223;
+          B=189;
           RollenName="m_hapticConstraint";
           KardinalitaetAnfangsKlasse="0..1";
           KardinalitaetEndeKlasse="0..1";
@@ -2223,7 +2254,7 @@ Jumli
         Referenz auf seine entsprechende/\t\t\tAufgabe um relevante Daten mit Ihr \
         auszutauschen/ @todo\tDefinition der abstrakten Adapter Methoden...............................................................................";
         Name="IBusinessAdapter";
-        ID=208;
+        ID=246;
         Datentyp="class";
         Zugriff=3;
         KomponentenId=-1;
@@ -2239,22 +2270,22 @@ Jumli
           = keine Kraft/\t\t\t2 = lässt sich schwer bewegen/\t\t\t3 = lässt sich \
           gar nicht bewegen/\t\t\t0 = kann nicht berechnet werden/\t\t\t-1= Fehler...............................................................................";
           Name="getForce";
-          ID=209;
+          ID=247;
           IsAbstract=true;
           IsVirtual=true;
           RueckgabeWert="int";
         };
         {
           *** Vererbung ***;
-          ID=210;
-          A=208;
-          B=236;
+          ID=248;
+          A=246;
+          B=264;
         };
       };
       {
         *** Klasse ***;
         Name="IBusinessConverter";
-        ID=211;
+        ID=249;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -2266,7 +2297,7 @@ Jumli
         {
           *** Methode ***;
           Name="businessToViewCoordinates";
-          ID=212;
+          ID=250;
           IsAbstract=true;
           IsStatic=true;
           IsVirtual=true;
@@ -2275,7 +2306,7 @@ Jumli
         {
           *** Methode ***;
           Name="viewToBusinessCoordinates";
-          ID=213;
+          ID=251;
           IsAbstract=true;
           IsStatic=true;
           IsVirtual=true;
@@ -2286,7 +2317,7 @@ Jumli
         *** Klasse ***;
         Name="IGraphicMaterial";
         Stereotype="Interface";
-        ID=214;
+        ID=252;
         Image="Interface";
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
@@ -2299,7 +2330,7 @@ Jumli
         {
           *** Methode ***;
           Name="renderProperty";
-          ID=215;
+          ID=253;
           IsAbstract=true;
           RueckgabeWert="void";
         };
@@ -2308,7 +2339,7 @@ Jumli
         *** Klasse ***;
         Name="IHapticAction";
         Stereotype="Interface";
-        ID=216;
+        ID=254;
         Image="Interface";
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
@@ -2321,26 +2352,26 @@ Jumli
         {
           *** Methode ***;
           Name="registerAction";
-          ID=217;
+          ID=255;
           IsAbstract=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=218;
+            ID=256;
             Typ="HLuint";
           };
         };
         {
           *** Methode ***;
           Name="unregisterAction";
-          ID=219;
+          ID=257;
           IsAbstract=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="shapeID";
-            ID=220;
+            ID=258;
             Typ="HLuint";
           };
         };
@@ -2349,7 +2380,7 @@ Jumli
         *** Klasse ***;
         Name="IHapticMaterial";
         Stereotype="Interface";
-        ID=221;
+        ID=259;
         Image="Interface";
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
@@ -2362,7 +2393,7 @@ Jumli
         {
           *** Methode ***;
           Name="renderProperty";
-          ID=222;
+          ID=260;
           IsAbstract=true;
           RueckgabeWert="void";
         };
@@ -2374,7 +2405,7 @@ Jumli
         Schnittstelle implementieren, können sich bei /\t\t\tObservables anmelden \
         um über Änderungen informiert zu werden...............................................................................";
         Name="IObserver";
-        ID=223;
+        ID=261;
         Datentyp="class";
         Zugriff=3;
         KomponentenId=-1;
@@ -2389,93 +2420,190 @@ Jumli
           @brief\tVeranlasst den Observer, sich die benötigten Informationen /\t\t\tvom \
           Observable zu holen.......................................................................";
           Name="Update";
-          ID=224;
+          ID=262;
           IsAbstract=true;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pObservable";
-            ID=225;
+            ID=263;
             Typ="Observable *";
           };
         };
       };
       {
         *** Klasse ***;
+        Doku="class Texture;class IBusinessAdapter;.............................................................................../ \
+        @author\tKatharina Greiner, Matr.-Nr. 943471//\t@brief\tHaptisches Objekt, \
+        das einen Knoten in einem Graphen darstellt................................................................................";
         Name="Node";
-        ID=226;
+        ID=104;
         Datentyp="class";
-        NameSpace="GraphFWEntwurf";
+        Zugriff=3;
         KomponentenId=-1;
         FileName="genSource\\Node.cpp";
-        FileActiveLine=-1;
         HeaderFileName="genSource\\Node.h";
-        HeaderFileActiveLine=-1;
         Parent=-1;
         {
+          *** Attribut ***;
+          Doku="......................................................................./ \
+          @brief\tID der OpenGL-Displayliste, mit der der Node gezeichnet wird........................................................................";
+          Name="m_DisplayList";
+          ID=321;
+          Datentyp="GLuint";
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_Height";
+          ID=322;
+          Datentyp="float";
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_Width";
+          ID=323;
+          Datentyp="float";
+          Zugriff=1;
+        };
+        {
           *** Methode ***;
+          Doku="..............................................................................................................................................";
           Name="Node";
-          ID=227;
+          ID=324;
           {
             *** Parameter ***;
             Name="businessObj";
-            ID=228;
+            ID=325;
             Typ="IBusinessAdapter *";
           };
         };
         {
           *** Methode ***;
-          Name="setTexture";
-          ID=229;
+          Doku="********************************************************************* \
+          Von IObserver geerbte Methoden*********************************************************************......................................................................./ \
+          @brief\tVeranlasst den Observer, sich die benötigten Informationen /\t\t\tvom \
+          Observable zu holen........................................................................";
+          Name="Update";
+          ID=326;
+          IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
-            Name="value";
-            ID=230;
-            Typ="const Texture*";
+            Name="pObservable";
+            ID=327;
+            Typ="Observable *";
           };
         };
         {
           *** Methode ***;
+          Name="getHeight";
+          ID=328;
+          RueckgabeWert="float";
+        };
+        {
+          *** Methode ***;
+          Name="getWidth";
+          ID=329;
+          RueckgabeWert="float";
+        };
+        {
+          *** Methode ***;
+          Name="releaseDisplayList";
+          ID=340;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Doku="..............................................................................................................................................\t\tvoid \
+          setTexture( const Texture* value );********************************************************************* \
+          Von HapticObject geerbte Methoden*********************************************************************..............................................................................................................................................";
+          Name="renderShape";
+          ID=330;
+          IsVirtual=true;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="setHeight";
+          ID=331;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=332;
+            Typ="float";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setWidth";
+          ID=333;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=334;
+            Typ="float";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="..............................................................................................................................................";
+          Name="translate";
+          ID=335;
+          IsVirtual=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="x";
+            ID=336;
+            Typ="const double";
+          };
+          {
+            *** Parameter ***;
+            Name="y";
+            ID=337;
+            Typ="const double";
+          };
+          {
+            *** Parameter ***;
+            Name="z";
+            ID=338;
+            Typ="const double";
+          };
+        };
+        {
+          *** Methode ***;
+          Doku="..............................................................................................................................................";
           Name="~Node";
-          ID=231;
+          ID=339;
           IsVirtual=true;
         };
         {
           *** Assoziation ***;
-          ID=232;
-          Datentyp="Texture*";
-          Zugriff=1;
-          A=226;
-          B=255;
-          RollenName="m_Texture";
-          KardinalitaetAnfangsKlasse="0..1";
-          KardinalitaetEndeKlasse="0..1";
-        };
-        {
-          *** Assoziation ***;
-          ID=233;
+          ID=124;
           Datentyp="IBusinessAdapter*";
           Zugriff=1;
-          A=226;
-          B=208;
-          RollenName="m_BusinessObject";
-          KardinalitaetAnfangsKlasse="1";
-          KardinalitaetEndeKlasse="1";
+          A=104;
+          B=246;
+          RollenName="m_pBusinessObject";
         };
         {
           *** Vererbung ***;
-          ID=234;
-          A=226;
-          B=185;
+          ID=125;
+          A=104;
+          B=223;
         };
         {
           *** Vererbung ***;
           Stereotype="implements";
-          ID=235;
-          A=226;
-          B=223;
+          ID=126;
+          A=104;
+          B=261;
         };
       };
       {
@@ -2485,7 +2613,7 @@ Jumli
         erben, können Objekte, die an ihrem Zustand/\t\t\tinteressiert sind über \
         Änderungen informieren ohne eine enge Bindung /\t\t\tzu ihnen zu haben................................................................................";
         Name="Observable";
-        ID=236;
+        ID=264;
         Datentyp="class";
         Zugriff=3;
         KomponentenId=-1;
@@ -2499,7 +2627,7 @@ Jumli
           Doku="......................................................................./ \
           @brief\tListe aller angemeldeten Observer........................................................................";
           Name="m_Observers";
-          ID=237;
+          ID=265;
           Datentyp="list<IObserver*>";
           Zugriff=1;
         };
@@ -2508,12 +2636,12 @@ Jumli
           Doku="......................................................................./ \
           @brief\tRegistriert einen neuen Obersver........................................................................";
           Name="AddObserver";
-          ID=238;
+          ID=266;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pObserver";
-            ID=239;
+            ID=267;
             Typ="IObserver *";
           };
         };
@@ -2523,14 +2651,14 @@ Jumli
           @brief\tInformiert alle Observer darüber, dass sich der Zustand des /\t\t\tObservables \
           geändert hat........................................................................";
           Name="NotifyAll";
-          ID=240;
+          ID=268;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
           Doku="..............................................................................................................................................";
           Name="Observable";
-          ID=241;
+          ID=269;
         };
         {
           *** Methode ***;
@@ -2538,28 +2666,28 @@ Jumli
           @brief\tMeldet einen Observer beim Observable ab. Das Observer-Objekt/\t\t\twird \
           dabei nicht gelöscht........................................................................";
           Name="RemoveObserver";
-          ID=242;
+          ID=270;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pObserver";
-            ID=243;
+            ID=271;
             Typ="IObserver *";
           };
         };
         {
           *** Methode ***;
           Name="~Observable";
-          ID=244;
+          ID=272;
           IsVirtual=true;
         };
         {
           *** Assoziation ***;
-          ID=245;
+          ID=273;
           Datentyp="list<IObserver>";
           Zugriff=2;
-          A=236;
-          B=223;
+          A=264;
+          B=261;
           RollenName="m_Observers";
           KardinalitaetAnfangsKlasse="0..*";
           KardinalitaetEndeKlasse="1";
@@ -2569,7 +2697,7 @@ Jumli
         *** Klasse ***;
         Name="Position";
         Stereotype="struct";
-        ID=246;
+        ID=274;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -2581,43 +2709,43 @@ Jumli
         {
           *** Attribut ***;
           Name="x";
-          ID=247;
+          ID=275;
           Datentyp="double";
         };
         {
           *** Attribut ***;
           Name="y";
-          ID=248;
+          ID=276;
           Datentyp="double";
         };
         {
           *** Attribut ***;
           Name="z";
-          ID=249;
+          ID=277;
           Datentyp="double";
         };
         {
           *** Methode ***;
           Name="Position";
-          ID=250;
+          ID=278;
           {
             *** Parameter ***;
             Name="x";
-            ID=251;
+            ID=279;
             Typ="double";
             Default="0.0";
           };
           {
             *** Parameter ***;
             Name="y";
-            ID=252;
+            ID=280;
             Typ="double";
             Default="0.0";
           };
           {
             *** Parameter ***;
             Name="z";
-            ID=253;
+            ID=281;
             Typ="double";
             Default="0.0";
           };
@@ -2625,14 +2753,14 @@ Jumli
         {
           *** Methode ***;
           Name="~Position";
-          ID=254;
+          ID=282;
           IsVirtual=true;
         };
       };
       {
         *** Klasse ***;
         Name="Texture";
-        ID=255;
+        ID=283;
         Datentyp="class";
         NameSpace="GraphFWEntwurf";
         KomponentenId=-1;
@@ -2642,11 +2770,110 @@ Jumli
         HeaderFileActiveLine=-1;
         Parent=-1;
       };
+      {
+        *** Klasse ***;
+        Name="ViscousForceEffect";
+        ID=284;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\ViscousForceEffect.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\ViscousForceEffect.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="m_Gain";
+          ID=285;
+          Datentyp="double";
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_Magnitude";
+          ID=286;
+          Datentyp="double";
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Name="ViscousForceEffect";
+          ID=287;
+          {
+            *** Parameter ***;
+            Name="magnitude";
+            ID=288;
+            Typ="double";
+            Default="0.0";
+          };
+          {
+            *** Parameter ***;
+            Name="gain";
+            ID=289;
+            Typ="double";
+            Default="0.0";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="renderProperties";
+          ID=290;
+          IsVirtual=true;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="setGain";
+          ID=291;
+          IsVirtual=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=292;
+            Typ="double";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setMagnitude";
+          ID=293;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=294;
+            Typ="double";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="~ViscousForceEffect";
+          ID=295;
+          IsVirtual=true;
+        };
+        {
+          *** Vererbung ***;
+          ID=296;
+          A=284;
+          B=213;
+        };
+      };
     };
     {
       *** SourceFiles ***;
       FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\main.cpp";
       ActiveLine=-1;
+    };
+    {
+      *** SourceFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Node.cpp";
+    };
+    {
+      *** SourceFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Node.h";
     };
     {
       *** SourceFiles ***;
@@ -2671,16 +2898,6 @@ Jumli
     {
       *** SourceFiles ***;
       FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Utilities.h";
-      ActiveLine=-1;
-    };
-    {
-      *** SourceFiles ***;
-      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\ViscousForceEffect.h";
-      ActiveLine=-1;
-    };
-    {
-      *** SourceFiles ***;
-      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\ViscousForceEffect.cpp";
       ActiveLine=-1;
     };
   };
