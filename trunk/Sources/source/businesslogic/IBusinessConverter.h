@@ -5,8 +5,11 @@
 class IBusinessConverter
 {
 public:
+	
+	// Parameter sollte "Position" sein, Rückgabetyp muss noch festgelegt werden
 	virtual void viewToBusinessCoordinates() = 0;
 	
+	// Rückgabetyp sollte "Position" sein, Parametertyp muss noch festgelegt werden
 	virtual void businessToViewCoordinates() = 0;
 	
 };
