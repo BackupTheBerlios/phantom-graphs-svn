@@ -1,7 +1,21 @@
+//*******************************************************************************
+/// @file	AppConfiguration.h
+/// @author	Carsten, Arnold
+/// @date	Erstellt am		06.01.2006
+/// @date	Letzte Änderung	06.01.2006
+//*******************************************************************************
+
+// Änderungen:
+// 06.01.2006	- Konstruktor, Destruktor
+//				- initTasks hinzugefügt
+// 09.01.2006
+
 #include "AppConfiguration.h"
+
 
 AppConfiguration::AppConfiguration()
 {
+	
 }
 
 int AppConfiguration::getProjectDuration()
@@ -22,7 +36,7 @@ void AppConfiguration::initTasks()
 {
 	list<BusinessTask*>::iterator itObj;
 
-	for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
+	/*for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
 	{
 		if (*itObj != NULL)
 		{
@@ -31,6 +45,11 @@ void AppConfiguration::initTasks()
 		}
 	}
 	m_BusinessTasks.clear();
+	*/
+
+	// m_ProjectDuration = 300;
+
+	// BusinessTask task = new BusinessTask;
 
 	
 	

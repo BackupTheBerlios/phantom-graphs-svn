@@ -12,12 +12,11 @@
 #ifndef _APPCONFIGURATION_H_
 #define _APPCONFIGURATION_H_
 
+#include "BusinessTask.h"
 #include <list>
 
 using namespace std;
 
-#include "BusinessTask.h"
-// #include "..\hapticgraphclasses\HapticObject.h"
 
 //...............................................................................
 /// @author	Carsten Arnold
@@ -33,17 +32,16 @@ protected:
 
 
 public:
-	void initTasks();
-	virtual ~AppConfiguration();
+	static void initTasks();
+	~AppConfiguration();
 	
+	/// @brief	Dauer des gesamt darzustellenden Projekts setzen
 	static void setProjectDuration( int value );
 	
+	/// @brief	Gibt die gesamt darzustellenden Dauer des Projekts zurück
 	static int getProjectDuration();
 
-	//.......................................................................
 	/// @brief	Liste aller Aufgaben.
-	//.......................................................................
-//	vector<HapticObject*> m_SceneElements;
 	list<BusinessTask*> m_BusinessTasks;
 
 	AppConfiguration();

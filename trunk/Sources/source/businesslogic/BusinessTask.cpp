@@ -11,6 +11,7 @@
 
 BusinessTask::BusinessTask()
 {
+	name = (char) "unnamed Task";
 	day_begin = 0;
 	day_duration = 0;
 	day_end = day_begin + day_duration;
@@ -20,15 +21,15 @@ BusinessTask::BusinessTask()
 	surface = 0;
 }
 
-BusinessTask::BusinessTask(int begin, int duration, int final, bool Milestone)
+BusinessTask::BusinessTask(char taskname, int begin, int duration, int final, bool Milestone)
 {
-	int test;
+	name = taskname;
 	day_begin = begin;
 	day_duration = duration;
 	day_final = final;
 	isMilestone = Milestone;
 	day_end = calcDayEnd(day_begin, day_duration);
-	test = AppConfiguration::getProjectDuration();
+	
 }
 
 
@@ -59,4 +60,21 @@ void BusinessTask::viewToBusinessCoordinates()
 void BusinessTask::businessToViewCoordinates()
 {
 
+}
+
+float BusinessTask::getWidth()
+{
+	width = 1.0;
+	return width;
+}
+
+float BusinessTask::getHeight()
+{
+	height = 1.0;
+	return height;
+}
+
+Position BusinessTask::getPosition()
+{
+	return position;
 }

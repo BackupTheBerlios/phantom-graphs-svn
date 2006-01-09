@@ -24,7 +24,7 @@ Description:
 /// @file	Main.cpp
 /// @author	angepasst von Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	30.12.2005
+/// @date	Letzte Änderung	09.01.2006 CA
 //*******************************************************************************
 
 // Änderungen:
@@ -36,7 +36,8 @@ Description:
 //				- Cursor wird jetzt von Cursor-Objekt gezeichnet
 // 30.12.05		- Fenster etwas vergrößert
 //				- nicht benötigte Funktionen gelöscht
-// 06.01.2006	- Task Erzeugung hinzugefügt
+// 06.01.2006	- Task Erzeugung hinzugefügt CA
+// 09.01.2006	- include der AppConfiguration CA
 
 #include <math.h>
 #include <assert.h>
@@ -61,6 +62,11 @@ Description:
 #include "hapticgraphclasses/HapticCursor.h"
 #include "exceptionclasses/HapticsExceptions.h"
 
+// Includes der Businesslogik
+#include "businesslogic/AppConfiguration.h"
+#include "businesslogic/BusinessTask.h"
+
+
 // Objekt zur Verwaltung des haptischen Gerätes
 static HapticDevice * pHapticDevice = NULL;
  
@@ -83,16 +89,18 @@ void initScene();
 
 //........................
 /// @author Carsten Arnold
-/// @brief initialises static tasks
+/// @brief initialises static tasks and defines Project Workspace
 //........................
-void initTasks(); 
+void setAppData(); 
 
 /*******************************************************************************
  Initializes GLUT for displaying a simple haptic scene
 *******************************************************************************/
 int main(int argc, char *argv[])
 {
-    glutInit(&argc, argv);
+    setAppData();
+	
+	glutInit(&argc, argv);
     
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 
@@ -250,7 +258,9 @@ void exitHandler()
 	}
 }
 
-void initTasks()
+void setAppData()
 {
+	AppConfiguration::initTasks();
+	// BusinessTask task = new BusinessTask();
 
 }

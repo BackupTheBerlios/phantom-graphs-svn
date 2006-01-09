@@ -14,6 +14,7 @@
 
 #include "IBusinessAdapter.h"
 #include "IBusinessConverter.h"
+#include "..\HAPTICGRAPHCLASSES\Utilities.h"	// Hinzugefügt von der Klassenansicht
 
 
 //...............................................................................
@@ -23,12 +24,18 @@
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
+	Position getPosition();
+	float getHeight();
+	float getWidth();
 	int getForce();
 	BusinessTask();
-	BusinessTask(int day_begin, int day_duration, int day_final, bool isMilestone);
+	BusinessTask(char taskname, int day_begin, int day_duration, int day_final, bool isMilestone);
 	virtual ~BusinessTask();
 
 private:
+	float height;
+	float width;
+	Position position;
 	int calcDayEnd(int begin, int duration);
 	bool isMilestone;
 	int day_begin;
@@ -37,7 +44,7 @@ private:
 	int day_final;
 	int force;
 	int day_duration;
-	char name[60];
+	char name;
 protected:
 	void businessToViewCoordinates();
 	void viewToBusinessCoordinates();
