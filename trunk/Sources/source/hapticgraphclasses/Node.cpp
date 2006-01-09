@@ -109,13 +109,13 @@ void Node::renderShape()
 		glBegin(GL_QUADS);
 
 		// linke untere Ecke
-		glVertex3f( 0.0f,		-m_Height,	-0.6f);
+		glVertex3f( 0.0f,		-m_Height,	-0.1f);
 		// rechte untere Ecke
-		glVertex3f( m_Width,	-m_Height,	-0.6f);
+		glVertex3f( m_Width,	-m_Height,	-0.1f);
 		// rechte obere Ecke
-		glVertex3f( m_Width,	 0.0f,		-0.6f);
+		glVertex3f( m_Width,	 0.0f,		-0.1f);
 		// linke obere Ecke
-		glVertex3f( 0.0f,		 0.0f,		-0.6f);
+		glVertex3f( 0.0f,		 0.0f,		-0.1f);
 
 		glEnd();
         glEndList();
