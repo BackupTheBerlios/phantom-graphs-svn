@@ -49,8 +49,8 @@ void AppConfiguration::initTasks()
 
 	// m_ProjectDuration = 300;
 
-	// BusinessTask task = new BusinessTask;
+	BusinessTask *task = new BusinessTask();
 
-	
+	//m_BusinessTasks.push_back(task);
 	
 }

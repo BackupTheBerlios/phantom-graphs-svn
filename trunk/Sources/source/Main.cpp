@@ -76,6 +76,9 @@ static GraphScene scene;
 // Cursor-Objekt
 static HapticCursor cursor;
 
+// Objekt  mit globale Konfigurations Daten
+AppConfiguration appData;
+
 // Function prototypes.
 void glutDisplay(void);
 void glutReshape(int width, int height);
@@ -260,7 +263,7 @@ void exitHandler()
 
 void setAppData()
 {
-	AppConfiguration::initTasks();
+	appData.initTasks();
 	// BusinessTask task = new BusinessTask();
 
 }

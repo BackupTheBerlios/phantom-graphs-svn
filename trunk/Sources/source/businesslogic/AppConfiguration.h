@@ -27,12 +27,12 @@ using namespace std;
 
 class AppConfiguration
 {
-protected:
+public:
 	static int m_ProjectDuration;
 
 
 public:
-	static void initTasks();
+	void initTasks();
 	~AppConfiguration();
 	
 	/// @brief	Dauer des gesamt darzustellenden Projekts setzen
