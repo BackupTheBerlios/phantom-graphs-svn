@@ -110,6 +110,9 @@ class Node : public HapticObject, public IObserver
 		virtual void translate(const double x, const double y, const double z);
 
 		//***********************************************************************
+
+
+		//***********************************************************************
 		// Von IObserver geerbte Methoden
 		//***********************************************************************
 
@@ -119,6 +122,7 @@ class Node : public HapticObject, public IObserver
 		//.......................................................................
 		virtual void Update( Observable * pObservable );
 
+		//***********************************************************************
 		
 };
 

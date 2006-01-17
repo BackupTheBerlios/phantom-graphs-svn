@@ -19,6 +19,7 @@
 #include "GraphScene.h"
 #include "Node.h"
 #include "DragObjectHandler.h"
+#include "Grid.h"
 
 
 //*******************************************************************************
@@ -68,11 +69,15 @@ void GraphScene::initScene()
 	// Hintergrundfarbe festlegen
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
+	// Grid erzeugen
+	HapticObject * tmpGrid = new Grid(3, 2);
+	addObject(tmpGrid);
+
 	// Dummy-Implementierung
 	HapticObject * tmpObj = new Node(NULL);
 	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
 	tmpObj->addHapticAction(drag);
-	tmpObj->translate(0.5, 0.0, 0.0);
+//	tmpObj->translate(0.5, 0.0, 0.0);
 	tmpObj->setHapticConstraint(new HapticConstraint(4.0f));
 	addObject(tmpObj);
 
