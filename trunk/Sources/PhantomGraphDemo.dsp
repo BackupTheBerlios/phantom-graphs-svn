@@ -124,6 +124,14 @@ SOURCE=.\source\hapticgraphclasses\GraphScene.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\Grid.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\Grid.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\HapticAction.h
 # End Source File
 # Begin Source File

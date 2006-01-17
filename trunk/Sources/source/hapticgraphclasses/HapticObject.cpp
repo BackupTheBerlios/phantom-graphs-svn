@@ -123,7 +123,10 @@ void HapticObject::renderHaptics()
 
     hlEndShape();
 
-	m_pHapticConstraint->renderConstraint(this);
+	if (m_pHapticConstraint != NULL)
+	{
+		m_pHapticConstraint->renderConstraint(this);
+	}
 }
 //*******************************************************************************
 
@@ -132,7 +135,7 @@ void HapticObject::renderDefaultGraphicProperties()
 {
 	// Dummy
 	glDisable(GL_LIGHTING);
-	glColor3f(1.0f, 1.0f, 1.0f);
+	glColor3f(0.43f, 0.48f, 0.64f);
 }
 //*******************************************************************************
 

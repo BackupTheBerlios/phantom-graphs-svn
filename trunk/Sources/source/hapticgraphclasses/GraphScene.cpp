@@ -65,6 +65,9 @@ void GraphScene::addObject( HapticObject * obj )
 //*******************************************************************************
 void GraphScene::initScene()
 {
+	// Hintergrundfarbe festlegen
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+
 	// Dummy-Implementierung
 	HapticObject * tmpObj = new Node(NULL);
 	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
