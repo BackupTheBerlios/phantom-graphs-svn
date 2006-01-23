@@ -12,24 +12,28 @@
 #pragma once
 #endif // _MSC_VER > 1000
 
+#include <string>
+#include <iostream>
 #include "IBusinessAdapter.h"
 #include "IBusinessConverter.h"
 #include "..\HAPTICGRAPHCLASSES\Utilities.h"	// Hinzugefügt von der Klassenansicht
 
+using namespace std;
 
 //...............................................................................
-/// @brief	diese KLasse verwaltet alle Aufgaben, die im Graf dargestellt werden sollen.
+/// @brief	diese KLasse verwaltet alle Aufgaben, die im Graph dargestellt werden sollen.
 ///
 //...............................................................................
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
+	void printInfo();
 	Position getPosition();
 	float getHeight();
 	float getWidth();
 	int getForce();
 	BusinessTask();
-	BusinessTask(char taskname, int day_begin, int day_duration, int day_final, bool isMilestone);
+	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);
 	virtual ~BusinessTask();
 
 private:
@@ -44,7 +48,7 @@ private:
 	int day_final;
 	int force;
 	int day_duration;
-	char name;
+	string name;
 protected:
 	void businessToViewCoordinates();
 	void viewToBusinessCoordinates();

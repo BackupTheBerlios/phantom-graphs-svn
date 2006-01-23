@@ -13,24 +13,27 @@ extern AppConfiguration appData;
 BusinessTask::BusinessTask()
 {
 	name = (char) "unnamed Task";
-	day_begin = 0;
 	day_duration = 0;
-	day_end = day_begin + day_duration;
 	day_final = 0;
-	force = 0;
 	isMilestone = false;
+
+	day_begin = -1;
+	day_end = day_begin + day_duration;
+	force = 0;
 	surface = 0;
 }
 
-BusinessTask::BusinessTask(char taskname, int begin, int duration, int final, bool Milestone)
+BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milestone)
 {
 	name = taskname;
-	day_begin = begin;
 	day_duration = duration;
 	day_final = final;
 	isMilestone = Milestone;
+
+	// day_begin = begin;
 	day_end = calcDayEnd(day_begin, day_duration);
-	
+	force = 0;
+	surface = 0;
 }
 
 
@@ -78,4 +81,10 @@ float BusinessTask::getHeight()
 Position BusinessTask::getPosition()
 {
 	return position;
+}
+
+void BusinessTask::printInfo()
+{
+	cout << this->name << " dauert " << this->day_duration << " Tage." << endl;
+	//printf("\n\n \n\n");
 }

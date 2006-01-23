@@ -76,9 +76,6 @@ static GraphScene scene;
 // Cursor-Objekt
 static HapticCursor cursor;
 
-// Objekt  mit globale Konfigurations Daten
-AppConfiguration appData;
-
 // Function prototypes.
 void glutDisplay(void);
 void glutReshape(int width, int height);
@@ -90,18 +87,28 @@ void initGL();
 void initHL();
 void initScene();
 
+// initialisiere Konfigurationsdaten Objekt
+void setAppData();
+
 //........................
 /// @author Carsten Arnold
-/// @brief initialises static tasks and defines Project Workspace
+/// @brief Objekt mit globale Konfigurations Daten CA
 //........................
-void setAppData(); 
+AppConfiguration appData;
 
 /*******************************************************************************
  Initializes GLUT for displaying a simple haptic scene
 *******************************************************************************/
 int main(int argc, char *argv[])
 {
+	/* wird erst mal nicht benötigt, da die Applikationsdaten
+	 * in einem Objekt erzeugt werden.
+	 */
     setAppData();
+
+	//appData = new AppConfiguration();
+
+
 	
 	glutInit(&argc, argv);
     

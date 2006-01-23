@@ -14,6 +14,7 @@
 
 #include "BusinessTask.h"
 #include <list>
+#include <iostream>
 
 using namespace std;
 
@@ -27,24 +28,24 @@ using namespace std;
 
 class AppConfiguration
 {
-public:
-	static int m_ProjectDuration;
+private:
+	int m_ProjectDuration;
 
 
 public:
 	void initTasks();
-	~AppConfiguration();
 	
 	/// @brief	Dauer des gesamt darzustellenden Projekts setzen
-	static void setProjectDuration( int value );
+	void setProjectDuration( int value );
 	
 	/// @brief	Gibt die gesamt darzustellenden Dauer des Projekts zurück
-	static int getProjectDuration();
+	int getProjectDuration();
 
 	/// @brief	Liste aller Aufgaben.
 	list<BusinessTask*> m_BusinessTasks;
 
 	AppConfiguration();
+	~AppConfiguration();
 	
 };
 
