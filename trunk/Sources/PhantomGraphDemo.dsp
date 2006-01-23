@@ -108,6 +108,14 @@ SOURCE=.\source\hapticgraphclasses\DragObjectHandler.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\DragSceneHandler.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\DragSceneHandler.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\FrictionForceEffect.cpp
 # End Source File
 # Begin Source File

@@ -15,10 +15,12 @@
 
 // OpenGL includes
 #include <GL/gl.h>
+#include <GL/glu.h>
 
 #include "GraphScene.h"
 #include "Node.h"
 #include "DragObjectHandler.h"
+#include "DragSceneHandler.h"
 #include "Grid.h"
 
 
@@ -45,10 +47,10 @@ GraphScene::~GraphScene()
 	}
 	m_SceneElements.clear();
 
-hlBeginFrame();
-eff->stopEffect();
+//hlBeginFrame();
+//eff->stopEffect();
 //eff2.stopEffect();
-hlEndFrame();
+//hlEndFrame();
 
 }
 //*******************************************************************************
@@ -71,6 +73,9 @@ void GraphScene::initScene()
 
 	// Grid erzeugen
 	HapticObject * tmpGrid = new Grid(3, 2);
+	DragSceneHandler * pdragsc = new DragSceneHandler(this);
+	tmpGrid->addHapticAction(pdragsc);
+	tmpGrid->setHapticConstraint(new HapticConstraint(1.2f));
 	addObject(tmpGrid);
 
 	// Dummy-Implementierung
@@ -84,12 +89,12 @@ void GraphScene::initScene()
 //eff = new FrictionForceEffect(0.5, 0.4);
 //double dir[3] = {-1.0, 0.0, 0.0};
 //eff = new ConstantForceEffect(dir, 0.5);
-eff = new ViscousForceEffect(2.0, 2.0);
+//eff = new ViscousForceEffect(2.0, 2.0);
 //eff.setGain(0.4);
 //eff.setMagnitude(0.5);
-hlBeginFrame();
-eff->startEffect();
-hlEndFrame();
+//hlBeginFrame();
+//eff->startEffect();
+//hlEndFrame();
 //eff2.startEffect();
 }
 //*******************************************************************************
@@ -150,5 +155,16 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 		// Haptic Frame beenden
 		hlEndFrame();
 	}
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void GraphScene::viewFrom(float x, float y, double nearDistance)
+{
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();            
+    gluLookAt(x, y, nearDistance + 1.0,
+              x, y, 0,
+              0, 1, 0);	
 }
 //*******************************************************************************

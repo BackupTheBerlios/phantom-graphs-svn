@@ -159,12 +159,14 @@ void glutReshape(int width, int height)
     glLoadIdentity();
     gluPerspective(kFovY, aspect, nearDist, farDist);
 
-    /* Place the camera down the Z axis looking at the origin */
+    // Place the camera down the Z axis looking at the origin 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();            
-    gluLookAt(0, 0, nearDist + 1.0,
-              0, 0, 0,
-              0, 1, 0);
+//    gluLookAt(0, 0, nearDist + 1.0,
+//              0, 0, 0,
+//              0, 1, 0);
+
+	scene.viewFrom(0.0, 0.0, nearDist);
 
 	pHapticDevice->updateWorkspace();
 

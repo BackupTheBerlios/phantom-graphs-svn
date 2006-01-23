@@ -85,6 +85,11 @@ ViscousForceEffect * eff;
 		/// @param	obj	Pointer auf das Objekt, das hinzugefügt werden soll.
 		//.......................................................................
 		void addObject( HapticObject * obj );
+
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		void viewFrom(float x, float y, double nearDistance);
 		
 };
 
