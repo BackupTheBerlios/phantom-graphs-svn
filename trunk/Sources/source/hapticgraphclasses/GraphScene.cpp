@@ -20,6 +20,7 @@
 #include "GraphScene.h"
 #include "Node.h"
 #include "DragObjectHandler.h"
+#include "DragNodeOnGridHandler.h"
 #include "DragSceneHandler.h"
 #include "Grid.h"
 
@@ -75,7 +76,7 @@ void GraphScene::initScene()
 	HapticObject * tmpGrid = new Grid(3, 2);
 	DragSceneHandler * pdragsc = new DragSceneHandler(this);
 	tmpGrid->addHapticAction(pdragsc);
-	tmpGrid->setHapticConstraint(new HapticConstraint(1.2f));
+//	tmpGrid->setHapticConstraint(new HapticConstraint(1.2f));
 	addObject(tmpGrid);
 
 	// Dummy-Implementierung
@@ -85,6 +86,12 @@ void GraphScene::initScene()
 //	tmpObj->translate(0.5, 0.0, 0.0);
 	tmpObj->setHapticConstraint(new HapticConstraint(4.0f));
 	addObject(tmpObj);
+
+	Node * tmpNode = new Node(NULL);
+	DragNodeOnGridHandler * dnh = new DragNodeOnGridHandler(tmpNode);
+	tmpNode->addHapticAction(dnh);
+	tmpNode->translate(0.5, 0.0, 0.0);
+	addObject(tmpNode);
 
 //eff = new FrictionForceEffect(0.5, 0.4);
 //double dir[3] = {-1.0, 0.0, 0.0};

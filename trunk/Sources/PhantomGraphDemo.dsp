@@ -100,6 +100,14 @@ SOURCE=.\source\hapticgraphclasses\ConstantForceEffect.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\DragNodeOnGridHandler.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\DragNodeOnGridHandler.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\DragObjectHandler.cpp
 # End Source File
 # Begin Source File

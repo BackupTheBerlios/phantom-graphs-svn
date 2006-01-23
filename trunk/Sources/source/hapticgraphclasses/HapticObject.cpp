@@ -13,6 +13,7 @@
 // 08.01.06		- setHapticConstraint() implementiert, Konstruktor und Destruktor angepasst
 //				  und in renderHaptics() einen Aufruf von m_pHapticConstraint->renderConstraint()
 //				  hinzugefügt
+// 23.01.06		- Methode renderShapeAtPosition() hinzugefügt und implementiert.
 
 // Haptics Library includes
 #include <HL/hl.h>
@@ -92,16 +93,23 @@ void HapticObject::addHapticAction( IHapticAction * act )
 //}
 
 //*******************************************************************************
+void HapticObject::renderShapeAtPosition()
+{
+	glPushMatrix();
+	glMultMatrixd(m_transformMatrix);
+    renderShape();
+	glPopMatrix();
+}
+//*******************************************************************************
+
+//*******************************************************************************
 void HapticObject::renderGraphics()
 {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	// Dummy
 	renderDefaultGraphicProperties();
 
-	glPushMatrix();
-	glMultMatrixd(m_transformMatrix);
-    renderShape();
-	glPopMatrix();
+	renderShapeAtPosition();
 
 	glPopAttrib();
 }
@@ -116,10 +124,7 @@ void HapticObject::renderHaptics()
 	// Dummy
     renderDefaultHapticProperties();
 
-	glPushMatrix();
-	glMultMatrixd(m_transformMatrix);
-    renderShape();
-	glPopMatrix();
+	renderShapeAtPosition();
 
     hlEndShape();
 

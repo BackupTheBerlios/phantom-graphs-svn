@@ -33,7 +33,7 @@ void HLCALLBACK DragObjectHandler::OnButtonUp(	HLenum event,
 														HLuint shapeID,
 														HLenum thread,
 														HLcache *cache,
-														void *userdata)
+														void *unused)
 {
 	hlRemoveEventCallback(HL_EVENT_MOTION, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragObjectHandler::OnDrag);
 	hlRemoveEventCallback(HL_EVENT_1BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragObjectHandler::OnButtonUp);

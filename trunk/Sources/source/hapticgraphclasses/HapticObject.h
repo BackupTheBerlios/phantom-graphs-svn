@@ -2,7 +2,7 @@
 /// @file	HapticObject.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	08.01.2006
+/// @date	Letzte Änderung	23.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -11,6 +11,7 @@
 // 08.01.06		- Attribut m_pHapticConstraint und zugehörigen Setter hinzugefügt
 //				- Baustellencode aufgeräumt
 //				- Doku zu einigen Attributen und Methoden geschrieben
+// 23.01.06		- Methode renderShapeAtPosition() hinzugefügt.
 
 
 #ifndef _HAPTICOBJECT_H_
@@ -104,6 +105,11 @@ class HapticObject
 		///			muss von allen abgeleiteten Klassen implementiert werden.
 		//.......................................................................
 		virtual void renderShape() = 0;
+
+		//.......................................................................
+		/// @brief	Rendert die Geometrie des Objekts an der richtigen Position im Raum.
+		//.......................................................................
+		virtual void renderShapeAtPosition();
 
 		//.......................................................................
 		//.......................................................................

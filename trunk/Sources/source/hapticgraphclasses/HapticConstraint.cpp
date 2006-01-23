@@ -2,11 +2,12 @@
 /// @file	HapticConstraint.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		02.01.2006
-/// @date	Letzte Änderung	08.01.2006
+/// @date	Letzte Änderung	23.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 08.01.06		- Implementierung der Klasse
+// 23.01.06		- Der Constraint wird jetzt an der richtigen Stelle gerendert.
 
 
 #include "HapticConstraint.h"
@@ -36,7 +37,7 @@ void HapticConstraint::renderConstraint( HapticObject * pObj )
     hlTouchModel(HL_CONSTRAINT);
     hlTouchModelf(HL_SNAP_DISTANCE, m_SnapDistance);
 	
-	pObj->renderShape();
+	pObj->renderShapeAtPosition();
 
 	hlEndShape();
 }
