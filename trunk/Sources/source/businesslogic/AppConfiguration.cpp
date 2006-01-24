@@ -8,16 +8,24 @@
 // Änderungen:
 // 06.01.2006	- Konstruktor, Destruktor
 //				- initTasks hinzugefügt
-// 09.01.2006
+// 09.01.2006	- Aufgaben initialisiern
+// 24.01.2006   - Startaufgabe festgelegt (m_rootTask)
 
 #include "AppConfiguration.h"
 
 
 AppConfiguration::AppConfiguration()
 {
+	/// @brief Ausgabe von Debuginfos ein-/ausschalten
+	setDebugState(true);
+	
 	// statische Festlegung der Projektdauer
 	setProjectDuration(300);
-	cout << "Das Projekt dauert " << getProjectDuration() << " Tage." << endl;
+	
+	/// @brief Debugausgabe Projektdauer
+	if(getDebugState()){
+		cout << "Das Projekt dauert " << getProjectDuration() << " Tage." << endl;
+	}
 
 }
 
@@ -40,7 +48,6 @@ void AppConfiguration::initTasks()
 {
 	list<BusinessTask*>::iterator itObj;
 
-
 	BusinessTask *task01 = new BusinessTask("A01",7,10,0);
 	BusinessTask *task02 = new BusinessTask("A02",14,24,1);
 	BusinessTask *task03 = new BusinessTask("A03",20,44,0);
@@ -50,7 +57,6 @@ void AppConfiguration::initTasks()
 	BusinessTask *task07 = new BusinessTask("A07",6,80,0);
 	BusinessTask *task08 = new BusinessTask("A08",6,300,1);
 
-	//m_BusinessTasks.push_back(task);
 	m_BusinessTasks.push_back(task01);
 	m_BusinessTasks.push_back(task02);
 	m_BusinessTasks.push_back(task03);
@@ -62,18 +68,40 @@ void AppConfiguration::initTasks()
 
 	//task01->printInfo();
 
-	for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
+	
+	/// @brief Debuginfo zur Ausgabe aller Tasks
+	if(getDebugState())
 	{
-		if (*itObj != NULL)
+		for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
 		{
-			//delete *itObj;
-			//*itObj = NULL;
-			(*itObj)->printInfo();
+			if (*itObj != NULL)
+			{
+				//delete *itObj;
+				//*itObj = NULL;
+				(*itObj)->printInfo();
+			}
 		}
+		cout << endl;
 	}
-	cout << endl;
 	
 	//m_BusinessTasks.clear();
-	
 
+	/* set root Aufgabe */
+	m_rootTask = *m_BusinessTasks.begin();
+	
+	/// @brief Debuginfo zur Ausgabe aller Tasks
+	if(getDebugState())
+	{
+		cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
+	}
+}
+
+bool AppConfiguration::getDebugState()
+{
+	return m_debug;
+}
+
+void AppConfiguration::setDebugState(bool state)
+{
+	m_debug = state;
 }

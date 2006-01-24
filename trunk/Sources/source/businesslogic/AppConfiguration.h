@@ -29,10 +29,19 @@ using namespace std;
 class AppConfiguration
 {
 private:
+	bool m_debug;
 	int m_ProjectDuration;
 
 
 public:
+	void setDebugState(bool);
+	bool getDebugState();
+	/// @ brief Pointer auf die Startaufgabe
+	IBusinessAdapter* m_rootTask;
+
+	/// @brief hier werden alle Aufgaben initialisiert
+	/// momentan hard codiert, als Erwiterung ist das einlesen aus XML
+	/// vorgesehen
 	void initTasks();
 	
 	/// @brief	Dauer des gesamt darzustellenden Projekts setzen
@@ -45,8 +54,7 @@ public:
 	list<BusinessTask*> m_BusinessTasks;
 
 	AppConfiguration();
-	~AppConfiguration();
-	
+	~AppConfiguration();	
 };
 
 #endif

@@ -12,26 +12,30 @@ extern AppConfiguration appData;
 
 BusinessTask::BusinessTask()
 {
-	name = (char) "unnamed Task";
+	m_Name = (char) "unnamed Task";
 	day_duration = 0;
 	day_final = 0;
 	isMilestone = false;
 
-	day_begin = -1;
-	day_end = day_begin + day_duration;
+	m_DayBegin = -1;
+	day_end = m_DayBegin + day_duration;
 	force = 0;
 	surface = 0;
+
+	// Nachfolger- und Vorgängerlisten löschen
+	m_TasksFollowing.clear();
+	m_TasksPrivious.clear();
 }
 
 BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milestone)
 {
-	name = taskname;
+	m_Name = taskname;
 	day_duration = duration;
 	day_final = final;
 	isMilestone = Milestone;
 
-	// day_begin = begin;
-	day_end = calcDayEnd(day_begin, day_duration);
+	// m_DayBegin = begin;
+	day_end = calcDayEnd(m_DayBegin, day_duration);
 	force = 0;
 	surface = 0;
 }
@@ -85,6 +89,20 @@ Position BusinessTask::getPosition()
 
 void BusinessTask::printInfo()
 {
-	cout << this->name << " dauert " << this->day_duration << " Tage." << endl;
-	//printf("\n\n \n\n");
+	cout << this->m_Name << " dauert " << this->day_duration << " Tage." << endl;
+}
+
+string BusinessTask::getName()
+{
+	return m_Name;
+}
+
+void BusinessTask::addTaskFollowing(BusinessTask)
+{
+
+}
+
+void BusinessTask::addTaskPrevious(BusinessTask)
+{
+
 }
