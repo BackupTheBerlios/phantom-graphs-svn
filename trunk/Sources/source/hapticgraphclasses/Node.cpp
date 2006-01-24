@@ -13,6 +13,7 @@
 
 
 #include "Node.h"
+#include "GraphScene.h"
 //#include "Texture.h"
 
 //*******************************************************************************
@@ -104,6 +105,8 @@ void Node::renderShape()
     }
     else
     {
+		float graphPlaneZ = GraphScene::getGraphPlaneZ();
+
         m_DisplayList = glGenLists(1);
         glNewList(m_DisplayList, GL_COMPILE_AND_EXECUTE);
 		glBegin(GL_QUADS);
@@ -111,13 +114,13 @@ void Node::renderShape()
 		float halfHeight = m_Height / 2;
 
 		// linke untere Ecke
-		glVertex3f( 0.0f,		-halfHeight,	-0.1f);
+		glVertex3f( 0.0f,		-halfHeight,	graphPlaneZ);
 		// rechte untere Ecke
-		glVertex3f( m_Width,	-halfHeight,	-0.1f);
+		glVertex3f( m_Width,	-halfHeight,	graphPlaneZ);
 		// rechte obere Ecke
-		glVertex3f( m_Width,	 halfHeight,		-0.1f);
+		glVertex3f( m_Width,	 halfHeight,	graphPlaneZ);
 		// linke obere Ecke
-		glVertex3f( 0.0f,		 halfHeight,		-0.1f);
+		glVertex3f( 0.0f,		 halfHeight,	graphPlaneZ);
 
 		glEnd();
         glEndList();

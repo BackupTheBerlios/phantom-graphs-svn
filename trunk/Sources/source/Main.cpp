@@ -29,13 +29,13 @@ Description:
 
 // Änderungen:
 // 26.12.05		- Die vorhandenen Shapes und zugehörigen Aufrufe des 
-//				  Constraint-Demo-Programms entfernt
+//				  Constraint-Demo-Programms entfernt (KG)
 //				- Initialisierung des Haptischen Gerätes wird jetzt von der Klasse
-//				  HapticDevice durchgeführt
-// 27.12.05		- nicht benötigten Code entfernt
-//				- Cursor wird jetzt von Cursor-Objekt gezeichnet
-// 30.12.05		- Fenster etwas vergrößert
-//				- nicht benötigte Funktionen gelöscht
+//				  HapticDevice durchgeführt (KG)
+// 27.12.05		- nicht benötigten Code entfernt (KG)
+//				- Cursor wird jetzt von Cursor-Objekt gezeichnet (KG)
+// 30.12.05		- Fenster etwas vergrößert (KG)
+//				- nicht benötigte Funktionen gelöscht (KG)
 // 06.01.2006	- Task Erzeugung hinzugefügt CA
 // 09.01.2006	- include der AppConfiguration CA
 
@@ -159,7 +159,7 @@ void glutReshape(int width, int height)
      * a canonical box centered at the origin */
 
     nearDist = 1.0 / tan((kFovY / 2.0) * kPI / 180.0);
-    farDist = nearDist + 4.0;
+    farDist = nearDist + 2.0;
     aspect = (double) width / height;
    
     glMatrixMode(GL_PROJECTION);
@@ -167,8 +167,8 @@ void glutReshape(int width, int height)
     gluPerspective(kFovY, aspect, nearDist, farDist);
 
     // Place the camera down the Z axis looking at the origin 
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();            
+//    glMatrixMode(GL_MODELVIEW);
+//    glLoadIdentity();            
 //    gluLookAt(0, 0, nearDist + 1.0,
 //              0, 0, 0,
 //              0, 1, 0);

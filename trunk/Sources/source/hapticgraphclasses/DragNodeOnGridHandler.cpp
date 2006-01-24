@@ -33,8 +33,14 @@ void HLCALLBACK DragNodeOnGridHandler::OnButtonUp(HLenum event,
 												  HLuint shapeID, 
 												  HLenum thread, 
 												  HLcache * cache, 
-												  void * unused )
+												  void * pHandlerObject )
 {
+	DragNodeOnGridHandler * pHandler = static_cast<DragNodeOnGridHandler*>(pHandlerObject);
+	if (pHandler != NULL)
+	{
+		pHandler->finishAction();
+	}
+
 	hlRemoveEventCallback(HL_EVENT_MOTION, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragNodeOnGridHandler::OnDrag);
 	hlRemoveEventCallback(HL_EVENT_1BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragNodeOnGridHandler::OnButtonUp);
 }
@@ -56,9 +62,10 @@ void HLCALLBACK DragNodeOnGridHandler::OnDrag(HLenum event,
 //*******************************************************************************
 
 //*******************************************************************************
-DragNodeOnGridHandler::DragNodeOnGridHandler( Node* pNode )
+DragNodeOnGridHandler::DragNodeOnGridHandler( Node* pNode, Grid * pGrid )
 {
 	m_pDragObj = pNode;
+	m_pGrid = pGrid;
 	m_LastProxyPos.set(0.0, 0.0, 0.0);
 }
 //*******************************************************************************
@@ -85,6 +92,14 @@ void DragNodeOnGridHandler::handleDrag( HLcache * pCache )
 	hduVector3Dd deltaProxy = proxyPos - m_LastProxyPos;
 	m_pDragObj->translate(deltaProxy[0], 0.0, 0.0);
 	m_LastProxyPos = proxyPos;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void DragNodeOnGridHandler::finishAction()
+{
+	Position newpos = m_pGrid->nearestGridPoint(m_pDragObj->getPosition());
+	m_pDragObj->setPosition(newpos.x, newpos.y, newpos.z);
 }
 //*******************************************************************************
 

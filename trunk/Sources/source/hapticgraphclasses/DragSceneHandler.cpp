@@ -76,7 +76,6 @@ void DragSceneHandler::handleDrag(HLcache * pCache)
 	hduVector3Dd proxyPos;
 	hlCacheGetDoublev(pCache, HL_PROXY_POSITION, proxyPos);
 	hduVector3Dd deltaProxy = proxyPos - m_LastProxyPos;
-//	m_pDragObj->translate(deltaProxy[0], deltaProxy[1], deltaProxy[2]);
 	m_pDragScene->viewFrom(-deltaProxy[0], -deltaProxy[1], 2.7);
 	m_LastProxyPos = proxyPos;
 }

@@ -13,6 +13,7 @@
 
 #include "HapticAction.h"
 #include "Node.h"
+#include "Grid.h"
 #include "Utilities.h"
 
 // ...............................................................................
@@ -38,6 +39,11 @@ class DragNodeOnGridHandler : public IHapticAction
 		/// @brief	Der Node, dem der Eventhandler zugeordnet ist.
 		//.......................................................................
 		Node * m_pDragObj;
+
+		//.......................................................................
+		/// @brief	Das Grid, auf dem der Node verschoben werden soll.
+		//.......................................................................
+		Grid * m_pGrid;
 
 		//.......................................................................
 		/// @brief	Position des Objektes vor dem Dragvorgang.
@@ -74,13 +80,14 @@ class DragNodeOnGridHandler : public IHapticAction
 		/// @param	thread	Gibt an, in welchem HLAPI-Thread das Event behandelt
 		///					 werden soll, in diesem Fall HL_CLIENT_THREAD
 		/// @param	cache	HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert
-		/// @param	unused	Wird von dieser Funktion nicht benötigt
+		/// @param	pHandlerObject	Pointer auf das DragObjectHandler-Objekt, das
+		///					das Event verarbeiten soll
 		//.......................................................................
 		static void HLCALLBACK OnButtonUp(	HLenum event, 
 											HLuint shapeID, 
 											HLenum thread, 
 											HLcache * cache, 
-											void * unused);
+											void * pHandlerObject);
 
 		//.......................................................................
 		/// @brief	(HLAPI-Callbackfunktion) Steuert das Draggen des Objekts
@@ -107,7 +114,7 @@ class DragNodeOnGridHandler : public IHapticAction
 		/// @param	pObj	Pointer auf das haptische Objekt für das der 
 		///					Eventhandler zuständig sein soll
 		//.......................................................................
-		DragNodeOnGridHandler( Node* pNode );
+		DragNodeOnGridHandler( Node* pNode, Grid * pGrid );
 
 		virtual ~DragNodeOnGridHandler();
 
@@ -122,10 +129,12 @@ class DragNodeOnGridHandler : public IHapticAction
 		/// @param	pCache	HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert
 		//.......................................................................
 		void handleDrag( HLcache * pCache );
+
+		void finishAction();
 		
-		//***********************************************************************
+		//=======================================================================
 		// Von IHapticAction geerbte Methoden
-		//***********************************************************************
+		//=======================================================================
 
 		//.......................................................................
 		/// @brief	Registriert die Aktion für eine Shape bei HLAPI
@@ -139,7 +148,7 @@ class DragNodeOnGridHandler : public IHapticAction
 		//.......................................................................
 		virtual void registerAction( HLuint shapeID );
 
-		//***********************************************************************
+		//=======================================================================
 		
 };
 

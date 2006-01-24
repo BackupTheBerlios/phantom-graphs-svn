@@ -73,7 +73,7 @@ void GraphScene::initScene()
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
 	// Grid erzeugen
-	HapticObject * tmpGrid = new Grid(3, 2);
+	Grid * tmpGrid = new Grid(3, 2);
 	DragSceneHandler * pdragsc = new DragSceneHandler(this);
 	tmpGrid->addHapticAction(pdragsc);
 //	tmpGrid->setHapticConstraint(new HapticConstraint(1.2f));
@@ -87,11 +87,20 @@ void GraphScene::initScene()
 	tmpObj->setHapticConstraint(new HapticConstraint(4.0f));
 	addObject(tmpObj);
 
+	bool test = tmpGrid->isGridPoint(tmpObj->getPosition());
+
 	Node * tmpNode = new Node(NULL);
-	DragNodeOnGridHandler * dnh = new DragNodeOnGridHandler(tmpNode);
+	DragNodeOnGridHandler * dnh = new DragNodeOnGridHandler(tmpNode, tmpGrid);
 	tmpNode->addHapticAction(dnh);
-	tmpNode->translate(0.5, 0.0, 0.0);
+	tmpNode->translate(0.13, 0.2, 0.0);
 	addObject(tmpNode);
+
+	Position p = tmpGrid->nearestGridPoint(tmpNode->getPosition());
+
+	Node * tmpN = new Node(NULL);
+	tmpN->addHapticAction(new DragSceneHandler(this));
+	tmpN->translate(-0.5, 0.0, 0.0);
+	addObject(tmpN);
 
 //eff = new FrictionForceEffect(0.5, 0.4);
 //double dir[3] = {-1.0, 0.0, 0.0};
@@ -168,10 +177,19 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 //*******************************************************************************
 void GraphScene::viewFrom(float x, float y, double nearDistance)
 {
-//    glMatrixMode(GL_MODELVIEW);
-//    glLoadIdentity();            
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();            
     gluLookAt(x, y, nearDistance + 1.0,
               x, y, 0,
               0, 1, 0);	
+
+}
+//*******************************************************************************
+
+//*******************************************************************************
+float GraphScene::getGraphPlaneZ()
+{
+	// Dummy
+	return -0.1f;
 }
 //*******************************************************************************

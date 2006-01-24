@@ -2,13 +2,14 @@
 /// @file	GraphScene.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	30.12.2005
+/// @date	Letzte Änderung	24.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 30.12.05		- Konstruktor, Destruktor, renderSceneGraphics(), renderSceneHaptics()
 //				  hinzugefügt
 //				- Doku zu den implementierten Methoden geschrieben.
+// 24.01.06		- Methode getGraphPlaneZ() hinzugefügt.
 
 
 #ifndef _GRAPHSCENE_H_
@@ -90,6 +91,14 @@ ViscousForceEffect * eff;
 		/// @brief	
 		//.......................................................................
 		void viewFrom(float x, float y, double nearDistance);
+
+		//.......................................................................
+		/// @brief	Gibt die z-Koordinate der Ebene parallel zur x-y-Ebene auf 
+		///			der der Graph dargestellt wird zurück.
+		/// @return	z-Koordinate der Ebene parallel zur x-y-Ebene auf der der 
+		///			Graph dargestellt wird.
+		//.......................................................................
+		static float getGraphPlaneZ();
 		
 };
 
