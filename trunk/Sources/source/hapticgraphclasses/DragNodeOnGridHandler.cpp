@@ -2,10 +2,12 @@
 /// @file	DragNodeOnGridHandle.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		23.01.2006
-/// @date	Letzte Änderung	23.01.2006
+/// @date	Letzte Änderung	26.01.2006
 //*******************************************************************************
 
 // Änderungen:
+// 26.01.06		- finishAction() sorgt dafür, dass der Node nach dem Verschieben
+//				  immer auf einem gültigen Gitterpunkt abgesetzt wird.
 
 
 #include "DragNodeOnGridHandler.h"
@@ -18,7 +20,7 @@ void HLCALLBACK DragNodeOnGridHandler::OnButtonDown(HLenum event,
 													void * pHandlerObject )
 {
 	hlAddEventCallback(HL_EVENT_MOTION, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragNodeOnGridHandler::OnDrag, pHandlerObject);
-	hlAddEventCallback(HL_EVENT_1BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragNodeOnGridHandler::OnButtonUp, NULL);
+	hlAddEventCallback(HL_EVENT_1BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragNodeOnGridHandler::OnButtonUp, pHandlerObject);
 
 	DragNodeOnGridHandler * pHandler = static_cast<DragNodeOnGridHandler*>(pHandlerObject);
 	if (pHandler != NULL)

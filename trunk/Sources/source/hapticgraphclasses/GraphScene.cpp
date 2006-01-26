@@ -74,6 +74,7 @@ void GraphScene::initScene()
 
 	// Grid erzeugen
 	Grid * tmpGrid = new Grid(3, 2);
+	tmpGrid->translate(0.2, 0.2, 0.0);
 	DragSceneHandler * pdragsc = new DragSceneHandler(this);
 	tmpGrid->addHapticAction(pdragsc);
 //	tmpGrid->setHapticConstraint(new HapticConstraint(1.2f));
@@ -83,7 +84,7 @@ void GraphScene::initScene()
 	HapticObject * tmpObj = new Node(NULL);
 	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
 	tmpObj->addHapticAction(drag);
-//	tmpObj->translate(0.5, 0.0, 0.0);
+	tmpObj->translate(0.0, 0.1, 0.0);
 	tmpObj->setHapticConstraint(new HapticConstraint(4.0f));
 	addObject(tmpObj);
 

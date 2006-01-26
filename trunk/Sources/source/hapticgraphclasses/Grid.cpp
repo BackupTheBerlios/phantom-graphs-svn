@@ -2,13 +2,15 @@
 /// @file	Grid.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		17.01.2006
-/// @date	Letzte Änderung	24.01.2006
+/// @date	Letzte Änderung	26.01.2006
 //*******************************************************************************
 
 // Änderungen:
-// 19.01.06		- Gitterpunkte auf dem Grid werden gerendert
+// 19.01.06		- Gitterpunkte auf dem Grid werden gerendert.
 // 24.01.06		- Methoden isGridPoint() und nearestGridPoint() hinzugefügt und
 //				  implementiert. 
+// 26.01.06		- isGridPoint() und nearestGridPoint() beachten jetzt auch die 
+//				  Ausgangsposition des Grid.
 
 #include <math.h>
 
@@ -33,37 +35,45 @@ Grid::~Grid()
 //*******************************************************************************
 bool Grid::isGridPoint(Position pos)
 {
-	// TODO muss Gridposition beachten
+	// linke untere Ecke des Grid ermitteln
+	Position gridPos = getPosition();
+
+	// Positionen relativ zum Grid betrachten (so tun, als wäre [0.0, 0.0] die 
+	// Position des Grid).
+	double x = pos.x - gridPos.x;
+	double y = pos.y - gridPos.y;
+	double z = pos.z - gridPos.z;
 
 	double threshold = 0.01;
 
 	// Prüfen, ob die x-Koordinate der Position nah genug an der x-Koordinate eines
 	// gültigen Gitterpunktes ist
 	// x-Koordinate nicht kleiner als linker Rand des Grid?
-	bool xOk = pos.x > -threshold;
+	bool xOk = x > -threshold;
 	if (xOk)
 	{
-		double tmp = pos.x / c_GridColumnWidth;
+		double tmp = x / c_GridColumnWidth;
 		// Abweichung von einer gültigen x-Koordinate klein genug?
 		// rechts von gültiger Koordinate			links von gültiger Koordinate
 		xOk = (fabs(tmp - (int)tmp) < threshold) || (fabs(tmp - (int)tmp) > (1.0 - threshold));
 		// x-Koordinate nicht größer als rechter Rand des Grid?
-		xOk = xOk && (pos.x < ((m_Columns - 1) * c_GridColumnWidth + threshold));
+		xOk = xOk && (x < ((m_Columns - 1) * c_GridColumnWidth + threshold));
 	}
 
 	// Prüfen, ob die y-Koordinate der Position nah genug an der y-Koordinate eines
 	// gültigen Gitterpunktes ist
-	bool yOk = pos.y > -threshold;
-	if (yOk)
+	bool yOk = y > -threshold;
+	// Berechnung für y nur durchführen, wenn auch x Ok war.
+	if (xOk && yOk)
 	{
-		double tmp = pos.y / c_GridRowHeight;
+		double tmp = y / c_GridRowHeight;
 		yOk = (fabs(tmp - (int)tmp) < threshold) || (fabs(tmp - (int)tmp) > (1.0 - threshold));
-		yOk = yOk && (pos.y < ((m_Rows - 1) * c_GridRowHeight + threshold));
+		yOk = yOk && (y < ((m_Rows - 1) * c_GridRowHeight + threshold));
 	}
 
 	// Prüfen, ob die z-Koordinate der Position nah genug an der z-Koordinate eines
 	// gültigen Gitterpunktes ist
-	bool zOk = fabs(pos.z) < threshold;
+	bool zOk = fabs(z) < threshold;
 
 	return (xOk && yOk && zOk);
 }
@@ -74,15 +84,24 @@ Position Grid::nearestGridPoint(Position pos)
 {
 	// TODO muss Gridposition beachten
 
+	// linke untere Ecke des Grid ermitteln
+	Position gridPos = getPosition();
+
+	// Positionen relativ zum Grid betrachten (so tun, als wäre [0.0, 0.0] die 
+	// Position des Grid).
+	double x = pos.x - gridPos.x;
+	double y = pos.y - gridPos.y;
+
+	// Ergebnisvariable
 	Position gridPoint;
 
-	double rightestX = (m_Columns - 1) * c_GridColumnWidth;
+	double rightestX = gridPos.x + (m_Columns - 1) * c_GridColumnWidth;
 
 	// nächstliegende x-Koordinate ermitteln:
-	// alles, was links vom Grid liegt, wird auf x = 0.0 gesetzt
-	if (pos.x < 0.0)
+	// alles, was links vom Grid liegt, wird auf x = gridPos.x gesetzt
+	if (pos.x < gridPos.x)
 	{
-		gridPoint.x = 0.0;
+		gridPoint.x = gridPos.x;
 	}
 	// alles, was rechts vom Grid liegt, wird auf die letzte gültige x-Koordinate
 	// des Grid gesetzt.
@@ -90,19 +109,20 @@ Position Grid::nearestGridPoint(Position pos)
 	{
 		gridPoint.x = rightestX;
 	}
+	// ansonsten auf den nächstgelegenen gültigen x-Wert runden
 	else
 	{
-		int factor = (int)((pos.x + (c_GridColumnWidth / 2)) / c_GridColumnWidth);
-		gridPoint.x = factor * c_GridColumnWidth;
+		int factor = (int)((x + (c_GridColumnWidth / 2)) / c_GridColumnWidth);
+		gridPoint.x = gridPos.x + factor * c_GridColumnWidth;
 	}
 
-	double highestY = (m_Rows - 1) * c_GridRowHeight;
+	double highestY = gridPos.y + (m_Rows - 1) * c_GridRowHeight;
 
 	// nächstliegende y-Koordinate ermitteln:
-	// alles, was unterhalb vom Grid liegt, wird auf y = 0.0 gesetzt
-	if (pos.y < 0.0)
+	// alles, was unterhalb vom Grid liegt, wird auf y = gridPos.y gesetzt
+	if (pos.y < gridPos.y)
 	{
-		gridPoint.y = 0.0;
+		gridPoint.y = gridPos.y;
 	}
 	// alles, was oberhalb vom Grid liegt, wird auf die letzte gültige y-Koordinate
 	// des Grid gesetzt.
@@ -110,11 +130,11 @@ Position Grid::nearestGridPoint(Position pos)
 	{
 		gridPoint.y = highestY;
 	}
-	// auf den nächstgelegenen gültigen y-Wert runden
+	// ansonsten auf den nächstgelegenen gültigen y-Wert runden
 	else
 	{
-		int factor = (int)((pos.y + (c_GridRowHeight / 2)) / c_GridRowHeight);
-		gridPoint.y = factor * c_GridRowHeight;
+		int factor = (int)((y + (c_GridRowHeight / 2)) / c_GridRowHeight);
+		gridPoint.y = gridPos.y + factor * c_GridRowHeight;
 	}
 
 	// z-Koordinate immer 0.0

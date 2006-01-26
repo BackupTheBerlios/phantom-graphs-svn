@@ -87,12 +87,18 @@ class Grid : public HapticObject
 		virtual ~Grid();
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Stellt fest, ob eine gegebene Position mit einem gültigen 
+		///			Gitterpunkt überein stimmt (Toleranz 0.01).
+		/// @param	pos	Die zu überprüfende Position.
+		/// @return	true, wenn pos ein gültiger Gitterpunkt ist, sonst false.
 		//.......................................................................
 		bool isGridPoint(Position pos);
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Ermittelt zu einer gegebenen Position den nächstgelegenen 
+		///			gültigen Gitterpunkt.
+		/// @param	pos	Die zu überprüfende Position.
+		/// @return	Position des zu pos nächstgelegenen Gitterpunktes.
 		//.......................................................................
 		Position nearestGridPoint(Position pos);
 		
