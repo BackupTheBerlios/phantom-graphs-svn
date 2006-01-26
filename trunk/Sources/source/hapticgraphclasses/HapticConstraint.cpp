@@ -18,6 +18,7 @@ HapticConstraint::HapticConstraint( HLfloat snapDist )
 : m_HLConstraintID(hlGenShapes(1))
 {
 	m_SnapDistance = snapDist;
+	m_Enabled = true;
 }
 //*******************************************************************************
 
@@ -32,6 +33,12 @@ HapticConstraint::~HapticConstraint()
 //*******************************************************************************
 void HapticConstraint::renderConstraint( HapticObject * pObj )
 {
+	// den Constraint nur dann rendern, wenn er aktiviert ist
+	if (!m_Enabled)
+	{
+		return;
+	}
+
 	hlBeginShape(HL_SHAPE_FEEDBACK_BUFFER, m_HLConstraintID);
 
     hlTouchModel(HL_CONSTRAINT);
@@ -47,5 +54,23 @@ void HapticConstraint::renderConstraint( HapticObject * pObj )
 void HapticConstraint::setSnapDistance( HLfloat value )
 {
 	m_SnapDistance = value;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+bool HapticConstraint::enable()
+{
+	bool before = m_Enabled;
+	m_Enabled = true;
+	return before;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+bool HapticConstraint::disable()
+{
+	bool before = m_Enabled;
+	m_Enabled = false;
+	return before;
 }
 //*******************************************************************************

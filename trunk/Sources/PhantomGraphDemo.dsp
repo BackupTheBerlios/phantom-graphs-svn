@@ -92,6 +92,14 @@ LINK32=link.exe
 # PROP Default_Filter ""
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\Camera.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\Camera.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\ConstantForceEffect.cpp
 # End Source File
 # Begin Source File

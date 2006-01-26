@@ -82,7 +82,7 @@ DragNodeOnGridHandler::~DragNodeOnGridHandler()
 void DragNodeOnGridHandler::initAction( HLcache * pCache )
 {
 	hlCacheGetDoublev(pCache, HL_PROXY_POSITION, m_LastProxyPos);
-	m_OriginalObjPosition = m_pDragObj->getPosition();
+	m_pGrid->getHapticConstraint()->enable();
 }
 //*******************************************************************************
 
@@ -102,6 +102,7 @@ void DragNodeOnGridHandler::finishAction()
 {
 	Position newpos = m_pGrid->nearestGridPoint(m_pDragObj->getPosition());
 	m_pDragObj->setPosition(newpos.x, newpos.y, newpos.z);
+	m_pGrid->getHapticConstraint()->disable();
 }
 //*******************************************************************************
 

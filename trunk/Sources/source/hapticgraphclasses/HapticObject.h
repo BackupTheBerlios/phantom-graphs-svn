@@ -2,7 +2,7 @@
 /// @file	HapticObject.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	23.01.2006
+/// @date	Letzte Änderung	26.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -12,6 +12,7 @@
 //				- Baustellencode aufgeräumt
 //				- Doku zu einigen Attributen und Methoden geschrieben
 // 23.01.06		- Methode renderShapeAtPosition() hinzugefügt.
+// 26.01.06		- Methode getHapticConstraint() hinzugefügt.
 
 
 #ifndef _HAPTICOBJECT_H_
@@ -128,6 +129,8 @@ class HapticObject
 		///			freigegeben.
 		//.......................................................................
 		void setHapticConstraint( HapticConstraint* value );
+
+		HapticConstraint * getHapticConstraint();
 		
 //	void addHapticMaterial( IHapticMaterial * material );
 

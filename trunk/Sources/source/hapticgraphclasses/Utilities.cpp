@@ -29,13 +29,15 @@ Position::~Position()
 
 
 
+//*******************************************************************************
+// Statische Konstanten intitialisierten
+const float UnitConversionInfo::ScreenWidthInViewUnits = 3.6f;
+//*******************************************************************************
 
 //*******************************************************************************
 UnitConversionInfo::UnitConversionInfo( int upsHorz, int upsVert, 
-										float unitWidth, float unitHeight, 
 										float paddingHorz, float paddingVert )
 : m_UnitsPerScreenHorizontal(upsHorz), m_UnitsPerScreenVertical(upsVert),
-  m_UnitWidth(unitWidth), m_UnitHeight(unitHeight),
   m_HorizontalPadding(paddingHorz), m_VerticalPadding(paddingVert)
 {
 }

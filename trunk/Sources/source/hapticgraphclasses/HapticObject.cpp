@@ -2,7 +2,7 @@
 /// @file	HapticObject.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	08.01.2006
+/// @date	Letzte Änderung	26.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -14,6 +14,8 @@
 //				  und in renderHaptics() einen Aufruf von m_pHapticConstraint->renderConstraint()
 //				  hinzugefügt
 // 23.01.06		- Methode renderShapeAtPosition() hinzugefügt und implementiert.
+// 26.01.06		- Methode getHapticConstraint() hinzugefügt und implementiert.
+//				- Im Konstruktor wird defaultmäßig ein deaktiviertes Constraint angelegt.
 
 // Haptics Library includes
 #include <HL/hl.h>
@@ -30,7 +32,11 @@
 HapticObject::HapticObject()
 : m_HLShapeID(hlGenShapes(1))
 {
-	m_pHapticConstraint = NULL;
+	// defaultmäßig ein Constraint definieren, aber deaktivieren
+	m_pHapticConstraint = new HapticConstraint(1.0);
+	m_pHapticConstraint->disable();
+
+	// Position beim Erzeugen des Objektes ist immer [0.0, 0.0, 0.0]
 	m_transformMatrix.makeIdentity();
 }
 //*******************************************************************************
@@ -73,6 +79,13 @@ void HapticObject::setHapticConstraint( HapticConstraint* value )
 	}
 
 	m_pHapticConstraint = value;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+HapticConstraint * HapticObject::getHapticConstraint()
+{
+	return m_pHapticConstraint;
 }
 //*******************************************************************************
 

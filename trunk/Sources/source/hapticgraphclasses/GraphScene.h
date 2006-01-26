@@ -2,7 +2,7 @@
 /// @file	GraphScene.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	24.01.2006
+/// @date	Letzte Änderung	26.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -10,6 +10,9 @@
 //				  hinzugefügt
 //				- Doku zu den implementierten Methoden geschrieben.
 // 24.01.06		- Methode getGraphPlaneZ() hinzugefügt.
+// 26.01.06		- initScene() hat neue Parameter bekommen.
+//				- GraphScene hat jetzt eine Camera zur Steuerung der Ansicht.
+//				- Dafür Methode getView() hinzugefügt.
 
 
 #ifndef _GRAPHSCENE_H_
@@ -20,6 +23,7 @@
 using namespace std;
 
 #include "HapticObject.h"
+#include "Camera.h"
 
 #include "FrictionForceEffect.h"
 #include "ConstantForceEffect.h"
@@ -41,6 +45,11 @@ class GraphScene
 		/// @brief	Liste aller haptischen Objekte der Scene.
 		//.......................................................................
 		vector<HapticObject*> m_SceneElements;
+
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		Camera * m_pCamera;
 
 		//.......................................................................
 		/// @brief	Fordert alle Objekte auf, ihre haptische Beschaffenheit zu rendern.
@@ -77,9 +86,13 @@ ViscousForceEffect * eff;
 		void renderScene( bool bHapticsEnabled );
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Initialisiert die graphische/haptische Szene.
+		///	@param	viewportWidth	Fensterbreite.
+		/// @param	viewportHeight	Fensterhöhe.
+		///	@param	pHd		Pointer auf das HapticDevice, das sich dem Sichtvolumen
+		///					der Kamera anpassen soll.	
 		//.......................................................................
-		virtual void initScene();
+		virtual void initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd );
 		
 		//.......................................................................
 		/// @brief	Fügt der Szene ein neues Objekt hinzu.
@@ -88,17 +101,17 @@ ViscousForceEffect * eff;
 		void addObject( HapticObject * obj );
 
 		//.......................................................................
-		/// @brief	
-		//.......................................................................
-		void viewFrom(float x, float y, double nearDistance);
-
-		//.......................................................................
 		/// @brief	Gibt die z-Koordinate der Ebene parallel zur x-y-Ebene auf 
 		///			der der Graph dargestellt wird zurück.
 		/// @return	z-Koordinate der Ebene parallel zur x-y-Ebene auf der der 
 		///			Graph dargestellt wird.
 		//.......................................................................
 		static float getGraphPlaneZ();
+
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		Camera * getView();
 		
 };
 

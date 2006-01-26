@@ -2,12 +2,15 @@
 /// @file	GraphScene.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	02.01.2006
+/// @date	Letzte Änderung	26.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 30.12.05		- Alle Methoden bis auf initScene() implementiert
 // 02.01.06		- Anstoß für Event-Callbacks hinzugefügt
+// 26.01.06		- initScene() hat neue Parameter bekommen.
+//				- neue Methode getView() hinzugefügt und implementiert.
+
 
 
 // Haptics Library includes
@@ -30,6 +33,8 @@ GraphScene::GraphScene()
 {
 	// keine Objekte in der Scene
 	m_SceneElements.clear();
+
+	m_pCamera = NULL;
 }
 //*******************************************************************************
 
@@ -47,6 +52,13 @@ GraphScene::~GraphScene()
 		}
 	}
 	m_SceneElements.clear();
+
+	// Kamera freigeben
+	if (m_pCamera != NULL)
+	{
+		delete m_pCamera;
+		m_pCamera = NULL;
+	}
 
 //hlBeginFrame();
 //eff->stopEffect();
@@ -67,8 +79,11 @@ void GraphScene::addObject( HapticObject * obj )
 //*******************************************************************************
 
 //*******************************************************************************
-void GraphScene::initScene()
+void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd )
 {
+	// Kamera initialisieren
+	m_pCamera = new Camera(40.0, viewportWidth, viewportHeight, pHd);
+
 	// Hintergrundfarbe festlegen
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
@@ -77,7 +92,10 @@ void GraphScene::initScene()
 	tmpGrid->translate(0.2, 0.2, 0.0);
 	DragSceneHandler * pdragsc = new DragSceneHandler(this);
 	tmpGrid->addHapticAction(pdragsc);
-//	tmpGrid->setHapticConstraint(new HapticConstraint(1.2f));
+	HapticConstraint * constr = new HapticConstraint(3.0f);
+	constr->disable();
+	tmpGrid->setHapticConstraint(constr);
+
 	addObject(tmpGrid);
 
 	// Dummy-Implementierung
@@ -176,21 +194,16 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 //*******************************************************************************
 
 //*******************************************************************************
-void GraphScene::viewFrom(float x, float y, double nearDistance)
-{
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();            
-    gluLookAt(x, y, nearDistance + 1.0,
-              x, y, 0,
-              0, 1, 0);	
-
-}
-//*******************************************************************************
-
-//*******************************************************************************
 float GraphScene::getGraphPlaneZ()
 {
 	// Dummy
 	return -0.1f;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+Camera * GraphScene::getView()
+{
+	return m_pCamera;
 }
 //*******************************************************************************

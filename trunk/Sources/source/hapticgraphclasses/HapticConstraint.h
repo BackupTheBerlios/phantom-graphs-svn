@@ -43,6 +43,8 @@ class HapticConstraint
 		//.......................................................................
 		const HLuint m_HLConstraintID;
 
+		bool m_Enabled;
+
 	public:
 		
 		//.......................................................................
@@ -73,6 +75,20 @@ class HapticConstraint
 		///			soll.
 		//.......................................................................
 		void renderConstraint( HapticObject* pObj );
+
+		//.......................................................................
+		/// @brief	Sorgt dafür, dass das Constraint bei einem Aufruf von 
+		///			renderConstraint() gerendert wird.
+		/// @return	Gibt den vorherigen Aktivierungsstatus zurück.
+		//.......................................................................
+		bool enable();
+	
+		//.......................................................................
+		/// @brief	Verhindert, dass das Constraint bei einem Aufruf von 
+		///			renderConstraint() gerendert wird.
+		/// @return	Gibt den vorherigen Aktivierungsstatus zurück.
+		//.......................................................................
+		bool disable();
 
 };
 

@@ -24,7 +24,7 @@ Description:
 /// @file	Main.cpp
 /// @author	angepasst von Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	09.01.2006 CA
+/// @date	Letzte Änderung	26.01.2006 (KG)
 //*******************************************************************************
 
 // Änderungen:
@@ -38,6 +38,8 @@ Description:
 //				- nicht benötigte Funktionen gelöscht (KG)
 // 06.01.2006	- Task Erzeugung hinzugefügt CA
 // 09.01.2006	- include der AppConfiguration CA
+// 26.01.06		- Berechnung des Sichtvolumens wird von neuer Camera-Klasse übernommen 
+//				  und  über GraphScene gesteuert. (KG)
 
 #include <math.h>
 #include <assert.h>
@@ -85,7 +87,7 @@ void exitHandler(void);
 
 void initGL();
 void initHL();
-void initScene();
+void initScene( int viewportWidth, int viewportHeight );
 
 // initialisiere Konfigurationsdaten Objekt
 void setAppData();
@@ -114,7 +116,10 @@ int main(int argc, char *argv[])
     
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 
-    glutInitWindowSize(800, 600);
+	int winWidth = 800;
+	int winHeight = 600;
+
+    glutInitWindowSize(winWidth, winHeight);
     glutCreateWindow("Phantom Graph Demo");
 
     // Set glut callback functions.
@@ -125,7 +130,7 @@ int main(int argc, char *argv[])
     // Provide a cleanup routine for handling application exit.
     atexit(exitHandler);
 
-    initScene();
+    initScene(winWidth, winHeight);
 
     glutMainLoop();
 
@@ -148,34 +153,7 @@ void glutDisplay()
 *******************************************************************************/
 void glutReshape(int width, int height)
 {
-    static const double kPI = 3.1415926535897932384626433832795;
-    static const double kFovY = 40;
-
-    double nearDist, farDist, aspect;
-
-    glViewport(0, 0, width, height);
-
-    /* Compute the viewing parameters based on a fixed fov and viewing
-     * a canonical box centered at the origin */
-
-    nearDist = 1.0 / tan((kFovY / 2.0) * kPI / 180.0);
-    farDist = nearDist + 2.0;
-    aspect = (double) width / height;
-   
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    gluPerspective(kFovY, aspect, nearDist, farDist);
-
-    // Place the camera down the Z axis looking at the origin 
-//    glMatrixMode(GL_MODELVIEW);
-//    glLoadIdentity();            
-//    gluLookAt(0, 0, nearDist + 1.0,
-//              0, 0, 0,
-//              0, 1, 0);
-
-	scene.viewFrom(0.0, 0.0, nearDist);
-
-	pHapticDevice->updateWorkspace();
+	scene.getView()->recalculateView(width, height);
 
 	cursor.scale();
 }
@@ -191,11 +169,11 @@ void glutIdle()
 /*******************************************************************************
  Initialize the scene. Handle initializing both OpenGL and HL
 *******************************************************************************/
-void initScene()
+void initScene( int viewportWidth, int viewportHeight )
 {
     initGL();
     initHL();
-	scene.initScene();
+	scene.initScene(viewportWidth, viewportHeight, pHapticDevice);
 }
 
 /*******************************************************************************
