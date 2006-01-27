@@ -51,7 +51,7 @@ public:
 	/// @brief	Ermittelt die Breite des Darstellungsobjektes in View-Einheiten.
 	/// @return	Breite des Darstellungsobjektes in View-Einheiten.
 	//.......................................................................
-	virtual float getDuration() = 0;
+	virtual int getDuration() = 0;
 
 	//.......................................................................
 	/// @brief	Ermittelt die Höhe des Darstellungsobjektes in View-Einheiten.
