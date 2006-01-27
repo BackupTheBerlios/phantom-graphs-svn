@@ -10,7 +10,9 @@
 //				- initTasks hinzugefügt
 // 09.01.2006	- Aufgaben initialisiern
 // 24.01.2006   - Startaufgabe festgelegt (m_rootTask)
-
+// 27.01.2006	- added: m_ProjectLines, Anzahl maximaler paralleler Aufgaben
+//				  added: Getter/Setter m_ProjectLines
+//				  coded: Nachfolger/Vorgänger hardcodiert
 #include "AppConfiguration.h"
 
 
@@ -21,6 +23,9 @@ AppConfiguration::AppConfiguration()
 	
 	// statische Festlegung der Projektdauer
 	setProjectDuration(300);
+
+	// statische Festlegung der graphischen Einheiten pro Tag
+
 	
 	/// @brief Debugausgabe Projektdauer
 	if(getDebugState()){
@@ -35,9 +40,10 @@ int AppConfiguration::getProjectDuration()
 	return m_ProjectDuration;
 }
 
-void AppConfiguration::setProjectDuration( int value )
+
+void AppConfiguration::setProjectDuration(int days)
 {
-	m_ProjectDuration = value;
+	m_ProjectDuration = days;
 }
 
 AppConfiguration::~AppConfiguration()
@@ -48,6 +54,10 @@ void AppConfiguration::initTasks()
 {
 	list<BusinessTask*>::iterator itObj;
 
+	/* Startknoten von dem alle anderen Aufgaben abhängen */
+	BusinessTask *task00 = new BusinessTask("A00",0,0,0);
+	
+	/* Alle anderen Aufgaben */
 	BusinessTask *task01 = new BusinessTask("A01",7,10,0);
 	BusinessTask *task02 = new BusinessTask("A02",14,24,1);
 	BusinessTask *task03 = new BusinessTask("A03",20,44,0);
@@ -57,6 +67,8 @@ void AppConfiguration::initTasks()
 	BusinessTask *task07 = new BusinessTask("A07",6,80,0);
 	BusinessTask *task08 = new BusinessTask("A08",6,300,1);
 
+	/* Aufgaben der Aufgabenliste hinzufügen */
+	m_BusinessTasks.push_back(task00);
 	m_BusinessTasks.push_back(task01);
 	m_BusinessTasks.push_back(task02);
 	m_BusinessTasks.push_back(task03);
@@ -66,9 +78,34 @@ void AppConfiguration::initTasks()
 	m_BusinessTasks.push_back(task07);
 	m_BusinessTasks.push_back(task08);
 
-	//task01->printInfo();
+	/* Den Aufgaben Nachfolger und Forgänger zuweisen */
+	task00->addTaskFollowing(task01);
 
+	task01->addTaskPrevious(task00);
+	task01->addTaskFollowing(task02);
+
+	task02->addTaskPrevious(task01);
+	task02->addTaskFollowing(task03);
+	task02->addTaskFollowing(task04);
+	task02->addTaskFollowing(task05);
+
+	task03->addTaskPrevious(task02);
+	task03->addTaskFollowing(task06);
 	
+	task04->addTaskPrevious(task02);
+	task04->addTaskFollowing(task06);
+
+	task05->addTaskPrevious(task02);
+
+	task06->addTaskPrevious(task03);
+	task06->addTaskPrevious(task04);
+	task06->addTaskFollowing(task07);
+
+	task07->addTaskPrevious(task06);
+	task07->addTaskFollowing(task08);
+
+	task08->addTaskPrevious(task07);
+
 	/// @brief Debuginfo zur Ausgabe aller Tasks
 	if(getDebugState())
 	{
@@ -92,6 +129,7 @@ void AppConfiguration::initTasks()
 	/// @brief Debuginfo zur Ausgabe aller Tasks
 	if(getDebugState())
 	{
+		cout << "DebugInfo: Aufruf aus AppConfiguration::initTasks" << endl;
 		cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
 	}
 }
@@ -104,4 +142,27 @@ bool AppConfiguration::getDebugState()
 void AppConfiguration::setDebugState(bool state)
 {
 	m_debug = state;
+}
+
+/// @brief liefert die max. Anzahl paralleler Aufgaben
+int AppConfiguration::getProjectLines()
+{
+	return m_ProjectLines;
+}
+
+
+
+IBusinessAdapter* AppConfiguration::getRootTask()
+{
+	return m_rootTask;
+}
+
+void AppConfiguration::setProjectLines(int lines)
+{
+	m_ProjectLines = lines;
+}
+
+void AppConfiguration::setUnitsPerDay(float units)
+{
+
 }

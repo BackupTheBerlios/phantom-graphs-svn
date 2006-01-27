@@ -89,7 +89,10 @@ void initGL();
 void initHL();
 void initScene( int viewportWidth, int viewportHeight );
 
-// initialisiere Konfigurationsdaten Objekt
+//...................................................................
+/// @author Carsten Arnold
+/// @brief Initialisiert Konfigurationsdaten Objekt CA
+//...................................................................
 void setAppData();
 
 //........................
@@ -103,15 +106,11 @@ AppConfiguration appData;
 *******************************************************************************/
 int main(int argc, char *argv[])
 {
-	/* wird erst mal nicht benötigt, da die Applikationsdaten
-	 * in einem Objekt erzeugt werden.
-	 */
+	//...................................................................
+	/// @brief
+	//...................................................................
     setAppData();
 
-	//appData = new AppConfiguration();
-
-
-	
 	glutInit(&argc, argv);
     
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
@@ -248,9 +247,19 @@ void exitHandler()
 	}
 }
 
+
+//...................................................................
+/// @brief Initialisiert alle Aufgabe CA
+//...................................................................
 void setAppData()
 {
 	appData.initTasks();
-	// BusinessTask task = new BusinessTask();
+
+	/// @brief Debuginfo zur Ausgabe aller Tasks
+	if(appData.getDebugState())
+	{
+		cout << "DebugInfo: Aufruf aus Main::setAppData()" << endl;
+		//cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
+	}
 
 }

@@ -51,19 +51,19 @@ public:
 	/// @brief	Ermittelt die Breite des Darstellungsobjektes in View-Einheiten.
 	/// @return	Breite des Darstellungsobjektes in View-Einheiten.
 	//.......................................................................
-	virtual float getWidth() = 0;
+	virtual float getDuration() = 0;
 
 	//.......................................................................
 	/// @brief	Ermittelt die Höhe des Darstellungsobjektes in View-Einheiten.
 	/// @return	Höhe des Darstellungsobjektes in View-Einheiten.
 	//.......................................................................
-	virtual float getHeight() = 0;
+	virtual int getLine() = 0;
 	
 	//.......................................................................
-	/// @brief	Ermittelt die Position (linke obere Ecke) des Darstellungsobjektes in View-Koordinaten.
-	/// @return	Position des Darstellungsobjektes in View-Koordinaten.
+	/// @brief	Ermittelt den Starttag
+	/// @return	Starttag
 	//.......................................................................
-	virtual Position getPosition() = 0;
+	virtual int getDayBegin() = 0;
 
 	//.......................................................................
 	/// @brief	Liefert den Namen des Tasks

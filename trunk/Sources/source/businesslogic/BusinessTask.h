@@ -34,20 +34,24 @@ using namespace std;
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
-	void addTaskPrevious(BusinessTask);
-	void addTaskFollowing(BusinessTask);
+	void addTaskPrevious(BusinessTask *follows);
+	void addTaskFollowing(BusinessTask *followed_by);
 	string getName();
 	void printInfo();
-	Position getPosition();
-	float getHeight();
-	float getWidth();
+	int getDayBegin();
+	int getLine();
+	int getDuration();
 	int getForce();
 	BusinessTask();
 	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);
 	virtual ~BusinessTask();
 
 private:
-	float height;
+	//..................................................
+	/// @brief Darstellungsebene
+	//..................................................
+	int m_line;
+
 	float width;
 	Position position;
 	int calcDayEnd(int begin, int duration);
@@ -57,7 +61,7 @@ private:
 	int day_end;
 	int day_final;
 	int force;
-	int day_duration;
+	int m_DayDuration;
 	string m_Name;
 
 	/// @brief	Liste aller direkter nachfolgenden Aufgaben
