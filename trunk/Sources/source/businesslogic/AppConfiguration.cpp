@@ -13,6 +13,8 @@
 // 27.01.2006	- added: m_ProjectLines, Anzahl maximaler paralleler Aufgaben
 //				  added: Getter/Setter m_ProjectLines
 //				  coded: Nachfolger/Vorgänger hardcodiert
+//				  added: statische m_ProjectLines
+
 #include "AppConfiguration.h"
 
 
@@ -23,6 +25,9 @@ AppConfiguration::AppConfiguration()
 	
 	// statische Festlegung der Projektdauer
 	setProjectDuration(300);
+
+	// statische Festlegung der  maximal parallel ausgeführter Aufgaben
+	setProjectLines(3);
 
 	// statische Festlegung der graphischen Einheiten pro Tag
 
