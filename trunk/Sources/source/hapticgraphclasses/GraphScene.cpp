@@ -26,6 +26,7 @@
 #include "DragNodeOnGridHandler.h"
 #include "DragSceneHandler.h"
 #include "Grid.h"
+#include "Edge.h"
 
 
 //*******************************************************************************
@@ -108,10 +109,13 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 
 	bool test = tmpGrid->isGridPoint(tmpObj->getPosition());
 
+	Edge * pEdge = new Edge();
+
 	Node * tmpNode = new Node(NULL);
 	DragNodeOnGridHandler * dnh = new DragNodeOnGridHandler(tmpNode, tmpGrid);
 	tmpNode->addHapticAction(dnh);
 	tmpNode->translate(0.13, 0.2, 0.0);
+	tmpNode->addIncomingEdge(pEdge);
 	addObject(tmpNode);
 
 	Position p = tmpGrid->nearestGridPoint(tmpNode->getPosition());
@@ -119,8 +123,11 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 	Node * tmpN = new Node(NULL);
 	tmpN->addHapticAction(new DragSceneHandler(this));
 	tmpN->translate(-0.5, 0.0, 0.0);
+	tmpN->addOutgoingEdge(pEdge);
 	addObject(tmpN);
 
+	addObject(pEdge);
+		
 //eff = new FrictionForceEffect(0.5, 0.4);
 //double dir[3] = {-1.0, 0.0, 0.0};
 //eff = new ConstantForceEffect(dir, 0.5);

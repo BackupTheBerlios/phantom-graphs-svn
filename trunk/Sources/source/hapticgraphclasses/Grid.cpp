@@ -161,6 +161,7 @@ void Grid::renderShape()
 		float x = 0.0f;
 		float y = 0.0f;
 
+		glLineWidth(1.0);
 		glBegin(GL_LINES);
 
 		// Zeilen

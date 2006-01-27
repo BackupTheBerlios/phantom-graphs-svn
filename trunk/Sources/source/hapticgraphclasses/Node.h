@@ -2,13 +2,14 @@
 /// @file	Node.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		30.12.2005
-/// @date	Letzte Änderung	08.01.2006
+/// @date	Letzte Änderung	27.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 03.01.06		- Methode translate() hinzugefügt
 // 08.01.06		- Attribute m_Width und m_Height und entsprechende Getter und Setter
 //				  hinzugefügt
+// 27.01.06		- Incoming- und Outgoing Edges und dazugehörige Methoden hinzugefügt.
 
 
 #ifndef _NODE_H_
@@ -20,10 +21,16 @@
 // OpenGL includes
 #include <GL/gl.h>
 
+// STL Includes
+#include <list>
+
 #include "HapticObject.h"
+#include "Edge.h"
 #include "../businesslogic/IObserver.h"
 #include "../businesslogic/IBusinessAdapter.h"
 
+
+using std::list;
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
@@ -48,6 +55,31 @@ class Node : public HapticObject, public IObserver
 		/// @brief
 		//.......................................................................
 		IBusinessAdapter * m_pBusinessObject;
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		list<Edge *> m_IncomingEdges;
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		list<Edge *> m_OutgoingEdges;
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		void updateIncomingEdge(Edge * pEdge);
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		void updateOutgoingEdge(Edge * pEdge);
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		void updateEdges();
 
 		//.......................................................................
 		/// @brief	ID der OpenGL-Displayliste, mit der der Node gezeichnet wird.
@@ -92,6 +124,20 @@ class Node : public HapticObject, public IObserver
 		/// @brief
 		//.......................................................................
 		float getHeight();
+
+		//.......................................................................
+		/// @brief	Fügt dem Knoten eine eingehende Kante hinzu.
+		/// @param	pEdge	Kante, die dem Knoten hinzugefügt werden soll.
+		///					Die Kante wird beim Löschen des Knotens nicht freigegeben!
+		//.......................................................................
+		void addIncomingEdge( Edge * pEdge );
+
+		//.......................................................................
+		/// @brief	Fügt dem Knoten eine ausgehende Kante hinzu.
+		/// @param	pEdge	Kante, die dem Knoten hinzugefügt werden soll.
+		///					Die Kante wird beim Löschen des Knotens nicht freigegeben!
+		//.......................................................................
+		void addOutgoingEdge( Edge * pEdge );
 		
 		//.......................................................................
 		//.......................................................................
@@ -108,6 +154,14 @@ class Node : public HapticObject, public IObserver
 		//.......................................................................
 		//.......................................................................
 		virtual void translate(const double x, const double y, const double z);
+
+		//.......................................................................
+		/// @brief	Platziert das Objekt an der Stelle mit dem Ortsvektor (x, y, z).
+		///	@param	x	x-Koordinate des Ortsvektors.
+		///	@param	y	y-Koordinate des Ortsvektors.
+		///	@param	z	z-Koordinate des Ortsvektors.
+		//.......................................................................
+		virtual void setPosition(const double x, const double y, const double z);
 
 		//=======================================================================
 
