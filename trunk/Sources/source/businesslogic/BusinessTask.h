@@ -7,9 +7,12 @@
 
 // Änderungen:
 // ...
-// 24.01.2006	- Liste mit Vorgängern hinzugefügt
-//				- Liste mit Nachfolgern hinzugefügt
-//				- Memberfunktion zum hinzufügen von Vorgängern und Nachfolgern
+// 24.01.2006	- Liste mit Vorgängern hinzugefügt CA
+//				- Liste mit Nachfolgern hinzugefügt CA
+//				- Memberfunktion zum hinzufügen von Vorgängern und Nachfolgern CA
+// 27.01.2006	- Änderung von Memberfunktion zum hinzufügen von Vorgängern 
+//				  und Nachfolgern CA
+// 28.01.2006	- m_Width umdefiniert CA
 
 #if !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)
 #define AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_
@@ -38,13 +41,15 @@ public:
 	void addTaskFollowing(BusinessTask *followed_by);
 	string getName();
 	void printInfo();
-	int getDayBegin();
+	int getBegin();
 	int getLine();
-	int getDuration();
+	int getWidth();
 	int getForce();
 	BusinessTask();
 	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);
 	virtual ~BusinessTask();
+
+	virtual list<IBusinessAdapter*>& getNextTasks();
 
 private:
 	//..................................................
@@ -56,19 +61,19 @@ private:
 	Position position;
 	int calcDayEnd(int begin, int duration);
 	bool isMilestone;
-	int m_DayBegin;
+	int m_Begin;
 	int surface;
 	int day_end;
 	int day_final;
 	int force;
-	int m_DayDuration;
+	int m_Width;
 	string m_Name;
 
 	/// @brief	Liste aller direkter nachfolgenden Aufgaben
-	list<BusinessTask*> m_TasksFollowing;
+	list<IBusinessAdapter*> m_TasksFollowing;
 
 	/// @brief	Liste aller direkter vorhergehender Aufgaben
-	list<BusinessTask*> m_TasksPrivious;
+	list<IBusinessAdapter*> m_TasksPrivious;
 
 protected:
 	void businessToViewCoordinates();

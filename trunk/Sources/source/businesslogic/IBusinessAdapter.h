@@ -23,6 +23,7 @@
 #include "../hapticgraphclasses/Utilities.h"
 #include <string>
 
+
 using namespace std;
 
 //...............................................................................
@@ -63,13 +64,26 @@ public:
 	/// @brief	Ermittelt den Starttag
 	/// @return	Starttag
 	//.......................................................................
-	virtual int getDayBegin() = 0;
+	virtual int getBegin() = 0;
 
 	//.......................................................................
 	/// @brief	Liefert den Namen des Tasks
 	/// @return	Name als string
 	//.......................................................................
 	virtual string getName() = 0;
+
+	//.......................................................................
+	/// @brief	Liefert die Nachfolger
+	/// @return	Liste mit Nachfolgern
+	//.......................................................................
+	virtual list<IBusinessAdapter*>& getNextTasks() = 0;
+
+	//.......................................................................
+	/// @brief	Liefert die Vorgänger
+	/// @return	Name als string
+	//.......................................................................
+	// virtual string getName() = 0;
+
 };
 
 #endif // !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)

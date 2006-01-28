@@ -7,11 +7,12 @@
 
 // Änderungen:
 // ...
-// 24.01.2006	- Liste mit Vorgängern hinzugefügt
-//				- Liste mit Nachfolgern hinzugefügt
-//				- Memberfunktion zum hinzufügen von Vorgängern und Nachfolgern
+// 24.01.2006	- Liste mit Vorgängern hinzugefügt CA
+//				- Liste mit Nachfolgern hinzugefügt CA
+//				- Memberfunktion zum hinzufügen von Vorgängern und Nachfolgern CA
 // 27.01.2006	- Änderung von Memberfunktion zum hinzufügen von Vorgängern 
-//				  und Nachfolgern
+//				  und Nachfolgern CA
+// 28.01.2006	- m_Width umdefiniert CA
 
 #include "BusinessTask.h"
 #include "AppConfiguration.h"
@@ -24,12 +25,12 @@ extern AppConfiguration appData;
 BusinessTask::BusinessTask()
 {
 	m_Name = (char) "unnamed Task";
-	m_DayDuration = 0;
+	m_Width = 0;
 	day_final = 0;
 	isMilestone = false;
 
-	m_DayBegin = -1;
-	day_end = m_DayBegin + m_DayDuration;
+	m_Begin = -1;
+	day_end = m_Begin + m_Width;
 	force = 0;
 	surface = 0;
 
@@ -41,12 +42,12 @@ BusinessTask::BusinessTask()
 BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milestone)
 {
 	m_Name = taskname;
-	m_DayDuration = duration;
+	m_Width = duration;
 	day_final = final;
 	isMilestone = Milestone;
 
 	// m_DayBegin = begin;
-	day_end = calcDayEnd(m_DayBegin, m_DayDuration);
+	day_end = calcDayEnd(m_Begin, m_Width);
 	force = 0;
 	surface = 0;
 }
@@ -81,9 +82,9 @@ void BusinessTask::businessToViewCoordinates()
 
 }
 
-int BusinessTask::getDuration()
+int BusinessTask::getWidth()
 {
-	return m_DayDuration;
+	return m_Width;
 }
 
 int BusinessTask::getLine()
@@ -91,14 +92,14 @@ int BusinessTask::getLine()
 	return m_line;
 }
 
-int BusinessTask::getDayBegin()
+int BusinessTask::getBegin()
 {
-	return m_DayBegin;
+	return m_Begin;
 }
 
 void BusinessTask::printInfo()
 {
-	cout << this->m_Name << " dauert " << this->m_DayDuration << " Tage." << endl;
+	cout << this->m_Name << " dauert " << this->m_Width << " Tage." << endl;
 }
 
 string BusinessTask::getName()
@@ -114,4 +115,9 @@ void BusinessTask::addTaskFollowing(BusinessTask *followed_by)
 void BusinessTask::addTaskPrevious(BusinessTask *followes)
 {
 	m_TasksPrivious.push_back(followes);
+}
+
+list<IBusinessAdapter*>&  BusinessTask::getNextTasks()
+{
+	return m_TasksFollowing;
 }
