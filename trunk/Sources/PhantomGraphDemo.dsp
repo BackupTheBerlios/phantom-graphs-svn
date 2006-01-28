@@ -216,6 +216,14 @@ SOURCE=.\source\hapticgraphclasses\Node.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\source\hapticgraphclasses\SpringForceEffect.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\source\hapticgraphclasses\SpringForceEffect.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\source\hapticgraphclasses\Utilities.cpp
 # End Source File
 # Begin Source File

@@ -172,7 +172,9 @@ void initScene( int viewportWidth, int viewportHeight )
 {
     initGL();
     initHL();
-	scene.initScene(viewportWidth, viewportHeight, pHapticDevice);
+	scene.initScene(viewportWidth, viewportHeight, pHapticDevice,
+					appData.getProjectDuration(), appData.getProjectLines(),
+					appData.getRootTask());
 }
 
 /*******************************************************************************

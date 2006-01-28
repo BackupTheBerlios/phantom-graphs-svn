@@ -80,15 +80,32 @@ void GraphScene::addObject( HapticObject * obj )
 //*******************************************************************************
 
 //*******************************************************************************
-void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd )
+void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd,
+							int gridColumns, int gridRows,
+							IBusinessAdapter * rootNode)
 {
 	// Kamera initialisieren
 	m_pCamera = new Camera(40.0, viewportWidth, viewportHeight, pHd);
+	m_pCamera->translateView(1.8, 0.0);
 
 	// Hintergrundfarbe festlegen
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
-	// Grid erzeugen
+	// Darstellungsobjekte zum Graphen erzeugen:
+	// Grid der entsprechenden Größe mit linker unterer Ecke bei [0.0, 0.0, 0.0] erzeugen
+	Grid * pGrid = new Grid(gridColumns, gridRows);
+	pGrid->setPosition(0.0, 0.0, 0.0);
+	HapticConstraint * pGridConstraint = new HapticConstraint(3.0f);
+	pGridConstraint->disable();
+	pGrid->setHapticConstraint(pGridConstraint);
+	pGrid->addHapticAction(new DragSceneHandler(this));
+	addObject(pGrid);
+
+	// vom rootNode ausgehend Haptische Objekte für Knoten und Kanten erzeugen
+	// der rootNode selbst wird nicht dargestellt
+
+
+/*	// Grid erzeugen
 	Grid * tmpGrid = new Grid(3, 2);
 	tmpGrid->translate(0.2, 0.2, 0.0);
 	DragSceneHandler * pdragsc = new DragSceneHandler(this);
@@ -138,6 +155,16 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 //eff->startEffect();
 //hlEndFrame();
 //eff2.startEffect();
+*/
+}
+//*******************************************************************************
+
+//*******************************************************************************
+Node * createObjects(IBusinessAdapter * businessObj)
+{
+	Node * pNode = new Node(businessObj);
+	// rekursiv die Nachfolger erzeugen und mit Kanten verbinden
+	return pNode;
 }
 //*******************************************************************************
 

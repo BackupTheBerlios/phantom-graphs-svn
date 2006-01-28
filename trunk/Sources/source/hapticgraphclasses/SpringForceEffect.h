@@ -1,24 +1,28 @@
 //*******************************************************************************
-/// @file	ViscousForceEffect.h
+/// @file	SpringForceEffect.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
-/// @date	Erstellt am		08.01.2006
-/// @date	Letzte Änderung	08.01.2006
+/// @date	Erstellt am		28.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
 
 
-#ifndef _VISCOUSFORCEEFFECT_H_
-#define _VISCOUSFORCEEFFECT_H_
+#ifndef _SPRINGFORCEEFFECT_H_
+#define _SPRINGFORCEEFFECT_H_
+
+// Haptic Library includes
+#include <HDU/hduVector.h>
 
 #include "HapticEffect.h"
+#include "Utilities.h"
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 ///
-/// @brief	Klasse zur Ausgabe einer "ambienten" Viskostät auf dem Phantom Device.
+/// @brief	Klasse zur Ausgabe einer Federkraft auf dem Phantom Device.
 //...............................................................................
-class ViscousForceEffect : public HapticEffect
+class SpringForceEffect : public HapticEffect
 {
 	protected:
 		
@@ -31,15 +35,20 @@ class ViscousForceEffect : public HapticEffect
 		/// @brief	
 		//.......................................................................
 		double m_Gain;
+		
+		//.......................................................................
+		/// @brief	Ankerpunkt der dargestellten Federkraft.
+		//.......................................................................
+		hduVector3Dd m_AnchorPosition;
 
 		//=======================================================================
 		// von HapticEffect geerbte Methoden
 		//=======================================================================
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Spezifiziert die Eigenschaften des Effektes für HLAPI.
 		//.......................................................................
-		virtual void renderProperties();
+		virtual void renderProperties() = 0;
 
 		//=======================================================================
 
@@ -48,12 +57,12 @@ class ViscousForceEffect : public HapticEffect
 		//.......................................................................
 		/// @brief	
 		//.......................................................................
-		ViscousForceEffect( double magnitude = 0.0, double gain = 0.0 );
+		SpringForceEffect( double magnitude, double gain, Position anchor );
 
 		//.......................................................................
 		/// @brief	
 		//.......................................................................
-		virtual ~ViscousForceEffect();
+		virtual ~SpringForceEffect();
 		
 		//.......................................................................
 		/// @brief	
@@ -65,6 +74,11 @@ class ViscousForceEffect : public HapticEffect
 		//.......................................................................
 		virtual void setGain( double value );
 		
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		void setAnchorPosition( double x, double y, double z );
+	
 };
 
-#endif // _VISCOUSFORCEEFFECT_H_
+#endif // _SPRINGFORCEEFFECT_H_

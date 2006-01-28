@@ -24,10 +24,12 @@ using namespace std;
 
 #include "HapticObject.h"
 #include "Camera.h"
+#include "Node.h"
 
 #include "FrictionForceEffect.h"
 #include "ConstantForceEffect.h"
 #include "ViscousForceEffect.h"
+#include "../businesslogic/IBusinessAdapter.h"
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
@@ -62,6 +64,11 @@ class GraphScene
 		//.......................................................................
 		void renderSceneGraphics();	
 
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		Node * createObjects(IBusinessAdapter * businessObj);
+
 //FrictionForceEffect * eff;
 //ConstantForceEffect * eff;
 //FrictionForceEffect * eff2;
@@ -92,7 +99,9 @@ ViscousForceEffect * eff;
 		///	@param	pHd		Pointer auf das HapticDevice, das sich dem Sichtvolumen
 		///					der Kamera anpassen soll.	
 		//.......................................................................
-		virtual void initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd );
+		virtual void initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd,
+								int gridColumns, int gridRows,
+								IBusinessAdapter * rootNode );
 		
 		//.......................................................................
 		/// @brief	Fügt der Szene ein neues Objekt hinzu.
