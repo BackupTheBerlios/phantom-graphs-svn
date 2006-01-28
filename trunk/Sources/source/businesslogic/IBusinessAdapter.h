@@ -10,7 +10,14 @@
 // Änderungen:
 // 06.01.2006	- Schnittstelle getForce() hinzugefügt
 // 09.01.06		- Schnittstellen getWidth(), getHeight() und getPosition() hinzugefügt (Kathrin)
-// 24.01.2006	- Schnittstelle getName() hinzugefügt (CA)
+// 24.01.2006	- Schnittstelle 
+//					getName() 
+//					getLine()
+//					getForce()
+//				  hinzugefügt (CA)
+// 28.01.2006	- added:
+//					getNextTasks()
+//					getPreviousTasks()
 
 
 #if !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)
@@ -80,9 +87,9 @@ public:
 
 	//.......................................................................
 	/// @brief	Liefert die Vorgänger
-	/// @return	Name als string
+	/// @return	Liste mit Vorgängern
 	//.......................................................................
-	// virtual string getName() = 0;
+	virtual list<IBusinessAdapter*>& getPreviousTasks() = 0;
 
 };
 

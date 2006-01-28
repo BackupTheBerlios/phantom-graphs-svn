@@ -13,7 +13,10 @@
 // 27.01.2006	- Änderung von Memberfunktion zum hinzufügen von Vorgängern 
 //				  und Nachfolgern CA
 // 28.01.2006	- m_Width umdefiniert CA
-//				- update: setLine()
+//				- update: setLine() CA
+//				- added:
+//					getNextTasks()
+//					getPreviousTasks()
 
 #include "BusinessTask.h"
 #include "AppConfiguration.h"
@@ -37,7 +40,7 @@ BusinessTask::BusinessTask()
 
 	// Nachfolger- und Vorgängerlisten löschen
 	m_TasksFollowing.clear();
-	m_TasksPrivious.clear();
+	m_TasksPrevious.clear();
 }
 
 BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milestone)
@@ -115,12 +118,17 @@ void BusinessTask::addTaskFollowing(BusinessTask *followed_by)
 
 void BusinessTask::addTaskPrevious(BusinessTask *followes)
 {
-	m_TasksPrivious.push_back(followes);
+	m_TasksPrevious.push_back(followes);
 }
 
 list<IBusinessAdapter*>&  BusinessTask::getNextTasks()
 {
 	return m_TasksFollowing;
+}
+
+list<IBusinessAdapter*>&  BusinessTask::getPreviousTasks()
+{
+	return m_TasksPrevious;
 }
 
 void BusinessTask::setLine(int line)
