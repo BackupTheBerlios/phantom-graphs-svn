@@ -2,7 +2,7 @@
 /// @file	Node.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		30.12.2005
-/// @date	Letzte Änderung	27.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -11,6 +11,7 @@
 //				  und implementiert
 //				- Konstruktor angepasst
 // 27.01.06		- Incoming- und Outgoing Edges und dazugehörige Methoden hinzugefügt.
+// 28.01.06		- Knoten holt sich Breite und Position jetzt von seinem BusinessObjekt.
 
 
 #include "Node.h"
@@ -18,19 +19,33 @@
 //#include "Texture.h"
 
 //*******************************************************************************
-Node::Node( IBusinessAdapter * businessObj )
+Node::Node( IBusinessAdapter * businessObj, UnitConversionInfo & unitInfo  )
+: m_rUnitInfo(unitInfo)
 {
 	m_DisplayList = 0;
 	m_pBusinessObject = businessObj;
+
+	float unitWidth		= m_rUnitInfo.getUnitWidth();
+	float unitHeight	= m_rUnitInfo.getUnitHeight();
+	float pad			= m_rUnitInfo.getHorizontalPadding();
+
+	// Höhe festlegen
+	m_Height = unitHeight;
+
+	// Breite und Position vom BusinessObjekt geben lassen
 	if (m_pBusinessObject != NULL)
 	{
-		// Höhe und Breite vom BusinessObjekt geben lassen
+		m_Width = (float)m_pBusinessObject->getWidth() * unitWidth - pad;
+
+		double x = m_pBusinessObject->getBegin() * unitWidth;
+		double y = m_pBusinessObject->getLine() * unitHeight;
+		HapticObject::setPosition(x, y, 0.0);
 	}
+	// wenn kein BusinessObjekt da ist, Breite auf 1 Unit setzen
 	else
 	{
-		m_Width = 0.1f;
-		m_Height = 0.1f;
-	}
+		m_Width = unitWidth - pad;
+	}	
 
 	m_IncomingEdges.clear();
 	m_OutgoingEdges.clear();
@@ -43,31 +58,9 @@ Node::~Node()
 	// Displayliste freigeben
 	releaseDisplayList();
 	
-/*
-	// Incoming Edges freigeben
-	list<Edge *>::iterator edgeIter;
-	for (edgeIter = m_IncomingEdges.begin(); edgeIter != m_IncomingEdges.end(); edgeIter++)
-	{
-		if ((*edgeIter) != NULL)
-		{
-			delete (*edgeIter);
-			(*edgeIter) = NULL;
-		}
-	}
-*/
+	// Inhalte der Kantenlisten löschen, die Pointer auf die Kanten müssen extern
+	// freigegeben werden.
 	m_IncomingEdges.clear();
-
-/*	// Outgoing Edges freigeben
-	for (edgeIter = m_OutgoingEdges.begin(); edgeIter != m_OutgoingEdges.end(); edgeIter++)
-	{
-		if ((*edgeIter) != NULL)
-		{
-			delete (*edgeIter);
-			(*edgeIter) = NULL;
-		}
-	}
-*/
-
 	m_OutgoingEdges.clear();
 }
 //*******************************************************************************
@@ -200,12 +193,14 @@ void Node::renderShape()
     else
     {
 		float graphPlaneZ = GraphScene::getGraphPlaneZ();
+		//float pad = m_rUnitInfo.getHorizontalPadding();
+		float halfVPad = m_rUnitInfo.getVerticalPadding() / 2.0f;
+		float halfHeight = m_Height / 2.0f - halfVPad;
+		
 
         m_DisplayList = glGenLists(1);
         glNewList(m_DisplayList, GL_COMPILE_AND_EXECUTE);
 		glBegin(GL_QUADS);
-
-		float halfHeight = m_Height / 2;
 
 		// linke untere Ecke
 		glVertex3f( 0.0f,		-halfHeight,	graphPlaneZ);
@@ -227,10 +222,11 @@ void Node::translate(const double x, const double y, const double z)
 {
 	if (m_pBusinessObject != NULL)
 	{
-		
+		// Business-Objekt fragen, ob und wie schwer sich der Knoten bewegen lassen
+		// soll.
 	}
-	HapticObject::translate(x, y, z);
 
+	HapticObject::translate(x, y, z);
 	updateEdges();
 }
 //*******************************************************************************
@@ -239,7 +235,6 @@ void Node::translate(const double x, const double y, const double z)
 void Node::setPosition(const double x, const double y, const double z)
 {
 	HapticObject::setPosition(x, y, z);
-
 	updateEdges();
 }
 //*******************************************************************************
@@ -247,6 +242,12 @@ void Node::setPosition(const double x, const double y, const double z)
 //*******************************************************************************
 void Node::Update( Observable * pObservable )
 {
+	float unitWidth = m_rUnitInfo.getUnitWidth();
+	m_Width = (float)m_pBusinessObject->getWidth() * unitWidth;
+
+	double x = m_pBusinessObject->getBegin() * unitWidth;
+	double y = m_pBusinessObject->getLine() * m_rUnitInfo.getUnitHeight();
+	HapticObject::setPosition(x, y, 0.0);
 }
 //*******************************************************************************
 

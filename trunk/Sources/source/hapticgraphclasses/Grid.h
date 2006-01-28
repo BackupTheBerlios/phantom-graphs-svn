@@ -2,11 +2,13 @@
 /// @file	Grid.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		17.01.2006
-/// @date	Letzte Änderung	24.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 24.01.06		- Methoden isGridPoint() und nearestGridPoint() hinzugefügt.
+// 28.01.06		- Membervariable m_rUnitInfo zur Einheitenkonvertierung hinzugefügt,
+//				  Konstruktor entsprechend angepasst.
 
 
 #ifndef _GRID_H_
@@ -19,8 +21,9 @@
 #include <GL/gl.h>
 
 #include "HapticObject.h"
+#include "Utilities.h"
 
-
+/*
 //*******************************************************************************
 // Konstantendeklarationen
 //*******************************************************************************
@@ -36,6 +39,7 @@ const float c_GridColumnWidth = 0.12f;
 const float c_GridRowHeight = 0.12f;
 
 //*******************************************************************************
+*/
 
 
 //...............................................................................
@@ -63,6 +67,11 @@ class Grid : public HapticObject
 		//.......................................................................
 		GLuint m_DisplayList;
 
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		UnitConversionInfo & m_rUnitInfo;
+
 		//=======================================================================
 		// Von HapticObject geerbte Methoden
 		//=======================================================================
@@ -82,7 +91,7 @@ class Grid : public HapticObject
 		///	@param cols	Anzahl der Spalten des Grid.
 		///	@param rows	Anzahl der Zeilen des Grid.
 		//.......................................................................
-		Grid( int cols = 1, int rows = 1 );
+		Grid( UnitConversionInfo & unitInfo, int cols = 1, int rows = 1 );
 
 		//.......................................................................
 		/// @brief	Destruktor: Gibt die Resourcen des Objektes frei.

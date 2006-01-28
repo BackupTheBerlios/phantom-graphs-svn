@@ -2,12 +2,14 @@
 /// @file	DragSceneHandler.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		19.01.2006
-/// @date	Letzte Änderung	26.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 26.01.06		- Sicht auf die Szene wird einigermaßen vernünftig auf der x-Achse 
 //				  hin und her geschoben.
+// 28.01.06		- Der DragSceneHandler reagiert jetzt statt auf den vorderen 
+//				  Phantom-Button auf den hinteren.
 
 #include "DragSceneHandler.h"
 
@@ -19,7 +21,7 @@ void HLCALLBACK DragSceneHandler::OnButtonDown(	HLenum event,
 												void *pHandlerObject)
 {
 	hlAddEventCallback(HL_EVENT_MOTION, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragSceneHandler::OnDrag, pHandlerObject);
-	hlAddEventCallback(HL_EVENT_1BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragSceneHandler::OnButtonUp, NULL);
+	hlAddEventCallback(HL_EVENT_2BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragSceneHandler::OnButtonUp, NULL);
 
 	DragSceneHandler * pHandler = static_cast<DragSceneHandler*>(pHandlerObject);
 	if (pHandler != NULL)
@@ -37,7 +39,7 @@ void HLCALLBACK DragSceneHandler::OnButtonUp(	HLenum event,
 												void *userdata)
 {
 	hlRemoveEventCallback(HL_EVENT_MOTION, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragSceneHandler::OnDrag);
-	hlRemoveEventCallback(HL_EVENT_1BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragSceneHandler::OnButtonUp);
+	hlRemoveEventCallback(HL_EVENT_2BUTTONUP, HL_OBJECT_ANY, HL_CLIENT_THREAD, DragSceneHandler::OnButtonUp);
 }
 //*******************************************************************************
 
@@ -85,13 +87,13 @@ void DragSceneHandler::handleDrag(HLcache * pCache)
 //*******************************************************************************
 void DragSceneHandler::registerAction( HLuint shapeID )
 {
-	hlAddEventCallback(HL_EVENT_1BUTTONDOWN, shapeID, HL_CLIENT_THREAD, DragSceneHandler::OnButtonDown, this);
+	hlAddEventCallback(HL_EVENT_2BUTTONDOWN, shapeID, HL_CLIENT_THREAD, DragSceneHandler::OnButtonDown, this);
 }
 //*******************************************************************************
 
 //*******************************************************************************
 void DragSceneHandler::unregisterAction( HLuint shapeID )
 {
-	hlRemoveEventCallback(HL_EVENT_1BUTTONDOWN, shapeID, HL_CLIENT_THREAD, DragSceneHandler::OnButtonDown);
+	hlRemoveEventCallback(HL_EVENT_2BUTTONDOWN, shapeID, HL_CLIENT_THREAD, DragSceneHandler::OnButtonDown);
 }
 //*******************************************************************************

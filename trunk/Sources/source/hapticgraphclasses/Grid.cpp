@@ -18,7 +18,8 @@
 #include "GraphScene.h"
 
 //*******************************************************************************
-Grid::Grid( int cols, int rows )
+Grid::Grid( UnitConversionInfo & unitInfo, int cols, int rows )
+: m_rUnitInfo(unitInfo)
 {
 	m_DisplayList = 0;
 	m_Columns = cols;
@@ -44,7 +45,9 @@ bool Grid::isGridPoint(Position pos)
 	double y = pos.y - gridPos.y;
 	double z = pos.z - gridPos.z;
 
-	double threshold = 0.01;
+	float	gridColumnWidth	= m_rUnitInfo.getUnitWidth();
+	float	gridRowHeight	= m_rUnitInfo.getUnitHeight();
+	double	threshold = 0.1 * gridColumnWidth;
 
 	// Prüfen, ob die x-Koordinate der Position nah genug an der x-Koordinate eines
 	// gültigen Gitterpunktes ist
@@ -52,12 +55,12 @@ bool Grid::isGridPoint(Position pos)
 	bool xOk = x > -threshold;
 	if (xOk)
 	{
-		double tmp = x / c_GridColumnWidth;
+		double tmp = x / gridColumnWidth;
 		// Abweichung von einer gültigen x-Koordinate klein genug?
 		// rechts von gültiger Koordinate			links von gültiger Koordinate
 		xOk = (fabs(tmp - (int)tmp) < threshold) || (fabs(tmp - (int)tmp) > (1.0 - threshold));
 		// x-Koordinate nicht größer als rechter Rand des Grid?
-		xOk = xOk && (x < ((m_Columns - 1) * c_GridColumnWidth + threshold));
+		xOk = xOk && (x < ((m_Columns - 1) * gridColumnWidth + threshold));
 	}
 
 	// Prüfen, ob die y-Koordinate der Position nah genug an der y-Koordinate eines
@@ -66,9 +69,9 @@ bool Grid::isGridPoint(Position pos)
 	// Berechnung für y nur durchführen, wenn auch x Ok war.
 	if (xOk && yOk)
 	{
-		double tmp = y / c_GridRowHeight;
+		double tmp = y / gridRowHeight;
 		yOk = (fabs(tmp - (int)tmp) < threshold) || (fabs(tmp - (int)tmp) > (1.0 - threshold));
-		yOk = yOk && (y < ((m_Rows - 1) * c_GridRowHeight + threshold));
+		yOk = yOk && (y < ((m_Rows - 1) * gridRowHeight + threshold));
 	}
 
 	// Prüfen, ob die z-Koordinate der Position nah genug an der z-Koordinate eines
@@ -92,10 +95,13 @@ Position Grid::nearestGridPoint(Position pos)
 	double x = pos.x - gridPos.x;
 	double y = pos.y - gridPos.y;
 
+	float	gridColumnWidth	= m_rUnitInfo.getUnitWidth();
+	float	gridRowHeight	= m_rUnitInfo.getUnitHeight();
+
 	// Ergebnisvariable
 	Position gridPoint;
 
-	double rightestX = gridPos.x + (m_Columns - 1) * c_GridColumnWidth;
+	double rightestX = gridPos.x + (m_Columns - 1) * gridColumnWidth;
 
 	// nächstliegende x-Koordinate ermitteln:
 	// alles, was links vom Grid liegt, wird auf x = gridPos.x gesetzt
@@ -112,11 +118,11 @@ Position Grid::nearestGridPoint(Position pos)
 	// ansonsten auf den nächstgelegenen gültigen x-Wert runden
 	else
 	{
-		int factor = (int)((x + (c_GridColumnWidth / 2)) / c_GridColumnWidth);
-		gridPoint.x = gridPos.x + factor * c_GridColumnWidth;
+		int factor = (int)((x + (gridColumnWidth / 2)) / gridColumnWidth);
+		gridPoint.x = gridPos.x + factor * gridColumnWidth;
 	}
 
-	double highestY = gridPos.y + (m_Rows - 1) * c_GridRowHeight;
+	double highestY = gridPos.y + (m_Rows - 1) * gridRowHeight;
 
 	// nächstliegende y-Koordinate ermitteln:
 	// alles, was unterhalb vom Grid liegt, wird auf y = gridPos.y gesetzt
@@ -133,8 +139,8 @@ Position Grid::nearestGridPoint(Position pos)
 	// ansonsten auf den nächstgelegenen gültigen y-Wert runden
 	else
 	{
-		int factor = (int)((y + (c_GridRowHeight / 2)) / c_GridRowHeight);
-		gridPoint.y = gridPos.y + factor * c_GridRowHeight;
+		int factor = (int)((y + (gridRowHeight / 2)) / gridRowHeight);
+		gridPoint.y = gridPos.y + factor * gridRowHeight;
 	}
 
 	// z-Koordinate immer 0.0
@@ -153,7 +159,9 @@ void Grid::renderShape()
     }
     else
     {
-		float graphPlaneZ = GraphScene::getGraphPlaneZ();
+		float	graphPlaneZ = GraphScene::getGraphPlaneZ();
+		float	gridColumnWidth	= m_rUnitInfo.getUnitWidth();
+		float	gridRowHeight	= m_rUnitInfo.getUnitHeight();
 
         m_DisplayList = glGenLists(1);
         glNewList(m_DisplayList, GL_COMPILE_AND_EXECUTE);
@@ -167,32 +175,32 @@ void Grid::renderShape()
 		// Zeilen
 		for (int i = 0; i < m_Rows; i++)
 		{
-			y = i * c_GridRowHeight;
+			y = i * gridRowHeight;
 			glVertex3f(0.0f,								y, graphPlaneZ);
-			glVertex3f((m_Columns - 1) * c_GridColumnWidth,	y, graphPlaneZ);
+			glVertex3f((m_Columns - 1) * gridColumnWidth,	y, graphPlaneZ);
 		}
 
 		// Spalten
 		for (i = 0; i < m_Columns; i++)
 		{
-			x = i * c_GridColumnWidth;
+			x = i * gridColumnWidth;
 			glVertex3f(x, 0.0f,								graphPlaneZ);
-			glVertex3f(x, (m_Rows - 1) * c_GridRowHeight,	graphPlaneZ);
+			glVertex3f(x, (m_Rows - 1) * gridRowHeight,		graphPlaneZ);
 		}
 
 		glEnd();
 
 		// Gitterpunkte
 		glColor3f(1.0f, 0.0f, 0.0f);
-		glPointSize(2.5);
+		glPointSize(5.0);
 		glBegin(GL_POINTS);
 
 		for (i = 0; i < m_Rows; i++)
 		{
-			y = i * c_GridRowHeight;
+			y = i * gridRowHeight;
 			for (int j = 0; j < m_Columns; j++)
 			{
-				x = j * c_GridColumnWidth;
+				x = j * gridColumnWidth;
 				glVertex3f(x, y, graphPlaneZ);
 				glVertex3f(x, y, graphPlaneZ);
 			}

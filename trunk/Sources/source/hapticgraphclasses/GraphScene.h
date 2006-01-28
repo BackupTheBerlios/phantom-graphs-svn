@@ -2,7 +2,7 @@
 /// @file	GraphScene.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	26.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -13,6 +13,8 @@
 // 26.01.06		- initScene() hat neue Parameter bekommen.
 //				- GraphScene hat jetzt eine Camera zur Steuerung der Ansicht.
 //				- Dafür Methode getView() hinzugefügt.
+// 28.01.06		- Membervariable m_rUnitInfo zur Einheitenkonvertierung hinzugefügt,
+//				  Konstruktor entsprechend angepasst.
 
 
 #ifndef _GRAPHSCENE_H_
@@ -25,6 +27,9 @@ using namespace std;
 #include "HapticObject.h"
 #include "Camera.h"
 #include "Node.h"
+#include "Grid.h"
+#include "Utilities.h"
+#include "HapticAction.h"
 
 #include "FrictionForceEffect.h"
 #include "ConstantForceEffect.h"
@@ -54,6 +59,16 @@ class GraphScene
 		Camera * m_pCamera;
 
 		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		UnitConversionInfo & m_rUnitInfo;
+
+		//.......................................................................
+		/// @brief	
+		//.......................................................................
+		IHapticAction * m_pDragSceneHandler;
+
+		//.......................................................................
 		/// @brief	Fordert alle Objekte auf, ihre haptische Beschaffenheit zu rendern.
 		/// @param	bHapticsEnabled	Gibt an, ob die Haptik gerendert werden kann.
 		//.......................................................................
@@ -67,7 +82,7 @@ class GraphScene
 		//.......................................................................
 		/// @brief	
 		//.......................................................................
-		Node * createObjects(IBusinessAdapter * businessObj);
+		Node * createObjects( IBusinessAdapter * businessObj, Grid * pGrid );
 
 //FrictionForceEffect * eff;
 //ConstantForceEffect * eff;
@@ -79,7 +94,7 @@ ViscousForceEffect * eff;
 		//.......................................................................
 		/// @brief	Konstruktor: Initialisiert das Objekt.
 		//.......................................................................
-		GraphScene();
+		GraphScene( UnitConversionInfo & unitInfo );
 
 		//.......................................................................
 		///	@brief	Destruktor: Gibt alle Objekte der Szene frei.

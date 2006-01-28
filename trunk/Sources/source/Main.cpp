@@ -73,7 +73,7 @@ Description:
 static HapticDevice * pHapticDevice = NULL;
  
 // Objekt zur Verwaltung aller Objekte der Szene
-static GraphScene scene;
+static GraphScene * pScene;
 
 // Cursor-Objekt
 static HapticCursor cursor;
@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
 *******************************************************************************/
 void glutDisplay()
 {    
-	scene.renderScene(pHapticDevice->isActive());
+	pScene->renderScene(pHapticDevice->isActive());
 	cursor.render();
     glutSwapBuffers();
 }
@@ -152,7 +152,7 @@ void glutDisplay()
 *******************************************************************************/
 void glutReshape(int width, int height)
 {
-	scene.getView()->recalculateView(width, height);
+	pScene->getView()->recalculateView(width, height);
 
 	cursor.scale();
 }
@@ -172,7 +172,9 @@ void initScene( int viewportWidth, int viewportHeight )
 {
     initGL();
     initHL();
-	scene.initScene(viewportWidth, viewportHeight, pHapticDevice,
+	static UnitConversionInfo uinf(3.6, 2.7, 0.05, 0.1);
+	pScene = new GraphScene(uinf);
+	pScene->initScene(viewportWidth, viewportHeight, pHapticDevice,
 					appData.getProjectDuration(), appData.getProjectLines(),
 					appData.getRootTask());
 }

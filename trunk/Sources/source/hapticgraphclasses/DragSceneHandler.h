@@ -26,7 +26,7 @@
 ///			Phantom zu bewegen
 ///			
 ///			Der Eventhandler reagiert auf die folgende Events:
-///			- der vordere Phantom-Button wird gedrückt, wenn das registrierte Objekt
+///			- der hintere Phantom-Button wird gedrückt, wenn das registrierte Objekt
 ///			  mit dem Phantom berührt wird
 ///			- das Phantom wird mit gedrücktem Button bewegt
 ///			- der vordere Phantom-Button wird losgelassen
@@ -52,7 +52,7 @@ class DragSceneHandler : public IHapticAction
 		//.......................................................................
 		/// @brief	(HLAPI-Callbackfunktion) Started das Draggen des Objekts
 		/// @param	event	Gibt an, auf welches HLAPI-Event hin die Callback-
-		///					Funktion aufgerufen werden soll, hier HL_EVENT_1BUTTONDOWN
+		///					Funktion aufgerufen werden soll, hier HL_EVENT_2BUTTONDOWN
 		///	@param	shapeID	Die ShapeID des Objekts, das bewegt werden soll
 		/// @param	thread	Gibt an, in welchem HLAPI-Thread das Event behandelt 
 		///					werden soll, in diesem Fall HL_CLIENT_THREAD
@@ -69,7 +69,7 @@ class DragSceneHandler : public IHapticAction
 		//.......................................................................
 		/// @brief	(HLAPI-Callbackfunktion) Beendet das Draggen des Objekts
 		/// @param	event	Gibt an, auf welches HLAPI-Event hin die Callback-
-		///					Funktion aufgerufen werden soll, hier HL_EVENT_1BUTTONUP
+		///					Funktion aufgerufen werden soll, hier HL_EVENT_2BUTTONUP
 		///	@param	shapeID	hier soll HL_OBJECT_ANY angegeben werden
 		/// @param	thread	Gibt an, in welchem HLAPI-Thread das Event behandelt
 		///					 werden soll, in diesem Fall HL_CLIENT_THREAD

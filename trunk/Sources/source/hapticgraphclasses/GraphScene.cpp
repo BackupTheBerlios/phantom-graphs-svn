@@ -2,14 +2,15 @@
 /// @file	GraphScene.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	26.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 30.12.05		- Alle Methoden bis auf initScene() implementiert
-// 02.01.06		- Anstoß für Event-Callbacks hinzugefügt
+// 02.01.06		- Anstoß für Event-Callbacks hinzugefügt.
 // 26.01.06		- initScene() hat neue Parameter bekommen.
 //				- neue Methode getView() hinzugefügt und implementiert.
+// 28.01.06		- createObjects() implementiert.
 
 
 
@@ -25,17 +26,20 @@
 #include "DragObjectHandler.h"
 #include "DragNodeOnGridHandler.h"
 #include "DragSceneHandler.h"
-#include "Grid.h"
 #include "Edge.h"
 
 
 //*******************************************************************************
-GraphScene::GraphScene()
+GraphScene::GraphScene( UnitConversionInfo & unitInfo )
+: m_rUnitInfo(unitInfo)
 {
 	// keine Objekte in der Scene
 	m_SceneElements.clear();
 
 	m_pCamera = NULL;
+
+	m_pDragSceneHandler = NULL;
+
 }
 //*******************************************************************************
 
@@ -59,6 +63,14 @@ GraphScene::~GraphScene()
 	{
 		delete m_pCamera;
 		m_pCamera = NULL;
+	}
+
+	// DragSceneHandler freigeben
+	if (m_pDragSceneHandler != NULL)
+	{
+		m_pDragSceneHandler->unregisterAction(HL_OBJECT_ANY);
+		delete m_pDragSceneHandler;
+		m_pDragSceneHandler = NULL;
 	}
 
 //hlBeginFrame();
@@ -91,9 +103,13 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 	// Hintergrundfarbe festlegen
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
+	// DragSceneHandler initialisieren
+	m_pDragSceneHandler = new DragSceneHandler(this);
+	m_pDragSceneHandler->registerAction(HL_OBJECT_ANY);
+
 	// Darstellungsobjekte zum Graphen erzeugen:
 	// Grid der entsprechenden Größe mit linker unterer Ecke bei [0.0, 0.0, 0.0] erzeugen
-	Grid * pGrid = new Grid(gridColumns, gridRows);
+	Grid * pGrid = new Grid(m_rUnitInfo, gridColumns, gridRows);
 	pGrid->setPosition(0.0, 0.0, 0.0);
 	HapticConstraint * pGridConstraint = new HapticConstraint(3.0f);
 	pGridConstraint->disable();
@@ -103,6 +119,12 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 
 	// vom rootNode ausgehend Haptische Objekte für Knoten und Kanten erzeugen
 	// der rootNode selbst wird nicht dargestellt
+	list<IBusinessAdapter*>& lsFollowingNodes = rootNode->getNextTasks();
+	list<IBusinessAdapter*>::iterator iterNext;
+	for (iterNext = lsFollowingNodes.begin(); iterNext != lsFollowingNodes.end(); iterNext++)
+	{
+		createObjects(*iterNext, pGrid);
+	}
 
 
 /*	// Grid erzeugen
@@ -156,14 +178,32 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 //hlEndFrame();
 //eff2.startEffect();
 */
+	eff = new ViscousForceEffect(5.0, 5.0);
 }
 //*******************************************************************************
 
 //*******************************************************************************
-Node * createObjects(IBusinessAdapter * businessObj)
+Node * GraphScene::createObjects(IBusinessAdapter * businessObj, Grid * pGrid )
 {
-	Node * pNode = new Node(businessObj);
+	Node * pNode = new Node(businessObj, m_rUnitInfo);
+	addObject(pNode);
+	pNode->addHapticAction(new DragNodeOnGridHandler(pNode, pGrid));
+
 	// rekursiv die Nachfolger erzeugen und mit Kanten verbinden
+	
+	Node * pNextNode = NULL;
+	Edge * pEdge = NULL;
+	list<IBusinessAdapter*>& lsFollowingNodes = businessObj->getNextTasks();
+	list<IBusinessAdapter*>::iterator iterNext;
+	for (iterNext = lsFollowingNodes.begin(); iterNext != lsFollowingNodes.end(); iterNext++)
+	{
+		pNextNode = createObjects(*iterNext, pGrid);
+		pEdge = new Edge();
+		pNode->addOutgoingEdge(pEdge);
+		pNextNode->addIncomingEdge(pEdge);
+		addObject(pEdge);
+	}
+
 	return pNode;
 }
 //*******************************************************************************
@@ -206,6 +246,8 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 		// Haptic Frame starten - haptische Objekte können nur zwischen hlBeginFrame()
 		// und hlEndFrame() gerendert werden
 		hlBeginFrame();
+
+		eff->startEffect();
 
 		// alle Objekte der Scene durchlaufen und sie zum Rendern ihrer haptischen
 		// Beschaffenheit auffordern

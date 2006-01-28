@@ -2,12 +2,15 @@
 /// @file	Utilities.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.01.2006
-/// @date	Letzte Änderung	24.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
 // 24.01.06		- Klasse UnitConversionInfo erstellt
 //				- Konstruktor von Position implementiert
+// 28.01.06		- Konstruktor von UnitConversionInfo dummymäßig implementiert.
+//				- UnitConversionInfo: Umrechnungsmethoden xValueToUnit(), yValueToUnit()
+//				  unitToXValue(), unitToYValue() hinzugefügt und implementiert.
 
 
 #include "Utilities.h"
@@ -63,6 +66,9 @@ UnitConversionInfo::UnitConversionInfo( int upsHorz, int upsVert,
 : m_UnitsPerScreenHorizontal(upsHorz), m_UnitsPerScreenVertical(upsVert),
   m_HorizontalPadding(paddingHorz), m_VerticalPadding(paddingVert)
 {
+	// Dummy
+	m_UnitWidth = 0.1f + m_HorizontalPadding;
+	m_UnitHeight = 0.2f + m_VerticalPadding;
 }
 //*******************************************************************************
 
@@ -98,7 +104,7 @@ float UnitConversionInfo::getUnitWidth()
 {
 //	return m_UnitWidth;
 	// Dummy
-	return 0.12;
+	return 0.12f;
 }
 //*******************************************************************************
 
@@ -113,5 +119,33 @@ float UnitConversionInfo::getHorizontalPadding()
 float UnitConversionInfo::getVerticalPadding()
 {
 	return m_VerticalPadding;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+float UnitConversionInfo::xValueToUnit(float xValue)
+{
+	return xValue / m_UnitWidth;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+float UnitConversionInfo::yValueToUnit(float yValue)
+{
+	return yValue / m_UnitHeight;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+float UnitConversionInfo::unitToXValue(float unit)
+{
+	return unit * m_UnitWidth;
+}
+//*******************************************************************************
+
+//*******************************************************************************
+float UnitConversionInfo::unitToYValue(float unit)
+{
+	return unit * m_UnitHeight;
 }
 //*******************************************************************************

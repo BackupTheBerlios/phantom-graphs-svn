@@ -2,7 +2,7 @@
 /// @file	Node.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		30.12.2005
-/// @date	Letzte Änderung	27.01.2006
+/// @date	Letzte Änderung	28.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -10,6 +10,8 @@
 // 08.01.06		- Attribute m_Width und m_Height und entsprechende Getter und Setter
 //				  hinzugefügt
 // 27.01.06		- Incoming- und Outgoing Edges und dazugehörige Methoden hinzugefügt.
+// 28.01.06		- Membervariable m_rUnitInfo zur Einheitenkonvertierung hinzugefügt,
+//				  Konstruktor entsprechend angepasst.
 
 
 #ifndef _NODE_H_
@@ -26,6 +28,7 @@
 
 #include "HapticObject.h"
 #include "Edge.h"
+#include "Utilities.h"
 #include "../businesslogic/IObserver.h"
 #include "../businesslogic/IBusinessAdapter.h"
 
@@ -69,6 +72,11 @@ class Node : public HapticObject, public IObserver
 		//.......................................................................
 		/// @brief
 		//.......................................................................
+		UnitConversionInfo & m_rUnitInfo;
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
 		void updateIncomingEdge(Edge * pEdge);
 
 		//.......................................................................
@@ -99,7 +107,7 @@ class Node : public HapticObject, public IObserver
 
 		//.......................................................................
 		//.......................................................................
-		Node( IBusinessAdapter * businessObj );
+		Node( IBusinessAdapter * businessObj, UnitConversionInfo & unitInfo );
 
 		//.......................................................................
 		//.......................................................................
