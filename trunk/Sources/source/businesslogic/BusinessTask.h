@@ -13,6 +13,7 @@
 // 27.01.2006	- Änderung von Memberfunktion zum hinzufügen von Vorgängern 
 //				  und Nachfolgern CA
 // 28.01.2006	- m_Width umdefiniert CA
+//				- update: setLine()
 
 #if !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)
 #define AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_
@@ -37,6 +38,7 @@ using namespace std;
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
+	void setLine(int line);
 	void addTaskPrevious(BusinessTask *follows);
 	void addTaskFollowing(BusinessTask *followed_by);
 	string getName();
@@ -55,7 +57,7 @@ private:
 	//..................................................
 	/// @brief Darstellungsebene
 	//..................................................
-	int m_line;
+	int m_Line;
 
 	float width;
 	Position position;

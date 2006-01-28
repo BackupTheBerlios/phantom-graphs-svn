@@ -13,6 +13,7 @@
 // 27.01.2006	- Änderung von Memberfunktion zum hinzufügen von Vorgängern 
 //				  und Nachfolgern CA
 // 28.01.2006	- m_Width umdefiniert CA
+//				- update: setLine()
 
 #include "BusinessTask.h"
 #include "AppConfiguration.h"
@@ -89,7 +90,7 @@ int BusinessTask::getWidth()
 
 int BusinessTask::getLine()
 {
-	return m_line;
+	return m_Line;
 }
 
 int BusinessTask::getBegin()
@@ -120,4 +121,9 @@ void BusinessTask::addTaskPrevious(BusinessTask *followes)
 list<IBusinessAdapter*>&  BusinessTask::getNextTasks()
 {
 	return m_TasksFollowing;
+}
+
+void BusinessTask::setLine(int line)
+{
+	m_Line = line;
 }

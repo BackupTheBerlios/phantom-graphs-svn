@@ -72,6 +72,15 @@ void AppConfiguration::initTasks()
 	BusinessTask *task07 = new BusinessTask("A07",6,80,0);
 	BusinessTask *task08 = new BusinessTask("A08",6,300,1);
 
+	task01->setLine(0);
+	task02->setLine(0);
+	task03->setLine(0);
+	task04->setLine(1);
+	task05->setLine(2);
+	task06->setLine(0);
+	task07->setLine(0);
+	task08->setLine(0);
+
 	/* Aufgaben der Aufgabenliste hinzufügen */
 	m_BusinessTasks.push_back(task00);
 	m_BusinessTasks.push_back(task01);
