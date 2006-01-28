@@ -17,7 +17,8 @@
 //				- added:
 //					getNextTasks()
 //					getPreviousTasks()
-
+//				- added: setBegin(float)
+//				- added: calcBegin()
 
 #if !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)
 #define AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_
@@ -42,6 +43,14 @@ using namespace std;
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
+
+	//...............................................................................
+	/// @brief	setzt den Anfang einer Aufgabe
+	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
+	/// @return bool true=Begin erfolgreich geändert, false=keine Änderung durchgeführt
+	//...............................................................................
+	bool setBegin(float begin);
+
 	void setLine(int line);
 	void addTaskPrevious(BusinessTask *follows);
 	void addTaskFollowing(BusinessTask *followed_by);
@@ -68,6 +77,14 @@ public:
 	virtual list<IBusinessAdapter*>& getPreviousTasks();
 
 private:
+
+	//..................................................
+	/// @brief rundet floats auf beliebige nachkommastellen ab
+	/// @param value float, das gerundet werden soll
+	/// @param nachkommastellen - anzugeben in 1 für keine, 10 für 1, 100 für 2 ... Nachkommastellen
+	//..................................................
+	float runden(float value, int nachkommastellen);
+
 	//..................................................
 	/// @brief Darstellungsebene
 	//..................................................
@@ -75,7 +92,21 @@ private:
 
 	float width;
 	Position position;
+
+	//..................................................
+	/// @brief berechnet den Anfangspunkt anhand von Endpunkt und Dauer
+	/// @param end Endpunkt
+	/// @param duration Dauer
+	//..................................................
+	int calcBegin(int end, int duration);
+
+	//..................................................
+	/// @brief berechnet den Endpunkt anhand von Anfangspunkt und Dauer
+	/// @param begin Anfangspunkt
+	/// @param duration Dauer
+	//..................................................
 	int calcDayEnd(int begin, int duration);
+
 	bool isMilestone;
 	int m_Begin;
 	int surface;

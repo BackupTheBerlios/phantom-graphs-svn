@@ -2,7 +2,7 @@
 /// @file	BusinessTask.cpp
 /// @author	Carsten Arnold
 /// @date	Erstellt am		02.01.2006
-/// @date	Letzte Änderung	27.01.2006 CA
+/// @date	Letzte Änderung	28.01.2006 CA
 //*******************************************************************************
 
 // Änderungen:
@@ -17,6 +17,9 @@
 //				- added:
 //					getNextTasks()
 //					getPreviousTasks()
+//				- added: setBegin(float)
+//				- added: calcBegin()
+
 
 #include "BusinessTask.h"
 #include "AppConfiguration.h"
@@ -51,7 +54,11 @@ BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milest
 	isMilestone = Milestone;
 
 	// m_DayBegin = begin;
-	day_end = calcDayEnd(m_Begin, m_Width);
+	// day_end = calcDayEnd(m_Begin, m_Width);
+	
+	/* Berechne den Anfang der Aufgabe*/
+	m_Begin = calcBegin(final, duration);
+
 	force = 0;
 	surface = 0;
 }
@@ -134,4 +141,25 @@ list<IBusinessAdapter*>&  BusinessTask::getPreviousTasks()
 void BusinessTask::setLine(int line)
 {
 	m_Line = line;
+}
+
+bool BusinessTask::setBegin(float begin)
+{
+	float begin_neu = runden(begin, 1);
+	m_Begin = begin_neu;
+	return true;
+}
+
+
+float BusinessTask::runden(float value, int nachkommastellen)
+{
+	// return ( (float) ( (long) (f * 100 + 0.5) ) ) / 100;
+	return ( (float) ( (long) (value * nachkommastellen) ) ) / nachkommastellen;
+}
+
+int BusinessTask::calcBegin(int end, int duration)
+{
+	int begin;
+	begin = end - duration;
+	return begin;
 }

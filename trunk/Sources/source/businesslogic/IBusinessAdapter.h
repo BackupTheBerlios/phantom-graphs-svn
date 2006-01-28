@@ -9,15 +9,15 @@
 
 // Änderungen:
 // 06.01.2006	- Schnittstelle getForce() hinzugefügt
-// 09.01.06		- Schnittstellen getWidth(), getHeight() und getPosition() hinzugefügt (Kathrin)
+// 09.01.0006		- Schnittstellen getWidth(), getHeight() und getPosition() hinzugefügt (Kathrin)
 // 24.01.2006	- Schnittstelle 
 //					getName() 
 //					getLine()
-//					getForce()
 //				  hinzugefügt (CA)
 // 28.01.2006	- added:
 //					getNextTasks()
 //					getPreviousTasks()
+//				- added setBegin(float)
 
 
 #if !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)
@@ -90,6 +90,12 @@ public:
 	/// @return	Liste mit Vorgängern
 	//.......................................................................
 	virtual list<IBusinessAdapter*>& getPreviousTasks() = 0;
+
+	//...............................................................................
+	/// @brief	setzt den Anfang einer Aufgabe
+	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
+	//...............................................................................
+	virtual bool setBegin(float begin) = 0;
 
 };
 
