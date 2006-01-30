@@ -22,7 +22,10 @@
 // 29.01.2006	- added: moveToFront() CA
 // 30.01.2006	- modified: getForce(int,int) CA
 //				- added: enum force CA
-//				- modified: moveToFront() CA
+//				- modified: moveToFront(), moveFollowingToFront(), 
+//				  movePreviousToFront() CA
+//				- modified calcRanges() CA
+				
 
 
 
@@ -39,11 +42,11 @@ BusinessTask::BusinessTask()
 {
 	m_Name = (char) "unnamed Task";
 	m_Width = 0;
-	day_final = 0;
+	m_Final = 0;
 	isMilestone = false;
 
-	m_Begin = -1;
-	day_end = m_Begin + m_Width;
+	m_Begin = 0;
+	m_End = m_Begin + m_Width;
 	m_Force = none;
 	surface = 0;
 
@@ -56,14 +59,15 @@ BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milest
 {
 	m_Name = taskname;
 	m_Width = duration;
-	day_final = final;
+	m_Final = final;
 	isMilestone = Milestone;
 
 	// m_DayBegin = begin;
-	// day_end = calcDayEnd(m_Begin, m_Width);
+	// m_End = calcDayEnd(m_Begin, m_Width);
 	
-	/* Berechne den Anfang der Aufgabe*/
-	m_Begin = calcBegin(final, duration);
+	/* Berechne Anfang und Ende der Aufgabe*/
+	m_Begin = calcBegin(m_Final, m_Width);
+	m_End = calcEnd(m_Begin, m_Width);
 
 	m_Force = none;
 	surface = 0;
@@ -79,12 +83,26 @@ BusinessTask::~BusinessTask()
 
 }
 
-force BusinessTask::getForce(float x, float y)
+force BusinessTask::getForce(float x_float, float y_float)
 {
+	int x = (int) x_float;
+	
+	if ( ((m_ForceRangeIncredible0 < x) && (x < m_ForceRangeMedium0)) ||
+		 ((m_ForceRangeMedium1 < x) || x < (m_ForceRangeIncredible1)))
+	{
+		m_Force = medium;
+	}
+	else if ((m_ForceRangeMedium0 < x) && (x < m_ForceRangeMedium1)) m_Force = none;
+	else
+	{
+		m_Force = incredible;
+	}
+	
+	m_Force = none;
 	return m_Force;
 }
 
-int BusinessTask::calcDayEnd(int begin, int duration)
+int BusinessTask::calcEnd(int begin, int duration)
 {
 	int end;
 	end = 0;
@@ -116,6 +134,11 @@ int BusinessTask::getLine()
 int BusinessTask::getBegin()
 {
 	return m_Begin;
+}
+
+int BusinessTask::getEnd()
+{
+	return m_End;
 }
 
 void BusinessTask::printInfo()
@@ -157,6 +180,13 @@ bool BusinessTask::setBegin(float begin)
 {
 	float begin_neu = runden(begin, 1);
 	m_Begin = begin_neu;
+
+	/* Ende neu setzen nach Änderung des Beginns */
+	calcEnd(m_Begin, m_Width);
+	
+	/* Meldung nach Änderng */
+	this->NotifyAll();
+	
 	return true;
 }
 
@@ -174,7 +204,13 @@ int BusinessTask::calcBegin(int end, int duration)
 	return begin;
 }
 
-void BusinessTask::moveToFront()
+void BusinessTask::moveAllToFront()
+{
+	movePreviousToFront();
+	moveFollowingToFront(m_End);
+}
+
+void BusinessTask::movePreviousToFront()
 {
 	list<IBusinessAdapter*>::iterator itObj;
 
@@ -185,31 +221,124 @@ void BusinessTask::moveToFront()
 		if (*itObj != NULL)
 		{
 			/* Rekursiv alle Vorgänger durchlaufen*/
-			(*itObj)->moveToFront();
+			(*itObj)->movePreviousToFront();
 		}
 	}
 
-	/* Wenn keine Vorgänger existieren */
-	if ( m_TasksPrevious.empty() )
-	{
-		/* Begin so lassen, wenn kein Vorgänger existiert, da
-		 * nur die Rootaufgabe keinen Vorgänger hat*/
-	}
-	else
-	{
-		int maxDay = m_Begin;
+	/* Berechnung des frühesten Anfangs */
+	int maxDay = 0;
 
-		list<IBusinessAdapter*>::iterator prevObj;
+	list<IBusinessAdapter*>::iterator prevObj;
 
-		/* m_Begin neu setzen auf den größten Wert aller Vorgänger */
-		for (prevObj = m_TasksPrevious.begin() ; prevObj != m_TasksPrevious.end(); prevObj++)
+	for (prevObj = m_TasksPrevious.begin() ; prevObj != m_TasksPrevious.end(); prevObj++)
+	{
+		if (*prevObj != NULL)
 		{
-			if (*prevObj != NULL)
+			/* Ende der vorherigen Aufgabe */
+			int end = (*prevObj)->getBegin() + (*prevObj)->getWidth();
+
+			if ( end <= m_Begin && end > maxDay)
 			{
-				/* maxDay */
+				maxDay = end;
 			}
 		}
-
 	}
 
+	/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
+	 * vorherigen Aufgabe */
+	setBegin( (float)(maxDay + 1) );
+
+}
+
+void BusinessTask::moveFollowingToFront(int earliest)
+{
+
+	/* Berechnung des frühesten Anfangs */
+	int endPrevDay = earliest;
+
+			if ( endPrevDay <= m_Begin)
+			{
+				/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
+				 * vorherigen Aufgabe */
+				setBegin( (float)(endPrevDay + 1) );
+			}
+
+	list<IBusinessAdapter*>::iterator itObj;
+
+	/* Durchlaufe die Nachfolger und schiebe sie vom ersten Nachfolger an gesehen
+	 * so weit wie möglich an den Begin des Projektzeitraums */
+	for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
+	{
+		if (*itObj != NULL)
+		{
+			/* Rekursiv alle Nachfolger durchlaufen*/
+			(*itObj)->moveFollowingToFront(m_End);
+		}
+	}
+}
+
+void BusinessTask::calcRanges()
+{
+	calcForceMedium0();
+	calcForceMedium1();
+
+
+}
+
+int BusinessTask::calcForceInc0(int value)
+{
+	int test = 0;
+	int range = 0;
+	int longest = 0;
+	/* Durchlaufe die Vorgänger  */
+	list<IBusinessAdapter*>::iterator itObj;
+	for (itObj = m_TasksPrevious.begin() ; itObj != m_TasksPrevious.end(); itObj++)
+	{
+		if (*itObj != NULL)
+		{
+			test = (*itObj)->getWidth();
+			if (test > range) range = test;
+			
+		}
+		
+	}
+	return range;
+}
+
+
+void BusinessTask::calcForceMedium0()
+{
+	int range = 0;
+	int test = 0;
+
+	/* Suche erste Bewegungseinschränkung  */
+	list<IBusinessAdapter*>::iterator itObj;
+	for (itObj = m_TasksPrevious.begin() ; itObj != m_TasksPrevious.end(); itObj++)
+	{
+		if (*itObj != NULL)
+		{
+			test = (*itObj)->getBegin() + (*itObj)->getWidth();
+			if (test > range) range = test;
+		}
+	}
+	m_ForceRangeMedium0 = range + 1;
+}
+
+void BusinessTask::calcForceMedium1()
+{
+	int range = appData.getProjectDuration();
+	int test = 0;
+
+	/* Suche erste Bewegungseinschränkung  */
+	list<IBusinessAdapter*>::iterator itObj;
+	for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
+	{
+		if (*itObj != NULL)
+		{
+			test = (*itObj)->getBegin();
+			if (test < range) range = test;
+		}
+	}
+
+	m_ForceRangeMedium0 = range - m_Width - 1;
 }

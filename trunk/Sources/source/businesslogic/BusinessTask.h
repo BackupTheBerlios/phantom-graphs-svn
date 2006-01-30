@@ -23,6 +23,9 @@
 // 30.01.2006	- modified: getForce(int,int) CA
 //				- added: enum force CA
 //				- modified: moveToFront() CA
+//				- modified: moveToFront(), moveFollowingToFront(), 
+//				  movePreviousToFront() CA
+//				- modified calcRanges() CA
 
 #if !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)
 #define AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_
@@ -49,11 +52,43 @@ using namespace std;
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter
 {
 public:
+	void calcForceMedium1();
+	void calcForceMedium0();
+	int calcForceInc0(int value);
+	void calcRanges();
+	// int m_ForceRangeNone1;
+	// int m_ForceRangeNone0;
+	int m_ForceRangeMedium0;
+	int m_ForceRangeMedium1;
+	int m_ForceRangeIncredible0;
+	int m_ForceRangeIncredible1;
 
 	//...............................................................................
-	/// @brief	schiebt die Aufgabe so weit wie möglich an den Anfang des Projekts
+	/// @brief	schiebt nachfolgende Aufgaben so weit wie möglich an den Anfang des Projekts
 	//...............................................................................
-	void moveToFront();
+	void moveFollowingToFront(int earliest);
+
+	//...............................................................................
+	/// @brief	schiebt vorhergehende Aufgaben so weit wie möglich an den Anfang des Projekts
+	//...............................................................................
+	void movePreviousToFront();
+
+	//...............................................................................
+	/// @brief	Liefert das Ende der Aufgabe
+	/// @return Ende der Aufgabe
+	//...............................................................................
+	int getEnd();
+
+	//...............................................................................
+	/// @brief	Liefert den Anfang der Aufgabe
+	/// @return Anfang der Aufgabe
+	//...............................................................................
+	int getBegin();
+
+	//...............................................................................
+	/// @brief	schiebt alle Aufgaben so weit wie möglich an den Anfang des Projekts
+	//...............................................................................
+	void moveAllToFront();
 
 	//...............................................................................
 	/// @brief	setzt den Anfang einer Aufgabe
@@ -67,7 +102,6 @@ public:
 	void addTaskFollowing(BusinessTask *followed_by);
 	string getName();
 	void printInfo();
-	int getBegin();
 	int getLine();
 	int getWidth();
 
@@ -129,13 +163,13 @@ private:
 	/// @param begin Anfangspunkt
 	/// @param duration Dauer
 	//..................................................
-	int calcDayEnd(int begin, int duration);
+	int calcEnd(int begin, int duration);
 
 	bool isMilestone;
 	int m_Begin;
 	int surface;
-	int day_end;
-	int day_final;
+	int m_End;
+	int m_Final;
 
 	int m_Width;
 	string m_Name;

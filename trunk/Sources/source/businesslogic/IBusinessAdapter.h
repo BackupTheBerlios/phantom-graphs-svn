@@ -107,10 +107,21 @@ public:
 	virtual bool setBegin(float begin) = 0;
 
 	//...............................................................................
-	/// @brief	setzt den Anfang einer Aufgabe
+	/// @brief	schiebt alle Aufgaben an den Projektanfang
 	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
 	//...............................................................................
-	virtual void moveToFront() = 0;
+	virtual void moveAllToFront() = 0;
+
+	//...............................................................................
+	/// @brief	schiebt nachfolgende Aufgaben so weit wie möglich an den Anfang des Projekts
+	//...............................................................................
+	virtual void moveFollowingToFront(int earliest) = 0;
+
+	//...............................................................................
+	/// @brief	schiebt vorhergehende Aufgaben so weit wie möglich an den Anfang des Projekts
+	//...............................................................................
+	virtual void movePreviousToFront() = 0;
+
 
 };
 

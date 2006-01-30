@@ -139,6 +139,10 @@ void AppConfiguration::initTasks()
 
 	/* set root Aufgabe */
 	m_rootTask = *m_BusinessTasks.begin();
+
+	/* Alle Aufgaben an den Anfang des Projektzeitraums setzen */
+	// m_rootTask->moveAllToFront();
+	task08->moveAllToFront();
 	
 	/// @brief Debuginfo zur Ausgabe aller Tasks
 	if(getDebugState())
@@ -146,6 +150,7 @@ void AppConfiguration::initTasks()
 		cout << "DebugInfo: Aufruf aus AppConfiguration::initTasks" << endl;
 		cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
 	}
+
 }
 
 bool AppConfiguration::getDebugState()
@@ -180,3 +185,5 @@ void AppConfiguration::setUnitsPerDay(float units)
 {
 
 }
+
+
