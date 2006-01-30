@@ -95,15 +95,17 @@ force BusinessTask::getForce(float x_float, float y_float)
 	x = m_Movement + m_Begin;
 
 	
-	if ( (((float)m_ForceRangeIncredible0 < x) && (x < (float)m_ForceRangeMedium0)) ||
-		 (((float)m_ForceRangeMedium1 < x) || x < ((float)m_ForceRangeIncredible1)))
+	if ((m_ForceRangeMedium0 < x) && (x < m_ForceRangeMedium1))
 	{
-		m_Force = medium;
+		m_Force = none;
 	}
-	else if ((m_ForceRangeMedium0 < x) && (x < m_ForceRangeMedium1)) m_Force = none;
-	else
+	else if((x < m_ForceRangeIncredible0) || (m_ForceRangeIncredible1 < x))
 	{
 		m_Force = incredible;
+	}
+	else
+	{
+		m_Force = medium;
 	}
 	
 	return m_Force;
