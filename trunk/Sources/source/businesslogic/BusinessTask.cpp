@@ -185,8 +185,10 @@ bool BusinessTask::setBegin(float begin)
 	{
 		moveToEarlierPosition(begin);
 	}
-
-	// m_Begin = (int)begin;
+	else if (begin > m_Begin)
+	{
+		moveToLaterPosition(begin);
+	}
 
 	/* Ende neu setzen nach Änderung des Beginns */
 	m_End = calcEnd(m_Begin, m_Width);
@@ -380,15 +382,15 @@ void BusinessTask::calcForceMedium1()
 }
 
 
-int BusinessTask::moveToEarlierPosition(int new_begin)
+void BusinessTask::moveToEarlierPosition(int new_begin)
 {
 	int test = 0;
 	int range = 0;
 
 	if(new_begin < m_ForceRangeIncredible0)
 	{
-		movePreviousToFront();
 		m_Begin = m_ForceRangeIncredible0;
+		movePreviousToFront();
 	}
 	else if(m_ForceRangeIncredible0 < new_begin && new_begin < m_ForceRangeMedium0)
 	{
@@ -412,7 +414,39 @@ int BusinessTask::moveToEarlierPosition(int new_begin)
 	{
 		m_Begin = new_begin;
 	}
+}
 
-	return 0;
+void BusinessTask::moveToLaterPosition(int new_begin)
+{
+	int test = 0;
+	int range = 0;
+
+	if(new_begin > m_ForceRangeIncredible1)
+	{
+		m_Begin = m_ForceRangeIncredible1 - m_Width;
+		moveFollowingToFront(m_ForceRangeIncredible1);
+	}
+	else if( m_ForceRangeMedium0 < new_begin && new_begin < m_ForceRangeIncredible1)
+	{
+		/* Durchlaufe die Vorgänger  */
+		list<IBusinessAdapter*>::iterator itObj;
+		for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
+		{
+			if (*itObj != NULL)
+			{
+				if ( new_begin > (*itObj)->getBegin() )
+				{
+					(*itObj)->moveToLaterPosition(new_begin + m_Width);
+				}
+			}
+			
+		}
+		m_Begin = new_begin;
+
+	}
+	else
+	{
+		m_Begin = new_begin;
+	}
 
 }

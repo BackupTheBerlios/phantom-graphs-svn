@@ -113,7 +113,8 @@ public:
 	virtual void moveAllToFront() = 0;
 
 	//...............................................................................
-	/// @brief	schiebt nachfolgende Aufgaben so weit wie möglich an den Anfang des Projekts
+	/// @brief	schiebt nachfolgende Aufgaben so weit wie möglich nach vorne
+	/// @param earliest frühester Anfang nachfolgender Aufgaben
 	//...............................................................................
 	virtual void moveFollowingToFront(int earliest) = 0;
 
@@ -134,10 +135,16 @@ public:
 
 	//...............................................................................
 	/// @brief	bewegt eine Aufgabe zu einem früheren Startpunkt
-	/// @param end erhält denneuen Endtermin von Nachfolgender Aufgabe
-	/// @return liefert Ihr neues Ende zurück
+	/// @param new_begin erhält seinen neuen Anfang
 	//...............................................................................
-	virtual int moveToEarlierPosition(int end) = 0;
+	virtual void moveToEarlierPosition(int end) = 0;
+
+	//...............................................................................
+	/// @brief	bewegt eine Aufgabe zu einem späteren Startpunkt
+	/// @param new_begin erhält seinen neuen Anfang
+	//...............................................................................
+	virtual void moveToLaterPosition(int new_begin) = 0;
+
 
 
 

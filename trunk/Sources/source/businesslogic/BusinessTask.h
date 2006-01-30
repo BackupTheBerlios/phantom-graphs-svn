@@ -54,11 +54,16 @@ class BusinessTask : public IBusinessAdapter, public IBusinessConverter
 public:
 
 	//...............................................................................
+	/// @brief	bewegt eine Aufgabe zu einem späteren Startpunkt
+	/// @param new_begin erhält seinen neuen Anfang
+	//...............................................................................
+	virtual void moveToLaterPosition(int new_begin);
+
+	//...............................................................................
 	/// @brief	bewegt eine Aufgabe zu einem früheren Startpunkt
 	/// @param end erhält denneuen Endtermin von Nachfolgender Aufgabe
-	/// @return liefert Ihr neues Ende zurück
 	//...............................................................................
-	virtual int moveToEarlierPosition(int end);
+	virtual void moveToEarlierPosition(int end);
 
 	virtual int calcForceInc1();
 	void calcForceMedium1();
