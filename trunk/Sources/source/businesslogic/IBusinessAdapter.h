@@ -16,8 +16,10 @@
 //				  hinzugefügt (CA)
 // 28.01.2006	- added:
 //					getNextTasks()
-//					getPreviousTasks()
-//				- added setBegin(float)
+//					getPreviousTasks() CA
+//				- added setBegin(float) CA
+// 30.01.2006	- modified: getForce(int,int) CA
+//				- added: enum force CA
 
 
 #if !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)
@@ -29,9 +31,16 @@
 
 #include "../hapticgraphclasses/Utilities.h"
 #include <string>
+#include <stdlib.h>
+#include <stdio.h>
 
 
 using namespace std;
+
+//...............................................................................
+/// @brief	Aufzählungstyp für die Kraft
+//...............................................................................
+enum force {none, medium, incredible};
 
 //...............................................................................
 /// @brief	Adapterklasse der eine Referenz zwischen Grafikobjekten der
@@ -44,16 +53,14 @@ using namespace std;
 class IBusinessAdapter  
 {
 public:
-
+	
 	//...............................................................................
 	/// @brief	Liefert die Kraft, die notwendig ist, um eine Aufgabe zu verschieben
-	/// @return	1 = keine Kraft
-	///			2 = lässt sich schwer bewegen
-	///			3 = lässt sich gar nicht bewegen
-	///			0 = kann nicht berechnet werden
-	///			-1= Fehler
+	/// @param	x aktueller x-Wert des Knoten in Business Einheiten
+	/// @param	y aktueller y-Wert des Knoten in Business Einheiten
+	/// @return	m_Force (siehe oben)
 	//...............................................................................
-	virtual int getForce()=0;
+	virtual force getForce(int x, int y)=0;
 
 	//.......................................................................
 	/// @brief	Ermittelt die Breite des Darstellungsobjektes in View-Einheiten.
@@ -96,6 +103,12 @@ public:
 	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
 	//...............................................................................
 	virtual bool setBegin(float begin) = 0;
+
+	//...............................................................................
+	/// @brief	setzt den Anfang einer Aufgabe
+	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
+	//...............................................................................
+	virtual void moveToFront() = 0;
 
 };
 

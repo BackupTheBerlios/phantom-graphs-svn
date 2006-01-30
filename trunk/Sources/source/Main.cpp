@@ -24,7 +24,7 @@ Description:
 /// @file	Main.cpp
 /// @author	angepasst von Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	26.01.2006 (KG)
+/// @date	Letzte Änderung	28.01.2006 (CA)
 //*******************************************************************************
 
 // Änderungen:
@@ -40,6 +40,7 @@ Description:
 // 09.01.2006	- include der AppConfiguration CA
 // 26.01.06		- Berechnung des Sichtvolumens wird von neuer Camera-Klasse übernommen 
 //				  und  über GraphScene gesteuert. (KG)
+// 28.01.06		- modified: setAppData(), sortiert Aufgaben an den Anfang des Projektzeitraums
 
 #include <math.h>
 #include <assert.h>
@@ -265,5 +266,6 @@ void setAppData()
 		cout << "DebugInfo: Aufruf aus Main::setAppData()" << endl;
 		//cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
 	}
+
 
 }

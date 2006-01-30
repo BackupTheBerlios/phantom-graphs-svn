@@ -2,7 +2,7 @@
 /// @file	BusinessTask.cpp
 /// @author	Carsten Arnold
 /// @date	Erstellt am		02.01.2006
-/// @date	Letzte Änderung	28.01.2006 CA
+/// @date	Letzte Änderung	30.01.2006 CA
 //*******************************************************************************
 
 // Änderungen:
@@ -19,10 +19,16 @@
 //					getPreviousTasks()
 //				- added: setBegin(float)
 //				- added: calcBegin()
+// 29.01.2006	- added: moveToFront() CA
+// 30.01.2006	- modified: getForce(int,int) CA
+//				- added: enum force CA
+//				- modified: moveToFront() CA
+
 
 
 #include "BusinessTask.h"
 #include "AppConfiguration.h"
+#include <stdio.h>
 
 extern AppConfiguration appData;
 //////////////////////////////////////////////////////////////////////
@@ -38,7 +44,7 @@ BusinessTask::BusinessTask()
 
 	m_Begin = -1;
 	day_end = m_Begin + m_Width;
-	force = 0;
+	m_Force = none;
 	surface = 0;
 
 	// Nachfolger- und Vorgängerlisten löschen
@@ -59,8 +65,12 @@ BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milest
 	/* Berechne den Anfang der Aufgabe*/
 	m_Begin = calcBegin(final, duration);
 
-	force = 0;
+	m_Force = none;
 	surface = 0;
+
+	// Nachfolger- und Vorgängerlisten löschen
+	m_TasksFollowing.clear();
+	m_TasksPrevious.clear();
 }
 
 
@@ -69,9 +79,9 @@ BusinessTask::~BusinessTask()
 
 }
 
-int BusinessTask::getForce()
+force BusinessTask::getForce(int x, int y)
 {
-	return force;
+	return m_Force;
 }
 
 int BusinessTask::calcDayEnd(int begin, int duration)
@@ -162,4 +172,44 @@ int BusinessTask::calcBegin(int end, int duration)
 	int begin;
 	begin = end - duration;
 	return begin;
+}
+
+void BusinessTask::moveToFront()
+{
+	list<IBusinessAdapter*>::iterator itObj;
+
+	/* Durchlaufe die Vorgänger und schiebe sie vom ersten Vorgänger an gesehen
+	 * so weit wie möglich an den Begin des Projektzeitraums */
+	for (itObj = m_TasksPrevious.begin() ; itObj != m_TasksPrevious.end(); itObj++)
+	{
+		if (*itObj != NULL)
+		{
+			/* Rekursiv alle Vorgänger durchlaufen*/
+			(*itObj)->moveToFront();
+		}
+	}
+
+	/* Wenn keine Vorgänger existieren */
+	if ( m_TasksPrevious.empty() )
+	{
+		/* Begin so lassen, wenn kein Vorgänger existiert, da
+		 * nur die Rootaufgabe keinen Vorgänger hat*/
+	}
+	else
+	{
+		int maxDay = m_Begin;
+
+		list<IBusinessAdapter*>::iterator prevObj;
+
+		/* m_Begin neu setzen auf den größten Wert aller Vorgänger */
+		for (prevObj = m_TasksPrevious.begin() ; prevObj != m_TasksPrevious.end(); prevObj++)
+		{
+			if (*prevObj != NULL)
+			{
+				/* maxDay */
+			}
+		}
+
+	}
+
 }

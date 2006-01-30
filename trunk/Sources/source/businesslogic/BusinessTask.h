@@ -2,7 +2,7 @@
 /// @file	BusinessTask.h
 /// @author	Carsten Arnold
 /// @date	Erstellt am		02.01.2006
-/// @date	Letzte Änderung	28.01.2006 CA
+/// @date	Letzte Änderung	30.01.2006 CA
 //*******************************************************************************
 
 // Änderungen:
@@ -16,9 +16,13 @@
 //				- update: setLine() CA
 //				- added:
 //					getNextTasks()
-//					getPreviousTasks()
-//				- added: setBegin(float)
-//				- added: calcBegin()
+//					getPreviousTasks() CA
+//				- added: setBegin(float) CA
+//				- added: calcBegin() CA
+// 29.01.2006	- added: moveToFront() CA
+// 30.01.2006	- modified: getForce(int,int) CA
+//				- added: enum force CA
+//				- modified: moveToFront() CA
 
 #if !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)
 #define AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_
@@ -30,6 +34,8 @@
 #include <string>
 #include <list>
 #include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
 #include "IBusinessAdapter.h"
 #include "IBusinessConverter.h"
 #include "..\HAPTICGRAPHCLASSES\Utilities.h"	// Hinzugefügt von der Klassenansicht
@@ -43,6 +49,11 @@ using namespace std;
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
 {
 public:
+
+	//...............................................................................
+	/// @brief	schiebt die Aufgabe so weit wie möglich an den Anfang des Projekts
+	//...............................................................................
+	void moveToFront();
 
 	//...............................................................................
 	/// @brief	setzt den Anfang einer Aufgabe
@@ -59,7 +70,15 @@ public:
 	int getBegin();
 	int getLine();
 	int getWidth();
-	int getForce();
+
+	//...............................................................................
+	/// @brief	Liefert die Kraft, die notwendig ist, um eine Aufgabe zu verschieben
+	/// @param	x aktueller x-Wert des Knoten in Business Einheiten
+	/// @param	y aktueller y-Wert des Knoten in Business Einheiten
+	/// @return	m_Force (siehe oben)
+	//...............................................................................
+	virtual force getForce(int x, int y);
+
 	BusinessTask();
 	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);
 	virtual ~BusinessTask();
@@ -77,6 +96,11 @@ public:
 	virtual list<IBusinessAdapter*>& getPreviousTasks();
 
 private:
+
+	//...............................................................................
+	/// @brief	Rückgabewerte für getForce()
+	//...............................................................................
+	force m_Force;
 
 	//..................................................
 	/// @brief rundet floats auf beliebige nachkommastellen ab
@@ -112,7 +136,7 @@ private:
 	int surface;
 	int day_end;
 	int day_final;
-	int force;
+
 	int m_Width;
 	string m_Name;
 
