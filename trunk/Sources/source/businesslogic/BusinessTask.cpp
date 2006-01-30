@@ -142,7 +142,10 @@ int BusinessTask::getEnd()
 
 void BusinessTask::printInfo()
 {
-	cout << this->m_Name << " dauert " << this->m_Width << " Tage, beginnt am " << m_Begin << ". und endet am " << m_End << ". Tag" << endl;
+	cout << this->m_Name << " Dauer: " << this->m_Width << " Beginn: ";
+	cout << m_Begin << " Endet:" << m_End;
+	cout << " Forces: " << m_ForceRangeIncredible0 << " " << m_ForceRangeMedium0;
+	cout << " " << m_ForceRangeMedium1 << " " << m_ForceRangeIncredible1 << endl;
 }
 
 string BusinessTask::getName()
@@ -285,7 +288,7 @@ void BusinessTask::moveFollowingToFront(int earliest)
 		if (*itObj != NULL)
 		{
 			/* Rekursiv alle Nachfolger durchlaufen*/
-			(*itObj)->moveFollowingToFront(m_End);
+			(*itObj)->moveFollowingToFront(endPrevDay + m_Width);
 		}
 	}
 }
@@ -358,7 +361,7 @@ void BusinessTask::calcForceMedium0()
 			if (test > range) range = test;
 		}
 	}
-	m_ForceRangeMedium0 = range + 1;
+	m_ForceRangeMedium0 = range + 0;
 }
 
 void BusinessTask::calcForceMedium1()

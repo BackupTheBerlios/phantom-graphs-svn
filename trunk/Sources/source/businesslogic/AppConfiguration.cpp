@@ -127,7 +127,7 @@ void AppConfiguration::initTasks()
 	m_rootTask = *m_BusinessTasks.begin();
 
 	/* Alle Aufgaben an den Anfang des Projektzeitraums setzen */
-	m_rootTask->moveAllToFront();
+	//m_rootTask->moveAllToFront();
 
 	/// Kräfte aller Aufgaben berechnen
 	if(getDebugState())
