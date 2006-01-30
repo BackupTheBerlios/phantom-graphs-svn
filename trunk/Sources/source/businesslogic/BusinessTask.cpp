@@ -191,13 +191,13 @@ void BusinessTask::setLine(int line)
 bool BusinessTask::setBegin(float begin)
 {
 	int new_begin = begin;
-	int previous_end = 0;
 
-	// float begin_neu = runden(begin, 1);
+	/* wenn der neue Starttermin früher liegt */
 	if (new_begin < m_Begin)
 	{
 		moveToEarlierPosition(new_begin);
 	}
+	/* wenn der neue Starttermin später liegt */
 	else if (new_begin > m_Begin)
 	{
 		moveToLaterPosition(new_begin);
@@ -272,8 +272,10 @@ void BusinessTask::movePreviousToFront()
 			/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
 			 * vorherigen Aufgabe */
 			m_Begin = (float)(maxDay + 0) ;
+			m_End = calcEnd(m_Begin, m_Width);
 		}
 		else m_Begin = 0;
+		m_End = calcEnd(m_Begin, m_Width);
 	}
 
 
@@ -290,6 +292,7 @@ void BusinessTask::moveFollowingToFront(int earliest)
 				/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
 				 * vorherigen Aufgabe */
 				m_Begin = (float)(endPrevDay + 0);
+				m_End = calcEnd(m_Begin, m_Width);
 			}
 
 	list<IBusinessAdapter*>::iterator itObj;
@@ -426,12 +429,12 @@ void BusinessTask::moveToEarlierPosition(int new_begin)
 			
 		}
 		m_Begin = new_begin;
-
 	}
 	else
 	{
 		m_Begin = new_begin;
 	}
+	m_End = calcEnd(m_Begin, m_Width);
 }
 
 void BusinessTask::moveToLaterPosition(int new_begin)
@@ -466,5 +469,5 @@ void BusinessTask::moveToLaterPosition(int new_begin)
 	{
 		m_Begin = new_begin;
 	}
-
+	m_End = calcEnd(m_Begin, m_Width);
 }
