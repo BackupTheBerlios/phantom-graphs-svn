@@ -98,7 +98,6 @@ force BusinessTask::getForce(float x_float, float y_float)
 		m_Force = incredible;
 	}
 	
-	m_Force = none;
 	return m_Force;
 }
 
@@ -143,7 +142,7 @@ int BusinessTask::getEnd()
 
 void BusinessTask::printInfo()
 {
-	cout << this->m_Name << " dauert " << this->m_Width << " Tage." << endl;
+	cout << this->m_Name << " dauert " << this->m_Width << " Tage, beginnt am " << m_Begin << ". und endet am " << m_End << ". Tag" << endl;
 }
 
 string BusinessTask::getName()
@@ -178,11 +177,11 @@ void BusinessTask::setLine(int line)
 
 bool BusinessTask::setBegin(float begin)
 {
-	float begin_neu = runden(begin, 1);
-	m_Begin = begin_neu;
+	// float begin_neu = runden(begin, 1);
+	m_Begin = (int)begin;
 
 	/* Ende neu setzen nach Änderung des Beginns */
-	calcEnd(m_Begin, m_Width);
+	m_End = calcEnd(m_Begin, m_Width);
 	
 	/* Meldung nach Änderng */
 	this->NotifyAll();
@@ -206,8 +205,8 @@ int BusinessTask::calcBegin(int end, int duration)
 
 void BusinessTask::moveAllToFront()
 {
-	movePreviousToFront();
 	moveFollowingToFront(m_End);
+	movePreviousToFront();
 }
 
 void BusinessTask::movePreviousToFront()
@@ -222,31 +221,34 @@ void BusinessTask::movePreviousToFront()
 		{
 			/* Rekursiv alle Vorgänger durchlaufen*/
 			(*itObj)->movePreviousToFront();
-		}
-	}
 
-	/* Berechnung des frühesten Anfangs */
-	int maxDay = 0;
 
-	list<IBusinessAdapter*>::iterator prevObj;
+			/* Berechnung des frühesten Anfangs */
+			int maxDay = 0;
 
-	for (prevObj = m_TasksPrevious.begin() ; prevObj != m_TasksPrevious.end(); prevObj++)
-	{
-		if (*prevObj != NULL)
-		{
-			/* Ende der vorherigen Aufgabe */
-			int end = (*prevObj)->getBegin() + (*prevObj)->getWidth();
+			list<IBusinessAdapter*>::iterator prevObj;
 
-			if ( end <= m_Begin && end > maxDay)
+			for (prevObj = m_TasksPrevious.begin() ; prevObj != m_TasksPrevious.end(); prevObj++)
 			{
-				maxDay = end;
+				if (*prevObj != NULL)
+				{
+					/* Ende der vorherigen Aufgabe */
+					int end = (*prevObj)->getBegin() + (*prevObj)->getWidth();
+
+					if ( end <= m_Begin && end > maxDay)
+					{
+						maxDay = end;
+					}
+				}
 			}
+
+			/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
+			 * vorherigen Aufgabe */
+			setBegin( (float)(maxDay + 0) );
 		}
+		else setBegin(0);
 	}
 
-	/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
-	 * vorherigen Aufgabe */
-	setBegin( (float)(maxDay + 1) );
 
 }
 
@@ -260,7 +262,7 @@ void BusinessTask::moveFollowingToFront(int earliest)
 			{
 				/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
 				 * vorherigen Aufgabe */
-				setBegin( (float)(endPrevDay + 1) );
+				setBegin( (float)(endPrevDay + 0) );
 			}
 
 	list<IBusinessAdapter*>::iterator itObj;
@@ -281,28 +283,52 @@ void BusinessTask::calcRanges()
 {
 	calcForceMedium0();
 	calcForceMedium1();
-
-
+	m_ForceRangeIncredible0 = calcForceInc0() - m_Width;
+	m_ForceRangeIncredible1 = calcForceInc1();
 }
 
-int BusinessTask::calcForceInc0(int value)
+int BusinessTask::calcForceInc0()
 {
 	int test = 0;
 	int range = 0;
-	int longest = 0;
+
 	/* Durchlaufe die Vorgänger  */
 	list<IBusinessAdapter*>::iterator itObj;
 	for (itObj = m_TasksPrevious.begin() ; itObj != m_TasksPrevious.end(); itObj++)
 	{
 		if (*itObj != NULL)
 		{
-			test = (*itObj)->getWidth();
+			test = (*itObj)->calcForceInc0();
 			if (test > range) range = test;
-			
 		}
 		
 	}
-	return range;
+	return (m_Width + range);
+}
+
+int BusinessTask::calcForceInc1()
+{
+	int test = 0;
+	int range = appData.getProjectDuration();
+
+	if (m_Final > 0)
+	{
+		return (m_Final - m_Width);
+	}
+	else {
+
+		/* Durchlaufe die Vorgänger  */
+		list<IBusinessAdapter*>::iterator itObj;
+		for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
+		{
+			if (*itObj != NULL)
+			{
+				test = (*itObj)->calcForceInc1();
+				if (test < range) range = test;
+			}			
+		}
+		return (range - m_Width);
+	}
 }
 
 
@@ -311,7 +337,7 @@ void BusinessTask::calcForceMedium0()
 	int range = 0;
 	int test = 0;
 
-	/* Suche erste Bewegungseinschränkung  */
+	/* Suche erste Bewegungseinschränkung Previous */
 	list<IBusinessAdapter*>::iterator itObj;
 	for (itObj = m_TasksPrevious.begin() ; itObj != m_TasksPrevious.end(); itObj++)
 	{
@@ -329,7 +355,7 @@ void BusinessTask::calcForceMedium1()
 	int range = appData.getProjectDuration();
 	int test = 0;
 
-	/* Suche erste Bewegungseinschränkung  */
+	/* Suche erste Bewegungseinschränkung Following */
 	list<IBusinessAdapter*>::iterator itObj;
 	for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
 	{
@@ -342,3 +368,4 @@ void BusinessTask::calcForceMedium1()
 
 	m_ForceRangeMedium0 = range - m_Width - 1;
 }
+

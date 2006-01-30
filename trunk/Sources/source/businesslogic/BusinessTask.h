@@ -52,9 +52,15 @@ using namespace std;
 class BusinessTask : public IBusinessAdapter, public IBusinessConverter
 {
 public:
+	virtual int calcForceInc1();
 	void calcForceMedium1();
 	void calcForceMedium0();
-	int calcForceInc0(int value);
+
+	//...............................................................................
+	/// @brief	berechnet den Punkt über den nicht nach Links verschoben werden kann
+	//...............................................................................
+	virtual int calcForceInc0();
+	
 	void calcRanges();
 	// int m_ForceRangeNone1;
 	// int m_ForceRangeNone0;

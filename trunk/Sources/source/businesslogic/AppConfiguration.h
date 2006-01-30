@@ -54,7 +54,6 @@ private:
 	IBusinessAdapter* m_rootTask;
 
 public:
-	int calcRanges0(int value);
 	//.......................................................................
 	/// @brief	setzt die Anzahl maximaler paralleler Aufgaben
 	/// @param	lines Anzahl maximaler paralleler Aufgaben

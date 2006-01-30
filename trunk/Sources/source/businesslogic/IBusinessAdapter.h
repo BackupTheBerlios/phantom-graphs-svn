@@ -122,6 +122,16 @@ public:
 	//...............................................................................
 	virtual void movePreviousToFront() = 0;
 
+	//...............................................................................
+	/// @brief	berechnet den Punkt über den nicht nach Links verschoben werden kann
+	//...............................................................................
+	virtual int calcForceInc0() = 0;
+
+	//...............................................................................
+	/// @brief	berechnet den Punkt über den nicht nach Rechts verschoben werden kann
+	//...............................................................................
+	virtual int calcForceInc1() = 0;
+
 
 };
 

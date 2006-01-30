@@ -120,6 +120,38 @@ void AppConfiguration::initTasks()
 
 	task08->addTaskPrevious(task07);
 
+	
+	//m_BusinessTasks.clear();
+
+	/* set root Aufgabe */
+	m_rootTask = *m_BusinessTasks.begin();
+
+	/* Alle Aufgaben an den Anfang des Projektzeitraums setzen */
+	m_rootTask->moveAllToFront();
+
+	/// Kräfte aller Aufgaben berechnen
+	if(getDebugState())
+	{
+		for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
+		{
+			if (*itObj != NULL)
+			{
+				//delete *itObj;
+				//*itObj = NULL;
+				(*itObj)->calcRanges();
+			}
+		}
+		cout << endl;
+	}
+
+	/// @brief Debuginfo zur Ausgabe aller Tasks
+	if(getDebugState())
+	{
+		cout << "DebugInfo: Aufruf aus AppConfiguration::initTasks" << endl;
+		cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
+	}
+
+	
 	/// @brief Debuginfo zur Ausgabe aller Tasks
 	if(getDebugState())
 	{
@@ -133,22 +165,6 @@ void AppConfiguration::initTasks()
 			}
 		}
 		cout << endl;
-	}
-	
-	//m_BusinessTasks.clear();
-
-	/* set root Aufgabe */
-	m_rootTask = *m_BusinessTasks.begin();
-
-	/* Alle Aufgaben an den Anfang des Projektzeitraums setzen */
-	// m_rootTask->moveAllToFront();
-	task08->moveAllToFront();
-	
-	/// @brief Debuginfo zur Ausgabe aller Tasks
-	if(getDebugState())
-	{
-		cout << "DebugInfo: Aufruf aus AppConfiguration::initTasks" << endl;
-		cout << "Name der Startaufgabe: " << m_rootTask->getName() << endl << endl;
 	}
 
 }
