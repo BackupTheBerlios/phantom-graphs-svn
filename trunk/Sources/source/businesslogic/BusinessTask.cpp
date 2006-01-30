@@ -177,30 +177,16 @@ void BusinessTask::setLine(int line)
 
 bool BusinessTask::setBegin(float begin)
 {
-	// float begin_neu = runden(begin, 1);
-	if (begin > m_Begin)
-	{
-		int test = 0;
-		int range = 0;
+	int new_begin = 0;
+	int previous_end = 0;
 
-		/* Suche erste Bewegungseinschränkung Following */
-		list<IBusinessAdapter*>::iterator itObj;
-		for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
-		{
-			if (*itObj != NULL)
-			{
-				test = (*itObj)->getBegin();
-				if (test > range) range = test;
-			}
-		}
-		if ((begin + m_Width) > range)
-		{
-			moveFollowingToFront(begin+m_Width +1);
-			setBegin(begin);
-		}
+	// float begin_neu = runden(begin, 1);
+	if (begin < m_Begin)
+	{
+		moveToEarlierPosition(begin);
 	}
 
-	m_Begin = (int)begin;
+	// m_Begin = (int)begin;
 
 	/* Ende neu setzen nach Änderung des Beginns */
 	m_End = calcEnd(m_Begin, m_Width);
@@ -394,40 +380,39 @@ void BusinessTask::calcForceMedium1()
 }
 
 
-int BusinessTask::moveToEarlierPosition(int end)
+int BusinessTask::moveToEarlierPosition(int new_begin)
 {
 	int test = 0;
 	int range = 0;
-	int new_begin = 0;
 
-	if(end > 0)
+	if(new_begin < m_ForceRangeIncredible0)
 	{
-		setBegin(end-m_Width);
-
+		movePreviousToFront();
+		m_Begin = m_ForceRangeIncredible0;
+	}
+	else if(m_ForceRangeIncredible0 < new_begin && new_begin < m_ForceRangeMedium0)
+	{
 		/* Durchlaufe die Vorgänger  */
 		list<IBusinessAdapter*>::iterator itObj;
 		for (itObj = m_TasksPrevious.begin() ; itObj != m_TasksPrevious.end(); itObj++)
 		{
 			if (*itObj != NULL)
 			{
-				if (m_Begin < ( (*itObj)->getBegin() + (*itObj)->getWidth() ))
+				if ( new_begin < ((*itObj)->getBegin() + (*itObj)->getWidth()) )
 				{
-					test = (*itObj)->moveToEarlierPosition(m_Begin);
-					if ((test >= new_begin) && (test >= 0))
-					{
-						new_begin = test;
-					}
-					else
-					{
-						new_begin = 0;
-					}
+					(*itObj)->moveToEarlierPosition(new_begin - (*itObj)->getWidth());
 				}
 			}
 			
 		}
-		setBegin(new_begin);
+		m_Begin = new_begin;
+
+	}
+	else
+	{
+		m_Begin = new_begin;
 	}
 
-	return (m_End);
+	return 0;
 
 }
