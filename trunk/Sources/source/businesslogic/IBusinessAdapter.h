@@ -132,6 +132,14 @@ public:
 	//...............................................................................
 	virtual int calcForceInc1() = 0;
 
+	//...............................................................................
+	/// @brief	bewegt eine Aufgabe zu einem früheren Startpunkt
+	/// @param end erhält denneuen Endtermin von Nachfolgender Aufgabe
+	/// @return liefert Ihr neues Ende zurück
+	//...............................................................................
+	virtual int moveToEarlierPosition(int end) = 0;
+
+
 
 };
 
