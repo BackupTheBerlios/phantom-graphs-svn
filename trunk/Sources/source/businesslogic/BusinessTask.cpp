@@ -177,25 +177,24 @@ void BusinessTask::setLine(int line)
 
 bool BusinessTask::setBegin(float begin)
 {
-	int new_begin = 0;
+	int new_begin = begin;
 	int previous_end = 0;
 
 	// float begin_neu = runden(begin, 1);
-	if (begin < m_Begin)
+	if (new_begin < m_Begin)
 	{
-		moveToEarlierPosition(begin);
+		moveToEarlierPosition(new_begin);
 	}
-	else if (begin > m_Begin)
+	else if (new_begin > m_Begin)
 	{
-		moveToLaterPosition(begin);
+		moveToLaterPosition(new_begin);
 	}
 
-	/* Ende neu setzen nach Änderung des Beginns */
+	/* Ende neu setzen nach Änderung des Begin */
 	m_End = calcEnd(m_Begin, m_Width);
+	calcRanges();
 	
 	/* Meldung nach Änderng */
-
-	
 	this->NotifyAll();
 	
 	return true;
