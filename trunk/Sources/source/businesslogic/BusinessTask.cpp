@@ -287,24 +287,24 @@ void BusinessTask::moveFollowingToFront(int earliest)
 	/* Berechnung des frühesten Anfangs */
 	int endPrevDay = earliest;
 
-			if ( endPrevDay <= m_Begin)
-			{
-				/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
-				 * vorherigen Aufgabe */
-				m_Begin = (float)(endPrevDay + 0);
-				m_End = calcEnd(m_Begin, m_Width);
-			}
+		if ( endPrevDay <= m_Begin)
+		{
+			/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
+			 * vorherigen Aufgabe */
+			m_Begin = (float)(endPrevDay + 0);
+			m_End = calcEnd(m_Begin, m_Width);
+		}
 
-	list<IBusinessAdapter*>::iterator itObj;
 
 	/* Durchlaufe die Nachfolger und schiebe sie vom ersten Nachfolger an gesehen
 	 * so weit wie möglich an den Begin des Projektzeitraums */
+	list<IBusinessAdapter*>::iterator itObj;
 	for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
 	{
 		if (*itObj != NULL)
 		{
 			/* Rekursiv alle Nachfolger durchlaufen*/
-			(*itObj)->moveFollowingToFront(endPrevDay + m_Width);
+			(*itObj)->moveFollowingToFront(m_End);
 		}
 	}
 }
@@ -444,7 +444,7 @@ void BusinessTask::moveToLaterPosition(int new_begin)
 
 	if(new_begin > m_ForceRangeIncredible1)
 	{
-		m_Begin = m_ForceRangeIncredible1 - m_Width;
+		//m_Begin = m_ForceRangeIncredible1;// - m_Width;
 		moveFollowingToFront(m_ForceRangeIncredible1);
 	}
 	else if( m_ForceRangeMedium0 < new_begin && new_begin < m_ForceRangeIncredible1)
