@@ -85,7 +85,7 @@ BusinessTask::~BusinessTask()
 
 force BusinessTask::getForce(float x_float, float y_float)
 {
-	int x = (int) x_float;
+	int x = m_Begin + (int) x_float;
 	
 	if ( ((m_ForceRangeIncredible0 < x) && (x < m_ForceRangeMedium0)) ||
 		 ((m_ForceRangeMedium1 < x) || x < (m_ForceRangeIncredible1)))
