@@ -308,10 +308,13 @@ void BusinessTask::moveFollowingToFront(int earliest)
 
 void BusinessTask::calcRanges()
 {
-	calcForceMedium0();
-	calcForceMedium1();
 	m_ForceRangeIncredible0 = calcForceInc0() - m_Width;
 	m_ForceRangeIncredible1 = calcForceInc1();
+	calcForceMedium0();
+	calcForceMedium1();
+
+	if(m_ForceRangeMedium0 < m_ForceRangeIncredible0) m_ForceRangeMedium0 = m_ForceRangeIncredible0;
+	if(m_ForceRangeMedium1 > m_ForceRangeIncredible1) m_ForceRangeMedium1 = m_ForceRangeIncredible1;
 }
 
 int BusinessTask::calcForceInc0()
