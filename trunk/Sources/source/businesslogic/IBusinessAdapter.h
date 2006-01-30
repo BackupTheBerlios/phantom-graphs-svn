@@ -31,6 +31,7 @@
 #endif // _MSC_VER > 1000
 
 #include "../hapticgraphclasses/Utilities.h"
+#include "Observable.h"
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
@@ -51,7 +52,7 @@ enum force {none, medium, incredible};
 ///			Aufgabe um relevante Daten mit Ihr auszutauschen
 /// @todo	Definition der abstrakten Adapter Methoden
 //...............................................................................
-class IBusinessAdapter
+class IBusinessAdapter : public Observable
 {
 public:
 	

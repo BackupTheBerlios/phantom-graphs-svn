@@ -35,11 +35,7 @@ Node::Node( IBusinessAdapter * businessObj, UnitConversionInfo & unitInfo  )
 	// Breite und Position vom BusinessObjekt geben lassen
 	if (m_pBusinessObject != NULL)
 	{
-		m_Width = (float)m_pBusinessObject->getWidth() * unitWidth - pad;
-
-		double x = m_pBusinessObject->getBegin() * unitWidth;
-		double y = m_pBusinessObject->getLine() * unitHeight;
-		HapticObject::setPosition(x, y, 0.0);
+		Update(m_pBusinessObject);
 	}
 	// wenn kein BusinessObjekt da ist, Breite auf 1 Unit setzen
 	else
@@ -242,11 +238,16 @@ void Node::setPosition(const double x, const double y, const double z)
 //*******************************************************************************
 void Node::Update( Observable * pObservable )
 {
-	float unitWidth = m_rUnitInfo.getUnitWidth();
-	m_Width = (float)m_pBusinessObject->getWidth() * unitWidth;
+	float unitWidth		= m_rUnitInfo.getUnitWidth();
+	float unitHeight	= m_rUnitInfo.getUnitHeight();
+	float pad			= m_rUnitInfo.getHorizontalPadding();
 
+	// Breite vom BusinessObjekt erfragen
+	m_Width = (float)m_pBusinessObject->getWidth() * unitWidth - pad;
+
+	// Position erfragen
 	double x = m_pBusinessObject->getBegin() * unitWidth;
-	double y = m_pBusinessObject->getLine() * m_rUnitInfo.getUnitHeight();
+	double y = m_pBusinessObject->getLine() * unitHeight;
 	HapticObject::setPosition(x, y, 0.0);
 }
 //*******************************************************************************
