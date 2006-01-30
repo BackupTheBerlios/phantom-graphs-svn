@@ -258,9 +258,9 @@ void BusinessTask::movePreviousToFront()
 
 			/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
 			 * vorherigen Aufgabe */
-			setBegin( (float)(maxDay + 0) );
+			m_Begin = (float)(maxDay + 0) ;
 		}
-		else setBegin(0);
+		else m_Begin = 0;
 	}
 
 
@@ -276,7 +276,7 @@ void BusinessTask::moveFollowingToFront(int earliest)
 			{
 				/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
 				 * vorherigen Aufgabe */
-				setBegin( (float)(endPrevDay + 0) );
+				m_Begin = (float)(endPrevDay + 0);
 			}
 
 	list<IBusinessAdapter*>::iterator itObj;
