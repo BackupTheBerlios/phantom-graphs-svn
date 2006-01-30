@@ -116,7 +116,7 @@ int BusinessTask::calcEnd(int begin, int duration)
 	int end;
 	end = 0;
 	end = begin + duration;
-	
+	calcRanges();
 	return end;
 }
 
@@ -287,13 +287,10 @@ void BusinessTask::moveFollowingToFront(int earliest)
 	/* Berechnung des frühesten Anfangs */
 	int endPrevDay = earliest;
 
-		if ( endPrevDay <= m_Begin)
-		{
-			/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
-			 * vorherigen Aufgabe */
-			m_Begin = (float)(endPrevDay + 0);
-			m_End = calcEnd(m_Begin, m_Width);
-		}
+		/* setzte neuen Begin der Aufgabe auf folge Tag der spätesten 
+		 * vorherigen Aufgabe */
+		m_Begin = (float)(endPrevDay + 0);
+		m_End = calcEnd(m_Begin, m_Width);
 
 
 	/* Durchlaufe die Nachfolger und schiebe sie vom ersten Nachfolger an gesehen
@@ -444,30 +441,30 @@ void BusinessTask::moveToLaterPosition(int new_begin)
 
 	if(new_begin > m_ForceRangeIncredible1)
 	{
-		//m_Begin = m_ForceRangeIncredible1;// - m_Width;
-		moveFollowingToFront(m_ForceRangeIncredible1);
+		m_Begin = m_ForceRangeIncredible1;// - m_Width;
+		m_End = calcEnd(m_Begin, m_Width);
+		moveFollowingToFront(m_Begin + m_Width);
 	}
 	else if( m_ForceRangeMedium0 < new_begin && new_begin < m_ForceRangeIncredible1)
 	{
-		/* Durchlaufe die Vorgänger  */
+		/* Durchlaufe die Nachfolger  */
 		list<IBusinessAdapter*>::iterator itObj;
 		for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
 		{
 			if (*itObj != NULL)
 			{
-				if ( new_begin > (*itObj)->getBegin() )
+				if ( new_begin + m_Width > (*itObj)->getBegin() )
 				{
 					(*itObj)->moveToLaterPosition(new_begin + m_Width);
 				}
 			}
-			
 		}
 		m_Begin = new_begin;
-
+		m_End = calcEnd(m_Begin, m_Width);
 	}
 	else
 	{
 		m_Begin = new_begin;
+		m_End = calcEnd(m_Begin, m_Width);
 	}
-	m_End = calcEnd(m_Begin, m_Width);
 }
