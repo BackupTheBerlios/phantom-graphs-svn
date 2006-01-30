@@ -46,7 +46,7 @@ using namespace std;
 /// @brief	diese KLasse verwaltet alle Aufgaben, die im Graph dargestellt werden sollen.
 ///
 //...............................................................................
-class BusinessTask : public IBusinessAdapter, public IBusinessConverter 
+class BusinessTask : public IBusinessAdapter, public IBusinessConverter
 {
 public:
 
@@ -77,7 +77,7 @@ public:
 	/// @param	y aktueller y-Wert des Knoten in Business Einheiten
 	/// @return	m_Force (siehe oben)
 	//...............................................................................
-	virtual force getForce(int x, int y);
+	virtual force getForce(float x, float y);
 
 	BusinessTask();
 	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);

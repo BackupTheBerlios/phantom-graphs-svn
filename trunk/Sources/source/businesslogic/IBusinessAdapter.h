@@ -22,6 +22,7 @@
 //				- added: enum force CA
 
 
+
 #if !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)
 #define AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_
 
@@ -50,7 +51,7 @@ enum force {none, medium, incredible};
 ///			Aufgabe um relevante Daten mit Ihr auszutauschen
 /// @todo	Definition der abstrakten Adapter Methoden
 //...............................................................................
-class IBusinessAdapter  
+class IBusinessAdapter
 {
 public:
 	
@@ -60,7 +61,7 @@ public:
 	/// @param	y aktueller y-Wert des Knoten in Business Einheiten
 	/// @return	m_Force (siehe oben)
 	//...............................................................................
-	virtual force getForce(int x, int y)=0;
+	virtual force getForce(float x, float y)=0;
 
 	//.......................................................................
 	/// @brief	Ermittelt die Breite des Darstellungsobjektes in View-Einheiten.

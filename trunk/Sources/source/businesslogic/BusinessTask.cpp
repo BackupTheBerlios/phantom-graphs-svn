@@ -79,7 +79,7 @@ BusinessTask::~BusinessTask()
 
 }
 
-force BusinessTask::getForce(int x, int y)
+force BusinessTask::getForce(float x, float y)
 {
 	return m_Force;
 }
