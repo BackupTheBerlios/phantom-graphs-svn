@@ -53,6 +53,7 @@ BusinessTask::BusinessTask()
 	// Nachfolger- und Vorgängerlisten löschen
 	m_TasksFollowing.clear();
 	m_TasksPrevious.clear();
+	m_Movement = 0;
 }
 
 BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milestone)
@@ -75,6 +76,7 @@ BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milest
 	// Nachfolger- und Vorgängerlisten löschen
 	m_TasksFollowing.clear();
 	m_TasksPrevious.clear();
+	m_Movement = 0;
 }
 
 
@@ -85,7 +87,13 @@ BusinessTask::~BusinessTask()
 
 force BusinessTask::getForce(float x_float, float y_float)
 {
-	int x = m_Begin + (int) x_float;
+	float x = 0.0;
+
+	/* akkumulierte Bewegung aufzeichen
+	 * wird in setBegin() wieder genullt */
+	m_Movement = m_Movement + x_float;
+	x = m_Movement + m_Begin;
+
 	
 	if ( ((m_ForceRangeIncredible0 < x) && (x < m_ForceRangeMedium0)) ||
 		 ((m_ForceRangeMedium1 < x) || x < (m_ForceRangeIncredible1)))
@@ -196,6 +204,9 @@ bool BusinessTask::setBegin(float begin)
 	/* Ende neu setzen nach Änderung des Begin */
 	m_End = calcEnd(m_Begin, m_Width);
 	calcRanges();
+
+	/* akkumulierte Bewegungen aus getForce() zurücksetzen */
+	m_Movement = 0;
 	
 	/* Meldung nach Änderng */
 	this->NotifyAll();

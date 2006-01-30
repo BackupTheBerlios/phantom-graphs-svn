@@ -200,6 +200,7 @@ private:
 	list<IBusinessAdapter*> m_TasksPrevious;
 
 protected:
+	float m_Movement;
 	void businessToViewCoordinates();
 	void viewToBusinessCoordinates();
 };
