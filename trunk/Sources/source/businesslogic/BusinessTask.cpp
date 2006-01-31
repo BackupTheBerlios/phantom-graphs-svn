@@ -446,7 +446,16 @@ void BusinessTask::moveToLaterPosition(int new_begin)
 	{
 		m_Begin = m_ForceRangeIncredible1;// - m_Width;
 		m_End = calcEnd(m_Begin, m_Width);
-		moveFollowingToFront(m_Begin + m_Width);
+
+		/* Durchlaufe die Nachfolger  */
+		list<IBusinessAdapter*>::iterator itObj;
+		for (itObj = m_TasksFollowing.begin() ; itObj != m_TasksFollowing.end(); itObj++)
+		{
+			if (*itObj != NULL)
+			{
+				(*itObj)->moveFollowingToFront(m_Begin + m_Width);
+			}
+		}		
 	}
 	else if( m_ForceRangeMedium0 < new_begin && new_begin < m_ForceRangeIncredible1)
 	{
