@@ -117,6 +117,10 @@ int BusinessTask::calcEnd(int begin, int duration)
 	end = 0;
 	end = begin + duration;
 	calcRanges();
+
+	/* Meldung nach Änderng */
+	this->NotifyAll();
+
 	return end;
 }
 
