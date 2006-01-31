@@ -277,9 +277,13 @@ void BusinessTask::movePreviousToFront()
 			 * vorherigen Aufgabe */
 			m_Begin = (float)(maxDay + 0) ;
 			m_End = calcEnd(m_Begin, m_Width);
+			/* Meldung nach Änderng */
+			this->NotifyAll();
 		}
 		else m_Begin = 0;
 		m_End = calcEnd(m_Begin, m_Width);
+		/* Meldung nach Änderng */
+		this->NotifyAll();
 	}
 
 
@@ -295,6 +299,8 @@ void BusinessTask::moveFollowingToFront(int earliest)
 		 * vorherigen Aufgabe */
 		m_Begin = (float)(endPrevDay + 0);
 		m_End = calcEnd(m_Begin, m_Width);
+		/* Meldung nach Änderng */
+		this->NotifyAll();
 
 
 	/* Durchlaufe die Nachfolger und schiebe sie vom ersten Nachfolger an gesehen
@@ -439,6 +445,9 @@ void BusinessTask::moveToEarlierPosition(int new_begin)
 		m_Begin = new_begin;
 	}
 	m_End = calcEnd(m_Begin, m_Width);
+	/* Meldung nach Änderng */
+	this->NotifyAll();
+
 }
 
 void BusinessTask::moveToLaterPosition(int new_begin)
@@ -450,6 +459,8 @@ void BusinessTask::moveToLaterPosition(int new_begin)
 	{
 		m_Begin = m_ForceRangeIncredible1;// - m_Width;
 		m_End = calcEnd(m_Begin, m_Width);
+		/* Meldung nach Änderng */
+		this->NotifyAll();
 
 		/* Durchlaufe die Nachfolger  */
 		list<IBusinessAdapter*>::iterator itObj;
@@ -477,10 +488,14 @@ void BusinessTask::moveToLaterPosition(int new_begin)
 		}
 		m_Begin = new_begin;
 		m_End = calcEnd(m_Begin, m_Width);
+		/* Meldung nach Änderng */
+		this->NotifyAll();
 	}
 	else
 	{
 		m_Begin = new_begin;
 		m_End = calcEnd(m_Begin, m_Width);
+		/* Meldung nach Änderng */
+		this->NotifyAll();
 	}
 }
