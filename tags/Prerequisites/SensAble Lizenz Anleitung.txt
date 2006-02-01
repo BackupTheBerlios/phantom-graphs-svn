@@ -1,0 +1,88 @@
+Eine beantragte Lizenz ist immer nur für
+einen Rechner, aber jedes beliebige Phantom Gerät gültig. Da die Lizenz
+nicht für den Phantom Treiber, sondern die 3D Touch SDK ist (in der die
+API
+"OpenHaptics Toolkit" enthalten ist), leuchtet zumindest letzteres ein.
+Als
+Identifikationsmerkmal für den Rechner wird die Volume ID
+("Datenträgernummer") der Systempartition herangezogen, die SensAble
+auch
+als "Host ID" bezeichnet. Diese läßt sich z.B. durch einen einfachen
+"dir
+/p" Befehl ermitteln.
+
+Vor einiger Zeit hatte Herr Schneider eine permanent Lizenz für einen
+Rechner im CAD Labor erhalten, die auf diesem und allen anderen CAD
+Rechnern
+funktioniert, da die Rechner des Labors geklont sind und die GLEICHE
+Volume
+ID haben (ausgenommen der Rechner erste Reihe links).
+
+Diese Lizenz läßt sich nun mit einem kleinen Trick auch auf anderen
+Rechnern
+benutzen, indem der Rechner an die Lizenz "angepasst" wird. Dazu muss
+die
+VolumeID der Festplatte geändert werden, wofür folgende Schritte
+erforderlich sind.
+
+1) Unter http://www.sysinternals.com/ntw2k/source/misc.shtml#volumeid
+das
+Freeware Tool "VolumeID" herunterladen und entpacken.
+
+2) Als Administrator einloggen
+
+3) Die angehängte Datei entpacken und die licence.lic in ein beliebiges
+Verzeichnis (z.B. C:\Programme\SensAble\3DTouch) kopieren. Falls nicht
+schon
+geschehen, ausserdem die Systemvariable OH_SDK_LICENSE_PATH hinzufügen
+und
+den vollen Pfad zur licence.lic als Wert eintragen.
+
+4) Kommandozeile öffnen (Start->Ausführen->cmd.exe)
+
+5) Vor dem Ändern der VolumeID sollte sicherheitshalber die bestehende
+aufgeschrieben werden. Die aktuelle VolumeID findet sich im Kopf der
+Ausgabe
+des "dir /p" Befehls unter "Datenträgernummer".
+
+6) Um die Volume ID zu ändern bitte folgende Befehle eingeben:
+
+cd [Verzeichnis mit Volumeid.exe]
+volumeid C: 3424-5CC3
+
+(Falls C nicht die Systempartition sein sollte, bitte den entsprechenden
+Buchstaben eintragen.)
+
+7) Rechner neustarten
+
+8) Unter der Kommandozeile mit dir /p verifizieren, ob die neue VolumeID
+übernommen wurde.
+
+Die Lizenz sollte nun funktionieren. Zum Testen eignen sich die examples
+im
+3DTouch Verzeichnis, aber nicht das Dice Demo, da dieses von der Lizenz
+unabhängig ist. Das Verfahren wurde an einem FH Rechner und meinem
+Rechner
+getestet, und hat funktioniert.
+
+Das Ändern der VolumeID sollte zumindest für NTFS Partitionen unter
+Windows
+keine weiteren Probleme bereiten. Bei FAT Partitionen kann (laut
+Beschreibung auf der SysInternals Seite) eine Meldung von Windows
+erscheinen. Da bei NT Systemen (Win NT4, 2000, XP) die Systempartition
+jedoch zwangsweise NTFS ist, betrifft dies nur Windows 98 Systeme.
+
+Es kann natürlich nicht garantiert werden, dass dies nicht eventuell zu
+Problemen mit anderen Programmen führt, die für Ihren Kopierschutz auf
+die
+Volume ID zurückgreifen. Dies sollte zwar die Ausnahme sein, ist aber
+nicht
+ganz auszuschließen...
+
+Falls solche Probleme auftreten, kann die VolumeID über o.g. Weg
+wiederhergestellt werden, und eine extra Lizenz unter Angabe der
+VolumeID
+durch Herr Schneider beantragt werden.
+
+
+
