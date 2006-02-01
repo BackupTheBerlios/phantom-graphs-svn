@@ -173,7 +173,7 @@ void initScene( int viewportWidth, int viewportHeight )
 {
     initGL();
     initHL();
-	static UnitConversionInfo uinf(3.6, 2.7, 0.05, 0.1);
+	static UnitConversionInfo uinf(3.6, 2.7, 0.03, 0.1);
 	pScene = new GraphScene(uinf);
 	pScene->initScene(viewportWidth, viewportHeight, pHapticDevice,
 					appData.getProjectDuration(), appData.getProjectLines(),

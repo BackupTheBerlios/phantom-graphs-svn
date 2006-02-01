@@ -31,9 +31,12 @@ SpringForceEffect::~SpringForceEffect()
 //*******************************************************************************
 void SpringForceEffect::setAnchorPosition( double x, double y, double z )
 {
-	m_AnchorPosition[0] = x;
-	m_AnchorPosition[1] = y;
-	m_AnchorPosition[2] = z;
+	if (!m_IsActive)
+	{
+		m_AnchorPosition[0] = x;
+		m_AnchorPosition[1] = y;
+		m_AnchorPosition[2] = z;
+	}
 }
 //*******************************************************************************
 

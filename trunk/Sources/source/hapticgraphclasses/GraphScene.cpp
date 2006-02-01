@@ -111,7 +111,7 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 	// Grid der entsprechenden Größe mit linker unterer Ecke bei [0.0, 0.0, 0.0] erzeugen
 	Grid * pGrid = new Grid(m_rUnitInfo, gridColumns, gridRows);
 	pGrid->setPosition(0.0, 0.0, 0.0);
-	HapticConstraint * pGridConstraint = new HapticConstraint(3.0f);
+	HapticConstraint * pGridConstraint = new HapticConstraint(1.0f);
 	pGridConstraint->disable();
 	pGrid->setHapticConstraint(pGridConstraint);
 	pGrid->addHapticAction(new DragSceneHandler(this));
@@ -178,7 +178,7 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 //hlEndFrame();
 //eff2.startEffect();
 */
-	eff = new ViscousForceEffect(5.0, 5.0);
+//	eff = new ViscousForceEffect(5.0, 5.0);
 }
 //*******************************************************************************
 
@@ -188,9 +188,9 @@ Node * GraphScene::createObjects(IBusinessAdapter * businessObj, Grid * pGrid )
 	Node * pNode = new Node(businessObj, m_rUnitInfo);
 	addObject(pNode);
 	pNode->addHapticAction(new DragNodeOnGridHandler(pNode, pGrid));
+	pNode->setHapticConstraint(new HapticConstraint(2.0));
 
 	// rekursiv die Nachfolger erzeugen und mit Kanten verbinden
-	
 	Node * pNextNode = NULL;
 	Edge * pEdge = NULL;
 	list<IBusinessAdapter*>& lsFollowingNodes = businessObj->getNextTasks();
@@ -247,7 +247,7 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 		// und hlEndFrame() gerendert werden
 		hlBeginFrame();
 
-		eff->startEffect();
+//		eff->startEffect();
 
 		// alle Objekte der Scene durchlaufen und sie zum Rendern ihrer haptischen
 		// Beschaffenheit auffordern

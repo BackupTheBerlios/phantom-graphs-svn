@@ -2,10 +2,11 @@
 /// @file	HapticEffect.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.01.2006
-/// @date	Letzte Änderung	03.01.2006
+/// @date	Letzte Änderung	30.01.2006
 //*******************************************************************************
 
 // Änderungen:
+// 30.01.06		- neues Attribut m_IsActive hinzugefügt.
 
 
 #ifndef _HAPTICEFFECT_H_
@@ -40,6 +41,11 @@ class HapticEffect
 		/// @brief	ID, mit der der Effekt bei HLAPI bekannt ist.
 		//.......................................................................
 		HLuint m_EffectID;
+
+		//.......................................................................
+		/// @brief
+		//.......................................................................
+		bool m_IsActive;
 
 		//.......................................................................
 		/// @brief	Muss von abgeleiteten Klassen implementiert werden, um die 

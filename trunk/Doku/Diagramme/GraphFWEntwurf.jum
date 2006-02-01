@@ -2,12 +2,12 @@ Jumli
 {
   *** Applikation ***;
   Version=1.4;
-  Elements=372;
+  Elements=376;
   {
     *** Model ***;
     Typ=2;
     MainFile="main.cpp";
-    ActiveDiagramm=17;
+    ActiveDiagramm=21;
     {
       *** GenSettings ***;
       GetPrefix="Get";
@@ -387,7 +387,16 @@ Jumli
           *** CJumliTracker ***;
           Rechteck=532,310,701,465;
           Order=-1;
-          UMLElementID=341;
+          UMLElementID=360;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=731,310,959,499;
+          Order=-1;
+          UMLElementID=340;
           IsWithAttributs=true;
           IsWithMethods=true;
           IsHideTaggedValue=true;
@@ -407,22 +416,13 @@ Jumli
         {
           *** VererbungZeichner ***;
           Order=-1;
-          UMLElementID=353;
+          UMLElementID=372;
           TextOffset=0,5;
-        };
-        {
-          *** CJumliTracker ***;
-          Rechteck=731,310,959,499;
-          Order=-1;
-          UMLElementID=354;
-          IsWithAttributs=true;
-          IsWithMethods=true;
-          IsHideTaggedValue=true;
         };
         {
           *** VererbungZeichner ***;
           Order=-1;
-          UMLElementID=357;
+          UMLElementID=358;
           TextOffset=0,5;
         };
       };
@@ -629,7 +629,7 @@ Jumli
         };
         {
           *** CJumliTracker ***;
-          Rechteck=37,463,217,754;
+          Rechteck=44,445,280,770;
           Order=-1;
           UMLElementID=291;
           IsWithAttributs=true;
@@ -647,7 +647,7 @@ Jumli
         };
         {
           *** CJumliTracker ***;
-          Rechteck=374,535,554,724;
+          Rechteck=404,535,584,724;
           Order=-1;
           UMLElementID=155;
           IsWithAttributs=true;
@@ -683,12 +683,7 @@ Jumli
           Rechteck=380,524,387,531;
           Order=-1;
           UMLElementID=169;
-          Knick=384,528;
           TextOffset=0,5;
-          {
-            *** Linie ***;
-            Punkt=384,528;
-          };
         };
         {
           *** AssoziationZeichner ***;
@@ -702,17 +697,56 @@ Jumli
         };
         {
           *** AssoziationZeichner ***;
-          Rechteck=248,650,363,667;
+          Rechteck=442,713,449,720;
           Order=-1;
           UMLElementID=318;
-          Knick=276,674;
+          Knick=296,671;
           TextOffset=0,5;
           OffsetRollenName=-33,-22;
           OffsetA=5,5;
           OffsetB=5,5;
           {
             *** Linie ***;
-            Punkt=276,674;
+            Punkt=296,671;
+          };
+        };
+        {
+          *** CJumliTracker ***;
+          Rechteck=49,944,218,1116;
+          Order=-1;
+          UMLElementID=236;
+          IsWithAttributs=true;
+          IsWithMethods=true;
+          IsHideTaggedValue=true;
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=9,897,152,914;
+          Order=-1;
+          UMLElementID=373;
+          Knick=117,868;
+          TextOffset=0,5;
+          OffsetRollenName=-39,-11;
+          OffsetA=5,5;
+          OffsetB=5,5;
+          {
+            *** Linie ***;
+            Punkt=117,868;
+          };
+        };
+        {
+          *** AssoziationZeichner ***;
+          Rechteck=164,897,343,914;
+          Order=-1;
+          UMLElementID=439;
+          Knick=209,859;
+          TextOffset=0,5;
+          OffsetRollenName=46,-11;
+          OffsetA=5,5;
+          OffsetB=5,5;
+          {
+            *** Linie ***;
+            Punkt=209,859;
           };
         };
       };
@@ -845,36 +879,36 @@ Jumli
         {
           *** Methode ***;
           Name="BusinessTask";
-          ID=40;
-          {
-            *** Parameter ***;
-            Name="day_begin";
-            ID=41;
-            Typ="int";
-          };
-          {
-            *** Parameter ***;
-            Name="day_duration";
-            ID=42;
-            Typ="int";
-          };
-          {
-            *** Parameter ***;
-            Name="day_final";
-            ID=43;
-            Typ="int";
-          };
-          {
-            *** Parameter ***;
-            Name="isMilestone";
-            ID=44;
-            Typ="bool";
-          };
+          ID=44;
         };
         {
           *** Methode ***;
           Name="BusinessTask";
           ID=39;
+          {
+            *** Parameter ***;
+            Name="day_begin";
+            ID=40;
+            Typ="int";
+          };
+          {
+            *** Parameter ***;
+            Name="day_duration";
+            ID=41;
+            Typ="int";
+          };
+          {
+            *** Parameter ***;
+            Name="day_final";
+            ID=42;
+            Typ="int";
+          };
+          {
+            *** Parameter ***;
+            Name="isMilestone";
+            ID=43;
+            Typ="bool";
+          };
         };
         {
           *** Methode ***;
@@ -2811,21 +2845,21 @@ Jumli
           Doku="......................................................................./ \
           @brief\tID der OpenGL-Displayliste, mit der der Node gezeichnet wird........................................................................";
           Name="m_DisplayList";
-          ID=292;
+          ID=482;
           Datentyp="GLuint";
           Zugriff=1;
         };
         {
           *** Attribut ***;
           Name="m_Height";
-          ID=293;
+          ID=483;
           Datentyp="float";
           Zugriff=1;
         };
         {
           *** Attribut ***;
           Name="m_Width";
-          ID=294;
+          ID=484;
           Datentyp="float";
           Zugriff=1;
         };
@@ -2833,11 +2867,11 @@ Jumli
           *** Methode ***;
           Doku="..............................................................................................................................................";
           Name="Node";
-          ID=295;
+          ID=485;
           {
             *** Parameter ***;
             Name="businessObj";
-            ID=296;
+            ID=486;
             Typ="IBusinessAdapter *";
           };
         };
@@ -2848,56 +2882,56 @@ Jumli
           @brief\tVeranlasst den Observer, sich die benötigten Informationen /\t\t\tvom \
           Observable zu holen........................................................................";
           Name="Update";
-          ID=297;
+          ID=489;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pObservable";
-            ID=298;
+            ID=490;
             Typ="Observable *";
           };
         };
         {
           *** Methode ***;
           Name="addIncomingEdge";
-          ID=299;
+          ID=491;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pEdge";
-            ID=300;
+            ID=492;
             Typ="Edge *";
           };
         };
         {
           *** Methode ***;
           Name="addOutgoingEdge";
-          ID=301;
+          ID=493;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="pEdge";
-            ID=302;
+            ID=494;
             Typ="Edge *";
           };
         };
         {
           *** Methode ***;
           Name="getHeight";
-          ID=303;
+          ID=495;
           RueckgabeWert="float";
         };
         {
           *** Methode ***;
           Name="getWidth";
-          ID=304;
+          ID=496;
           RueckgabeWert="float";
         };
         {
           *** Methode ***;
           Name="releaseDisplayList";
-          ID=305;
+          ID=497;
           Zugriff=1;
           RueckgabeWert="void";
         };
@@ -2907,31 +2941,55 @@ Jumli
           setTexture( const Texture* value );********************************************************************* \
           Von HapticObject geerbte Methoden*********************************************************************..............................................................................................................................................";
           Name="renderShape";
-          ID=306;
+          ID=498;
           IsVirtual=true;
           RueckgabeWert="void";
         };
         {
           *** Methode ***;
-          Name="setHeight";
-          ID=307;
+          Name="setHardToMoveEffect";
+          ID=499;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=308;
+            ID=500;
+            Typ="HapticEffect*";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setHeight";
+          ID=501;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=502;
             Typ="float";
           };
         };
         {
           *** Methode ***;
-          Name="setWidth";
-          ID=309;
+          Name="setImpossibleToMoveEffect";
+          ID=487;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=310;
+            ID=488;
+            Typ="HapticEffect*";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setWidth";
+          ID=503;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=504;
             Typ="float";
           };
         };
@@ -2939,25 +2997,25 @@ Jumli
           *** Methode ***;
           Doku="..............................................................................................................................................";
           Name="translate";
-          ID=311;
+          ID=505;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="x";
-            ID=312;
+            ID=506;
             Typ="const double";
           };
           {
             *** Parameter ***;
             Name="y";
-            ID=313;
+            ID=507;
             Typ="const double";
           };
           {
             *** Parameter ***;
             Name="z";
-            ID=314;
+            ID=508;
             Typ="const double";
           };
         };
@@ -2965,7 +3023,7 @@ Jumli
           *** Methode ***;
           Doku="..............................................................................................................................................";
           Name="~Node";
-          ID=315;
+          ID=509;
           IsVirtual=true;
         };
         {
@@ -2998,6 +3056,24 @@ Jumli
           RollenName="m_OutgoingEdges";
           KardinalitaetAnfangsKlasse="0..*";
           KardinalitaetEndeKlasse="1";
+        };
+        {
+          *** Assoziation ***;
+          ID=373;
+          Datentyp="HapticEffect*";
+          Zugriff=1;
+          A=291;
+          B=236;
+          RollenName="m_pHardToMoveEffect";
+        };
+        {
+          *** Assoziation ***;
+          ID=439;
+          Datentyp="HapticEffect*";
+          Zugriff=2;
+          A=291;
+          B=236;
+          RollenName="m_pImpossibleToMoveEffect";
         };
         {
           *** Vererbung ***;
@@ -3167,7 +3243,7 @@ Jumli
       {
         *** Klasse ***;
         Name="SpringForceEffect";
-        ID=354;
+        ID=340;
         Datentyp="class";
         NameSpace="HapticEffects";
         KomponentenId=-1;
@@ -3179,146 +3255,10 @@ Jumli
         {
           *** Attribut ***;
           Name="m_AnchorPosition";
-          ID=551;
+          ID=341;
           Datentyp="hduVector3Dd";
           Zugriff=1;
         };
-        {
-          *** Attribut ***;
-          Name="m_Gain";
-          ID=552;
-          Datentyp="double";
-          Zugriff=1;
-        };
-        {
-          *** Attribut ***;
-          Name="m_Magnitude";
-          ID=553;
-          Datentyp="double";
-          Zugriff=1;
-        };
-        {
-          *** Methode ***;
-          Name="SpringForceEffect";
-          ID=554;
-          {
-            *** Parameter ***;
-            Name="magnitude";
-            ID=555;
-            Typ="double";
-            Default="0.0";
-          };
-          {
-            *** Parameter ***;
-            Name="gain";
-            ID=556;
-            Typ="double";
-            Default="0.0";
-          };
-          {
-            *** Parameter ***;
-            Name="anchor";
-            ID=557;
-            Typ="Position";
-            TypID=331;
-            Default="Position (0.0, 0.0, 0.0)";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="renderProperties";
-          ID=558;
-          IsVirtual=true;
-          Zugriff=1;
-          RueckgabeWert="void";
-        };
-        {
-          *** Methode ***;
-          Name="setAnchorPosition";
-          ID=559;
-          RueckgabeWert="void";
-          {
-            *** Parameter ***;
-            Name="x";
-            ID=560;
-            Typ="double";
-          };
-          {
-            *** Parameter ***;
-            Name="y";
-            ID=561;
-            Typ="double";
-          };
-          {
-            *** Parameter ***;
-            Name="z";
-            ID=562;
-            Typ="double";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="setGain";
-          ID=563;
-          IsVirtual=true;
-          RueckgabeWert="void";
-          {
-            *** Parameter ***;
-            Name="value";
-            ID=564;
-            Typ="double";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="setMagnitude";
-          ID=565;
-          RueckgabeWert="void";
-          {
-            *** Parameter ***;
-            Name="value";
-            ID=566;
-            Typ="double";
-          };
-        };
-        {
-          *** Methode ***;
-          Name="~SpringForceEffect";
-          ID=567;
-          IsVirtual=true;
-        };
-        {
-          *** Vererbung ***;
-          ID=357;
-          A=354;
-          B=236;
-        };
-      };
-      {
-        *** Klasse ***;
-        Name="Texture";
-        ID=340;
-        Datentyp="class";
-        NameSpace="GraphFWEntwurf";
-        KomponentenId=-1;
-        FileName="genSource\\Texture.cpp";
-        FileActiveLine=-1;
-        HeaderFileName="genSource\\Texture.h";
-        HeaderFileActiveLine=-1;
-        Parent=-1;
-      };
-      {
-        *** Klasse ***;
-        Name="ViscousForceEffect";
-        ID=341;
-        Datentyp="class";
-        NameSpace="GraphFWEntwurf";
-        KomponentenId=-1;
-        FileName="genSource\\ViscousForceEffect.cpp";
-        FileActiveLine=-1;
-        HeaderFileName="genSource\\ViscousForceEffect.h";
-        HeaderFileActiveLine=-1;
-        Parent=-1;
         {
           *** Attribut ***;
           Name="m_Gain";
@@ -3335,7 +3275,7 @@ Jumli
         };
         {
           *** Methode ***;
-          Name="ViscousForceEffect";
+          Name="SpringForceEffect";
           ID=344;
           {
             *** Parameter ***;
@@ -3351,11 +3291,147 @@ Jumli
             Typ="double";
             Default="0.0";
           };
+          {
+            *** Parameter ***;
+            Name="anchor";
+            ID=347;
+            Typ="Position";
+            TypID=331;
+            Default="Position (0.0, 0.0, 0.0)";
+          };
         };
         {
           *** Methode ***;
           Name="renderProperties";
-          ID=347;
+          ID=348;
+          IsVirtual=true;
+          Zugriff=1;
+          RueckgabeWert="void";
+        };
+        {
+          *** Methode ***;
+          Name="setAnchorPosition";
+          ID=349;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="x";
+            ID=350;
+            Typ="double";
+          };
+          {
+            *** Parameter ***;
+            Name="y";
+            ID=351;
+            Typ="double";
+          };
+          {
+            *** Parameter ***;
+            Name="z";
+            ID=352;
+            Typ="double";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setGain";
+          ID=353;
+          IsVirtual=true;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=354;
+            Typ="double";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="setMagnitude";
+          ID=355;
+          RueckgabeWert="void";
+          {
+            *** Parameter ***;
+            Name="value";
+            ID=356;
+            Typ="double";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="~SpringForceEffect";
+          ID=357;
+          IsVirtual=true;
+        };
+        {
+          *** Vererbung ***;
+          ID=358;
+          A=340;
+          B=236;
+        };
+      };
+      {
+        *** Klasse ***;
+        Name="Texture";
+        ID=359;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\Texture.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\Texture.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+      };
+      {
+        *** Klasse ***;
+        Name="ViscousForceEffect";
+        ID=360;
+        Datentyp="class";
+        NameSpace="GraphFWEntwurf";
+        KomponentenId=-1;
+        FileName="genSource\\ViscousForceEffect.cpp";
+        FileActiveLine=-1;
+        HeaderFileName="genSource\\ViscousForceEffect.h";
+        HeaderFileActiveLine=-1;
+        Parent=-1;
+        {
+          *** Attribut ***;
+          Name="m_Gain";
+          ID=361;
+          Datentyp="double";
+          Zugriff=1;
+        };
+        {
+          *** Attribut ***;
+          Name="m_Magnitude";
+          ID=362;
+          Datentyp="double";
+          Zugriff=1;
+        };
+        {
+          *** Methode ***;
+          Name="ViscousForceEffect";
+          ID=363;
+          {
+            *** Parameter ***;
+            Name="magnitude";
+            ID=364;
+            Typ="double";
+            Default="0.0";
+          };
+          {
+            *** Parameter ***;
+            Name="gain";
+            ID=365;
+            Typ="double";
+            Default="0.0";
+          };
+        };
+        {
+          *** Methode ***;
+          Name="renderProperties";
+          ID=366;
           IsVirtual=true;
           Zugriff=1;
           RueckgabeWert="void";
@@ -3363,38 +3439,38 @@ Jumli
         {
           *** Methode ***;
           Name="setGain";
-          ID=348;
+          ID=367;
           IsVirtual=true;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=349;
+            ID=368;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="setMagnitude";
-          ID=350;
+          ID=369;
           RueckgabeWert="void";
           {
             *** Parameter ***;
             Name="value";
-            ID=351;
+            ID=370;
             Typ="double";
           };
         };
         {
           *** Methode ***;
           Name="~ViscousForceEffect";
-          ID=352;
+          ID=371;
           IsVirtual=true;
         };
         {
           *** Vererbung ***;
-          ID=353;
-          A=341;
+          ID=372;
+          A=360;
           B=236;
         };
       };
@@ -3457,20 +3533,20 @@ Jumli
     {
       *** SourceFiles ***;
       FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Node.cpp";
-      ActiveLine=-1;
+      ActiveLine=23;
     };
     {
       *** SourceFiles ***;
       FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\Node.h";
+    };
+    {
+      *** SourceFiles ***;
+      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\SpringForceEffect.cpp";
       ActiveLine=-1;
     };
     {
       *** SourceFiles ***;
       FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\SpringForceEffect.h";
-    };
-    {
-      *** SourceFiles ***;
-      FileName="D:\\FHW\\WS05-06\\Visualisierung\\Projekt\\Doku\\Diagramme\\genSource\\SpringForceEffect.cpp";
       ActiveLine=-1;
     };
   };

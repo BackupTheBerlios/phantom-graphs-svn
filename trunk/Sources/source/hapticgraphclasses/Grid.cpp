@@ -12,6 +12,9 @@
 // 26.01.06		- isGridPoint() und nearestGridPoint() beachten jetzt auch die 
 //				  Ausgangsposition des Grid.
 
+#include <windows.h>
+#include <GL/glut.h>
+
 #include <math.h>
 
 #include "Grid.h"
@@ -192,7 +195,7 @@ void Grid::renderShape()
 
 		// Gitterpunkte
 		glColor3f(1.0f, 0.0f, 0.0f);
-		glPointSize(5.0);
+		glPointSize(2.5);
 		glBegin(GL_POINTS);
 
 		for (i = 0; i < m_Rows; i++)
@@ -207,6 +210,9 @@ void Grid::renderShape()
 		}
 
 		glEnd();
+
+		// Skala zeichnen
+		GlutString::write("1", Position(0.0, -gridRowHeight, graphPlaneZ));
 
         glEndList();
     }

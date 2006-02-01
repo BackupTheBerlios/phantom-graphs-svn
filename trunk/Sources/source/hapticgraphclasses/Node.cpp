@@ -13,9 +13,14 @@
 // 27.01.06		- Incoming- und Outgoing Edges und dazugehörige Methoden hinzugefügt.
 // 28.01.06		- Knoten holt sich Breite und Position jetzt von seinem BusinessObjekt.
 
+// Haptic Library includes
+#include <HL/hl.h>
 
 #include "Node.h"
 #include "GraphScene.h"
+//#include "ViscousForceEffect.h"
+#include "FrictionForceEffect.h"
+#include "SpringForceEffect.h"
 //#include "Texture.h"
 
 //*******************************************************************************
@@ -29,19 +34,26 @@ Node::Node( IBusinessAdapter * businessObj, UnitConversionInfo & unitInfo  )
 	float unitHeight	= m_rUnitInfo.getUnitHeight();
 	float pad			= m_rUnitInfo.getHorizontalPadding();
 
-	// Höhe festlegen
-	m_Height = unitHeight;
+	// Höhe auf 1 Unit festlegen
+	m_Height = m_rUnitInfo.unitToYValue(1);
 
 	// Breite und Position vom BusinessObjekt geben lassen
 	if (m_pBusinessObject != NULL)
 	{
+		m_pBusinessObject->AddObserver(this);
 		Update(m_pBusinessObject);
 	}
 	// wenn kein BusinessObjekt da ist, Breite auf 1 Unit setzen
 	else
 	{
-		m_Width = unitWidth - pad;
+		m_Width = m_rUnitInfo.unitToXValue(1) - pad;
 	}	
+
+	// Effekte standardmäßig belegen
+//	m_pHardToMoveEffect			= new ViscousForceEffect(1.0, 1.0);
+	m_pHardToMoveEffect			= new FrictionForceEffect(1.0, 0.5);
+//	m_pImpossibleToMoveEffect	= new SpringForceEffect(100.0, 100.0, getPosition());
+	m_pImpossibleToMoveEffect	= new FrictionForceEffect(100.0, 90.0); 
 
 	m_IncomingEdges.clear();
 	m_OutgoingEdges.clear();
@@ -53,7 +65,20 @@ Node::~Node()
 {
 	// Displayliste freigeben
 	releaseDisplayList();
+
+	// Effekte freigeben
+	if (m_pHardToMoveEffect != NULL)
+	{
+		delete m_pHardToMoveEffect;
+		m_pHardToMoveEffect = NULL;
+	}
 	
+	if (m_pImpossibleToMoveEffect != NULL)
+	{
+		delete m_pImpossibleToMoveEffect;
+		m_pImpossibleToMoveEffect = NULL;
+	}
+
 	// Inhalte der Kantenlisten löschen, die Pointer auf die Kanten müssen extern
 	// freigegeben werden.
 	m_IncomingEdges.clear();
@@ -173,6 +198,18 @@ void Node::updateEdges()
 //*******************************************************************************
 
 //*******************************************************************************
+void Node::setHardToMoveEffect( HapticEffect * value )
+{
+}
+//*******************************************************************************
+
+//*******************************************************************************
+void Node::setImpossibleToMoveEffect( HapticEffect * value )
+{
+}
+//*******************************************************************************
+
+//*******************************************************************************
 /*void Node::setTexture( const Texture* value )
 {
 }
@@ -220,6 +257,47 @@ void Node::translate(const double x, const double y, const double z)
 	{
 		// Business-Objekt fragen, ob und wie schwer sich der Knoten bewegen lassen
 		// soll.
+		float xUnits = m_rUnitInfo.xValueToUnit(x);
+		float yUnits = m_rUnitInfo.yValueToUnit(y);
+		force f = incredible;
+		f = m_pBusinessObject->getForce(xUnits, yUnits);
+		switch(f)
+		{
+			case none:
+			{
+				// der Node darf sich frei bewegen, keine Aktion nötig.
+				// Eventuell aktive Effekte müssen gestoppt werden.
+				m_pHardToMoveEffect->stopEffect();
+				m_pImpossibleToMoveEffect->stopEffect();
+				break;
+			}
+			case medium:
+			{
+				// ForceEffect für schweres Bewegen aktivieren und den anderen Effekt
+				// falls nötig stoppen.
+				m_pImpossibleToMoveEffect->stopEffect();
+				m_pHardToMoveEffect->startEffect();
+				break;
+			}
+			case incredible:
+			{
+				// ForceEffect, der jede Bewegung blockieren soll, aktivieren und 
+				// den anderen Effekt falls nötig stoppen.
+				m_pHardToMoveEffect->stopEffect();
+				double prox[3];
+//				hlGetDoublev(HL_PROXY_POSITION, prox);
+//				((SpringForceEffect *)m_pImpossibleToMoveEffect)->setAnchorPosition(prox[0], prox[1], prox[2]);
+				m_pImpossibleToMoveEffect->startEffect();
+				break;
+			}
+			default:
+			{
+				// Eventuell aktive Effekte müssen gestoppt werden.
+				m_pHardToMoveEffect->stopEffect();
+				m_pImpossibleToMoveEffect->stopEffect();
+				break;
+			}
+		}
 	}
 
 	HapticObject::translate(x, y, z);
@@ -230,25 +308,37 @@ void Node::translate(const double x, const double y, const double z)
 //*******************************************************************************
 void Node::setPosition(const double x, const double y, const double z)
 {
-	HapticObject::setPosition(x, y, z);
-	updateEdges();
+	if (m_pBusinessObject != NULL)
+	{
+		float xUnits = m_rUnitInfo.xValueToUnit(x);
+		m_pBusinessObject->setBegin(xUnits);
+		Update(m_pBusinessObject);
+
+		m_pHardToMoveEffect->stopEffect();
+		m_pImpossibleToMoveEffect->stopEffect();
+	}
+	else
+	{
+		HapticObject::setPosition(x, y, z);
+		updateEdges();
+	}
 }
 //*******************************************************************************
 
 //*******************************************************************************
 void Node::Update( Observable * pObservable )
 {
-	float unitWidth		= m_rUnitInfo.getUnitWidth();
-	float unitHeight	= m_rUnitInfo.getUnitHeight();
-	float pad			= m_rUnitInfo.getHorizontalPadding();
+	float pad = m_rUnitInfo.getHorizontalPadding();
 
 	// Breite vom BusinessObjekt erfragen
-	m_Width = (float)m_pBusinessObject->getWidth() * unitWidth - pad;
+	m_Width = m_rUnitInfo.unitToXValue((float)m_pBusinessObject->getWidth()) - pad;
 
 	// Position erfragen
-	double x = m_pBusinessObject->getBegin() * unitWidth;
-	double y = m_pBusinessObject->getLine() * unitHeight;
+	double x = m_rUnitInfo.unitToXValue(m_pBusinessObject->getBegin());
+	double y = m_rUnitInfo.unitToYValue(m_pBusinessObject->getLine());
 	HapticObject::setPosition(x, y, 0.0);
+
+	updateEdges();
 }
 //*******************************************************************************
 

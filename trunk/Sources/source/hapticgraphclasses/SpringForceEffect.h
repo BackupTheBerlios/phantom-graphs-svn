@@ -48,7 +48,7 @@ class SpringForceEffect : public HapticEffect
 		//.......................................................................
 		/// @brief	Spezifiziert die Eigenschaften des Effektes für HLAPI.
 		//.......................................................................
-		virtual void renderProperties() = 0;
+		virtual void renderProperties();
 
 		//=======================================================================
 

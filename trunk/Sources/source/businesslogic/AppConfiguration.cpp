@@ -67,7 +67,7 @@ void AppConfiguration::initTasks()
 	BusinessTask *task02 = new BusinessTask("A02",14,24,1);
 	BusinessTask *task03 = new BusinessTask("A03",20,44,0);
 	BusinessTask *task04 = new BusinessTask("A04",10,34,0);
-	BusinessTask *task05 = new BusinessTask("A05",30,100,0);
+	BusinessTask *task05 = new BusinessTask("A05",30,55,0);
 	BusinessTask *task06 = new BusinessTask("A06",20,70,1);
 	BusinessTask *task07 = new BusinessTask("A07",6,80,0);
 	BusinessTask *task08 = new BusinessTask("A08",6,300,1);
@@ -127,7 +127,7 @@ void AppConfiguration::initTasks()
 	m_rootTask = *m_BusinessTasks.begin();
 
 	/* Alle Aufgaben an den Anfang des Projektzeitraums setzen */
-	m_rootTask->moveAllToFront();
+//	m_rootTask->moveAllToFront();
 
 	/// Kräfte aller Aufgaben berechnen
 	if(getDebugState())

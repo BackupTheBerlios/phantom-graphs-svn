@@ -55,6 +55,9 @@ Position Position::operator+(double value)
 //*******************************************************************************
 
 
+
+
+
 //*******************************************************************************
 // Statische Konstanten intitialisierten
 const float UnitConversionInfo::ScreenWidthInViewUnits = 3.6f;
@@ -68,7 +71,7 @@ UnitConversionInfo::UnitConversionInfo( int upsHorz, int upsVert,
 {
 	// Dummy
 	m_UnitWidth = 0.1f + m_HorizontalPadding;
-	m_UnitHeight = 0.2f + m_VerticalPadding;
+	m_UnitHeight = 0.25f + m_VerticalPadding;
 }
 //*******************************************************************************
 
@@ -102,9 +105,7 @@ float UnitConversionInfo::getUnitHeight()
 //*******************************************************************************
 float UnitConversionInfo::getUnitWidth()
 {
-//	return m_UnitWidth;
-	// Dummy
-	return 0.12f;
+	return m_UnitWidth;
 }
 //*******************************************************************************
 
@@ -147,5 +148,29 @@ float UnitConversionInfo::unitToXValue(float unit)
 float UnitConversionInfo::unitToYValue(float unit)
 {
 	return unit * m_UnitHeight;
+}
+//*******************************************************************************
+
+
+
+#include <GL/glut.h>
+
+//*******************************************************************************
+void GlutString::write(char * string, Position pos)
+{
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+	glTranslated(pos.x, pos.y, pos.z);
+	glLineWidth(2.0);
+	glColor3f(0.0, 0.0, 0.0);
+	glDisable(GL_LIGHTING);
+
+	for ( ; *string != '\0'; string++)
+    {
+        glutStrokeCharacter(GLUT_STROKE_ROMAN, *string);
+    }
+
+	glPopMatrix();
 }
 //*******************************************************************************
