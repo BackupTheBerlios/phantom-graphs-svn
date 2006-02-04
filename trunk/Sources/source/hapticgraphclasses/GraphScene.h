@@ -2,7 +2,7 @@
 /// @file	GraphScene.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	28.01.2006
+/// @date	Letzte Änderung	04.02.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -15,25 +15,24 @@
 //				- Dafür Methode getView() hinzugefügt.
 // 28.01.06		- Membervariable m_rUnitInfo zur Einheitenkonvertierung hinzugefügt,
 //				  Konstruktor entsprechend angepasst.
+// 04.02.06		- Doku vervollständigt, Code aufgeräumt.
 
 
 #ifndef _GRAPHSCENE_H_
 #define _GRAPHSCENE_H_
 
+// STL includes
 #include <vector>
 
 using namespace std;
 
+// eigene includes
 #include "HapticObject.h"
 #include "Camera.h"
 #include "Node.h"
 #include "Grid.h"
 #include "Utilities.h"
 #include "HapticAction.h"
-
-#include "FrictionForceEffect.h"
-#include "ConstantForceEffect.h"
-#include "ViscousForceEffect.h"
 #include "../businesslogic/IBusinessAdapter.h"
 
 //...............................................................................
@@ -49,22 +48,26 @@ class GraphScene
 	protected:
 
 		//.......................................................................
-		/// @brief	Liste aller haptischen Objekte der Scene.
+		/// @brief	Liste aller haptischen Objekte der Scene. 
+		///			Alle Elemente der Szene werden auch von ihr freigegeben.
 		//.......................................................................
 		vector<HapticObject*> m_SceneElements;
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Camera-Objekt, von dem aus die Szene beobachtet wird. Wird von
+		///			der GraphScene erzeugt und freigegeben.
 		//.......................................................................
 		Camera * m_pCamera;
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Referenz auf das Einheitenobjekt auf dessen Basis die Szene
+		///			dargestellt werden soll. Wird NICHT von der GraphScene freigegeben!
 		//.......................................................................
 		UnitConversionInfo & m_rUnitInfo;
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Eventhandlerobjekt, dass für das Bewegen der Szene mit dem 
+		///			Phantom zuständig ist. Wird von der GraphScene erzeugt und freigegeben.
 		//.......................................................................
 		IHapticAction * m_pDragSceneHandler;
 
@@ -80,24 +83,31 @@ class GraphScene
 		void renderSceneGraphics();	
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Erzeugt aus einem Graphen, der durch IBusinessAdapter-Objekte
+		///			beschrieben wird rekursiv die zugehörigen Darstellungsobjekte 
+		///			und fügt diese der Liste von Szenenelementen hinzu.
+		/// @param	businessObj	Knoten, für den ein Darstellungsobjekt erzeugt 
+		///						werden soll. Auch für dessen Nachfolger wird
+		///						createObjects aufgerufen. Die Knoten werden mit
+		///						Kanten verbunden.
+		/// @param	pGrid		Nötiger Parameter um die Darstellungsobjekte mit
+		///						dem Grid zu verknüpfen.
+		/// @return	Das Darstellungsobjekt, das das businessObj repräsentiert.
 		//.......................................................................
 		Node * createObjects( IBusinessAdapter * businessObj, Grid * pGrid );
-
-//FrictionForceEffect * eff;
-//ConstantForceEffect * eff;
-//FrictionForceEffect * eff2;
-ViscousForceEffect * eff;
 
 	public:
 		
 		//.......................................................................
 		/// @brief	Konstruktor: Initialisiert das Objekt.
+		/// @param	unitInfo	Referenz auf das Einheitenobjekt auf dessen Basis 
+		///						die Szene dargestellt werden soll. 
+		///						Wird NICHT von der GraphScene freigegeben!
 		//.......................................................................
 		GraphScene( UnitConversionInfo & unitInfo );
 
 		//.......................................................................
-		///	@brief	Destruktor: Gibt alle Objekte der Szene frei.
+		///	@brief	Destruktor: Gibt die Resourcen des Objektes frei.
 		//.......................................................................
 		virtual ~GraphScene();
 
@@ -113,6 +123,12 @@ ViscousForceEffect * eff;
 		/// @param	viewportHeight	Fensterhöhe.
 		///	@param	pHd		Pointer auf das HapticDevice, das sich dem Sichtvolumen
 		///					der Kamera anpassen soll.	
+		/// @param	gridColmns	Anzahl der Spalten, die das Grid haben soll, auf dem 
+		///						der Graph dargestellt wird.
+		/// @param	gridRows	Anzahl der Zeilen, die das Grid haben soll, auf dem 
+		///						der Graph dargestellt wird.
+		/// @param	rootNode	Wurzelknoten eines Graphen, der durch IBusinessAdapter-Objekte
+		///						beschrieben wird.
 		//.......................................................................
 		virtual void initScene( int viewportWidth, int viewportHeight, HapticDevice * pHd,
 								int gridColumns, int gridRows,
@@ -133,7 +149,8 @@ ViscousForceEffect * eff;
 		static float getGraphPlaneZ();
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Gibt das Camera-Objekt zurück, mit dem die Szene betrachtet wird.
+		/// @return	Zeiger auf das Camera-Objekt, mit dem die Szene betrachtet wird.
 		//.......................................................................
 		Camera * getView();
 		

@@ -74,7 +74,7 @@ class Camera
 		///	@param	viewportWidth	Fensterbreite.
 		/// @param	viewportHeight	Fensterhöhe.
 		///	@param	pHd		Pointer auf das HapticDevice, das sich dem Sichtvolumen
-		///					der Kamera anpassen soll.
+		///					der Kamera anpassen soll. Wird nicht von der Camera freigegeben!
 		//.......................................................................
 		Camera( double fovY, int viewportWidth, int viewportHeight, HapticDevice * pHd = NULL );
 

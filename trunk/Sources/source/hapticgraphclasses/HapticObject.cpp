@@ -119,11 +119,8 @@ void HapticObject::renderShapeAtPosition()
 void HapticObject::renderGraphics()
 {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
-	// Dummy
 	renderDefaultGraphicProperties();
-
 	renderShapeAtPosition();
-
 	glPopAttrib();
 }
 //*******************************************************************************
@@ -134,13 +131,12 @@ void HapticObject::renderHaptics()
 	hlBeginShape(HL_SHAPE_FEEDBACK_BUFFER, m_HLShapeID);
     hlTouchModel(HL_CONTACT);
 
-	// Dummy
     renderDefaultHapticProperties();
-
 	renderShapeAtPosition();
 
     hlEndShape();
 
+	// Falls ein Constraint definiert ist, soll auch der sich rendern.
 	if (m_pHapticConstraint != NULL)
 	{
 		m_pHapticConstraint->renderConstraint(this);

@@ -2,7 +2,7 @@
 /// @file	HapticObject.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.12.2005
-/// @date	Letzte Änderung	26.01.2006
+/// @date	Letzte Änderung	04.02.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -13,6 +13,7 @@
 //				- Doku zu einigen Attributen und Methoden geschrieben
 // 23.01.06		- Methode renderShapeAtPosition() hinzugefügt.
 // 26.01.06		- Methode getHapticConstraint() hinzugefügt.
+// 04.02.06		- Doku vervollständigt.
 
 
 #ifndef _HAPTICOBJECT_H_
@@ -27,6 +28,7 @@
 
 using namespace std;
 
+// eigene includes
 #include "HapticAction.h"
 #include "HapticConstraint.h"
 #include "Utilities.h"
@@ -59,17 +61,17 @@ class HapticObject
 		//.......................................................................
 		/// @brief	Sorgt dafür, dass sich das HapticObject für das Phantom
 		///			magnetisch anfühlt.
+		///
+		///			Wird vom HapticObject freigegeben.
 		//.......................................................................
 		HapticConstraint* m_pHapticConstraint;
 
 		//.......................................................................
 		/// @brief	Liste der Eventhandler, die das Objekt betreffen.
+		///
+		///			Die zugeordneten Actions werden vom HapticObject freigegeben.
 		//.......................................................................
 		vector<IHapticAction*> m_HapticActions;
-
-//	vector<IHapticProperty> m_hapticProperties;
-
-//	vector<IGraphicProperty> m_graphicProperties;
 		
 		//.......................................................................
 		/// @brief	Hier werden die Standard-Haptikeigenschaften eines Objektes
@@ -92,10 +94,15 @@ class HapticObject
 	public:
 
 		//.......................................................................
+		/// @brief	Konstruktor: Initialisiert ein HapticObject mit Defaultwerten:
+		///			Die Standardposition eines Objektes ist [0.0, 0.0, 0.0], es 
+		///			wird ein inaktiver Constraint für das Objekt definiert.
 		//.......................................................................
 		HapticObject();
 
 		//.......................................................................
+		/// @brief	Destruktor: Gibt die Resourcen des Objektes frei. Zugeordnete
+		///			Constraints und HapticActions werden dabei mit freigegeben.
 		//.......................................................................
 		virtual ~HapticObject();
 
@@ -103,7 +110,8 @@ class HapticObject
 		/// @brief	Hier wird die Geometrie des Objekts festgelegt.
 		///
 		///			Am besten wird dafür eine Displayliste verwendet. Diese Methode 
-		///			muss von allen abgeleiteten Klassen implementiert werden.
+		///			muss von allen abgeleiteten Klassen, die instanziiert werden
+		///			sollen, implementiert werden.
 		//.......................................................................
 		virtual void renderShape() = 0;
 
@@ -113,10 +121,13 @@ class HapticObject
 		virtual void renderShapeAtPosition();
 
 		//.......................................................................
+		/// @brief	Rendert das Objekt als Contact-Shape auf dem Phantom. Falls 
+		///			ein Constraint definiert ist, wird auch der gerendert.
 		//.......................................................................
 		void renderHaptics();
 		
 		//.......................................................................
+		/// @brief	Rendert das Objekt mit seinen graphischen Eigenschaften.
 		//.......................................................................
 		void renderGraphics();
 
@@ -130,11 +141,13 @@ class HapticObject
 		//.......................................................................
 		void setHapticConstraint( HapticConstraint* value );
 
+		//.......................................................................
+		/// @brief	Gibt das HapticConstraint-Objekt, das mit dem HapticObject 
+		///			verbunden ist, zurück.
+		///	@return	value	Pointer auf ein Constraint-Objekt, das mit dem 
+		///			HapticObject verbunden ist.
+		//.......................................................................
 		HapticConstraint * getHapticConstraint();
-		
-//	void addHapticMaterial( IHapticMaterial * material );
-
-//	void addGraphicMaterial( IGraphicMaterial * material );
 		
 		//.......................................................................
 		/// @brief	Fügt dem Objekt einen Eventhandler hinzu und sorgt dafür, dass
@@ -152,7 +165,7 @@ class HapticObject
 		///	@param	y	y-Koordinate des Translationsvektors.
 		///	@param	z	z-Koordinate des Translationsvektors.
 		//.......................................................................
-		virtual void translate(const double x, const double y, const double z);
+		virtual void translate( const double x, const double y, const double z );
 
 		//.......................................................................
 		/// @brief	Platziert das Objekt an der Stelle mit dem Ortsvektor (x, y, z).
@@ -160,7 +173,7 @@ class HapticObject
 		///	@param	y	y-Koordinate des Ortsvektors.
 		///	@param	z	z-Koordinate des Ortsvektors.
 		//.......................................................................
-		virtual void setPosition(const double x, const double y, const double z);
+		virtual void setPosition( const double x, const double y, const double z );
 
 		//.......................................................................
 		/// @brief	Ermittelt den Ortsvektor der aktuellen Position des Objekts 

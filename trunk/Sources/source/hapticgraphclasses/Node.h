@@ -110,7 +110,7 @@ class Node : public HapticObject, public IObserver
 //		Texture* m_Texture;
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Gibt die Displayliste frei und weist ihr einen ungültigen Wert zu.
 		//.......................................................................
 		void releaseDisplayList();
 
@@ -177,6 +177,7 @@ class Node : public HapticObject, public IObserver
 		//=======================================================================
 
 		//.......................................................................
+		/// @brief	Legt die Geometrie aller Objekte dieser Klasse fest.
 		//.......................................................................
 		virtual void renderShape();
 

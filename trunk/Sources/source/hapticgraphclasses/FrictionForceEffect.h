@@ -2,10 +2,11 @@
 /// @file	FrictionForceEffect.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		06.01.2006
-/// @date	Letzte Änderung	06.01.2006
+/// @date	Letzte Änderung	04.02.2006
 //*******************************************************************************
 
 // Änderungen:
+// 04.02.06		- Doku vervollständigt.
 
 
 #ifndef _FRICTIONFORCEEFFECT_H_
@@ -24,11 +25,17 @@ class FrictionForceEffect : public HapticEffect
 		
 		//.......................................................................
 		/// @brief	"Größe" der Kraft.
+		///
+		///			Für weiterführende Erkärungen s. "API Reference" des 
+		///			OpenHaptics Toolkit.
 		//.......................................................................
 		double m_Magnitude;
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Zunahme der Kraft.
+		///
+		///			Für weiterführende Erkärungen s. "API Reference" des 
+		///			OpenHaptics Toolkit.
 		//.......................................................................
 		double m_Gain;
 
@@ -42,8 +49,8 @@ class FrictionForceEffect : public HapticEffect
 
 		//.......................................................................
 		/// @brief	Konstruktor: Initialisiert den Effekt mit den angegebenen Werten.
-		/// @param	magnitude	
-		/// @param	gain
+		/// @param	magnitude	"Größe" der Kraft.	Default: 0.0
+		/// @param	gain		Zunahme der Kraft.	Default: 0.0
 		//.......................................................................
 		FrictionForceEffect( double magnitude = 0.0, double gain = 0.0 );
 
@@ -53,12 +60,14 @@ class FrictionForceEffect : public HapticEffect
 		virtual ~FrictionForceEffect();
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Wert für die Magnitude der Kraft.
+		/// @param	value	Neuer Wert für die Magnitude der Kraft.
 		//.......................................................................
 		void setMagnitude( double value );
 		
 		//.......................................................................
-		/// @brief
+		/// @brief	Setzt den Wert für die Zunahme der Kraft.
+		/// @param	value	Neuer Wert für die Zunahme der Kraft.
 		//.......................................................................
 		virtual void setGain( double value );
 	

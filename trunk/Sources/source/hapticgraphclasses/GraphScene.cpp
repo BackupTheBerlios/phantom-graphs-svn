@@ -2,7 +2,7 @@
 /// @file	GraphScene.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	28.01.2006
+/// @date	Letzte Änderung	04.02.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -11,6 +11,7 @@
 // 26.01.06		- initScene() hat neue Parameter bekommen.
 //				- neue Methode getView() hinzugefügt und implementiert.
 // 28.01.06		- createObjects() implementiert.
+// 04.02.06		- Code aufgeräumt.
 
 
 
@@ -72,12 +73,6 @@ GraphScene::~GraphScene()
 		delete m_pDragSceneHandler;
 		m_pDragSceneHandler = NULL;
 	}
-
-//hlBeginFrame();
-//eff->stopEffect();
-//eff2.stopEffect();
-//hlEndFrame();
-
 }
 //*******************************************************************************
 
@@ -125,60 +120,6 @@ void GraphScene::initScene( int viewportWidth, int viewportHeight, HapticDevice 
 	{
 		createObjects(*iterNext, pGrid);
 	}
-
-
-/*	// Grid erzeugen
-	Grid * tmpGrid = new Grid(3, 2);
-	tmpGrid->translate(0.2, 0.2, 0.0);
-	DragSceneHandler * pdragsc = new DragSceneHandler(this);
-	tmpGrid->addHapticAction(pdragsc);
-	HapticConstraint * constr = new HapticConstraint(3.0f);
-	constr->disable();
-	tmpGrid->setHapticConstraint(constr);
-
-	addObject(tmpGrid);
-
-	// Dummy-Implementierung
-	HapticObject * tmpObj = new Node(NULL);
-	DragObjectHandler * drag = new DragObjectHandler(tmpObj);
-	tmpObj->addHapticAction(drag);
-	tmpObj->translate(0.0, 0.1, 0.0);
-	tmpObj->setHapticConstraint(new HapticConstraint(4.0f));
-	addObject(tmpObj);
-
-	bool test = tmpGrid->isGridPoint(tmpObj->getPosition());
-
-	Edge * pEdge = new Edge();
-
-	Node * tmpNode = new Node(NULL);
-	DragNodeOnGridHandler * dnh = new DragNodeOnGridHandler(tmpNode, tmpGrid);
-	tmpNode->addHapticAction(dnh);
-	tmpNode->translate(0.13, 0.2, 0.0);
-	tmpNode->addIncomingEdge(pEdge);
-	addObject(tmpNode);
-
-	Position p = tmpGrid->nearestGridPoint(tmpNode->getPosition());
-
-	Node * tmpN = new Node(NULL);
-	tmpN->addHapticAction(new DragSceneHandler(this));
-	tmpN->translate(-0.5, 0.0, 0.0);
-	tmpN->addOutgoingEdge(pEdge);
-	addObject(tmpN);
-
-	addObject(pEdge);
-		
-//eff = new FrictionForceEffect(0.5, 0.4);
-//double dir[3] = {-1.0, 0.0, 0.0};
-//eff = new ConstantForceEffect(dir, 0.5);
-//eff = new ViscousForceEffect(2.0, 2.0);
-//eff.setGain(0.4);
-//eff.setMagnitude(0.5);
-//hlBeginFrame();
-//eff->startEffect();
-//hlEndFrame();
-//eff2.startEffect();
-*/
-//	eff = new ViscousForceEffect(5.0, 5.0);
 }
 //*******************************************************************************
 
@@ -246,8 +187,6 @@ void GraphScene::renderSceneHaptics( bool bHapticsEnabled )
 		// Haptic Frame starten - haptische Objekte können nur zwischen hlBeginFrame()
 		// und hlEndFrame() gerendert werden
 		hlBeginFrame();
-
-//		eff->startEffect();
 
 		// alle Objekte der Scene durchlaufen und sie zum Rendern ihrer haptischen
 		// Beschaffenheit auffordern

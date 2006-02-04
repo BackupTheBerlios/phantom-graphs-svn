@@ -2,13 +2,14 @@
 /// @file	Grid.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		17.01.2006
-/// @date	Letzte Änderung	28.01.2006
+/// @date	Letzte Änderung	04.02.2006
 //*******************************************************************************
 
 // Änderungen:
 // 24.01.06		- Methoden isGridPoint() und nearestGridPoint() hinzugefügt.
 // 28.01.06		- Membervariable m_rUnitInfo zur Einheitenkonvertierung hinzugefügt,
 //				  Konstruktor entsprechend angepasst.
+// 04.02.06		- Doku vervollständigt.
 
 
 #ifndef _GRID_H_
@@ -20,32 +21,16 @@
 // OpenGL includes
 #include <GL/gl.h>
 
+// eigene includes
 #include "HapticObject.h"
 #include "Utilities.h"
-
-/*
-//*******************************************************************************
-// Konstantendeklarationen
-//*******************************************************************************
-
-//...............................................................................
-/// @brief	
-//...............................................................................
-const float c_GridColumnWidth = 0.12f;
-
-//...............................................................................
-/// @brief	
-//...............................................................................
-const float c_GridRowHeight = 0.12f;
-
-//*******************************************************************************
-*/
 
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 ///
-/// @brief	
+/// @brief	Klasse, die Gitterraster darstellt, auf dem die Elemente eines Graphen
+///			Angeordnet werden können.
 ///			Die Position des Grid wird durch die linke untere Ecke festgelegt.
 //...............................................................................
 class Grid : public HapticObject
@@ -68,7 +53,8 @@ class Grid : public HapticObject
 		GLuint m_DisplayList;
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Referenz auf das Einheitenobjekt auf dessen Basis das Grid
+		///			dargestellt werden soll. Wird NICHT vom Grid freigegeben!
 		//.......................................................................
 		UnitConversionInfo & m_rUnitInfo;
 
@@ -77,7 +63,7 @@ class Grid : public HapticObject
 		//=======================================================================
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Legt die graphischen Eigenschaften für Grids fest.
 		//.......................................................................
 		virtual void renderDefaultGraphicProperties();
 
@@ -88,8 +74,10 @@ class Grid : public HapticObject
 		//.......................................................................
 		/// @brief	Konstruktor: Initialisiert das Grid mit einer bestimmten 
 		///			Anzahl an Zeilen und Spalten.
-		///	@param cols	Anzahl der Spalten des Grid.
-		///	@param rows	Anzahl der Zeilen des Grid.
+		/// @param	unitInfo	Referenz auf das Einheitenobjekt auf dessen Basis 
+		///						das Grid dargestellt werden soll. Wird NICHT vom Grid freigegeben!
+		///	@param	cols		Anzahl der Spalten des Grid. Default: 1
+		///	@param	rows		Anzahl der Zeilen des Grid.  Default: 1
 		//.......................................................................
 		Grid( UnitConversionInfo & unitInfo, int cols = 1, int rows = 1 );
 
@@ -119,7 +107,7 @@ class Grid : public HapticObject
 		//=======================================================================
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Legt die Geometrie aller Objekte dieser Klasse fest.
 		//.......................................................................
 		virtual void renderShape();
 	

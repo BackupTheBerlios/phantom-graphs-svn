@@ -2,10 +2,11 @@
 /// @file	Edge.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		27.01.2006
-/// @date	Letzte Änderung	27.01.2006
+/// @date	Letzte Änderung	04.02.2006
 //*******************************************************************************
 
 // Änderungen:
+// 04.02.06		- Doku vervollständigt.
 
 
 #ifndef _EDGE_H_
@@ -17,6 +18,7 @@
 // OpenGL includes
 #include <GL/gl.h>
 
+// eigene includes
 #include "HapticObject.h"
 #include "Utilities.h"
 
@@ -30,22 +32,22 @@ class Edge : public HapticObject
 	protected:
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Anfangspunkt der Kante.
 		//.......................................................................
 		Position m_StartPosition;
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Endpunkt der Kante.
 		//.......................................................................
 		Position m_EndPosition;
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	ID der OpenGL-Displayliste, mit der die Edge gezeichnet wird.
 		//.......................................................................
 		GLuint m_DisplayList;
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Gibt die Displayliste frei und weist ihr einen ungültigen Wert zu.
 		//.......................................................................
 		void releaseDisplayList();
 
@@ -54,7 +56,7 @@ class Edge : public HapticObject
 		//=======================================================================
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Legt die graphischen Eigenschaften für Edges fest.
 		//.......................................................................
 		virtual void renderDefaultGraphicProperties();
 
@@ -63,22 +65,27 @@ class Edge : public HapticObject
 	public:
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Konstruktor: Initialisiert die Edge mit Werten für
+		///			Anfangs- und Endpunkt.
+		/// @param	start	Position des Anfangspunktes. Default: [0.0, 0.0, 0.0]
+		///	@param	end		Position des Endpunktes.	 Default: [0.0, 0.0, 0.0]
 		//.......................................................................
 		Edge( Position start = Position(0.0, 0.0, 0.0), Position end = Position(0.0, 0.0, 0.0) );
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Destruktor: Gibt die Resourcen des Objektes frei.
 		//.......................................................................
 		virtual ~Edge();
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Anfangspunkt der Edge.
+		///	@param	value	Neue Position des Anfangspunktes.
 		//.......................................................................
 		void setStartPosition( Position value );
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Endpunkt der Edge.
+		///	@param	value	Neue Position des Endpunktes.
 		//.......................................................................
 		void setEndPosition( Position value );
 		
@@ -87,7 +94,7 @@ class Edge : public HapticObject
 		//=======================================================================
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Legt die Geometrie aller Objekte dieser Klasse fest.
 		//.......................................................................
 		virtual void renderShape();
 	
