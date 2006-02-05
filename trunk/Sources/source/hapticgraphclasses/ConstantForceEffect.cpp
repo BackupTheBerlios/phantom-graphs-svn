@@ -11,7 +11,7 @@
 #include "ConstantForceEffect.h"
 
 // Haptic Library includes
-//#include <HL/hl.h>
+#include <HL/hl.h>
 
 //*******************************************************************************
 ConstantForceEffect::ConstantForceEffect( const double direction[3], double magnitude )

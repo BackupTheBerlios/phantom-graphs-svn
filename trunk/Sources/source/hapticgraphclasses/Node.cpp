@@ -16,12 +16,12 @@
 // Haptic Library includes
 #include <HL/hl.h>
 
+// eigene includes
 #include "Node.h"
 #include "GraphScene.h"
-//#include "ViscousForceEffect.h"
 #include "FrictionForceEffect.h"
 #include "SpringForceEffect.h"
-//#include "Texture.h"
+
 
 //*******************************************************************************
 Node::Node( IBusinessAdapter * businessObj, UnitConversionInfo & unitInfo  )
@@ -50,9 +50,7 @@ Node::Node( IBusinessAdapter * businessObj, UnitConversionInfo & unitInfo  )
 	}	
 
 	// Effekte standardmäßig belegen
-//	m_pHardToMoveEffect			= new ViscousForceEffect(1.0, 1.0);
 	m_pHardToMoveEffect			= new FrictionForceEffect(1.0, 0.5);
-//	m_pImpossibleToMoveEffect	= new SpringForceEffect(100.0, 100.0, getPosition());
 	m_pImpossibleToMoveEffect	= new FrictionForceEffect(100.0, 90.0); 
 
 	m_IncomingEdges.clear();
@@ -210,13 +208,6 @@ void Node::setImpossibleToMoveEffect( HapticEffect * value )
 //*******************************************************************************
 
 //*******************************************************************************
-/*void Node::setTexture( const Texture* value )
-{
-}
-*/
-//*******************************************************************************
-
-//*******************************************************************************
 void Node::renderShape()
 {
     if (m_DisplayList != 0)
@@ -284,9 +275,6 @@ void Node::translate(const double x, const double y, const double z)
 				// ForceEffect, der jede Bewegung blockieren soll, aktivieren und 
 				// den anderen Effekt falls nötig stoppen.
 				m_pHardToMoveEffect->stopEffect();
-				double prox[3];
-//				hlGetDoublev(HL_PROXY_POSITION, prox);
-//				((SpringForceEffect *)m_pImpossibleToMoveEffect)->setAnchorPosition(prox[0], prox[1], prox[2]);
 				m_pImpossibleToMoveEffect->startEffect();
 				break;
 			}

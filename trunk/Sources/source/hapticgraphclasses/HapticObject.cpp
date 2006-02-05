@@ -24,8 +24,6 @@
 #include <GL/gl.h>
 
 #include "HapticObject.h"
-//#include "GraphicalProperty.h"
-//#include "HapticProperty.h"
 
 
 //*******************************************************************************
@@ -96,14 +94,6 @@ void HapticObject::addHapticAction( IHapticAction * act )
 	act->registerAction(m_HLShapeID);
 }
 //*******************************************************************************
-
-//void HapticObject::addGraphicMaterial( IGraphicMaterial * material )
-//{
-//}
-
-//void HapticObject::addHapticMaterial( IHapticMaterial * material )
-//{
-//}
 
 //*******************************************************************************
 void HapticObject::renderShapeAtPosition()

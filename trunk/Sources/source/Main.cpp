@@ -74,7 +74,7 @@ Description:
 static HapticDevice * pHapticDevice = NULL;
  
 // Objekt zur Verwaltung aller Objekte der Szene
-static GraphScene * pScene;
+static GraphScene * pScene = NULL;
 
 // Cursor-Objekt
 static HapticCursor cursor;
@@ -107,9 +107,6 @@ AppConfiguration appData;
 *******************************************************************************/
 int main(int argc, char *argv[])
 {
-	//...................................................................
-	/// @brief
-	//...................................................................
     setAppData();
 
 	glutInit(&argc, argv);

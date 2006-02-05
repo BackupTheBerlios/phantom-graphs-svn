@@ -88,8 +88,6 @@ bool Grid::isGridPoint(Position pos)
 //*******************************************************************************
 Position Grid::nearestGridPoint(Position pos)
 {
-	// TODO muss Gridposition beachten
-
 	// linke untere Ecke des Grid ermitteln
 	Position gridPos = getPosition();
 

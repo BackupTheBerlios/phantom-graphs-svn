@@ -22,6 +22,8 @@
 ///			Die Sichtrichtung der Kamera ist immer parallel zur z-Achse (Sicht in
 ///			Richtung der negativen z-Achse), oben ist immer in Richtung der positiven
 ///			y-Achse.
+///			Codebasis für die Klasse ist das von SensAble zu Verfügung gestellte
+///			Constraints-Beispiel.
 //...............................................................................
 class Camera
 {
