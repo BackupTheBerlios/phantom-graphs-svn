@@ -72,6 +72,9 @@ void AppConfiguration::initTasks()
 	BusinessTask *task07 = new BusinessTask("A07",6,80,0);
 	BusinessTask *task08 = new BusinessTask("A08",6,300,1);
 
+	BusinessTask *task09 = new BusinessTask("A08",6,300,1);
+	delete task09;
+
 	task01->setLine(0);
 	task02->setLine(0);
 	task03->setLine(0);
