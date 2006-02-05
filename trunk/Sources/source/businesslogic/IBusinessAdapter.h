@@ -109,7 +109,6 @@ public:
 
 	//...............................................................................
 	/// @brief	schiebt alle Aufgaben an den Projektanfang
-	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
 	//...............................................................................
 	virtual void moveAllToFront() = 0;
 
@@ -136,7 +135,7 @@ public:
 
 	//...............................................................................
 	/// @brief	bewegt eine Aufgabe zu einem früheren Startpunkt
-	/// @param new_begin erhält seinen neuen Anfang
+	/// @param end erhält sein neues Ende
 	//...............................................................................
 	virtual void moveToEarlierPosition(int end) = 0;
 

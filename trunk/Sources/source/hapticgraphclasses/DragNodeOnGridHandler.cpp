@@ -1,5 +1,5 @@
 //*******************************************************************************
-/// @file	DragNodeOnGridHandle.cpp
+/// @file	DragNodeOnGridHandler.cpp
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		23.01.2006
 /// @date	Letzte Änderung	26.01.2006

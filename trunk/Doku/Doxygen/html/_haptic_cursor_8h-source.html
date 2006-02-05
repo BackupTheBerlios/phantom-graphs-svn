@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/HapticCursor.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/HapticCursor.h</h1><a href="_haptic_cursor_8h.html">gehe zur Dokumentation dieser Datei</a><pre class="fragment"><div>00001 <span class="comment">//*******************************************************************************</span>
+00006 <span class="comment"></span><span class="comment">//*******************************************************************************</span>
+00007 
+00008 <span class="comment">// Änderungen:</span>
+00009 <span class="comment">// 27.12.05             - Member m_CursorSizePixels, m_CursorScale und Konstruktor hinzu-</span>
+00010 <span class="comment">//                                gefügt</span>
+00011 <span class="comment">// 05.02.06             - Doku vervollständigt.</span>
+00012 
+00013 
+00014 <span class="preprocessor">#ifndef _HAPTICCURSOR_H_</span>
+00015 <span class="preprocessor"></span><span class="preprocessor">#define _HAPTICCURSOR_H_</span>
+00016 <span class="preprocessor"></span>
+<a name="l00018"></a><a class="code" href="_haptic_cursor_8h.html#a0">00018</a> <span class="preprocessor">#define DEFAULT_CURSOR_SIZE_PIX 20</span>
+00019 <span class="preprocessor"></span>
+00020 
+00021 <span class="comment">//...............................................................................</span>
+00028 <span class="comment"></span><span class="comment">//...............................................................................</span>
+<a name="l00029"></a><a class="code" href="class_haptic_cursor.html">00029</a> <span class="keyword">class </span><a class="code" href="class_haptic_cursor.html">HapticCursor</a>
+00030 {
+00031         <span class="keyword">protected</span>:
+00032                 
+00033                 <span class="comment">//.......................................................................</span>
+00035 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00036"></a><a class="code" href="class_haptic_cursor.html#p0">00036</a>                 <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_haptic_cursor.html#p0">m_SizePixels</a>;
+00037 
+00038                 <span class="comment">//.......................................................................</span>
+00040 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00041"></a><a class="code" href="class_haptic_cursor.html#p1">00041</a>                 <span class="keywordtype">double</span> <a class="code" href="class_haptic_cursor.html#p1">m_Scale</a>;
+00042 
+00043                 <span class="comment">//.......................................................................</span>
+00045 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00046"></a><a class="code" href="class_haptic_cursor.html#p2">00046</a>                 GLuint <a class="code" href="class_haptic_cursor.html#p2">m_DisplayList</a>;
+00047 
+00048         <span class="keyword">public</span>:
+00049                 
+00050                 <span class="comment">//.......................................................................</span>
+00054 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00055                 <a class="code" href="class_haptic_cursor.html#a0">HapticCursor</a>(<span class="keywordtype">int</span> sizePix = DEFAULT_CURSOR_SIZE_PIX);
+00056                 
+00057                 <span class="comment">//.......................................................................</span>
+00059 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00060                 <span class="keyword">virtual</span> <a class="code" href="class_haptic_cursor.html#a1">~HapticCursor</a>();        
+00061 
+00062                 <span class="comment">//.......................................................................</span>
+00064 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00065                 <span class="keywordtype">void</span> <a class="code" href="class_haptic_cursor.html#a2">scale</a>();
+00066                 
+00067                 <span class="comment">//.......................................................................</span>
+00070 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00071                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_haptic_cursor.html#a3">render</a>();
+00072                 
+00073 };
+00074 
+00075 <span class="preprocessor">#endif // _HAPTICCURSOR_H_</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 20:52:59 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

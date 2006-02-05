@@ -43,6 +43,9 @@ class HapticConstraint
 		//.......................................................................
 		const HLuint m_HLConstraintID;
 
+		//.......................................................................
+		/// @brief	Flag, das angibt, ob der Constraint gerendert werden soll.
+		//.......................................................................
 		bool m_Enabled;
 
 	public:
@@ -72,7 +75,7 @@ class HapticConstraint
 		/// @brief	Rendert ein Constraint für das mit pObj bezeichnete Objekt als
 		///			eigenständige HLAPI-Shape. Darf nicht innerhalb eines 
 		///			hlBeginShape()/hlEndShape-Blockes aufgerufen werden.
-		///	@param	pobj	HapticObject, für das ein Constraint gerendert werden
+		///	@param	pObj	HapticObject, für das ein Constraint gerendert werden
 		///			soll.
 		//.......................................................................
 		void renderConstraint( HapticObject* pObj );

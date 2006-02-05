@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: Edge Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>Edge Klassenreferenz</h1>Haptisches Objekt, das eine Kante in einem Graphen darstellt.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_edge_8h-source.html">Edge.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für Edge:
+<p><center><img src="class_edge.png" usemap="#Edge_map" border="0" alt=""></center>
+<map name="Edge_map">
+<area href="class_haptic_object.html" alt="HapticObject" shape="rect" coords="0,0,85,24">
+</map>
+<a href="class_edge-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#a0">Edge</a> (<a class="el" href="struct_position.html">Position</a> start=<a class="el" href="struct_position.html">Position</a>(0.0, 0.0, 0.0), <a class="el" href="struct_position.html">Position</a> end=<a class="el" href="struct_position.html">Position</a>(0.0, 0.0, 0.0))</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor: Initialisiert die Edge mit Werten für Anfangs- und Endpunkt.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="Edge::~Edge" ></a>
+virtual&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#a1">~Edge</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destruktor: Gibt die Resourcen des Objektes frei. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#a2">setStartPosition</a> (<a class="el" href="struct_position.html">Position</a> value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt den Anfangspunkt der Edge.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#a3">setEndPosition</a> (<a class="el" href="struct_position.html">Position</a> value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt den Endpunkt der Edge.  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a4" doxytag="Edge::renderShape" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#a4">renderShape</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Legt die Geometrie aller Objekte dieser Klasse fest. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="b0" doxytag="Edge::releaseDisplayList" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#b0">releaseDisplayList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt die Displayliste frei und weist ihr einen ungültigen Wert zu. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="b1" doxytag="Edge::renderDefaultGraphicProperties" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#b1">renderDefaultGraphicProperties</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Legt die graphischen Eigenschaften für Edges fest. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="Edge::m_StartPosition" ></a>
+<a class="el" href="struct_position.html">Position</a>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#p0">m_StartPosition</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Anfangspunkt der Kante. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p1" doxytag="Edge::m_EndPosition" ></a>
+<a class="el" href="struct_position.html">Position</a>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#p1">m_EndPosition</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Endpunkt der Kante. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p2" doxytag="Edge::m_DisplayList" ></a>
+GLuint&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_edge.html#p2">m_DisplayList</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ID der OpenGL-Displayliste, mit der die Edge gezeichnet wird. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Haptisches Objekt, das eine Kante in einem Graphen darstellt. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471 </dd></dl>
+
+<p>
+<hr><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" name="a0" doxytag="Edge::Edge" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Edge::Edge           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>start</em> = <code><a class="el" href="struct_position.html">Position</a>(0.0,&nbsp;0.0,&nbsp;0.0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="mdname" nowrap> <em>end</em> = <code><a class="el" href="struct_position.html">Position</a>(0.0,&nbsp;0.0,&nbsp;0.0)</code></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Konstruktor: Initialisiert die Edge mit Werten für Anfangs- und Endpunkt. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>start</em>&nbsp;</td><td><a class="el" href="struct_position.html">Position</a> des Anfangspunktes. Default: [0.0, 0.0, 0.0] </td></tr>
+    <tr><td></td><td valign=top><em>end</em>&nbsp;</td><td><a class="el" href="struct_position.html">Position</a> des Endpunktes. Default: [0.0, 0.0, 0.0] </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a3" doxytag="Edge::setEndPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Edge::setEndPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Setzt den Endpunkt der Edge. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Neue <a class="el" href="struct_position.html">Position</a> des Endpunktes. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Edge::setStartPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Edge::setStartPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="struct_position.html">Position</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Setzt den Anfangspunkt der Edge. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Neue <a class="el" href="struct_position.html">Position</a> des Anfangspunktes. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/<a class="el" href="_edge_8h-source.html">Edge.h</a><li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/<a class="el" href="_edge_8cpp.html">Edge.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 20:53:03 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

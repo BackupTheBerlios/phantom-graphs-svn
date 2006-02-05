@@ -148,7 +148,7 @@ public:
 	/// @return Name der Aufgabe
 	string getName();
 
-	/// @gibt einige Infos der Aufgabe auf stdout aus
+	/// @brief	gibt einige Infos der Aufgabe auf stdout aus
 	void printInfo();
 
 	//...............................................................................

@@ -1,0 +1,489 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: HapticObject Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>HapticObject Klassenreferenz</h1>Basisklasse aller haptischen Objekte. Stellt grundlegende Funktionalität zum Fühlbarmachen und Bewegen von Objekten zur Verfügung. Kümmert sich Um die Registrierung von Eventhandlern.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_haptic_object_8h-source.html">HapticObject.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für HapticObject:
+<p><center><img src="class_haptic_object.png" usemap="#HapticObject_map" border="0" alt=""></center>
+<map name="HapticObject_map">
+<area href="class_edge.html" alt="Edge" shape="rect" coords="0,56,85,80">
+<area href="class_grid.html" alt="Grid" shape="rect" coords="95,56,180,80">
+<area href="class_node.html" alt="Node" shape="rect" coords="190,56,275,80">
+</map>
+<a href="class_haptic_object-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="HapticObject::HapticObject" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a0">HapticObject</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor: Initialisiert ein HapticObject mit Defaultwerten: Die Standardposition eines Objektes ist [0.0, 0.0, 0.0], es wird ein inaktiver Constraint für das Objekt definiert. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="HapticObject::~HapticObject" ></a>
+virtual&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a1">~HapticObject</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destruktor: Gibt die Resourcen des Objektes frei. Zugeordnete Constraints und HapticActions werden dabei mit freigegeben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a2">renderShape</a> ()=0</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Hier wird die Geometrie des Objekts festgelegt.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="HapticObject::renderShapeAtPosition" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a3">renderShapeAtPosition</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rendert die Geometrie des Objekts an der richtigen <a class="el" href="struct_position.html">Position</a> im Raum. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a4" doxytag="HapticObject::renderHaptics" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a4">renderHaptics</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rendert das Objekt als Contact-Shape auf dem Phantom. Falls ein Constraint definiert ist, wird auch der gerendert. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a5" doxytag="HapticObject::renderGraphics" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a5">renderGraphics</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rendert das Objekt mit seinen graphischen Eigenschaften. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a6">setHapticConstraint</a> (<a class="el" href="class_haptic_constraint.html">HapticConstraint</a> *value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt ein Constraint für das HapticObject. Das übergebene Constraint-Objekt wird beim Deleten des HapticObjects mit freigegeben.  <a href="#a6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="class_haptic_constraint.html">HapticConstraint</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a7">getHapticConstraint</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt das HapticConstraint-Objekt, das mit dem HapticObject verbunden ist, zurück.  <a href="#a7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a8">addHapticAction</a> (<a class="el" href="class_i_haptic_action.html">IHapticAction</a> *act)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fügt dem Objekt einen Eventhandler hinzu und sorgt dafür, dass die entprechenden Events für das Objekt registriert werden. Das übergebene Eventhandler-Objekt wird beim Deleten des HapticObjects mit freigegeben.  <a href="#a8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a9">translate</a> (const double x, const double y, const double z)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verschiebt das Objekt um den Vektor [x, y, z].  <a href="#a9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a10">setPosition</a> (const double x, const double y, const double z)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Platziert das Objekt an der Stelle mit dem Ortsvektor [x, y, z].  <a href="#a10"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="struct_position.html">Position</a>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#a11">getPosition</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ermittelt den Ortsvektor der aktuellen <a class="el" href="struct_position.html">Position</a> des Objekts und gibt diesen zurück.  <a href="#a11"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#b0">renderDefaultHapticProperties</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Hier werden die Standard-Haptikeigenschaften eines Objektes festgelegt.  <a href="#b0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#b1">renderDefaultGraphicProperties</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Hier werden die Standard-Graphikeigenschaften eines Objektes festgelegt.  <a href="#b1"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="HapticObject::m_HLShapeID" ></a>
+const HLuint&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#p0">m_HLShapeID</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ID, mit der das Objekt bei HLAPI bekannt ist. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p1" doxytag="HapticObject::m_transformMatrix" ></a>
+hduMatrix&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#p1">m_transformMatrix</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Die aktuelle Transform-Matrix des HapticObject. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="class_haptic_constraint.html">HapticConstraint</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#p2">m_pHapticConstraint</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Sorgt dafür, dass sich das HapticObject für das Phantom magnetisch anfühlt.  <a href="#p2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>vector&lt; <a class="el" href="class_i_haptic_action.html">IHapticAction</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_object.html#p3">m_HapticActions</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste der Eventhandler, die das Objekt betreffen.  <a href="#p3"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Basisklasse aller haptischen Objekte. Stellt grundlegende Funktionalität zum Fühlbarmachen und Bewegen von Objekten zur Verfügung. Kümmert sich Um die Registrierung von Eventhandlern. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471</dd></dl>
+<p>
+Da die Klasse HapticObject abstrakt ist, kann sie nicht direkt instanziiert werden. Abgeleitete Klassen müssen die Geometrie für das Objekt erzeugen. 
+<p>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a8" doxytag="HapticObject::addHapticAction" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticObject::addHapticAction           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_i_haptic_action.html">IHapticAction</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>act</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Fügt dem Objekt einen Eventhandler hinzu und sorgt dafür, dass die entprechenden Events für das Objekt registriert werden. Das übergebene Eventhandler-Objekt wird beim Deleten des HapticObjects mit freigegeben. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>act</em>&nbsp;</td><td>Pointer auf den Actionhandler, der dem Objekt zugeordnet werden soll. Wird von dem HapticObject freigegeben. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a7" doxytag="HapticObject::getHapticConstraint" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="class_haptic_constraint.html">HapticConstraint</a> * HapticObject::getHapticConstraint           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Gibt das HapticConstraint-Objekt, das mit dem HapticObject verbunden ist, zurück. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>value Pointer auf ein Constraint-Objekt, das mit dem HapticObject verbunden ist. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a11" doxytag="HapticObject::getPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="struct_position.html">Position</a> HapticObject::getPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ermittelt den Ortsvektor der aktuellen <a class="el" href="struct_position.html">Position</a> des Objekts und gibt diesen zurück. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Ortsvektor der aktuellen <a class="el" href="struct_position.html">Position</a> des Objekts. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b1" doxytag="HapticObject::renderDefaultGraphicProperties" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticObject::renderDefaultGraphicProperties           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Hier werden die Standard-Graphikeigenschaften eines Objektes festgelegt. 
+<p>
+Die Standardeigenschaften können für abgeleitete Klassen neu festgelegt werden. 
+<p>
+Erneute Implementation in <a class="el" href="class_edge.html#b1">Edge</a> und <a class="el" href="class_grid.html#b0">Grid</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b0" doxytag="HapticObject::renderDefaultHapticProperties" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticObject::renderDefaultHapticProperties           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Hier werden die Standard-Haptikeigenschaften eines Objektes festgelegt. 
+<p>
+Die Standardeigenschaften können für abgeleitete Klassen neu festgelegt werden.     </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="HapticObject::renderShape" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> virtual void HapticObject::renderShape           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Hier wird die Geometrie des Objekts festgelegt. 
+<p>
+Am besten wird dafür eine Displayliste verwendet. Diese Methode muss von allen abgeleiteten Klassen, die instanziiert werden sollen, implementiert werden. 
+<p>
+Implementiert in <a class="el" href="class_edge.html#a4">Edge</a>, <a class="el" href="class_grid.html#a4">Grid</a> und <a class="el" href="class_node.html#a10">Node</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a6" doxytag="HapticObject::setHapticConstraint" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticObject::setHapticConstraint           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_haptic_constraint.html">HapticConstraint</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Setzt ein Constraint für das HapticObject. Das übergebene Constraint-Objekt wird beim Deleten des HapticObjects mit freigegeben. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Pointer auf ein Constraint-Objekt, das von jetzt an mit dem HapticObject verbunden ist. Wird von dem HapticObject freigegeben. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a10" doxytag="HapticObject::setPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticObject::setPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>z</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Platziert das Objekt an der Stelle mit dem Ortsvektor [x, y, z]. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>x</em>&nbsp;</td><td>x-Koordinate des Ortsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>y</em>&nbsp;</td><td>y-Koordinate des Ortsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>z</em>&nbsp;</td><td>z-Koordinate des Ortsvektors. </td></tr>
+  </table>
+</dl>
+
+<p>
+Erneute Implementation in <a class="el" href="class_node.html#a12">Node</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a9" doxytag="HapticObject::translate" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticObject::translate           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>z</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Verschiebt das Objekt um den Vektor [x, y, z]. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>x</em>&nbsp;</td><td>x-Koordinate des Translationsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>y</em>&nbsp;</td><td>y-Koordinate des Translationsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>z</em>&nbsp;</td><td>z-Koordinate des Translationsvektors. </td></tr>
+  </table>
+</dl>
+
+<p>
+Erneute Implementation in <a class="el" href="class_node.html#a11">Node</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Datenelemente</h2>
+<a class="anchor" name="p3" doxytag="HapticObject::m_HapticActions" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> vector&lt;<a class="el" href="class_i_haptic_action.html">IHapticAction</a>*&gt; <a class="el" href="class_haptic_object.html#p3">HapticObject::m_HapticActions</a><code> [protected]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Liste der Eventhandler, die das Objekt betreffen. 
+<p>
+Die zugeordneten Actions werden vom HapticObject freigegeben.     </td>
+  </tr>
+</table>
+<a class="anchor" name="p2" doxytag="HapticObject::m_pHapticConstraint" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="class_haptic_constraint.html">HapticConstraint</a>* <a class="el" href="class_haptic_object.html#p2">HapticObject::m_pHapticConstraint</a><code> [protected]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sorgt dafür, dass sich das HapticObject für das Phantom magnetisch anfühlt. 
+<p>
+Wird vom HapticObject freigegeben.     </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/<a class="el" href="_haptic_object_8h-source.html">HapticObject.h</a><li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/<a class="el" href="_haptic_object_8cpp.html">HapticObject.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 20:53:03 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

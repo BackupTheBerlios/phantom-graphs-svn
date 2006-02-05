@@ -1,5 +1,5 @@
 //*******************************************************************************
-/// @file	AppConfiguration.h
+/// @file	AppConfiguration.cpp
 /// @author	Carsten, Arnold
 /// @date	Erstellt am		30.11.2005
 /// @date	Letzte Änderung	27.01.2006

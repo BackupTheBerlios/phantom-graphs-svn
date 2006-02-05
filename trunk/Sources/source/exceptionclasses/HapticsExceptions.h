@@ -1,5 +1,5 @@
 //*******************************************************************************
-/// @file	HapticExceptions.h
+/// @file	HapticsExceptions.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
 /// @date	Letzte Änderung	27.12.2005

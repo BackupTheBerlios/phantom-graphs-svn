@@ -125,7 +125,7 @@ class GraphScene
 		/// @param	viewportHeight	Fensterhöhe.
 		///	@param	pHd		Pointer auf das HapticDevice, das sich dem Sichtvolumen
 		///					der Kamera anpassen soll.	
-		/// @param	gridColmns	Anzahl der Spalten, die das Grid haben soll, auf dem 
+		/// @param	gridColumns	Anzahl der Spalten, die das Grid haben soll, auf dem 
 		///						der Graph dargestellt wird.
 		/// @param	gridRows	Anzahl der Zeilen, die das Grid haben soll, auf dem 
 		///						der Graph dargestellt wird.

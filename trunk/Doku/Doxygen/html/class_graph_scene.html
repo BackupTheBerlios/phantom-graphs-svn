@@ -1,0 +1,403 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: GraphScene Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>GraphScene Klassenreferenz</h1>Klasse, die alle haptischen Objekte der Scene verwaltet.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_graph_scene_8h-source.html">GraphScene.h</a>&gt;</code>
+<p>
+<a href="class_graph_scene-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#a0">GraphScene</a> (<a class="el" href="class_unit_conversion_info.html">UnitConversionInfo</a> &amp;unitInfo)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor: Initialisiert das Objekt.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="GraphScene::~GraphScene" ></a>
+virtual&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#a1">~GraphScene</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destruktor: Gibt die Resourcen des Objektes frei. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#a2">renderScene</a> (bool bHapticsEnabled)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rendert die Haptik und Graphik der Szene.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#a3">initScene</a> (int viewportWidth, int viewportHeight, <a class="el" href="class_haptic_device.html">HapticDevice</a> *pHd, int gridColumns, int gridRows, <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *rootNode)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialisiert die graphische/haptische Szene.  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#a4">addObject</a> (<a class="el" href="class_haptic_object.html">HapticObject</a> *obj)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fügt der Szene ein neues Objekt hinzu.  <a href="#a4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="class_camera.html">Camera</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#a5">getView</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt das Camera-Objekt zurück, mit dem die Szene betrachtet wird.  <a href="#a5"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche, statische Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#e0">getGraphPlaneZ</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt die z-Koordinate der Ebene parallel zur x-y-Ebene auf der der Graph dargestellt wird zurück.  <a href="#e0"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#b0">renderSceneHaptics</a> (bool bHapticsEnabled)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fordert alle Objekte auf, ihre haptische Beschaffenheit zu rendern.  <a href="#b0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="b1" doxytag="GraphScene::renderSceneGraphics" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#b1">renderSceneGraphics</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fordert alle Objekte auf, ihre graphische Beschaffenheit zu rendern. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="class_node.html">Node</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#b2">createObjects</a> (<a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *businessObj, <a class="el" href="class_grid.html">Grid</a> *pGrid)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Erzeugt aus einem Graphen, der durch IBusinessAdapter-Objekte beschrieben wird rekursiv die zugehörigen Darstellungsobjekte und fügt diese der Liste von Szenenelementen hinzu.  <a href="#b2"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="GraphScene::m_SceneElements" ></a>
+vector&lt; <a class="el" href="class_haptic_object.html">HapticObject</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#p0">m_SceneElements</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste aller haptischen Objekte der Scene. Alle Elemente der Szene werden auch von ihr freigegeben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p1" doxytag="GraphScene::m_pCamera" ></a>
+<a class="el" href="class_camera.html">Camera</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#p1">m_pCamera</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Camera-Objekt, von dem aus die Szene beobachtet wird. Wird von der GraphScene erzeugt und freigegeben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p2" doxytag="GraphScene::m_rUnitInfo" ></a>
+<a class="el" href="class_unit_conversion_info.html">UnitConversionInfo</a> &amp;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#p2">m_rUnitInfo</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Referenz auf das Einheitenobjekt auf dessen Basis die Szene dargestellt werden soll. Wird NICHT von der GraphScene freigegeben! <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p3" doxytag="GraphScene::m_pDragSceneHandler" ></a>
+<a class="el" href="class_i_haptic_action.html">IHapticAction</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_graph_scene.html#p3">m_pDragSceneHandler</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Eventhandlerobjekt, dass für das Bewegen der Szene mit dem Phantom zuständig ist. Wird von der GraphScene erzeugt und freigegeben. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Klasse, die alle haptischen Objekte der Scene verwaltet. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471</dd></dl>
+<p>
+Sie ist sowohl für die Erzeugung der Objekte verantwortlich, als auch dafür, dass sie sich zur richtigen Zeit rendern. 
+<p>
+<hr><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" name="a0" doxytag="GraphScene::GraphScene" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> GraphScene::GraphScene           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_unit_conversion_info.html">UnitConversionInfo</a> &amp;&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>unitInfo</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Konstruktor: Initialisiert das Objekt. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>unitInfo</em>&nbsp;</td><td>Referenz auf das Einheitenobjekt auf dessen Basis die Szene dargestellt werden soll. Wird NICHT von der GraphScene freigegeben! </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a4" doxytag="GraphScene::addObject" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void GraphScene::addObject           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_haptic_object.html">HapticObject</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>obj</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Fügt der Szene ein neues Objekt hinzu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>obj</em>&nbsp;</td><td>Pointer auf das Objekt, das hinzugefügt werden soll. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b2" doxytag="GraphScene::createObjects" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="class_node.html">Node</a> * GraphScene::createObjects           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>businessObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="class_grid.html">Grid</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>pGrid</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Erzeugt aus einem Graphen, der durch IBusinessAdapter-Objekte beschrieben wird rekursiv die zugehörigen Darstellungsobjekte und fügt diese der Liste von Szenenelementen hinzu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>businessObj</em>&nbsp;</td><td>Knoten, für den ein Darstellungsobjekt erzeugt werden soll. Auch für dessen Nachfolger wird createObjects aufgerufen. Die Knoten werden mit Kanten verbunden. </td></tr>
+    <tr><td></td><td valign=top><em>pGrid</em>&nbsp;</td><td>Nötiger Parameter um die Darstellungsobjekte mit dem <a class="el" href="class_grid.html">Grid</a> zu verknüpfen. </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Das Darstellungsobjekt, das das businessObj repräsentiert. </dd></dl>
+<dl compact><dt><b><a class="el" href="todo.html#_todo000006">Noch zu erledigen:</a></b></dt><dd>Bisher kann mit dieser Methode nur ein Baum erzeugt werden, nicht jeder beliebige Graph.</dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="e0" doxytag="GraphScene::getGraphPlaneZ" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> float GraphScene::getGraphPlaneZ           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [static]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Gibt die z-Koordinate der Ebene parallel zur x-y-Ebene auf der der Graph dargestellt wird zurück. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>z-Koordinate der Ebene parallel zur x-y-Ebene auf der der Graph dargestellt wird. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a5" doxytag="GraphScene::getView" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="class_camera.html">Camera</a> * GraphScene::getView           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Gibt das Camera-Objekt zurück, mit dem die Szene betrachtet wird. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Zeiger auf das Camera-Objekt, mit dem die Szene betrachtet wird. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="GraphScene::initScene" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void GraphScene::initScene           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>viewportWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>viewportHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="class_haptic_device.html">HapticDevice</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>pHd</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>gridColumns</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>gridRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>rootNode</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Initialisiert die graphische/haptische Szene. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>viewportWidth</em>&nbsp;</td><td>Fensterbreite. </td></tr>
+    <tr><td></td><td valign=top><em>viewportHeight</em>&nbsp;</td><td>Fensterhöhe. </td></tr>
+    <tr><td></td><td valign=top><em>pHd</em>&nbsp;</td><td>Pointer auf das <a class="el" href="class_haptic_device.html">HapticDevice</a>, das sich dem Sichtvolumen der Kamera anpassen soll. </td></tr>
+    <tr><td></td><td valign=top><em>gridColumns</em>&nbsp;</td><td>Anzahl der Spalten, die das <a class="el" href="class_grid.html">Grid</a> haben soll, auf dem der Graph dargestellt wird. </td></tr>
+    <tr><td></td><td valign=top><em>gridRows</em>&nbsp;</td><td>Anzahl der Zeilen, die das <a class="el" href="class_grid.html">Grid</a> haben soll, auf dem der Graph dargestellt wird. </td></tr>
+    <tr><td></td><td valign=top><em>rootNode</em>&nbsp;</td><td>Wurzelknoten eines Graphen, der durch IBusinessAdapter-Objekte beschrieben wird. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="GraphScene::renderScene" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void GraphScene::renderScene           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>bHapticsEnabled</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Rendert die Haptik und Graphik der Szene. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>bHapticsEnabled</em>&nbsp;</td><td>Gibt an, ob die Haptik gerendert werden kann. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b0" doxytag="GraphScene::renderSceneHaptics" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void GraphScene::renderSceneHaptics           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>bHapticsEnabled</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Fordert alle Objekte auf, ihre haptische Beschaffenheit zu rendern. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>bHapticsEnabled</em>&nbsp;</td><td>Gibt an, ob die Haptik gerendert werden kann. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/<a class="el" href="_graph_scene_8h-source.html">GraphScene.h</a><li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/hapticgraphclasses/<a class="el" href="_graph_scene_8cpp.html">GraphScene.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 20:53:03 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

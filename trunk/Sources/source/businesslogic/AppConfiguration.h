@@ -65,7 +65,7 @@ public:
 	void initTasks();
 	
 	/// @brief	setzt die Gesamtdauer des Projekts in Tagen
-	/// @param	value Gesamtdauer des Projekts in Tagen
+	/// @param	days Gesamtdauer des Projekts in Tagen
 	void setProjectDuration(int days);
 	
 	/// @brief	Gibt die gesamt darzustellenden Dauer des Projekts zurück

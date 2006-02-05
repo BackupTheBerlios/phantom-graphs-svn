@@ -1,5 +1,5 @@
 //*******************************************************************************
-/// @file	BusinessTask.h
+/// @file	BusinessTask.cpp
 /// @author	Carsten Arnold
 /// @date	Erstellt am		30.11.2005
 /// @date	Letzte Änderung	30.01.2006 CA

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: Observable Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>Observable Klassenreferenz</h1>Implementiert das Observer-Pattern.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_observable_8h-source.html">Observable.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für Observable:
+<p><center><img src="class_observable.png" usemap="#Observable_map" border="0" alt=""></center>
+<map name="Observable_map">
+<area href="class_i_business_adapter.html" alt="IBusinessAdapter" shape="rect" coords="0,56,110,80">
+<area href="class_business_task.html" alt="BusinessTask" shape="rect" coords="0,112,110,136">
+</map>
+<a href="class_observable-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="Observable::Observable" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_observable.html#a0">Observable</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstrktor: Initialisiert das Objekt. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_observable.html#a1">AddObserver</a> (<a class="el" href="class_i_observer.html">IObserver</a> *pObserver)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Registriert einen neuen Obersver.  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_observable.html#a2">RemoveObserver</a> (<a class="el" href="class_i_observer.html">IObserver</a> *pObserver)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Meldet einen Observer beim Observable ab. Das Observer-Objekt wird dabei nicht gelöscht.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="Observable::NotifyAll" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_observable.html#a3">NotifyAll</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Informiert alle Observer darüber, dass sich der Zustand des Observables geändert hat. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="Observable::m_Observers" ></a>
+list&lt; <a class="el" href="class_i_observer.html">IObserver</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_observable.html#p0">m_Observers</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste aller angemeldeten Observer. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Implementiert das Observer-Pattern. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471</dd></dl>
+<p>
+Klassen, die von Observable erben, können Objekte, die an ihrem Zustand interessiert sind über Änderungen informieren ohne eine enge Bindung zu ihnen zu haben. 
+<p>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a1" doxytag="Observable::AddObserver" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Observable::AddObserver           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_i_observer.html">IObserver</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pObserver</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Registriert einen neuen Obersver. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pObserver</em>&nbsp;</td><td>Zeiger auf ein Observer-Objekt, das den Observable von jetzt an beobachten will. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Observable::RemoveObserver" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Observable::RemoveObserver           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_i_observer.html">IObserver</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pObserver</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Meldet einen Observer beim Observable ab. Das Observer-Objekt wird dabei nicht gelöscht. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pObserver</em>&nbsp;</td><td>Zeiger auf das Observer-Objekt, das von jetzt an den Observable nicht mehr beobachten will. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/businesslogic/<a class="el" href="_observable_8h-source.html">Observable.h</a><li>D:/FHW/WS05-06/Visualisierung/Projekt/Sources/source/businesslogic/<a class="el" href="_observable_8cpp.html">Observable.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 20:53:03 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>
