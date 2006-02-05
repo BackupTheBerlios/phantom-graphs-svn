@@ -18,7 +18,7 @@
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 ///
-/// @brief	Schnittstelle für haptische Eventhandler
+/// @brief	Schnittstelle für haptische Eventhandler.
 ///
 ///			Implementierende Klassen müssen darauf achten, dass alle HLAPI-Events
 ///			sauber registriert und deregistriert werden.

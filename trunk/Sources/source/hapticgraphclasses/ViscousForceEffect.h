@@ -2,10 +2,11 @@
 /// @file	ViscousForceEffect.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		08.01.2006
-/// @date	Letzte Änderung	08.01.2006
+/// @date	Letzte Änderung	05.02.2006
 //*******************************************************************************
 
 // Änderungen:
+// 05.02.06		- Doku vervollständigt.
 
 
 #ifndef _VISCOUSFORCEEFFECT_H_
@@ -23,12 +24,18 @@ class ViscousForceEffect : public HapticEffect
 	protected:
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	"Größe" der Kraft.
+		///
+		///			Für weiterführende Erkärungen s. "API Reference" des 
+		///			OpenHaptics Toolkit.
 		//.......................................................................
 		double m_Magnitude;
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Zunahme der Kraft.
+		///
+		///			Für weiterführende Erkärungen s. "API Reference" des 
+		///			OpenHaptics Toolkit.
 		//.......................................................................
 		double m_Gain;
 
@@ -37,7 +44,7 @@ class ViscousForceEffect : public HapticEffect
 		//=======================================================================
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Spezifiziert die Eigenschaften des Effektes für HLAPI.
 		//.......................................................................
 		virtual void renderProperties();
 
@@ -46,22 +53,26 @@ class ViscousForceEffect : public HapticEffect
 	public:
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Konstruktor: Initialisiert den Effekt mit den angegebenen Werten.
+		/// @param	magnitude	"Größe" der Kraft. Default: 0.0
+		/// @param	gain		Zunahme der Kraft. Default: 0.0
 		//.......................................................................
 		ViscousForceEffect( double magnitude = 0.0, double gain = 0.0 );
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Destruktor: Gibt die Resourcen des Objekts frei.
 		//.......................................................................
 		virtual ~ViscousForceEffect();
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Wert für die Magnitude der Kraft.
+		/// @param	value	Neuer Wert für die Magnitude der Kraft.
 		//.......................................................................
 		void setMagnitude( double value );
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Wert für die Zunahme der Kraft.
+		/// @param	value	Neuer Wert für die Zunahme der Kraft.
 		//.......................................................................
 		virtual void setGain( double value );
 		

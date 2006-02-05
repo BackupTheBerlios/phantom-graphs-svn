@@ -160,7 +160,7 @@ class HapticObject
 		void addHapticAction( IHapticAction * act );
 
 		//.......................................................................
-		/// @brief	Verschiebt das Objekt um den Vektor (x, y, z).
+		/// @brief	Verschiebt das Objekt um den Vektor [x, y, z].
 		///	@param	x	x-Koordinate des Translationsvektors.
 		///	@param	y	y-Koordinate des Translationsvektors.
 		///	@param	z	z-Koordinate des Translationsvektors.
@@ -168,7 +168,7 @@ class HapticObject
 		virtual void translate( const double x, const double y, const double z );
 
 		//.......................................................................
-		/// @brief	Platziert das Objekt an der Stelle mit dem Ortsvektor (x, y, z).
+		/// @brief	Platziert das Objekt an der Stelle mit dem Ortsvektor [x, y, z].
 		///	@param	x	x-Koordinate des Ortsvektors.
 		///	@param	y	y-Koordinate des Ortsvektors.
 		///	@param	z	z-Koordinate des Ortsvektors.

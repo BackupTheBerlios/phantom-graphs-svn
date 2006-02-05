@@ -17,17 +17,19 @@
 class Observable;
 
 //...............................................................................
-/// @brief	Schnittstelle für  das Observer-Pattern
+/// @author	Katharina Greiner, Matr.-Nr. 943471
+///
+/// @brief	Schnittstelle für  das Observer-Pattern.
 ///
 ///			Klassen, die diese Schnittstelle implementieren, können sich bei 
-///			Observables anmelden um über Änderungen informiert zu werden
+///			Observables anmelden um über Änderungen informiert zu werden.
 //...............................................................................
 class IObserver
 {
 	public:
 		//.......................................................................
 		/// @brief	Veranlasst den Observer, sich die benötigten Informationen 
-		///			vom Observable zu holen
+		///			vom Observable zu holen.
 		/// @param	pObservable	Das observierte Objekt, von dem der Observer
 		///						Informationen braucht.
 		//.......................................................................

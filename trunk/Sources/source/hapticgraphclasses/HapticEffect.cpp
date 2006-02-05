@@ -45,6 +45,7 @@ void HapticEffect::startEffect()
 	hlStartEffect(m_EffectType, m_EffectID);
 	if (!(HL_NO_ERROR == hlGetError().errorCode))
 	{
+		// nur zum Debuggen benötigt
 		int bla = 1;
 	}
 	m_IsActive = true;
@@ -59,6 +60,7 @@ void HapticEffect::stopEffect()
 		hlStopEffect(m_EffectID);
 		if (HL_INVALID_OPERATION == hlGetError().errorCode)
 		{
+			// nur zum Debuggen benötigt
 			int bla = 1;
 		}
 		m_IsActive = false;

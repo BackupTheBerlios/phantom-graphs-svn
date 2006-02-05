@@ -93,6 +93,8 @@ class GraphScene
 		/// @param	pGrid		Nötiger Parameter um die Darstellungsobjekte mit
 		///						dem Grid zu verknüpfen.
 		/// @return	Das Darstellungsobjekt, das das businessObj repräsentiert.
+		/// @todo	Bisher kann mit dieser Methode nur ein Baum erzeugt werden,
+		///			nicht jeder beliebige Graph.
 		//.......................................................................
 		Node * createObjects( IBusinessAdapter * businessObj, Grid * pGrid );
 

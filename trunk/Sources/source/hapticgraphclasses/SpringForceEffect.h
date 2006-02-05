@@ -2,10 +2,11 @@
 /// @file	SpringForceEffect.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		28.01.2006
-/// @date	Letzte Änderung	28.01.2006
+/// @date	Letzte Änderung	05.02.2006
 //*******************************************************************************
 
 // Änderungen:
+// 05.02.06		- Doku vervollständigt.
 
 
 #ifndef _SPRINGFORCEEFFECT_H_
@@ -27,12 +28,18 @@ class SpringForceEffect : public HapticEffect
 	protected:
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	"Größe" der Kraft.
+		///
+		///			Für weiterführende Erkärungen s. "API Reference" des 
+		///			OpenHaptics Toolkit.
 		//.......................................................................
 		double m_Magnitude;
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Zunahme der Kraft.
+		///
+		///			Für weiterführende Erkärungen s. "API Reference" des 
+		///			OpenHaptics Toolkit.
 		//.......................................................................
 		double m_Gain;
 		
@@ -55,27 +62,35 @@ class SpringForceEffect : public HapticEffect
 	public:
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Konstruktor: Initialisiert den Effekt mit den angegebenen Werten.
+		/// @param	magnitude	"Größe" der Kraft.
+		/// @param	gain		Zunahme der Kraft.
+		/// @param	anchor		Ankerpunkt der dargestellten Federkraft.
 		//.......................................................................
 		SpringForceEffect( double magnitude, double gain, Position anchor );
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Destruktor: Gibt die Resourcen des Objekts frei.
 		//.......................................................................
 		virtual ~SpringForceEffect();
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Wert für die Magnitude der Kraft.
+		/// @param	value	Neuer Wert für die Magnitude der Kraft.
 		//.......................................................................
 		void setMagnitude( double value );
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Setzt den Wert für die Zunahme der Kraft.
+		/// @param	value	Neuer Wert für die Zunahme der Kraft.
 		//.......................................................................
 		virtual void setGain( double value );
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Ändert den Ankerpunkt der dargestellten Federkraft.
+		///	@param	x	x-Koordinate des neuen Ankerpunktes.
+		///	@param	y	y-Koordinate des neuen Ankerpunktes.
+		///	@param	z	z-Koordinate des neuen Ankerpunktes.
 		//.......................................................................
 		void setAnchorPosition( double x, double y, double z );
 	

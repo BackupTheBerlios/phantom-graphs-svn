@@ -50,6 +50,7 @@ class HapticConstraint
 		//.......................................................................
 		///	@brief	Konstruktor: Registriert die Constraint-Shape bei HLAPI und 
 		///			initialisiert das Objekt mit den angegebenen Werten.
+		///			Der Constraint ist defaultmäßig aktiviert.
 		///	@param	snapDist	Abstand von der Oberfläche, den das Phantom 
 		///			überschreiten muss, um sich von ihr zu lösen. Defaultwert ist
 		///			0.0, was bedeutet, dass kein Constraint wirkt.

@@ -2,22 +2,29 @@
 /// @file	HapticCursor.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		26.12.2005
-/// @date	Letzte Änderung	27.12.2005
+/// @date	Letzte Änderung	05.02.2006
 //*******************************************************************************
 
 // Änderungen:
 // 27.12.05		- Member m_CursorSizePixels, m_CursorScale und Konstruktor hinzu-
 //				  gefügt
+// 05.02.06		- Doku vervollständigt.
 
 
 #ifndef _HAPTICCURSOR_H_
 #define _HAPTICCURSOR_H_
 
+/// @brief	Standardgröße des HapticCursors
 #define DEFAULT_CURSOR_SIZE_PIX 20
 
 
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
+///
+/// @brief	Kapselt ein Zeige-Widget, das den Bewegungen des Phantom-Proxy folgt.
+///
+///			Codebasis für die Klasse ist das von SensAble zu Verfügung gestellte
+///			Constraints-Beispiel.
 //...............................................................................
 class HapticCursor
 {

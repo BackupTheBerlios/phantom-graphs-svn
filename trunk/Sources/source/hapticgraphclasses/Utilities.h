@@ -2,13 +2,14 @@
 /// @file	Utilities.h
 /// @author	Katharina Greiner, Matr.-Nr. 943471
 /// @date	Erstellt am		03.01.2006
-/// @date	Letzte Änderung	28.01.2006
+/// @date	Letzte Änderung	05.02.2006
 //*******************************************************************************
 
 // Änderungen:
 // 24.01.06		- Klasse UnitConversionInfo erstellt
 // 28.01.06		- UnitConversionInfo: Umrechnungsmethoden xValueToUnit(), yValueToUnit()
 //				  unitToXValue(), unitToYValue() hinzugefügt und implementiert.
+// 05.02.06		- Doku vervollständigt.
 
 
 #ifndef _UTILITIES_H_
@@ -17,6 +18,8 @@
 //*******************************************************************************
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
+///
+/// @brief	Stellt einen Punkt im 3D-Raum dar.
 //...............................................................................
 struct Position
 {
@@ -52,6 +55,7 @@ struct Position
 		Position( double x = 0.0, double y = 0.0, double z = 0.0 );
 
 		//.......................................................................
+		/// @brief	Destruktor: Gibt die Resourcen des Objekts frei.
 		//.......................................................................
 		virtual ~Position();
 		
@@ -80,6 +84,11 @@ struct Position
 //*******************************************************************************
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
+///
+/// @brief	Klasse, die die Umwandlung zwischen View- und Businesskoordinaten übernimmt.
+/// @todo	Die Umrechnung erfolgt bisher mit festen Dummy-Werten. Die dynamische 
+///			Berechnung der Einheiten aus der einstellbaren Anzahl der Einheiten
+///			pro Bildschirm muss noch implementiert werden.
 //...............................................................................
 class UnitConversionInfo
 {
@@ -130,13 +139,22 @@ class UnitConversionInfo
 	public:
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Konstruktor: Initialisiert das Objekt mit den angegebenen
+		///			Werten und berechnet daraus die Einheitengröße.
+		///	@param	upsHorz	Anzahl der Einheiten, die in horizontaler Richtung auf 
+		///			dem Bildschirm dargestellt werden sollen.
+		/// @param	upsVert	Anzahl der Einheiten, die in vertikaler Richtung auf 
+		///			dem Bildschirm dargestellt werden sollen.
+		/// @param	paddingHorz	Horizontaler Abstand zwischen zwei Knoten.
+		/// @param	paddingVert	Vertikaler Abstand zwischen zwei Knoten.
+		/// @todo	Die dynamische Berechnung der Einheiten aus der Anzahl der
+		///			Einheiten pro Bildschirm muss noch implementiert werden.
 		//.......................................................................
 		UnitConversionInfo( int upsHorz, int upsVert,  
 							float paddingHorz, float paddingVert );
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Destruktor: Gibt die Resourcen des Objekts frei.
 		//.......................................................................
 		virtual ~UnitConversionInfo();
 		
@@ -169,32 +187,34 @@ class UnitConversionInfo
 		float getUnitHeight();
 		
 		//.......................................................................
-		/// @brief	
+		/// @brief	Gibt den horizontalen Abstand zwischen zwei Knoten zurück.
+		/// @return	Horizontaler Abstand zwischen zwei Knoten.
 		//.......................................................................
 		float getHorizontalPadding();
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Gibt den vertikalen Abstand zwischen zwei Knoten zurück.
+		/// @return	Vertikaler Abstand zwischen zwei Knoten.
 		//.......................................................................
 		float getVerticalPadding();
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Rechnet eine View-x-Koordinate in Business-Einheiten um.
 		//.......................................................................
 		float xValueToUnit(float xValue);
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Rechnet eine View-y-Koordinate in Business-Einheiten um.
 		//.......................................................................
 		float yValueToUnit(float yValue);
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Rechnet einen Business-Einheiten-Wert in View-x-Koordinaten um.
 		//.......................................................................
 		float unitToXValue(float unit);
 
 		//.......................................................................
-		/// @brief
+		/// @brief	Rechnet einen Business-Einheiten-Wert in View-y-Koordinaten um.
 		//.......................................................................
 		float unitToYValue(float unit);
 		
@@ -204,13 +224,19 @@ class UnitConversionInfo
 //*******************************************************************************
 //...............................................................................
 /// @author	Katharina Greiner, Matr.-Nr. 943471
+///
+/// @brief	Einfache Klasse um mit glut einen Text auszugeben.
+///	@todo	Textausgabe funktioniert noch nicht.
 //...............................................................................
 class GlutString
 {
 	public:
 
 		//.......................................................................
-		/// @brief	
+		/// @brief	Gibt den String string an der Position pos aus.
+		///	@param	string	Zeiger auf einen C-String der ausgegeben werden soll.
+		/// @param	pos		Position, an der der Text ausgegeben werden soll.
+		///	@todo	Funktioniert noch nicht.
 		//.......................................................................
 		static void write(char * string, Position pos);		
 		
