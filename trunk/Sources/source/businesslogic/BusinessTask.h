@@ -1,7 +1,7 @@
 //*******************************************************************************
 /// @file	BusinessTask.h
 /// @author	Carsten Arnold
-/// @date	Erstellt am		02.01.2006
+/// @date	Erstellt am		30.11.2005
 /// @date	Letzte Änderung	30.01.2006 CA
 //*******************************************************************************
 
@@ -14,14 +14,14 @@
 //				  und Nachfolgern CA
 // 28.01.2006	- m_Width umdefiniert CA
 //				- update: setLine() CA
-//				- added:
+//				- modified:
 //					getNextTasks()
 //					getPreviousTasks() CA
-//				- added: setBegin(float) CA
-//				- added: calcBegin() CA
-// 29.01.2006	- added: moveToFront() CA
+//				- modified: setBegin(float) CA
+//				- modified: calcBegin() CA
+// 29.01.2006	- modified: moveToFront() CA
 // 30.01.2006	- modified: getForce(int,int) CA
-//				- added: enum force CA
+//				- modified: enum force CA
 //				- modified: moveToFront() CA
 //				- modified: moveToFront(), moveFollowingToFront(), 
 //				  movePreviousToFront() CA
@@ -49,7 +49,7 @@ using namespace std;
 /// @brief	diese KLasse verwaltet alle Aufgaben, die im Graph dargestellt werden sollen.
 ///
 //...............................................................................
-class BusinessTask : public IBusinessAdapter, public IBusinessConverter
+class BusinessTask : public IBusinessAdapter
 {
 public:
 
@@ -65,22 +65,49 @@ public:
 	//...............................................................................
 	virtual void moveToEarlierPosition(int end);
 
-	virtual int calcForceInc1();
-	void calcForceMedium1();
+	//...............................................................................
+	/// @brief	berechnet das Datum nach Links zum Ende der nächsten vorhergehenden Aufgabe
+	/// @return gibt das Datum zurück
+	//...............................................................................
 	void calcForceMedium0();
 
 	//...............................................................................
-	/// @brief	berechnet den Punkt über den nicht nach Links verschoben werden kann
+	/// @brief	berechnet das Datum nach Rechts zum Begin der nächsten folgenden Aufgabe
+	/// @return gibt das Datum zurück
+	//...............................................................................
+	void calcForceMedium1();
+
+	//...............................................................................
+	/// @brief	berechnet das Datum über das nicht nach Links verschoben werden kann
+	/// @return gibt das Datum zurück
 	//...............................................................................
 	virtual int calcForceInc0();
-	
+
+	//...............................................................................
+	/// @brief	berechnet das Datum über das nicht nach Rechts verschoben werden kann
+	/// @return gibt das Datum zurück
+	//...............................................................................
+	virtual int calcForceInc1();
+
+	/// @brief Aufruf zum berechnen der Kraftpositionen der Aufgabe
 	void calcRanges();
-	// int m_ForceRangeNone1;
-	// int m_ForceRangeNone0;
+
+	/// Datum vom Ende der nächsten vorhergehenden Aufgabe
 	int m_ForceRangeMedium0;
+
+	/// Datum vom Anfang der nächsten nachfolgenden Aufgabe
 	int m_ForceRangeMedium1;
+
+	/// Datum über das die Aufgabe nicht weiter nach Links verschoben werden kann
 	int m_ForceRangeIncredible0;
+	
+	/// Datum über das die Aufgabe nicht weiter nach Rechts verschoben werden kann
 	int m_ForceRangeIncredible1;
+
+	//...............................................................................
+	/// @brief	schiebt alle Aufgaben so weit wie möglich an den Anfang des Projekts
+	//...............................................................................
+	void moveAllToFront();
 
 	//...............................................................................
 	/// @brief	schiebt nachfolgende Aufgaben so weit wie möglich an den Anfang des Projekts
@@ -105,23 +132,42 @@ public:
 	int getBegin();
 
 	//...............................................................................
-	/// @brief	schiebt alle Aufgaben so weit wie möglich an den Anfang des Projekts
-	//...............................................................................
-	void moveAllToFront();
-
-	//...............................................................................
 	/// @brief	setzt den Anfang einer Aufgabe
 	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
 	/// @return bool true=Begin erfolgreich geändert, false=keine Änderung durchgeführt
 	//...............................................................................
 	bool setBegin(float begin);
 
-	void setLine(int line);
+	/// @brief fügt eine Aufgabe zu der Liste der Vorgänger hinzu
 	void addTaskPrevious(BusinessTask *follows);
+
+	/// @brief fügt eine Aufgabe zu der Liste der Nachfolger hinzu
 	void addTaskFollowing(BusinessTask *followed_by);
+
+	/// @brief liefert den Namen der Aufgabe
+	/// @return Name der Aufgabe
 	string getName();
+
+	/// @gibt einige Infos der Aufgabe auf stdout aus
 	void printInfo();
+
+	//...............................................................................
+	/// @brief	setzt die Eben der Aufgabe, erhöt sich, wenn die Aufgabe parallel
+	///			zu einer anderen Aufgabe durchgeführt werden kann
+	/// @param	line zu setzende Eben [0..[
+	//...............................................................................
+	void setLine(int line);
+
+	//...............................................................................
+	/// @brief	liefert die Eben der Aufgabe
+	/// @return Ebene der Aufgabe
+	//...............................................................................
 	int getLine();
+
+	//...............................................................................
+	/// @ brief liefert die Dauer der Aufgabe
+	/// @return Dauer der Aufgabe
+	//...............................................................................	
 	int getWidth();
 
 	//...............................................................................
@@ -133,8 +179,16 @@ public:
 	virtual force getForce(float x, float y);
 
 	BusinessTask();
-	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);
 	virtual ~BusinessTask();
+
+	//...............................................................................
+	/// @brief	überschreibt den StandardKonstruktor mit der Übergabe folgender Parameter
+	/// @param	taskname Name der Aufgabe
+	/// @param	day_duration Dauer der Aufgabe
+	/// @param	day_final Datum an dem die Aufgabe fertig gestellt sein muss
+	/// @param	isMilestone ist die Aufgabe ein Milestone
+	//...............................................................................
+	BusinessTask(string taskname, int day_duration, int day_final, bool isMilestone);
 
 	//.......................................................................
 	/// @brief	Liefert die Nachfolger
@@ -151,7 +205,7 @@ public:
 private:
 
 	//...............................................................................
-	/// @brief	Rückgabewerte für getForce()
+	/// @brief	Rückgabewerte für getForce(), enum deklariert in IBusinessAdapter
 	//...............................................................................
 	force m_Force;
 
@@ -167,13 +221,16 @@ private:
 	//..................................................
 	int m_Line;
 
+	//..................................................
+	/// @brief Dauer der Aufgabe
+	//..................................................
 	float width;
-	Position position;
 
 	//..................................................
 	/// @brief berechnet den Anfangspunkt anhand von Endpunkt und Dauer
 	/// @param end Endpunkt
 	/// @param duration Dauer
+	/// @return	Dauer der Aufgabe
 	//..................................................
 	int calcBegin(int end, int duration);
 
@@ -181,16 +238,38 @@ private:
 	/// @brief berechnet den Endpunkt anhand von Anfangspunkt und Dauer
 	/// @param begin Anfangspunkt
 	/// @param duration Dauer
+	/// @return Ende der Aufgabe
 	//..................................................
 	int calcEnd(int begin, int duration);
 
+	//..................................................
+	/// @brief ist die Aufgabe Milestone
+	//..................................................
 	bool isMilestone;
+
+	//..................................................
+	/// @brief Anfangsdatum der Aufgabe
+	//..................................................
 	int m_Begin;
-	int surface;
+
+	//..................................................
+	/// @brief Enddatum der Aufgabe
+	//..................................................
 	int m_End;
+
+	//..................................................
+	/// @brief Deadline der Aufgabe
+	//..................................................
 	int m_Final;
 
+	//..................................................
+	/// @brief Dauer der Aufgabe
+	//..................................................	
 	int m_Width;
+
+	//..................................................
+	/// @brief Name der Aufgabe
+	//..................................................
 	string m_Name;
 
 	/// @brief	Liste aller direkter nachfolgenden Aufgaben
@@ -200,9 +279,9 @@ private:
 	list<IBusinessAdapter*> m_TasksPrevious;
 
 protected:
+
+	/// @brief akkumuliert die übergebenen Differenzen von x-Axis Bewegungen der View
 	float m_Movement;
-	void businessToViewCoordinates();
-	void viewToBusinessCoordinates();
 };
 
 #endif // !defined(AFX_BUSINESSTASK_H__2F03CA42_805D_4D8E_90DF_3D94633457FE__INCLUDED_)

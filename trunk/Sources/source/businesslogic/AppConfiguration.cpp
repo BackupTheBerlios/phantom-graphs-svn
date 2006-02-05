@@ -1,16 +1,16 @@
 //*******************************************************************************
 /// @file	AppConfiguration.h
 /// @author	Carsten, Arnold
-/// @date	Erstellt am		06.01.2006
-/// @date	Letzte Änderung	06.01.2006
+/// @date	Erstellt am		30.11.2005
+/// @date	Letzte Änderung	27.01.2006
 //*******************************************************************************
 
 // Änderungen:
-// 06.01.2006	- Konstruktor, Destruktor
-//				- initTasks hinzugefügt
-// 09.01.2006	- Aufgaben initialisiern
-// 24.01.2006   - Startaufgabe festgelegt (m_rootTask)
-// 27.01.2006	- added: m_ProjectLines, Anzahl maximaler paralleler Aufgaben
+// 06.01.2006	- Konstruktor, Destruktor CA
+//				- initTasks hinzugefügt CA
+// 09.01.2006	- Aufgaben initialisiern CA
+// 24.01.2006   - Startaufgabe festgelegt (m_rootTask) CA
+// 27.01.2006	- added: m_ProjectLines, Anzahl maximaler paralleler Aufgaben CA
 //				  added: Getter/Setter m_ProjectLines
 //				  coded: Nachfolger/Vorgänger hardcodiert
 //				  added: statische m_ProjectLines
@@ -41,7 +41,6 @@ AppConfiguration::AppConfiguration()
 
 int AppConfiguration::getProjectDuration()
 {
-	// Dummy
 	return m_ProjectDuration;
 }
 
@@ -124,30 +123,24 @@ void AppConfiguration::initTasks()
 	task08->addTaskPrevious(task07);
 
 	
-	//m_BusinessTasks.clear();
-
 	/* set root Aufgabe */
 	m_rootTask = *m_BusinessTasks.begin();
 
 	/* Alle Aufgaben an den Anfang des Projektzeitraums setzen */
-//	m_rootTask->moveAllToFront();
+	//	m_rootTask->moveAllToFront();
 
-	/// Kräfte aller Aufgaben berechnen
-	if(getDebugState())
+	// Kräfte aller Aufgaben berechnen
+	for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
 	{
-		for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
+		if (*itObj != NULL)
 		{
-			if (*itObj != NULL)
-			{
-				//delete *itObj;
-				//*itObj = NULL;
-				(*itObj)->calcRanges();
-			}
+			//delete *itObj;
+			//*itObj = NULL;
+			(*itObj)->calcRanges();
 		}
-		cout << endl;
 	}
 
-	/// @brief Debuginfo zur Ausgabe aller Tasks
+	// @brief Debuginfo zur Ausgabe aller Tasks
 	if(getDebugState())
 	{
 		cout << "DebugInfo: Aufruf aus AppConfiguration::initTasks" << endl;
@@ -155,7 +148,7 @@ void AppConfiguration::initTasks()
 	}
 
 	
-	/// @brief Debuginfo zur Ausgabe aller Tasks
+	// @brief Debuginfo zur Ausgabe aller Tasks
 	if(getDebugState())
 	{
 		for (itObj = m_BusinessTasks.begin() ; itObj != m_BusinessTasks.end(); itObj++)
@@ -182,12 +175,10 @@ void AppConfiguration::setDebugState(bool state)
 	m_debug = state;
 }
 
-/// @brief liefert die max. Anzahl paralleler Aufgaben
 int AppConfiguration::getProjectLines()
 {
 	return m_ProjectLines;
 }
-
 
 
 IBusinessAdapter* AppConfiguration::getRootTask()
@@ -198,11 +189,6 @@ IBusinessAdapter* AppConfiguration::getRootTask()
 void AppConfiguration::setProjectLines(int lines)
 {
 	m_ProjectLines = lines;
-}
-
-void AppConfiguration::setUnitsPerDay(float units)
-{
-
 }
 
 

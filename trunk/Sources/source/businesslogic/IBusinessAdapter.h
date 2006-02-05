@@ -103,6 +103,7 @@ public:
 	//...............................................................................
 	/// @brief	setzt den Anfang einer Aufgabe
 	/// @param	begin	Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin
+	/// 
 	//...............................................................................
 	virtual bool setBegin(float begin) = 0;
 

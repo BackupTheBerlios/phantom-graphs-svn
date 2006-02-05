@@ -1,8 +1,8 @@
 //*******************************************************************************
 /// @file	AppConfiguration.h
 /// @author	Carsten, Arnold
-/// @date	Erstellt am		06.01.2006
-/// @date	Letzte Änderung	27.01.2006 CA
+/// @date	Erstellt am		30.11.2005
+/// @date	Letzte Änderung	27.01.2006
 //*******************************************************************************
 
 // Änderungen:
@@ -13,9 +13,7 @@
 // 27.01.2006	- added: m_ProjectLines, Anzahl maximaler paralleler Aufgaben CA
 //				  added: Getter/Setter m_ProjectLines
 //				  coded: Nachfolger/Vorgänger hardcodiert
-//				  added: m_UnitsPerDay, Setter
-//				  
-
+//				  added: statische m_ProjectLines
 
 #ifndef _APPCONFIGURATION_H_
 #define _APPCONFIGURATION_H_
@@ -31,39 +29,31 @@ using namespace std;
 /// @author	Carsten Arnold
 ///
 /// @brief	Klasse, die für projektübergreifende Aufgaben zuständig ist und 
-//			static Member zur Verfügung stellt
+///			static Member zur Verfügung stellt, Singelton
 //...............................................................................
 
 class AppConfiguration
 {
 private:
+
 	/// @brief hält den aktuellen Debugstatus
 	///        default=false, wird im Konstruktor gesetzt gesetzt
 	bool m_debug;
 
+	/// @brief Dauer des Projektzeitraums
 	int m_ProjectDuration;
 	
 	/// @brief Anzahl maximaler paralleler Aufgaben
 	int m_ProjectLines;
 
-	/// @brief Graphische Einheiten, die einem Tag entsprechen
-	float m_UnitsPerDay;
-	
 	/// @ brief Pointer auf die fiktive Startaufgabe, die nur Startpunkt 
 	///   und selbst keine wirkliche Aufgabe ist Aufgabe 
 	IBusinessAdapter* m_rootTask;
 
 public:
-	//.......................................................................
-	/// @brief	setzt die Anzahl maximaler paralleler Aufgaben
-	/// @param	lines Anzahl maximaler paralleler Aufgaben
-	//.......................................................................
-	void setUnitsPerDay(float units);
 
-	//.......................................................................
 	/// @brief	setzt die Anzahl maximaler paralleler Aufgaben
 	/// @param	lines Anzahl maximaler paralleler Aufgaben
-	//.......................................................................
 	void setProjectLines(int lines);
 
 	/// @brief	Liste aller Aufgaben.
@@ -74,36 +64,24 @@ public:
 	///			vorgesehen
 	void initTasks();
 	
-	//.......................................................................
 	/// @brief	setzt die Gesamtdauer des Projekts in Tagen
 	/// @param	value Gesamtdauer des Projekts in Tagen
-	//.......................................................................
 	void setProjectDuration(int days);
 	
-	//.......................................................................
 	/// @brief	Gibt die gesamt darzustellenden Dauer des Projekts zurück
-	//.......................................................................
 	int getProjectDuration();
 
-	//.......................................................................
 	/// @brief	liefert einen Pointer auf die Anfangsaufgabe
-	//.......................................................................
 	IBusinessAdapter* getRootTask();
 
-	//.......................................................................
 	/// @brief	liefert die max. Anzahl paralleler Aufgaben
-	//.......................................................................
 	int getProjectLines();
 
-	//.......................................................................
 	/// @brief	setzt den Debugstatus zur Anzeige von Infos während der Programmausführung
 	/// @param	state true/false
-	//.......................................................................
 	void setDebugState(bool state);
 
-	//.......................................................................
 	/// @brief	liefert den aktuellen Debugstatus
-	//.......................................................................
 	bool getDebugState();
 
 	AppConfiguration();

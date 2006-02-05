@@ -1,7 +1,7 @@
 //*******************************************************************************
-/// @file	BusinessTask.cpp
+/// @file	BusinessTask.h
 /// @author	Carsten Arnold
-/// @date	Erstellt am		02.01.2006
+/// @date	Erstellt am		30.11.2005
 /// @date	Letzte Änderung	30.01.2006 CA
 //*******************************************************************************
 
@@ -14,14 +14,15 @@
 //				  und Nachfolgern CA
 // 28.01.2006	- m_Width umdefiniert CA
 //				- update: setLine() CA
-//				- added:
+//				- modified:
 //					getNextTasks()
-//					getPreviousTasks()
-//				- added: setBegin(float)
-//				- added: calcBegin()
-// 29.01.2006	- added: moveToFront() CA
+//					getPreviousTasks() CA
+//				- modified: setBegin(float) CA
+//				- modified: calcBegin() CA
+// 29.01.2006	- modified: moveToFront() CA
 // 30.01.2006	- modified: getForce(int,int) CA
-//				- added: enum force CA
+//				- modified: enum force CA
+//				- modified: moveToFront() CA
 //				- modified: moveToFront(), moveFollowingToFront(), 
 //				  movePreviousToFront() CA
 //				- modified calcRanges() CA
@@ -48,7 +49,6 @@ BusinessTask::BusinessTask()
 	m_Begin = 0;
 	m_End = m_Begin + m_Width;
 	m_Force = none;
-	surface = 0;
 
 	// Nachfolger- und Vorgängerlisten löschen
 	m_TasksFollowing.clear();
@@ -71,7 +71,6 @@ BusinessTask::BusinessTask(string taskname, int duration, int final, bool Milest
 	m_End = calcEnd(m_Begin, m_Width);
 
 	m_Force = none;
-	surface = 0;
 
 	// Nachfolger- und Vorgängerlisten löschen
 	m_TasksFollowing.clear();
@@ -124,15 +123,6 @@ int BusinessTask::calcEnd(int begin, int duration)
 	return end;
 }
 
-void BusinessTask::viewToBusinessCoordinates()
-{
-
-}
-
-void BusinessTask::businessToViewCoordinates()
-{
-
-}
 
 int BusinessTask::getWidth()
 {
