@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: hapticgraphclasses/Camera.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>hapticgraphclasses/Camera.h</h1><a href="_camera_8h.html">gehe zur Dokumentation dieser Datei</a><pre class="fragment"><div>00001 <span class="comment">//*******************************************************************************</span>
+00006 <span class="comment"></span><span class="comment">//*******************************************************************************</span>
+00007 
+00008 <span class="comment">// Änderungen:</span>
+00009 
+00010 
+00011 <span class="preprocessor">#ifndef _CAMERA_H_</span>
+00012 <span class="preprocessor"></span><span class="preprocessor">#define _CAMERA_H_</span>
+00013 <span class="preprocessor"></span>
+00014 <span class="preprocessor">#include "<a class="code" href="_haptic_device_8h.html">HapticDevice.h</a>"</span>
+00015 
+00016 <span class="comment">// ...............................................................................</span>
+00027 <span class="comment"></span><span class="comment">//...............................................................................</span>
+<a name="l00028"></a><a class="code" href="class_camera.html">00028</a> <span class="keyword">class </span><a class="code" href="class_camera.html">Camera</a>
+00029 {
+00030         <span class="keyword">protected</span>:
+00031                 
+00032                 <span class="comment">//.......................................................................</span>
+00034 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00035"></a><a class="code" href="class_camera.html#p0">00035</a>                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#p0">m_Ratio</a>;
+00036                 
+00037                 <span class="comment">//.......................................................................</span>
+00039 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00040"></a><a class="code" href="class_camera.html#p1">00040</a>                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#p1">m_NearDistance</a>;
+00041                 
+00042                 <span class="comment">//.......................................................................</span>
+00044 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00045"></a><a class="code" href="class_camera.html#p2">00045</a>                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#p2">m_FovY</a>;
+00046                 
+00047                 <span class="comment">//.......................................................................</span>
+00049 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00050"></a><a class="code" href="class_camera.html#p3">00050</a>                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#p3">m_FarDistance</a>;
+00051 
+00052                 <span class="comment">//.......................................................................</span>
+00054 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00055"></a><a class="code" href="class_camera.html#p4">00055</a>                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#p4">m_LastX</a>;
+00056 
+00057                 <span class="comment">//.......................................................................</span>
+00059 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00060"></a><a class="code" href="class_camera.html#p5">00060</a>                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#p5">m_LastY</a>;
+00061 
+00062                 <span class="comment">//.......................................................................</span>
+00065 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00066"></a><a class="code" href="class_camera.html#p6">00066</a>                 <a class="code" href="class_haptic_device.html">HapticDevice</a> * <a class="code" href="class_camera.html#p6">m_pHapticDevice</a>;
+00067 
+00068         <span class="keyword">public</span>:
+00069 
+00070                 <span class="comment">//.......................................................................</span>
+00080 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00081                 <a class="code" href="class_camera.html#a0">Camera</a>( <span class="keywordtype">double</span> fovY, <span class="keywordtype">int</span> viewportWidth, <span class="keywordtype">int</span> viewportHeight, <a class="code" href="class_haptic_device.html">HapticDevice</a> * pHd = NULL );
+00082 
+00083                 <span class="comment">//.......................................................................</span>
+00085 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00086                 <span class="keyword">virtual</span> <a class="code" href="class_camera.html#a1">~Camera</a>();
+00087                 
+00088                 <span class="comment">//.......................................................................</span>
+00092 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00093                 <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a2">translateView</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y );
+00094                 
+00095                 <span class="comment">//.......................................................................</span>
+00100 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00101                 <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a3">recalculateView</a>( <span class="keywordtype">int</span> viewportWidth, <span class="keywordtype">int</span> viewportHeight );
+00102                 
+00103                 <span class="comment">//.......................................................................</span>
+00106 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00107                 <span class="keywordtype">double</span> <a class="code" href="class_camera.html#a4">getRatio</a>();
+00108                 
+00109 };
+00110 
+00111 <span class="preprocessor">#endif // _CAMERA_H_</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:11 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

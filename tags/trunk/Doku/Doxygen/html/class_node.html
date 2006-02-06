@@ -1,0 +1,635 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: Node Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>Node Klassenreferenz</h1>Haptisches Objekt, das einen Knoten in einem Graphen als Rechteck darstellt.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_node_8h-source.html">Node.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für Node:
+<p><center><img src="class_node.png" usemap="#Node_map" border="0" alt=""></center>
+<map name="Node_map">
+<area href="class_haptic_object.html" alt="HapticObject" shape="rect" coords="0,0,85,24">
+<area href="class_i_observer.html" alt="IObserver" shape="rect" coords="95,0,180,24">
+</map>
+<a href="class_node-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a0">Node</a> (<a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *businessObj, <a class="el" href="class_unit_conversion_info.html">UnitConversionInfo</a> &amp;unitInfo)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor: Initialisiert das Objekt mit dem dazugehörigen Business-Objekt. Alle Darstellungsinformationen werden vom Business-Objekt angefordert.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="Node::~Node" ></a>
+virtual&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a1">~Node</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destruktor: Gibt die Ressourcen des Objektes frei. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a2">setWidth</a> (float value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ändert die Breite des Node.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a3">setHeight</a> (float value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ändert die Höhe des Node.  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a4">getWidth</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt die aktuelle Breite des Node zurück.  <a href="#a4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a5">getHeight</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt die aktuelle Höhe des Node zurück.  <a href="#a5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a6">setImpossibleToMoveEffect</a> (<a class="el" href="class_haptic_effect.html">HapticEffect</a> *value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Weist dem Node einen neuen Effekt für das Verhindern von Bewegung zu.  <a href="#a6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a7">setHardToMoveEffect</a> (<a class="el" href="class_haptic_effect.html">HapticEffect</a> *value)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Weist dem Node einen neuen Effekt für die eigeschränkte Bewegung zu.  <a href="#a7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a8">addIncomingEdge</a> (<a class="el" href="class_edge.html">Edge</a> *pEdge)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fügt dem Knoten eine eingehende Kante hinzu.  <a href="#a8"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a9">addOutgoingEdge</a> (<a class="el" href="class_edge.html">Edge</a> *pEdge)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Fügt dem Knoten eine ausgehende Kante hinzu.  <a href="#a9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a10" doxytag="Node::renderShape" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a10">renderShape</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Legt die Geometrie aller Objekte dieser Klasse fest. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a11">translate</a> (const double x, const double y, const double z)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Verschiebt den Node um den Vektor [x, y, z] unter Beachtung durch die Businesslogik definierten Restriktionen.  <a href="#a11"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a12">setPosition</a> (const double x, const double y, const double z)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Platziert das Objekt an der Stelle mit dem Ortsvektor [x, y, z], falls das Business-Objekt es erlaubt. Ansonsten wird der Node an einer vom Business-Objekt berechneten <a class="el" href="struct_position.html">Position</a> platziert.  <a href="#a12"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a13" doxytag="Node::Update" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#a13">Update</a> (<a class="el" href="class_observable.html">Observable</a> *pObservable)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Veranlasst den Observer, sich die benötigten Informationen vom <a class="el" href="class_observable.html">Observable</a> zu holen. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#b0">updateIncomingEdge</a> (<a class="el" href="class_edge.html">Edge</a> *pEdge)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt den Endpunkt einer eingehenden Kante neu.  <a href="#b0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#b1">updateOutgoingEdge</a> (<a class="el" href="class_edge.html">Edge</a> *pEdge)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setzt den Anfangspunkt einer ausgehenden Kante neu.  <a href="#b1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="b2" doxytag="Node::updateEdges" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#b2">updateEdges</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Aktualisiert die Anfangs- und Endpunkte der Kanten, die mit dem Knoten verbunden sind. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="b3" doxytag="Node::releaseDisplayList" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#b3">releaseDisplayList</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt die Displayliste frei und weist ihr einen ungültigen Wert zu. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="Node::m_Width" ></a>
+float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p0">m_Width</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Breite des Node in View-Koordinaten. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p1" doxytag="Node::m_Height" ></a>
+float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p1">m_Height</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Höhe des Node in View-Koordinaten. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p2" doxytag="Node::m_pBusinessObject" ></a>
+<a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p2">m_pBusinessObject</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Zeiger auf ein Businesslogik-Objekt, das der Node darstellen soll. Die Eigenschaften und das Verhalten des Node werden von diesem Objekt abgefragt. Wird NICHT vom Node freigegeben! <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p3" doxytag="Node::m_rUnitInfo" ></a>
+<a class="el" href="class_unit_conversion_info.html">UnitConversionInfo</a> &amp;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p3">m_rUnitInfo</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Referenz auf das Einheitenobjekt auf dessen Basis der Node dargestellt werden soll. Wird NICHT vom Node freigegeben! <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p4" doxytag="Node::m_pHardToMoveEffect" ></a>
+<a class="el" href="class_haptic_effect.html">HapticEffect</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p4">m_pHardToMoveEffect</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Effekt, der aktiviert wird, wenn sich der Node nur eingeschränkt bewegen lassen soll. Wird vom Node erzeugt und freigegeben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p5" doxytag="Node::m_pImpossibleToMoveEffect" ></a>
+<a class="el" href="class_haptic_effect.html">HapticEffect</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p5">m_pImpossibleToMoveEffect</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Effekt, der aktiviert wird, wenn sich der Node gar nicht bewegen lassen soll. Wird vom Node erzeugt und freigegeben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p6" doxytag="Node::m_IncomingEdges" ></a>
+list&lt; <a class="el" href="class_edge.html">Edge</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p6">m_IncomingEdges</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste von Verbindungen zu Vorgängerknoten. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p7" doxytag="Node::m_OutgoingEdges" ></a>
+list&lt; <a class="el" href="class_edge.html">Edge</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p7">m_OutgoingEdges</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste von Verbindungen zu Nachfolgerknoten. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p8" doxytag="Node::m_DisplayList" ></a>
+GLuint&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_node.html#p8">m_DisplayList</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ID der OpenGL-Displayliste, mit der der Node gezeichnet wird. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Haptisches Objekt, das einen Knoten in einem Graphen als Rechteck darstellt. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471</dd></dl>
+<p>
+Der Node lässt sich mit verschieden starken Restriktionen bewegen, je nach Definition der Businesslogik:<ul>
+<li>Frei bewegbar</li><li>eingeschränkt bewegbar</li><li>gar nicht bewegbar In der Rolle des Observers beobachtet der Node sein Businesslogik-Objekt und reagiert auf dessen Änderungen. <dl compact><dt><b><a class="el" href="todo.html#_todo000003">Noch zu erledigen:</a></b></dt><dd>Der Effekt für "gar nicht bewegbar" muss noch richtig eingestellt werden.</dd></dl>
+</li></ul>
+
+<p>
+<hr><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" name="a0" doxytag="Node::Node" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> Node::Node           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *&nbsp;</td>
+          <td class="mdname" nowrap> <em>businessObj</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="class_unit_conversion_info.html">UnitConversionInfo</a> &amp;&nbsp;</td>
+          <td class="mdname" nowrap> <em>unitInfo</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Konstruktor: Initialisiert das Objekt mit dem dazugehörigen Business-Objekt. Alle Darstellungsinformationen werden vom Business-Objekt angefordert. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>businessObj</em>&nbsp;</td><td>Zeiger auf ein Businesslogik-Objekt, das der Node darstellen soll. Wird NICHT vom Node freigegeben! </td></tr>
+    <tr><td></td><td valign=top><em>unitInfo</em>&nbsp;</td><td>Referenz auf das Einheitenobjekt auf dessen Basis der Node dargestellt werden soll. Wird NICHT vom Node freigegeben! </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a8" doxytag="Node::addIncomingEdge" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::addIncomingEdge           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_edge.html">Edge</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pEdge</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Fügt dem Knoten eine eingehende Kante hinzu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pEdge</em>&nbsp;</td><td>Kante, die dem Knoten hinzugefügt werden soll. Die Kante wird beim Löschen des Knotens nicht freigegeben! </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a9" doxytag="Node::addOutgoingEdge" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::addOutgoingEdge           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_edge.html">Edge</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pEdge</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Fügt dem Knoten eine ausgehende Kante hinzu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pEdge</em>&nbsp;</td><td>Kante, die dem Knoten hinzugefügt werden soll. Die Kante wird beim Löschen des Knotens nicht freigegeben! </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a5" doxytag="Node::getHeight" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> float Node::getHeight           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Gibt die aktuelle Höhe des Node zurück. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Die aktuelle Höhe des Node. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a4" doxytag="Node::getWidth" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> float Node::getWidth           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Gibt die aktuelle Breite des Node zurück. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Die aktuelle Breite des Node. </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a7" doxytag="Node::setHardToMoveEffect" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::setHardToMoveEffect           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_haptic_effect.html">HapticEffect</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Weist dem Node einen neuen Effekt für die eigeschränkte Bewegung zu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Zeiger auf den neuen Effekt für die eigeschränkte Bewegung. Wird vom Node freigegeben. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="Node::setHeight" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::setHeight           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">float&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ändert die Höhe des Node. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Neue Höhe des Node. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a6" doxytag="Node::setImpossibleToMoveEffect" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::setImpossibleToMoveEffect           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_haptic_effect.html">HapticEffect</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Weist dem Node einen neuen Effekt für das Verhindern von Bewegung zu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Zeiger auf den neuen Effekt für das Verhindern von Bewegung. Wird vom Node freigegeben. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a12" doxytag="Node::setPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::setPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>z</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Platziert das Objekt an der Stelle mit dem Ortsvektor [x, y, z], falls das Business-Objekt es erlaubt. Ansonsten wird der Node an einer vom Business-Objekt berechneten <a class="el" href="struct_position.html">Position</a> platziert. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>x</em>&nbsp;</td><td>x-Koordinate des Ortsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>y</em>&nbsp;</td><td>y-Koordinate des Ortsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>z</em>&nbsp;</td><td>z-Koordinate des Ortsvektors. </td></tr>
+  </table>
+</dl>
+
+<p>
+Erneute Implementation von <a class="el" href="class_haptic_object.html#a10">HapticObject</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="Node::setWidth" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::setWidth           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">float&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>value</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ändert die Breite des Node. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>Neue Breite des Node. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a11" doxytag="Node::translate" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::translate           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>const double&nbsp;</td>
+          <td class="mdname" nowrap> <em>z</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Verschiebt den Node um den Vektor [x, y, z] unter Beachtung durch die Businesslogik definierten Restriktionen. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>x</em>&nbsp;</td><td>x-Koordinate des Translationsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>y</em>&nbsp;</td><td>y-Koordinate des Translationsvektors. </td></tr>
+    <tr><td></td><td valign=top><em>z</em>&nbsp;</td><td>z-Koordinate des Translationsvektors. </td></tr>
+  </table>
+</dl>
+
+<p>
+Erneute Implementation von <a class="el" href="class_haptic_object.html#a9">HapticObject</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b0" doxytag="Node::updateIncomingEdge" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::updateIncomingEdge           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_edge.html">Edge</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pEdge</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Setzt den Endpunkt einer eingehenden Kante neu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pEdge</em>&nbsp;</td><td><a class="el" href="class_edge.html">Edge</a>, deren Endpunkt verändert werden soll. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="b1" doxytag="Node::updateOutgoingEdge" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void Node::updateOutgoingEdge           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_edge.html">Edge</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pEdge</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Setzt den Anfangspunkt einer ausgehenden Kante neu. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pEdge</em>&nbsp;</td><td><a class="el" href="class_edge.html">Edge</a>, deren Anfangspunkt verändert werden soll. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>hapticgraphclasses/<a class="el" href="_node_8h-source.html">Node.h</a><li>hapticgraphclasses/<a class="el" href="_node_8cpp.html">Node.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:14 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

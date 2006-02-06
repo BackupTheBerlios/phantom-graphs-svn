@@ -1,0 +1,14 @@
+Aufgabenverteilung - Kathrin
+
+- Einarbeitung in HLAPI und OpenGL
+- Testanwendung
+- Entwicklung der Sorftwarearchitektur
+- Erstellung der Klassendiagramme
+- Implementierung und Dokumentation der HapticFramework-Klassen
+	- 21 Klassen
+	-> Implementierung des Frontend der Demo-Anwendung
+- Implementierung und Dokumentation des Observer-Patterns
+	- 2 Klassen
+- Vorbereitung der Präsentationen
+- Projektbeschreibung
+- Doxygen-Konfiguration

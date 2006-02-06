@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: AppConfiguration Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>AppConfiguration Klassenreferenz</h1>Klasse, die für projektübergreifende Aufgaben zuständig ist und static Member zur Verfügung stellt, Singelton.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_app_configuration_8h-source.html">AppConfiguration.h</a>&gt;</code>
+<p>
+<a href="class_app_configuration-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a0">setProjectLines</a> (int lines)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">setzt die Anzahl maximaler paralleler Aufgaben  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="AppConfiguration::initTasks" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a1">initTasks</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">hier werden alle Aufgaben initialisiert momentan hard codiert, als Erwiterung ist das einlesen aus XML vorgesehen <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a2">setProjectDuration</a> (int days)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">setzt die Gesamtdauer des Projekts in Tagen  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="AppConfiguration::getProjectDuration" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a3">getProjectDuration</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gibt die gesamt darzustellenden Dauer des Projekts zurück. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a4" doxytag="AppConfiguration::getRootTask" ></a>
+<a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a4">getRootTask</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">liefert einen Pointer auf die Anfangsaufgabe <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a5" doxytag="AppConfiguration::getProjectLines" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a5">getProjectLines</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">liefert die max. Anzahl paralleler Aufgaben <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a6">setDebugState</a> (bool state)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">setzt den Debugstatus zur Anzeige von Infos während der Programmausführung  <a href="#a6"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a7" doxytag="AppConfiguration::getDebugState" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a7">getDebugState</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">liefert den aktuellen Debugstatus <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#a8">AppConfiguration</a> ()</td></tr>
+
+<tr><td colspan=2><br><h2>Öffentliche Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="o0" doxytag="AppConfiguration::m_BusinessTasks" ></a>
+list&lt; <a class="el" href="class_business_task.html">BusinessTask</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#o0">m_BusinessTasks</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste aller Aufgaben. <br></td></tr>
+<tr><td colspan=2><br><h2>Private Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="AppConfiguration::m_debug" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#r0">m_debug</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">hält den aktuellen Debugstatus default=false, wird im Konstruktor gesetzt gesetzt <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="AppConfiguration::m_ProjectDuration" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#r1">m_ProjectDuration</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dauer des Projektzeitraums. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="AppConfiguration::m_ProjectLines" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#r2">m_ProjectLines</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Anzahl maximaler paralleler Aufgaben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_app_configuration.html#r3">m_rootTask</a></td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Klasse, die für projektübergreifende Aufgaben zuständig ist und static Member zur Verfügung stellt, Singelton. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Carsten Arnold</dd></dl>
+
+<p>
+<hr><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" name="a8" doxytag="AppConfiguration::AppConfiguration" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> AppConfiguration::AppConfiguration           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ausgabe von Debuginfos ein-/ausschalten<p>
+Debugausgabe Projektdauer     </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a6" doxytag="AppConfiguration::setDebugState" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void AppConfiguration::setDebugState           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">bool&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>state</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+setzt den Debugstatus zur Anzeige von Infos während der Programmausführung 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>state</em>&nbsp;</td><td>true/false </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="AppConfiguration::setProjectDuration" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void AppConfiguration::setProjectDuration           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>days</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+setzt die Gesamtdauer des Projekts in Tagen 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>days</em>&nbsp;</td><td>Gesamtdauer des Projekts in Tagen </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a0" doxytag="AppConfiguration::setProjectLines" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void AppConfiguration::setProjectLines           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>lines</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+setzt die Anzahl maximaler paralleler Aufgaben 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>lines</em>&nbsp;</td><td>Anzahl maximaler paralleler Aufgaben </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Datenelemente</h2>
+<a class="anchor" name="r3" doxytag="AppConfiguration::m_rootTask" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a>* <a class="el" href="class_app_configuration.html#r3">AppConfiguration::m_rootTask</a><code> [private]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+@ brief Pointer auf die fiktive Startaufgabe, die nur Startpunkt und selbst keine wirkliche Aufgabe ist Aufgabe     </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>businesslogic/<a class="el" href="_app_configuration_8h-source.html">AppConfiguration.h</a><li>businesslogic/<a class="el" href="_app_configuration_8cpp.html">AppConfiguration.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:14 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

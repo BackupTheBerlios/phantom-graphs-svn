@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: Main.cpp Dateireferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>Main.cpp Dateireferenz</h1><code>#include &lt;math.h&gt;</code><br>
+<code>#include &lt;assert.h&gt;</code><br>
+<code>#include &lt;GL/gl.h&gt;</code><br>
+<code>#include &lt;GL/glut.h&gt;</code><br>
+<code>#include &lt;HL/hl.h&gt;</code><br>
+<code>#include &lt;HDU/hduMatrix.h&gt;</code><br>
+<code>#include &lt;HDU/hduError.h&gt;</code><br>
+<code>#include &lt;HLU/hlu.h&gt;</code><br>
+<code>#include "<a class="el" href="_haptic_device_8h-source.html">hapticgraphclasses/HapticDevice.h</a>"</code><br>
+<code>#include "<a class="el" href="_graph_scene_8h-source.html">hapticgraphclasses/GraphScene.h</a>"</code><br>
+<code>#include "<a class="el" href="_haptic_cursor_8h-source.html">hapticgraphclasses/HapticCursor.h</a>"</code><br>
+<code>#include "<a class="el" href="_haptics_exceptions_8h-source.html">exceptionclasses/HapticsExceptions.h</a>"</code><br>
+<code>#include "<a class="el" href="_app_configuration_8h-source.html">businesslogic/AppConfiguration.h</a>"</code><br>
+<code>#include "<a class="el" href="_business_task_8h-source.html">businesslogic/BusinessTask.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Funktionen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a4" doxytag="Main.cpp::glutDisplay" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>glutDisplay</b> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a5" doxytag="Main.cpp::glutReshape" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>glutReshape</b> (int width, int height)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a6" doxytag="Main.cpp::glutIdle" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>glutIdle</b> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a7" doxytag="Main.cpp::exitHandler" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>exitHandler</b> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a8" doxytag="Main.cpp::initGL" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>initGL</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a9" doxytag="Main.cpp::initHL" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>initHL</b> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a10" doxytag="Main.cpp::initScene" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><b>initScene</b> (int viewportWidth, int viewportHeight)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="_main_8cpp.html#a11">setAppData</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initialisiert Konfigurationsdaten Objekt CA.  <a href="#a11"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a12" doxytag="Main.cpp::main" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><b>main</b> (int argc, char *argv[])</td></tr>
+
+<tr><td colspan=2><br><h2>Variablen</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="Main.cpp::pHapticDevice" ></a>
+<a class="el" href="class_haptic_device.html">HapticDevice</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>pHapticDevice</b> = NULL</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="Main.cpp::pScene" ></a>
+<a class="el" href="class_graph_scene.html">GraphScene</a> *&nbsp;</td><td class="memItemRight" valign=bottom><b>pScene</b> = NULL</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="Main.cpp::cursor" ></a>
+<a class="el" href="class_haptic_cursor.html">HapticCursor</a>&nbsp;</td><td class="memItemRight" valign=bottom><b>cursor</b></td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="el" href="class_app_configuration.html">AppConfiguration</a>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="_main_8cpp.html#a3">appData</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Objekt mit globale Konfigurations Daten CA.  <a href="#a3"></a><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+<dl compact><dt><b>Autor:</b></dt><dd>angepasst von Katharina Greiner, Matr.-Nr. 943471 </dd></dl>
+<dl compact><dt><b>Datum:</b></dt><dd>Erstellt am 26.12.2005 <p>
+Letzte Änderung 28.01.2006 (CA)</dd></dl>
+<hr><h2>Dokumentation der Funktionen</h2>
+<a class="anchor" name="a11" doxytag="Main.cpp::setAppData" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void setAppData           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Initialisiert Konfigurationsdaten Objekt CA. 
+<p>
+Debuginfo zur Ausgabe aller Tasks     </td>
+  </tr>
+</table>
+<hr><h2>Variablen-Dokumentation</h2>
+<a class="anchor" name="a3" doxytag="Main.cpp::appData" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="class_app_configuration.html">AppConfiguration</a> <a class="el" href="_main_8cpp.html#a3">appData</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Objekt mit globale Konfigurations Daten CA. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Carsten Arnold </dd></dl>
+    </td>
+  </tr>
+</table>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:14 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

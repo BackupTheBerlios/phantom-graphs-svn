@@ -1,0 +1,455 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: DragObjectHandler Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>DragObjectHandler Klassenreferenz</h1>Eine Eventhandlerklasse die es ermöglicht, haptische Objekte mit dem Phantom zu bewegen.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_drag_object_handler_8h-source.html">DragObjectHandler.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für DragObjectHandler:
+<p><center><img src="class_drag_object_handler.png" usemap="#DragObjectHandler_map" border="0" alt=""></center>
+<map name="DragObjectHandler_map">
+<area href="class_i_haptic_action.html" alt="IHapticAction" shape="rect" coords="0,0,122,24">
+</map>
+<a href="class_drag_object_handler-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#a0">DragObjectHandler</a> (<a class="el" href="class_haptic_object.html">HapticObject</a> *pObj)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor, initialisiert das Eventhandler-Objekt mit dem zugehörigen haptischen Objekt.  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#a1">initAction</a> (HLcache *pCache)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Nimmt die Proxy-Position beim Starten des Drag-Vorgangs auf.  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#a2">handleDrag</a> (HLcache *pCache)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Veranlasst das haptische Objekt, sich mit dem Proxy zu bewegen.  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#a3">registerAction</a> (HLuint shapeID)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Registriert die Aktion für eine Shape bei HLAPI.  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#a4">unregisterAction</a> (HLuint shapeID)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Meldet die Aktion für eine Shape bei HLAPI ab.  <a href="#a4"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte, statische Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void HLCALLBACK&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#f0">OnButtonDown</a> (HLenum event, HLuint shapeID, HLenum thread, HLcache *cache, void *pHandlerObject)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">(HLAPI-Callbackfunktion) Started das Draggen des Objekts  <a href="#f0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void HLCALLBACK&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#f1">OnButtonUp</a> (HLenum event, HLuint shapeID, HLenum thread, HLcache *cache, void *unused)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">(HLAPI-Callbackfunktion) Beendet das Draggen des Objekts.  <a href="#f1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void HLCALLBACK&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#f2">OnDrag</a> (HLenum event, HLuint shapeID, HLenum thread, HLcache *cache, void *pHandlerObject)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">(HLAPI-Callbackfunktion) Steuert das Draggen des Objekts.  <a href="#f2"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="DragObjectHandler::m_pDragObj" ></a>
+<a class="el" href="class_haptic_object.html">HapticObject</a> *&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#p0">m_pDragObj</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Das Objekt, dem der Eventhandler zugeordnet ist. Wird NICHT vom EventHandler freigegeben! <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p1" doxytag="DragObjectHandler::m_LastProxyPos" ></a>
+hduVector3Dd&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_drag_object_handler.html#p1">m_LastProxyPos</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="struct_position.html">Position</a> des Proxy beim letzten Aufruf des Draghandlers. Dient zur Berechnung des Vektors um den das Objekt verschoben werden soll. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Eine Eventhandlerklasse die es ermöglicht, haptische Objekte mit dem Phantom zu bewegen. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471</dd></dl>
+<p>
+Der Eventhandler reagiert auf die folgende Events:<ul>
+<li>der vordere Phantom-Button wird gedrückt, wenn ein Objekt mit dem Phantom berührt wird</li><li>das Phantom wird mit gedrücktem Button bewegt</li><li>der vordere Phantom-Button wird losgelassen Wirkung: Solange der Button gedrückt gehalten wird, folgt das registrierte Objekt der Bewegung des Phantom <dl compact><dt><b><a class="el" href="todo.html#_todo000002">Noch zu erledigen:</a></b></dt><dd>Objekte lassen sich noch nicht nach hinten (in neg. z-Richtung) verschieben.</dd></dl>
+</li></ul>
+
+<p>
+<hr><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" name="a0" doxytag="DragObjectHandler::DragObjectHandler" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> DragObjectHandler::DragObjectHandler           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="class_haptic_object.html">HapticObject</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pObj</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Konstruktor, initialisiert das Eventhandler-Objekt mit dem zugehörigen haptischen Objekt. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pObj</em>&nbsp;</td><td>Pointer auf das haptische Objekt für das der Eventhandler zuständig sein soll. Wird NICHT vom EventHandler freigegeben! </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a2" doxytag="DragObjectHandler::handleDrag" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void DragObjectHandler::handleDrag           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLcache *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pCache</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Veranlasst das haptische Objekt, sich mit dem Proxy zu bewegen. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pCache</em>&nbsp;</td><td>HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="DragObjectHandler::initAction" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void DragObjectHandler::initAction           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLcache *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>pCache</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Nimmt die Proxy-Position beim Starten des Drag-Vorgangs auf. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>pCache</em>&nbsp;</td><td>HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f0" doxytag="DragObjectHandler::OnButtonDown" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HLCALLBACK DragObjectHandler::OnButtonDown           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLuint&nbsp;</td>
+          <td class="mdname" nowrap> <em>shapeID</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLcache *&nbsp;</td>
+          <td class="mdname" nowrap> <em>cache</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>void *&nbsp;</td>
+          <td class="mdname" nowrap> <em>pHandlerObject</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static, protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+(HLAPI-Callbackfunktion) Started das Draggen des Objekts 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>event</em>&nbsp;</td><td>Gibt an, auf welches HLAPI-Event hin die Callback- Funktion aufgerufen werden soll, hier HL_EVENT_1BUTTONDOWN. </td></tr>
+    <tr><td></td><td valign=top><em>shapeID</em>&nbsp;</td><td>Die ShapeID des Objekts, das bewegt werden soll. </td></tr>
+    <tr><td></td><td valign=top><em>thread</em>&nbsp;</td><td>Gibt an, in welchem HLAPI-Thread das Event behandelt werden soll, in diesem Fall HL_CLIENT_THREAD. </td></tr>
+    <tr><td></td><td valign=top><em>cache</em>&nbsp;</td><td>HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert. </td></tr>
+    <tr><td></td><td valign=top><em>pHandlerObject</em>&nbsp;</td><td>Pointer auf das DragObjectHandler-Objekt, das das Event verarbeiten soll. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f1" doxytag="DragObjectHandler::OnButtonUp" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HLCALLBACK DragObjectHandler::OnButtonUp           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLuint&nbsp;</td>
+          <td class="mdname" nowrap> <em>shapeID</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLcache *&nbsp;</td>
+          <td class="mdname" nowrap> <em>cache</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>void *&nbsp;</td>
+          <td class="mdname" nowrap> <em>unused</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static, protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+(HLAPI-Callbackfunktion) Beendet das Draggen des Objekts. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>event</em>&nbsp;</td><td>Gibt an, auf welches HLAPI-Event hin die Callback- Funktion aufgerufen werden soll, hier HL_EVENT_1BUTTONUP. </td></tr>
+    <tr><td></td><td valign=top><em>shapeID</em>&nbsp;</td><td>Hier soll HL_OBJECT_ANY angegeben werden. </td></tr>
+    <tr><td></td><td valign=top><em>thread</em>&nbsp;</td><td>Gibt an, in welchem HLAPI-Thread das Event behandelt werden soll, in diesem Fall HL_CLIENT_THREAD. </td></tr>
+    <tr><td></td><td valign=top><em>cache</em>&nbsp;</td><td>HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert. </td></tr>
+    <tr><td></td><td valign=top><em>unused</em>&nbsp;</td><td>Wird von dieser Funktion nicht benötigt. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="f2" doxytag="DragObjectHandler::OnDrag" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HLCALLBACK DragObjectHandler::OnDrag           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>event</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLuint&nbsp;</td>
+          <td class="mdname" nowrap> <em>shapeID</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLenum&nbsp;</td>
+          <td class="mdname" nowrap> <em>thread</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>HLcache *&nbsp;</td>
+          <td class="mdname" nowrap> <em>cache</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>void *&nbsp;</td>
+          <td class="mdname" nowrap> <em>pHandlerObject</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [static, protected]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+(HLAPI-Callbackfunktion) Steuert das Draggen des Objekts. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>event</em>&nbsp;</td><td>Gibt an, auf welches HLAPI-Event hin die Callback- Funktion aufgerufen werden soll, hier HL_EVENT_MOTION. </td></tr>
+    <tr><td></td><td valign=top><em>shapeID</em>&nbsp;</td><td>Hier soll HL_OBJECT_ANY angegeben werden. </td></tr>
+    <tr><td></td><td valign=top><em>thread</em>&nbsp;</td><td>Gibt an, in welchem HLAPI-Thread das Event behandelt werden soll, in diesem Fall HL_CLIENT_THREAD. </td></tr>
+    <tr><td></td><td valign=top><em>cache</em>&nbsp;</td><td>HLAPI-State Schnappschuss in dem Moment, in dem das Event feuert. </td></tr>
+    <tr><td></td><td valign=top><em>pHandlerObject</em>&nbsp;</td><td>Pointer auf das DragObjectHandler-Objekt, das das Event verarbeiten soll. </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="DragObjectHandler::registerAction" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void DragObjectHandler::registerAction           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLuint&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>shapeID</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Registriert die Aktion für eine Shape bei HLAPI. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>shapeID</em>&nbsp;</td><td>ID der Shape, für die die Aktion registriert werden soll. </td></tr>
+  </table>
+</dl>
+
+<p>
+Implementiert <a class="el" href="class_i_haptic_action.html#a1">IHapticAction</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a4" doxytag="DragObjectHandler::unregisterAction" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void DragObjectHandler::unregisterAction           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">HLuint&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>shapeID</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Meldet die Aktion für eine Shape bei HLAPI ab. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>shapeID</em>&nbsp;</td><td>ID der Shape, für die die Aktion registriert wurde. </td></tr>
+  </table>
+</dl>
+
+<p>
+Implementiert <a class="el" href="class_i_haptic_action.html#a0">IHapticAction</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>hapticgraphclasses/<a class="el" href="_drag_object_handler_8h-source.html">DragObjectHandler.h</a><li>hapticgraphclasses/<a class="el" href="_drag_object_handler_8cpp.html">DragObjectHandler.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:14 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

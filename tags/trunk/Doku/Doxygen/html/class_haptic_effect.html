@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: HapticEffect Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>HapticEffect Klassenreferenz</h1>Abstrakte Klasse zur Kapselung von HLAPI Force Effects.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_haptic_effect_8h-source.html">HapticEffect.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für HapticEffect:
+<p><center><img src="class_haptic_effect.png" usemap="#HapticEffect_map" border="0" alt=""></center>
+<map name="HapticEffect_map">
+<area href="class_constant_force_effect.html" alt="ConstantForceEffect" shape="rect" coords="0,56,128,80">
+<area href="class_friction_force_effect.html" alt="FrictionForceEffect" shape="rect" coords="138,56,266,80">
+<area href="class_spring_force_effect.html" alt="SpringForceEffect" shape="rect" coords="276,56,404,80">
+<area href="class_viscous_force_effect.html" alt="ViscousForceEffect" shape="rect" coords="414,56,542,80">
+</map>
+<a href="class_haptic_effect-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a0" doxytag="HapticEffect::HapticEffect" ></a>
+&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#a0">HapticEffect</a> (HLenum type=HL_EFFECT_CONSTANT)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Konstruktor: Initialisiert das Objekt mit Defaultwerten und macht den Effekt bei HLAPI bekannt. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a1" doxytag="HapticEffect::~HapticEffect" ></a>
+virtual&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#a1">~HapticEffect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destuktor: Gibt den Effekt bei HLAPI frei. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a2" doxytag="HapticEffect::startEffect" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#a2">startEffect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Startet den Effekt. Der Effekt wird so lange gerendert, bis stopEffekt() aufgerufen wird. Wurde der Effekt bereits gestartet, hat der Aufruf von <a class="el" href="class_haptic_effect.html#a2">startEffect()</a> keinerlei Auswirkung. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a3" doxytag="HapticEffect::stopEffect" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#a3">stopEffect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Stoppt einen bereits gestarteten Effekt. Ist der Effekt inaktiv, hat der Aufruf von <a class="el" href="class_haptic_effect.html#a3">stopEffect()</a> keinerlei Auswirkung. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#a4">triggerEffect</a> (double duration=100.0)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Löst den Effekt einmalig aus, er dauert dann für die mit duration spezifizierte Zeit an.  <a href="#a4"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="b0" doxytag="HapticEffect::renderProperties" ></a>
+virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#b0">renderProperties</a> ()=0</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Muss von abgeleiteten Klassen implementiert werden, um die gewünschten Eigenschaften des Effektes zu spezifizieren. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>HLenum&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#p0">m_EffectType</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Effekttyp.  <a href="#p0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p1" doxytag="HapticEffect::m_EffectID" ></a>
+HLuint&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#p1">m_EffectID</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ID, mit der der Effekt bei HLAPI bekannt ist. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p2" doxytag="HapticEffect::m_IsActive" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_haptic_effect.html#p2">m_IsActive</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Flag, das angibt, ob der Effekt aktiv (gestartet) ist. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+Abstrakte Klasse zur Kapselung von HLAPI Force Effects. 
+<p>
+<dl compact><dt><b>Autor:</b></dt><dd>Katharina Greiner, Matr.-Nr. 943471</dd></dl>
+<p>
+Dies ist die Basisklasse für alle "ambienten" Force Effects. Sie ist für das Registrieren und Deregistrieren des Effektes bei HLAPI zuständig und stellt Methoden zum Starten, Stoppen und Triggern des Effektes zur Verfügung. Abgeleitete Klassen, die instanziiert werden sollen, müssen die abstrakte Methode <a class="el" href="class_haptic_effect.html#b0">renderProperties()</a> implementieren. <p>
+<dl compact><dt><b><a class="el" href="bug.html#_bug000001">Fehler:</a></b></dt><dd>Manchmal wird zwar <a class="el" href="class_haptic_effect.html#a2">startEffect()</a> aufgerufen, der Effekt aber nicht gerendert. Das gleiche gilt für <a class="el" href="class_haptic_effect.html#a3">stopEffect()</a>: Manchmal wird der Effekt nicht mehr angehalten. Ursache ist bisher ungekärt.</dd></dl>
+
+<p>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="a4" doxytag="HapticEffect::triggerEffect" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void HapticEffect::triggerEffect           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">double&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>duration</em> = <code>100.0</code>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Löst den Effekt einmalig aus, er dauert dann für die mit duration spezifizierte Zeit an. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>duration</em>&nbsp;</td><td>Dauer des Effektes in Millisekunden. Default: 100.0 ms </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Datenelemente</h2>
+<a class="anchor" name="p0" doxytag="HapticEffect::m_EffectType" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> HLenum <a class="el" href="class_haptic_effect.html#p0">HapticEffect::m_EffectType</a><code> [protected]</code>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Effekttyp. 
+<p>
+Zulässige Werte:<ul>
+<li>HL_EFFECT_CONSTANT</li><li>HL_EFFECT_SPRING</li><li>HL_EFFECT_VISCOUS</li><li>HL_EFFECT_FRICTION Für eine detailiertere Beschreibung der Effekttypen, siehe 3D TOUCH SDK - API REFERENCE </li></ul>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>hapticgraphclasses/<a class="el" href="_haptic_effect_8h-source.html">HapticEffect.h</a><li>hapticgraphclasses/<a class="el" href="_haptic_effect_8cpp.html">HapticEffect.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:14 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

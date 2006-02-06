@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: businesslogic/IBusinessAdapter.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>businesslogic/IBusinessAdapter.h</h1><a href="_i_business_adapter_8h.html">gehe zur Dokumentation dieser Datei</a><pre class="fragment"><div>00001 <span class="comment">// IBusinessAdapter.h: Schnittstelle für die Klasse IBusinessAdapter.</span>
+00002 <span class="comment">//</span>
+00003 <span class="comment">//*******************************************************************************</span>
+00008 <span class="comment"></span><span class="comment">//*******************************************************************************</span>
+00009 
+00010 <span class="comment">// Änderungen:</span>
+00011 <span class="comment">// 06.01.2006   - Schnittstelle getForce() hinzugefügt</span>
+00012 <span class="comment">// 09.01.0006           - Schnittstellen getWidth(), getHeight() und getPosition() hinzugefügt (Kathrin)</span>
+00013 <span class="comment">// 24.01.2006   - Schnittstelle </span>
+00014 <span class="comment">//                                      getName() </span>
+00015 <span class="comment">//                                      getLine()</span>
+00016 <span class="comment">//                                hinzugefügt (CA)</span>
+00017 <span class="comment">// 28.01.2006   - added:</span>
+00018 <span class="comment">//                                      getNextTasks()</span>
+00019 <span class="comment">//                                      getPreviousTasks() CA</span>
+00020 <span class="comment">//                              - added setBegin(float) CA</span>
+00021 <span class="comment">// 30.01.2006   - modified: getForce(int,int) CA</span>
+00022 <span class="comment">//                              - added: enum force CA</span>
+00023 
+00024 
+00025 
+00026 <span class="preprocessor">#if !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)</span>
+00027 <span class="preprocessor"></span><span class="preprocessor">#define AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_</span>
+00028 <span class="preprocessor"></span>
+00029 <span class="preprocessor">#if _MSC_VER &gt; 1000</span>
+00030 <span class="preprocessor"></span><span class="preprocessor">#pragma once</span>
+00031 <span class="preprocessor"></span><span class="preprocessor">#endif // _MSC_VER &gt; 1000</span>
+00032 <span class="preprocessor"></span>
+00033 <span class="preprocessor">#include "../hapticgraphclasses/Utilities.h"</span>
+00034 <span class="preprocessor">#include "<a class="code" href="_observable_8h.html">Observable.h</a>"</span>
+00035 <span class="preprocessor">#include &lt;string&gt;</span>
+00036 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+00037 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
+00038 
+00039 
+00040 <span class="keyword">using</span> <span class="keyword">namespace </span>std;
+00041 
+00042 <span class="comment">//...............................................................................</span>
+00044 <span class="comment"></span><span class="comment">//...............................................................................</span>
+<a name="l00045"></a><a class="code" href="_i_business_adapter_8h.html#a4">00045</a> <span class="keyword">enum</span> <a class="code" href="_i_business_adapter_8h.html#a4">force</a> {none, medium, incredible};
+00046 
+00047 <span class="comment">//...............................................................................</span>
+00054 <span class="comment"></span><span class="comment">//...............................................................................</span>
+<a name="l00055"></a><a class="code" href="class_i_business_adapter.html">00055</a> <span class="keyword">class </span><a class="code" href="class_i_business_adapter.html">IBusinessAdapter</a> : <span class="keyword">public</span> <a class="code" href="class_observable.html">Observable</a>
+00056 {
+00057 <span class="keyword">public</span>:
+00058         
+00059         <span class="comment">//...............................................................................</span>
+00064 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00065         <span class="keyword">virtual</span> <a class="code" href="_i_business_adapter_8h.html#a4">force</a> <a class="code" href="class_i_business_adapter.html#a0">getForce</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y)=0;
+00066 
+00067         <span class="comment">//.......................................................................</span>
+00070 <span class="comment"></span>        <span class="comment">//.......................................................................</span>
+00071         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_i_business_adapter.html#a1">getWidth</a>() = 0;
+00072 
+00073         <span class="comment">//.......................................................................</span>
+00076 <span class="comment"></span>        <span class="comment">//.......................................................................</span>
+00077         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_i_business_adapter.html#a2">getLine</a>() = 0;
+00078         
+00079         <span class="comment">//.......................................................................</span>
+00082 <span class="comment"></span>        <span class="comment">//.......................................................................</span>
+00083         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_i_business_adapter.html#a3">getBegin</a>() = 0;
+00084 
+00085         <span class="comment">//.......................................................................</span>
+00088 <span class="comment"></span>        <span class="comment">//.......................................................................</span>
+00089         <span class="keyword">virtual</span> string <a class="code" href="class_i_business_adapter.html#a4">getName</a>() = 0;
+00090 
+00091         <span class="comment">//.......................................................................</span>
+00094 <span class="comment"></span>        <span class="comment">//.......................................................................</span>
+00095         <span class="keyword">virtual</span> list&lt;IBusinessAdapter*&gt;&amp; <a class="code" href="class_i_business_adapter.html#a5">getNextTasks</a>() = 0;
+00096 
+00097         <span class="comment">//.......................................................................</span>
+00100 <span class="comment"></span>        <span class="comment">//.......................................................................</span>
+00101         <span class="keyword">virtual</span> list&lt;IBusinessAdapter*&gt;&amp; <a class="code" href="class_i_business_adapter.html#a6">getPreviousTasks</a>() = 0;
+00102 
+00103         <span class="comment">//...............................................................................</span>
+00107 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00108         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_business_adapter.html#a7">setBegin</a>(<span class="keywordtype">float</span> begin) = 0;
+00109 
+00110         <span class="comment">//...............................................................................</span>
+00112 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00113         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_business_adapter.html#a8">moveAllToFront</a>() = 0;
+00114 
+00115         <span class="comment">//...............................................................................</span>
+00118 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00119         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_business_adapter.html#a9">moveFollowingToFront</a>(<span class="keywordtype">int</span> earliest) = 0;
+00120 
+00121         <span class="comment">//...............................................................................</span>
+00123 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00124         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_business_adapter.html#a10">movePreviousToFront</a>() = 0;
+00125 
+00126         <span class="comment">//...............................................................................</span>
+00128 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00129         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_i_business_adapter.html#a11">calcForceInc0</a>() = 0;
+00130 
+00131         <span class="comment">//...............................................................................</span>
+00133 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00134         <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="class_i_business_adapter.html#a12">calcForceInc1</a>() = 0;
+00135 
+00136         <span class="comment">//...............................................................................</span>
+00139 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00140         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_business_adapter.html#a13">moveToEarlierPosition</a>(<span class="keywordtype">int</span> end) = 0;
+00141 
+00142         <span class="comment">//...............................................................................</span>
+00145 <span class="comment"></span>        <span class="comment">//...............................................................................</span>
+00146         <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_business_adapter.html#a14">moveToLaterPosition</a>(<span class="keywordtype">int</span> new_begin) = 0;
+00147 
+00148 
+00149 
+00150 
+00151 };
+00152 
+00153 <span class="preprocessor">#endif // !defined(AFX_IBUSINESSADAPTER_H__6A0D2DAF_7C57_48C6_AAE3_5961D5FD4ABF__INCLUDED_)</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:11 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

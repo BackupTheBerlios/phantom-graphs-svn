@@ -1,0 +1,948 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: BusinessTask Klassenreferenz</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>BusinessTask Klassenreferenz</h1>diese KLasse verwaltet alle Aufgaben, die im Graph dargestellt werden sollen.  
+<a href="#_details">Mehr...</a>
+<p>
+<code>#include &lt;<a class="el" href="_business_task_8h-source.html">BusinessTask.h</a>&gt;</code>
+<p>
+<p>Klassendiagramm für BusinessTask:
+<p><center><img src="class_business_task.png" usemap="#BusinessTask_map" border="0" alt=""></center>
+<map name="BusinessTask_map">
+<area href="class_i_business_adapter.html" alt="IBusinessAdapter" shape="rect" coords="0,56,110,80">
+<area href="class_observable.html" alt="Observable" shape="rect" coords="0,0,110,24">
+</map>
+<a href="class_business_task-members.html">Aufstellung aller Elemente</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a0">moveToLaterPosition</a> (int new_begin)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">bewegt eine Aufgabe zu einem späteren Startpunkt  <a href="#a0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a1">moveToEarlierPosition</a> (int end)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">bewegt eine Aufgabe zu einem früheren Startpunkt  <a href="#a1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a2">calcForceMedium0</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">berechnet das Datum nach Links zum Ende der nächsten vorhergehenden Aufgabe  <a href="#a2"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a3">calcForceMedium1</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">berechnet das Datum nach Rechts zum Begin der nächsten folgenden Aufgabe  <a href="#a3"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a4">calcForceInc0</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">berechnet das Datum über das nicht nach Links verschoben werden kann  <a href="#a4"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a5">calcForceInc1</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">berechnet das Datum über das nicht nach Rechts verschoben werden kann  <a href="#a5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a6" doxytag="BusinessTask::calcRanges" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a6">calcRanges</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Aufruf zum berechnen der Kraftpositionen der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a7" doxytag="BusinessTask::moveAllToFront" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a7">moveAllToFront</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">schiebt alle Aufgaben so weit wie möglich an den Anfang des Projekts <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a8" doxytag="BusinessTask::moveFollowingToFront" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a8">moveFollowingToFront</a> (int earliest)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">schiebt nachfolgende Aufgaben so weit wie möglich an den Anfang des Projekts <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a9" doxytag="BusinessTask::movePreviousToFront" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a9">movePreviousToFront</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">schiebt vorhergehende Aufgaben so weit wie möglich an den Anfang des Projekts <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a10">getEnd</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liefert das Ende der Aufgabe.  <a href="#a10"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a11">getBegin</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liefert den Anfang der Aufgabe.  <a href="#a11"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a12">setBegin</a> (float begin)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">setzt den Anfang einer Aufgabe  <a href="#a12"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a13" doxytag="BusinessTask::addTaskPrevious" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a13">addTaskPrevious</a> (<a class="el" href="class_business_task.html">BusinessTask</a> *follows)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">fügt eine Aufgabe zu der Liste der Vorgänger hinzu <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a14" doxytag="BusinessTask::addTaskFollowing" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a14">addTaskFollowing</a> (<a class="el" href="class_business_task.html">BusinessTask</a> *followed_by)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">fügt eine Aufgabe zu der Liste der Nachfolger hinzu <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>string&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a15">getName</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">liefert den Namen der Aufgabe  <a href="#a15"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="a16" doxytag="BusinessTask::printInfo" ></a>
+void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a16">printInfo</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gibt einige Infos der Aufgabe auf stdout aus <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>void&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a17">setLine</a> (int line)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">setzt die Eben der Aufgabe, erhöt sich, wenn die Aufgabe parallel zu einer anderen Aufgabe durchgeführt werden kann  <a href="#a17"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a18">getLine</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">liefert die Eben der Aufgabe  <a href="#a18"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a19">getWidth</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual <a class="el" href="_i_business_adapter_8h.html#a4">force</a>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a20">getForce</a> (float x, float y)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liefert die Kraft, die notwendig ist, um eine Aufgabe zu verschieben.  <a href="#a20"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a23">BusinessTask</a> (string taskname, int day_duration, int day_final, bool <a class="el" href="class_business_task.html#r3">isMilestone</a>)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">überschreibt den StandardKonstruktor mit der Übergabe folgender Parameter  <a href="#a23"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual list&lt; <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> * &gt; &amp;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a24">getNextTasks</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liefert die Nachfolger.  <a href="#a24"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>virtual list&lt; <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> * &gt; &amp;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#a25">getPreviousTasks</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liefert die Vorgänger.  <a href="#a25"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Öffentliche Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="o0" doxytag="BusinessTask::m_ForceRangeMedium0" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#o0">m_ForceRangeMedium0</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Datum vom Ende der nächsten vorhergehenden Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="o1" doxytag="BusinessTask::m_ForceRangeMedium1" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#o1">m_ForceRangeMedium1</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Datum vom Anfang der nächsten nachfolgenden Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="o2" doxytag="BusinessTask::m_ForceRangeIncredible0" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#o2">m_ForceRangeIncredible0</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Datum über das die Aufgabe nicht weiter nach Links verschoben werden kann. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="o3" doxytag="BusinessTask::m_ForceRangeIncredible1" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#o3">m_ForceRangeIncredible1</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Datum über das die Aufgabe nicht weiter nach Rechts verschoben werden kann. <br></td></tr>
+<tr><td colspan=2><br><h2>Geschützte Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="p0" doxytag="BusinessTask::m_Movement" ></a>
+float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#p0">m_Movement</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">akkumuliert die übergebenen Differenzen von x-Axis Bewegungen der View <br></td></tr>
+<tr><td colspan=2><br><h2>Private Methoden</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#d0">runden</a> (float value, int nachkommastellen)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">rundet floats auf beliebige nachkommastellen ab  <a href="#d0"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#d1">calcBegin</a> (int end, int duration)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">berechnet den Anfangspunkt anhand von Endpunkt und Dauer  <a href="#d1"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top>int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#d2">calcEnd</a> (int begin, int duration)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">berechnet den Endpunkt anhand von Anfangspunkt und Dauer  <a href="#d2"></a><br></td></tr>
+<tr><td colspan=2><br><h2>Private Attribute</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r0" doxytag="BusinessTask::m_Force" ></a>
+<a class="el" href="_i_business_adapter_8h.html#a4">force</a>&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r0">m_Force</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Rückgabewerte für <a class="el" href="class_business_task.html#a20">getForce()</a>, enum deklariert in <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a>. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r1" doxytag="BusinessTask::m_Line" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r1">m_Line</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Darstellungsebene. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r2" doxytag="BusinessTask::width" ></a>
+float&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r2">width</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dauer der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r3" doxytag="BusinessTask::isMilestone" ></a>
+bool&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r3">isMilestone</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ist die Aufgabe Milestone <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r4" doxytag="BusinessTask::m_Begin" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r4">m_Begin</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Anfangsdatum der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r5" doxytag="BusinessTask::m_End" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r5">m_End</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enddatum der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r6" doxytag="BusinessTask::m_Final" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r6">m_Final</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deadline der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r7" doxytag="BusinessTask::m_Width" ></a>
+int&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r7">m_Width</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dauer der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r8" doxytag="BusinessTask::m_Name" ></a>
+string&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r8">m_Name</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Name der Aufgabe. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r9" doxytag="BusinessTask::m_TasksFollowing" ></a>
+list&lt; <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r9">m_TasksFollowing</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste aller direkter nachfolgenden Aufgaben. <br></td></tr>
+<tr><td class="memItemLeft" nowrap align=right valign=top><a class="anchor" name="r10" doxytag="BusinessTask::m_TasksPrevious" ></a>
+list&lt; <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> * &gt;&nbsp;</td><td class="memItemRight" valign=bottom><a class="el" href="class_business_task.html#r10">m_TasksPrevious</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Liste aller direkter vorhergehender Aufgaben. <br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>Ausführliche Beschreibung</h2>
+diese KLasse verwaltet alle Aufgaben, die im Graph dargestellt werden sollen. 
+<p>
+<hr><h2>Beschreibung der Konstruktoren und Destruktoren</h2>
+<a class="anchor" name="a23" doxytag="BusinessTask::BusinessTask" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> BusinessTask::BusinessTask           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">string&nbsp;</td>
+          <td class="mdname" nowrap> <em>taskname</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>day_duration</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>day_final</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>bool&nbsp;</td>
+          <td class="mdname" nowrap> <em>isMilestone</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+überschreibt den StandardKonstruktor mit der Übergabe folgender Parameter 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>taskname</em>&nbsp;</td><td>Name der Aufgabe </td></tr>
+    <tr><td></td><td valign=top><em>day_duration</em>&nbsp;</td><td>Dauer der Aufgabe </td></tr>
+    <tr><td></td><td valign=top><em>day_final</em>&nbsp;</td><td>Datum an dem die Aufgabe fertig gestellt sein muss </td></tr>
+    <tr><td></td><td valign=top><em>isMilestone</em>&nbsp;</td><td>ist die Aufgabe ein Milestone </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>Dokumentation der Elementfunktionen</h2>
+<a class="anchor" name="d1" doxytag="BusinessTask::calcBegin" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::calcBegin           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+berechnet den Anfangspunkt anhand von Endpunkt und Dauer 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>end</em>&nbsp;</td><td>Endpunkt </td></tr>
+    <tr><td></td><td valign=top><em>duration</em>&nbsp;</td><td>Dauer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Dauer der Aufgabe </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d2" doxytag="BusinessTask::calcEnd" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::calcEnd           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap> <em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>duration</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+berechnet den Endpunkt anhand von Anfangspunkt und Dauer 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>begin</em>&nbsp;</td><td>Anfangspunkt </td></tr>
+    <tr><td></td><td valign=top><em>duration</em>&nbsp;</td><td>Dauer </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Ende der Aufgabe </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a4" doxytag="BusinessTask::calcForceInc0" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::calcForceInc0           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+berechnet das Datum über das nicht nach Links verschoben werden kann 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>gibt das Datum zurück </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a11">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a5" doxytag="BusinessTask::calcForceInc1" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::calcForceInc1           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+berechnet das Datum über das nicht nach Rechts verschoben werden kann 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>gibt das Datum zurück </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a12">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2" doxytag="BusinessTask::calcForceMedium0" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void BusinessTask::calcForceMedium0           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+berechnet das Datum nach Links zum Ende der nächsten vorhergehenden Aufgabe 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>gibt das Datum zurück </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a3" doxytag="BusinessTask::calcForceMedium1" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void BusinessTask::calcForceMedium1           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+berechnet das Datum nach Rechts zum Begin der nächsten folgenden Aufgabe 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>gibt das Datum zurück </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a11" doxytag="BusinessTask::getBegin" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::getBegin           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Liefert den Anfang der Aufgabe. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Anfang der Aufgabe </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a3">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a10" doxytag="BusinessTask::getEnd" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::getEnd           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Liefert das Ende der Aufgabe. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Ende der Aufgabe </dd></dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a20" doxytag="BusinessTask::getForce" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="_i_business_adapter_8h.html#a4">force</a> BusinessTask::getForce           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">float&nbsp;</td>
+          <td class="mdname" nowrap> <em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>float&nbsp;</td>
+          <td class="mdname" nowrap> <em>y</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Liefert die Kraft, die notwendig ist, um eine Aufgabe zu verschieben. 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>x</em>&nbsp;</td><td>aktueller x-Wert des Knoten in Business Einheiten </td></tr>
+    <tr><td></td><td valign=top><em>y</em>&nbsp;</td><td>aktueller y-Wert des Knoten in Business Einheiten </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>m_Force (siehe oben) </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a0">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a18" doxytag="BusinessTask::getLine" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::getLine           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+liefert die Eben der Aufgabe 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Ebene der Aufgabe </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a2">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a15" doxytag="BusinessTask::getName" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> string BusinessTask::getName           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+liefert den Namen der Aufgabe 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Name der Aufgabe </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a4">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a24" doxytag="BusinessTask::getNextTasks" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> list&lt; <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> * &gt; &amp; BusinessTask::getNextTasks           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Liefert die Nachfolger. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Liste mit Nachfolgern </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a5">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a25" doxytag="BusinessTask::getPreviousTasks" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> list&lt; <a class="el" href="class_i_business_adapter.html">IBusinessAdapter</a> * &gt; &amp; BusinessTask::getPreviousTasks           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Liefert die Vorgänger. 
+<p>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>Liste mit Vorgängern </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a6">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a19" doxytag="BusinessTask::getWidth" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int BusinessTask::getWidth           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+@ brief liefert die Dauer der Aufgabe <dl compact><dt><b>Rückgabe:</b></dt><dd>Dauer der Aufgabe </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a1">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a1" doxytag="BusinessTask::moveToEarlierPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void BusinessTask::moveToEarlierPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>end</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+bewegt eine Aufgabe zu einem früheren Startpunkt 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>end</em>&nbsp;</td><td>erhält denneuen Endtermin von Nachfolgender Aufgabe </td></tr>
+  </table>
+</dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a13">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a0" doxytag="BusinessTask::moveToLaterPosition" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void BusinessTask::moveToLaterPosition           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>new_begin</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+bewegt eine Aufgabe zu einem späteren Startpunkt 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>new_begin</em>&nbsp;</td><td>erhält seinen neuen Anfang </td></tr>
+  </table>
+</dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a14">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="d0" doxytag="BusinessTask::runden" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> float BusinessTask::runden           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">float&nbsp;</td>
+          <td class="mdname" nowrap> <em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap> <em>nachkommastellen</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [private]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+rundet floats auf beliebige nachkommastellen ab 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>value</em>&nbsp;</td><td>float, das gerundet werden soll </td></tr>
+    <tr><td></td><td valign=top><em>nachkommastellen</em>&nbsp;</td><td>- anzugeben in 1 für keine, 10 für 1, 100 für 2 ... Nachkommastellen </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a12" doxytag="BusinessTask::setBegin" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> bool BusinessTask::setBegin           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">float&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>begin</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap><code> [virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+setzt den Anfang einer Aufgabe 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>begin</em>&nbsp;</td><td>Anhand des Übergabewertes entscheidet die Aufgabe den genauen Begin </td></tr>
+  </table>
+</dl>
+<dl compact><dt><b>Rückgabe:</b></dt><dd>bool true=Begin erfolgreich geändert, false=keine Änderung durchgeführt </dd></dl>
+
+<p>
+Implementiert <a class="el" href="class_i_business_adapter.html#a7">IBusinessAdapter</a>.
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a17" doxytag="BusinessTask::setLine" ></a><p>
+<table class="mdTable" width="100%" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void BusinessTask::setLine           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap> <em>line</em>          </td>
+          <td class="md" valign="top">&nbsp;)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+setzt die Eben der Aufgabe, erhöt sich, wenn die Aufgabe parallel zu einer anderen Aufgabe durchgeführt werden kann 
+<p>
+<dl compact><dt><b>Parameter:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td></td><td valign=top><em>line</em>&nbsp;</td><td>zu setzende Eben [0..[ </td></tr>
+  </table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Dateien:<ul>
+<li>businesslogic/<a class="el" href="_business_task_8h-source.html">BusinessTask.h</a><li>businesslogic/<a class="el" href="_business_task_8cpp.html">BusinessTask.cpp</a></ul>
+<hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:14 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>

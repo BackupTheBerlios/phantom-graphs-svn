@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+<title>Phantom Graph Demo: hapticgraphclasses/HapticEffect.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Erzeugt von Doxygen 1.3.8 -->
+<div class="qindex"><a class="qindex" href="index.html">Hauptseite</a> | <a class="qindex" href="hierarchy.html">Klassenhierarchie</a> | <a class="qindex" href="annotated.html">Auflistung&nbsp;der&nbsp;Klassen</a> | <a class="qindex" href="files.html">Auflistung&nbsp;der&nbsp;Dateien</a> | <a class="qindex" href="functions.html">Klassen-Elemente</a> | <a class="qindex" href="globals.html">Datei-Elemente</a> | <a class="qindex" href="pages.html">Zusätzliche&nbsp;Informationen</a></div>
+<h1>hapticgraphclasses/HapticEffect.h</h1><a href="_haptic_effect_8h.html">gehe zur Dokumentation dieser Datei</a><pre class="fragment"><div>00001 <span class="comment">//*******************************************************************************</span>
+00006 <span class="comment"></span><span class="comment">//*******************************************************************************</span>
+00007 
+00008 <span class="comment">// Änderungen:</span>
+00009 <span class="comment">// 30.01.06             - neues Attribut m_IsActive hinzugefügt.</span>
+00010 <span class="comment">// 05.02.06             - Doku vervollständigt.</span>
+00011 
+00012 
+00013 <span class="preprocessor">#ifndef _HAPTICEFFECT_H_</span>
+00014 <span class="preprocessor"></span><span class="preprocessor">#define _HAPTICEFFECT_H_</span>
+00015 <span class="preprocessor"></span>
+00016 <span class="comment">// Haptic Library includes</span>
+00017 <span class="preprocessor">#include &lt;HL/hl.h&gt;</span>
+00018 
+00019 <span class="comment">//...............................................................................</span>
+00033 <span class="comment"></span><span class="comment">//...............................................................................</span>
+<a name="l00034"></a><a class="code" href="class_haptic_effect.html">00034</a> <span class="keyword">class </span><a class="code" href="class_haptic_effect.html">HapticEffect</a>
+00035 {
+00036         <span class="keyword">protected</span>:
+00037                 
+00038                 <span class="comment">//.......................................................................</span>
+00048 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00049"></a><a class="code" href="class_haptic_effect.html#p0">00049</a>                 HLenum <a class="code" href="class_haptic_effect.html#p0">m_EffectType</a>;
+00050                 
+00051                 <span class="comment">//.......................................................................</span>
+00053 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00054"></a><a class="code" href="class_haptic_effect.html#p1">00054</a>                 HLuint <a class="code" href="class_haptic_effect.html#p1">m_EffectID</a>;
+00055 
+00056                 <span class="comment">//.......................................................................</span>
+00058 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+<a name="l00059"></a><a class="code" href="class_haptic_effect.html#p2">00059</a>                 <span class="keywordtype">bool</span> <a class="code" href="class_haptic_effect.html#p2">m_IsActive</a>;
+00060 
+00061                 <span class="comment">//.......................................................................</span>
+00064 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00065                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_haptic_effect.html#b0">renderProperties</a>() = 0;
+00066 
+00067         <span class="keyword">public</span>:
+00068 
+00069                 <span class="comment">//.......................................................................</span>
+00072 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00073                 <a class="code" href="class_haptic_effect.html#a0">HapticEffect</a>(HLenum type = HL_EFFECT_CONSTANT);
+00074 
+00075                 <span class="comment">//.......................................................................</span>
+00077 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00078                 <span class="keyword">virtual</span> <a class="code" href="class_haptic_effect.html#a1">~HapticEffect</a>();
+00079                 
+00080                 <span class="comment">//.......................................................................</span>
+00084 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00085                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_haptic_effect.html#a2">startEffect</a>();
+00086 
+00087                 <span class="comment">//.......................................................................</span>
+00090 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00091                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_haptic_effect.html#a3">stopEffect</a>();
+00092 
+00093                 <span class="comment">//.......................................................................</span>
+00097 <span class="comment"></span>                <span class="comment">//.......................................................................</span>
+00098                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_haptic_effect.html#a4">triggerEffect</a>( <span class="keywordtype">double</span> duration = 100.0 );
+00099         
+00100 };
+00101 
+00102 <span class="preprocessor">#endif // _HAPTICEFFECT_H_</span>
+</div></pre><hr size="1"><address style="align: right;"><small>Erzeugt am Sun Feb 5 22:12:12 2006 für Phantom Graph Demo von
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 ></a> 1.3.8 </small></address>
+</body>
+</html>
